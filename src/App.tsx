@@ -1,10 +1,11 @@
 import { useEffect, useReducer, useState } from 'react'
 import { EndScreen } from './components/EndScreen.tsx'
 import { HUD } from './components/HUD.tsx'
+import { KnowLanguages } from './components/KnowLanguages.tsx'
 import { Reveal } from './components/Reveal.tsx'
 import { Round } from './components/Round.tsx'
 import { StartScreen } from './components/StartScreen.tsx'
-import { LANGUAGES } from './data/languages.ts'
+import { LANGUAGES, type LangCode, type Language } from './data/languages.ts'
 import {
   SLOW_RATE,
   clipKey,
@@ -17,12 +18,12 @@ import {
 } from './engine/game.ts'
 import { seedFromString } from './engine/rng.ts'
 import { useAudio } from './hooks/useAudio.ts'
-import { appendHeard, loadBestScore, loadHeard, saveBestScore, saveHeard } from './storage.ts'
+import { appendHeard, loadBestScore, loadHeard, loadKnown, saveBestScore, saveHeard, saveKnown } from './storage.ts'
 
 type AppState = { screen: 'start' } | { screen: 'game'; game: GameState }
 
 type Action =
-  | { type: 'start'; seed: number; difficulty: Difficulty; heard: readonly string[] }
+  | { type: 'start'; seed: number; difficulty: Difficulty; pool: readonly Language[]; heard: readonly string[] }
   | { type: 'guess'; index: number | null }
   | { type: 'next' }
   | { type: 'menu' }
@@ -30,7 +31,7 @@ type Action =
 function reducer(state: AppState, action: Action): AppState {
   switch (action.type) {
     case 'start':
-      return { screen: 'game', game: initialState(action.seed, action.difficulty, LANGUAGES, action.heard) }
+      return { screen: 'game', game: initialState(action.seed, action.difficulty, action.pool, action.heard) }
     case 'guess':
       return state.screen === 'game' ? { ...state, game: guess(state.game, action.index) } : state
     case 'next':
@@ -50,6 +51,14 @@ function randomSeed(): number {
   return crypto.getRandomValues(new Uint32Array(1))[0] ?? Date.now() >>> 0
 }
 
+const ROSTER = new Set<string>(LANGUAGES.map((l) => l.code))
+
+/** The saved known-languages choice, or null if the player was never asked. */
+function initialKnown(): LangCode[] | null {
+  const saved = loadKnown()
+  return saved === null ? null : saved.filter((c): c is LangCode => ROSTER.has(c))
+}
+
 function clipUrl(code: string, voiceIndex: number, sentenceId: string): string {
   return `${import.meta.env.BASE_URL}audio/${code}/${voiceIndex}/${sentenceId}.mp3`
 }
@@ -63,6 +72,11 @@ export default function App() {
   // Clips heard in earlier games, so replays do not repeat them. Kept in
   // memory too, so it still works for this session if storage is disabled.
   const [heard, setHeard] = useState(loadHeard)
+  // Languages the player knows are excluded from every game (answer and
+  // distractors). null = not asked yet, so the picker is shown first.
+  const [known, setKnown] = useState(initialKnown)
+  const [editingKnown, setEditingKnown] = useState(false)
+  const pool = LANGUAGES.filter((l) => !known?.includes(l.code))
 
   const game = state.screen === 'game' ? state.game : null
   const src =
@@ -78,7 +92,13 @@ export default function App() {
 
   const start = (difficulty: Difficulty) => {
     // A ?seed= game ignores the memory so the seed alone determines it.
-    dispatch({ type: 'start', seed: urlSeed ?? randomSeed(), difficulty, heard: urlSeed === null ? heard : [] })
+    dispatch({
+      type: 'start',
+      seed: urlSeed ?? randomSeed(),
+      difficulty,
+      pool,
+      heard: urlSeed === null ? heard : [],
+    })
     setUrlSeed(null)
   }
 
@@ -106,7 +126,34 @@ export default function App() {
     dispatch({ type: 'next' })
   }
 
-  if (!game) return <StartScreen bestScore={bestScore} onStart={start} />
+  const saveKnownLanguages = (codes: LangCode[]) => {
+    saveKnown(codes)
+    setKnown(codes)
+    setEditingKnown(false)
+  }
+
+  if (!game && (known === null || editingKnown)) {
+    return (
+      <KnowLanguages
+        initial={known ?? []}
+        firstVisit={known === null}
+        onSave={saveKnownLanguages}
+        onCancel={known === null ? undefined : () => setEditingKnown(false)}
+      />
+    )
+  }
+
+  if (!game) {
+    return (
+      <StartScreen
+        bestScore={bestScore}
+        pool={pool}
+        excludedCount={LANGUAGES.length - pool.length}
+        onStart={start}
+        onEditKnown={() => setEditingKnown(true)}
+      />
+    )
+  }
 
   if (game.phase === 'over') {
     return (

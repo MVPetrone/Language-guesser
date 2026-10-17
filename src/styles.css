@@ -202,6 +202,135 @@ kbd {
   background: var(--surface-2);
 }
 
+.link {
+  min-height: 44px;
+  padding: 0 4px;
+  border: 0;
+  background: none;
+  color: var(--accent);
+  font: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.btn:disabled:active {
+  transform: none;
+}
+
+.known {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  column-gap: 6px;
+}
+
+.pool-guard {
+  max-width: 36ch;
+  padding: 10px 14px;
+  border: 1px solid var(--bad);
+  border-radius: var(--radius);
+  background: var(--bad-bg);
+}
+
+/* ---------- languages I know ---------- */
+
+.know-title {
+  font-size: clamp(1.5rem, 6vw, 2rem);
+  line-height: 1.15;
+}
+
+.know-search {
+  width: 100%;
+  min-height: var(--tap);
+  padding: 0 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+}
+
+.know-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.know-group {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.know-group legend {
+  margin-bottom: 6px;
+  color: var(--muted);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.know-item {
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  align-items: center;
+  gap: 12px;
+  min-height: 52px;
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  cursor: pointer;
+}
+
+.know-item input {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--accent);
+}
+
+.know-item.is-selected {
+  border-color: var(--accent);
+  background: var(--surface-2);
+}
+
+.know-flag {
+  font-size: 1.4rem;
+}
+
+.know-name {
+  font-weight: 600;
+}
+
+.know-native {
+  font-size: 0.9rem;
+}
+
+.know-footer {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px 0 8px;
+  background: var(--bg);
+  text-align: center;
+}
+
+.know-warning {
+  color: var(--bad);
+  font-weight: 600;
+}
+
 /* ---------- HUD ---------- */
 
 .hud {

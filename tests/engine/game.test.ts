@@ -7,9 +7,11 @@ import {
   DIFFICULTY_LEVEL,
   DIFFICULTY_TIERS,
   LIVES,
+  MIN_POOL,
   OPTION_COUNT,
   ROUNDS,
   STREAK_BONUS,
+  answerTiers,
   applyResult,
   buildRound,
   clipKey,
@@ -408,6 +410,61 @@ describe('memory across replays', () => {
       const repeats = playGame(seed * 10 + 3, 'easy', heard).filter((k) => heard.includes(k))
       expect(repeats).toHaveLength(4)
       for (const k of repeats) expect(heard.indexOf(k)).toBeLessThan(heard.length / 2)
+    }
+  })
+})
+
+describe('known-language exclusion', () => {
+  const withoutTiers = (...tiers: number[]) => LANGUAGES.filter((l) => !tiers.includes(l.tier))
+
+  it('never uses an excluded language as the answer or a distractor', () => {
+    const rng = mulberry32(404)
+    for (let trial = 0; trial < 50; trial++) {
+      const excluded = new Set(LANGUAGES.filter(() => rng() < 0.5).map((l) => l.code))
+      const pool = LANGUAGES.filter((l) => !excluded.has(l.code))
+      if (pool.length < MIN_POOL) continue
+      for (const difficulty of DIFFICULTIES) {
+        let s = initialState(trial, difficulty, pool)
+        while (s.phase !== 'over') {
+          for (const opt of s.round.options) expect(excluded.has(opt.code)).toBe(false)
+          s = play(s, true)
+        }
+      }
+    }
+  })
+
+  it('a pool of exactly MIN_POOL languages plays a full game at every difficulty', () => {
+    expect(MIN_POOL).toBe(12)
+    const pool = LANGUAGES.slice(-MIN_POOL)
+    for (const difficulty of DIFFICULTIES) {
+      let s = initialState(3, difficulty, pool)
+      while (s.phase !== 'over') s = play(s, true)
+      expect(s.history).toHaveLength(ROUNDS)
+    }
+  })
+
+  it("keeps the difficulty's own tiers while any remain", () => {
+    for (const difficulty of DIFFICULTIES) {
+      expect(answerTiers(LANGUAGES, difficulty)).toBe(DIFFICULTY_TIERS[difficulty])
+    }
+  })
+
+  it('falls back to the nearest non-empty tier instead of throwing', () => {
+    expect(answerTiers(withoutTiers(1), 'easy')).toEqual([2])
+    expect(answerTiers(withoutTiers(1, 2), 'easy')).toEqual([3])
+    expect(answerTiers(withoutTiers(1, 2), 'normal')).toEqual([3])
+    expect(answerTiers(withoutTiers(2), 'normal')).toBe(DIFFICULTY_TIERS.normal)
+    for (const [pool, difficulty, tier] of [
+      [withoutTiers(1), 'easy', 2],
+      [withoutTiers(1, 2), 'normal', 3],
+    ] as const) {
+      let s = initialState(5, difficulty, pool)
+      while (s.phase !== 'over') {
+        expect(s.round.language.tier).toBe(tier)
+        s = play(s, true)
+      }
+      // The sentence level still follows the chosen difficulty.
+      for (const r of s.history) expect(sentencesForLevel(levelForDifficulty(difficulty)).map((x) => x.id)).toContain(r.sentenceId)
     }
   })
 })

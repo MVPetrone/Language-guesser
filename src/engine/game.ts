@@ -15,6 +15,8 @@ export const STREAK_BONUS = 25
 /** The bonus stops growing after this many consecutive hits. */
 export const MAX_STREAK_BONUS_STEPS = 5
 export const SLOW_RATE = 0.6
+/** Fewest languages a game may draw from once the player's known ones are excluded. */
+export const MIN_POOL = 12
 
 export type Difficulty = 'easy' | 'normal' | 'hard'
 
@@ -23,6 +25,19 @@ export const DIFFICULTY_TIERS: Record<Difficulty, readonly Tier[]> = {
   easy: [1],
   normal: [1, 2],
   hard: [1, 2, 3],
+}
+
+/**
+ * Tiers the answer is actually drawn from: the difficulty's own, or — when the
+ * pool has none of those left (the player knows them all) — the nearest tier
+ * that still has a language, preferring the easier one on a tie.
+ */
+export function answerTiers(pool: readonly Language[], difficulty: Difficulty): readonly Tier[] {
+  const tiers = DIFFICULTY_TIERS[difficulty]
+  if (pool.some((l) => tiers.includes(l.tier))) return tiers
+  const distance = (t: Tier) => Math.min(...tiers.map((a) => Math.abs(a - t)))
+  const present = [...new Set(pool.map((l) => l.tier))].sort((a, b) => distance(a) - distance(b) || a - b)
+  return present.slice(0, 1)
 }
 
 /** Which sentence level is spoken at each difficulty. */
@@ -158,7 +173,7 @@ function pickClip(rng: Rng, eligible: readonly Language[], level: SentenceLevel,
 
 /**
  * Builds one round. The answer comes from the tiers allowed by `difficulty`
- * and speaks a sentence of that difficulty's level in one of its voices;
+ * (see `answerTiers` for the fallback when those are empty) and speaks a sentence of that difficulty's level in one of its voices;
  * distractors come from the answer's own tier so they are plausibly
  * confusable (falling back to other tiers only if that tier is too small).
  * `avoid` steers away from answers and clips already used this game.
@@ -169,9 +184,9 @@ export function buildRound(
   difficulty: Difficulty,
   avoid: Avoid = {},
 ): RoundSpec {
-  const tiers = DIFFICULTY_TIERS[difficulty]
+  const tiers = answerTiers(pool, difficulty)
   const eligible = pool.filter((l) => tiers.includes(l.tier))
-  if (eligible.length === 0) throw new Error(`No languages for difficulty "${difficulty}"`)
+  if (eligible.length === 0) throw new Error('The language pool is empty')
 
   const { language, sentenceId, voiceIndex } = pickClip(rng, eligible, levelForDifficulty(difficulty), avoid)
 

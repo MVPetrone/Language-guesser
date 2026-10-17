@@ -3,11 +3,23 @@ import { LANGUAGES } from '../../src/data/languages.ts'
 import { guess, initialState, nextRound } from '../../src/engine/game.ts'
 import { seedFromString } from '../../src/engine/rng.ts'
 
-/** Collects uncaught page errors so each test can assert there were none. */
-function trackErrors(page: Page): Error[] {
-  const errors: Error[] = []
-  page.on('pageerror', (err) => errors.push(err))
+/**
+ * Collects uncaught page errors and console errors so each test can assert
+ * there were none. `allow` filters console messages a test provokes on purpose.
+ */
+function trackErrors(page: Page, allow?: RegExp): string[] {
+  const errors: string[] = []
+  page.on('pageerror', (err) => errors.push(`pageerror: ${err.message}`))
+  page.on('console', (msg) => {
+    if (msg.type() === 'error' && !(allow && allow.test(msg.text()))) errors.push(`console: ${msg.text()}`)
+  })
   return errors
+}
+
+/** First visit: answer the known-languages picker with "none". */
+async function skipKnown(page: Page) {
+  await expect(page.getByTestId('know-languages')).toBeVisible()
+  await page.getByTestId('know-none').click()
 }
 
 test('start, answer 3 rounds, reach the end screen with no page errors', async ({ page }) => {
@@ -18,6 +30,7 @@ test('start, answer 3 rounds, reach the end screen with no page errors', async (
   })
 
   await page.goto('./?seed=smoke')
+  await skipKnown(page)
   await page.getByRole('button', { name: /start/i }).click()
 
   for (let n = 1; n <= 3; n++) {
@@ -68,9 +81,11 @@ test('bundled mp3 decodes in this browser', async ({ page }) => {
 })
 
 test('a missing clip is surfaced and the round can be skipped', async ({ page }) => {
-  const errors = trackErrors(page)
+  // The 404s this test serves are logged by the browser; anything else is a failure.
+  const errors = trackErrors(page, /Failed to load resource.*404/)
   await page.route('**/*.mp3', (route) => route.fulfill({ status: 404, body: 'nope' }))
   await page.goto('./?seed=missing')
+  await skipKnown(page)
   await page.getByRole('button', { name: /start/i }).click()
 
   await expect(page.getByTestId('audio-error')).toBeVisible()
@@ -101,6 +116,7 @@ test('perfect game: exact score, best score persisted, share copied', async ({ p
   expect(final.phase).toBe('over')
 
   await page.goto('./?seed=perfect')
+  await skipKnown(page)
   await page.getByRole('button', { name: /start/i }).click()
   for (const [i, pick] of picks.entries()) {
     await expect(page.getByTestId('round-counter')).toHaveText(`${i + 1}/10`)
@@ -122,6 +138,8 @@ test('perfect game: exact score, best score persisted, share copied', async ({ p
   expect(clip).toContain(`${final.score} pts`)
 
   await page.reload()
+  // Asked once: the saved choice skips the picker on later visits.
+  await expect(page.getByTestId('know-languages')).toHaveCount(0)
   await expect(page.getByText(`Best score: ${final.score}`)).toBeVisible()
   expect(errors).toEqual([])
 })
@@ -139,6 +157,8 @@ test('works with localStorage disabled and no clipboard API', async ({ page }) =
   const { picks } = plannedRounds('nostorage', [true, false, false, false])
 
   await page.goto('./?seed=nostorage')
+  // Nothing can be remembered, so the picker is shown; skipping still works.
+  await skipKnown(page)
   await page.getByRole('button', { name: /start/i }).click()
   for (const pick of picks) {
     await page.getByTestId(`option-${pick}`).click()
@@ -150,5 +170,106 @@ test('works with localStorage disabled and no clipboard API', async ({ page }) =
   await page.getByTestId('share').click()
   await expect(page.getByTestId('share-fallback')).toBeVisible()
   await expect(page.getByTestId('share-fallback')).toHaveValue(/🟩🟥🟥/)
+  expect(errors).toEqual([])
+})
+
+/** Answers rounds with option 1 until the end screen; returns each round's option names. */
+async function playToEnd(page: Page): Promise<string[][]> {
+  const end = page.getByTestId('end-screen')
+  const rounds: string[][] = []
+  for (let i = 0; i < 10 && !(await end.isVisible()); i++) {
+    await expect(page.getByTestId('option-0')).toBeEnabled()
+    rounds.push(await page.locator('.option-name').allTextContents())
+    await page.keyboard.press('1')
+    await expect(page.getByTestId('verdict')).toBeVisible()
+    await page.getByTestId('next').click()
+  }
+  await expect(end).toBeVisible()
+  return rounds
+}
+
+test('known languages: searchable picker, asked once, excluded from every option', async ({ page }) => {
+  const errors = trackErrors(page)
+  await page.goto('./')
+  await expect(page.getByTestId('know-languages')).toBeVisible()
+
+  // Search narrows 40 checkboxes down, accent-insensitively.
+  await page.getByTestId('know-search').fill('espanol')
+  await expect(page.locator('.know-item')).toHaveCount(1)
+  await page.getByTestId('know-es-ES').check()
+  await page.getByTestId('know-search').fill('')
+  await expect(page.locator('.know-item')).toHaveCount(40)
+  for (const code of ['fr-FR', 'de-DE', 'it-IT', 'pt-BR', 'nl-NL']) await page.getByTestId(`know-${code}`).check()
+  await expect(page.getByTestId('know-count')).toHaveText(/6 selected · 34 left/)
+  await page.getByTestId('know-save').click()
+
+  await expect(page.getByTestId('excluded-count')).toContainText('6 languages you know are left out')
+  await page.reload()
+  await expect(page.getByTestId('know-languages')).toHaveCount(0)
+  await expect(page.getByTestId('excluded-count')).toContainText('6 languages')
+
+  const excluded = ['Spanish', 'French', 'German', 'Italian', 'Portuguese (Brazil)', 'Dutch']
+  await page.getByRole('button', { name: /start/i }).click()
+  const rounds = await playToEnd(page)
+  expect(rounds.length).toBeGreaterThan(0)
+  for (const names of rounds) {
+    expect(names).toHaveLength(4)
+    for (const name of names) expect(excluded).not.toContain(name)
+  }
+  expect(errors).toEqual([])
+})
+
+test('pool guard: Start is blocked below the minimum and unblocked again', async ({ page }) => {
+  const errors = trackErrors(page)
+  await page.goto('./')
+  await skipKnown(page)
+  await expect(page.getByRole('button', { name: /start/i })).toBeEnabled()
+
+  await page.getByTestId('edit-known').click()
+  const keep = new Set(LANGUAGES.slice(0, 11).map((l) => l.code))
+  for (const l of LANGUAGES) if (!keep.has(l.code)) await page.getByTestId(`know-${l.code}`).check()
+  await expect(page.getByTestId('know-count')).toHaveText(/29 selected · 11 left to play — a game needs at least 12/)
+  await page.getByTestId('know-save').click()
+
+  await expect(page.getByRole('button', { name: /start/i })).toBeDisabled()
+  await expect(page.getByTestId('pool-guard')).toContainText('at least 12 languages')
+  await expect(page.getByTestId('pool-guard')).toContainText('only 11 are left')
+
+  // Cancel leaves the choice alone; untick one and Start works again.
+  await page.getByTestId('edit-known').click()
+  await page.getByTestId('know-cancel').click()
+  await expect(page.getByRole('button', { name: /start/i })).toBeDisabled()
+  await page.getByTestId('edit-known').click()
+  await page.getByTestId(`know-${LANGUAGES[39]?.code}`).uncheck()
+  await page.getByTestId('know-save').click()
+  await expect(page.getByTestId('pool-guard')).toHaveCount(0)
+  await page.getByRole('button', { name: /start/i }).click()
+  await expect(page.getByTestId('round-counter')).toHaveText('1/10')
+  expect(errors).toEqual([])
+})
+
+test('a replay does not repeat any clip from the previous game', async ({ page }) => {
+  const errors = trackErrors(page)
+  const clips: string[] = []
+  page.on('request', (req) => {
+    if (req.url().endsWith('.mp3')) clips.push(new URL(req.url()).pathname)
+  })
+  await page.goto('./')
+  await skipKnown(page)
+  await page.getByRole('button', { name: /start/i }).click()
+  await playToEnd(page)
+  const first = new Set(clips)
+  clips.length = 0
+
+  await page.getByRole('button', { name: /play again/i }).click()
+  await playToEnd(page)
+  const second = new Set(clips)
+
+  expect(first.size).toBeGreaterThanOrEqual(3)
+  expect(second.size).toBeGreaterThanOrEqual(3)
+  for (const url of second) expect(first.has(url)).toBe(false)
+  for (const url of [...first, ...second]) expect(url).toMatch(/\/audio\/[a-zA-Z-]+\/[01]\/l2-[a-z0-9-]+\.mp3$/)
+  const heard = await page.evaluate(() => JSON.parse(localStorage.getItem('gtl:heard') ?? '[]') as string[])
+  expect(heard.length).toBe(first.size + second.size)
   expect(errors).toEqual([])
 })

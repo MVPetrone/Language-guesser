@@ -50,3 +50,29 @@ export function saveHeard(keys: readonly string[]): void {
 export function appendHeard(keys: readonly string[], key: string): string[] {
   return [...keys.filter((k) => k !== key), key].slice(-HEARD_CAP)
 }
+
+const KNOWN_KEY = 'gtl:known'
+
+/**
+ * Codes of the languages the player said they know, or null if they have
+ * never been asked (or storage is unavailable, in which case they are asked
+ * again on the next visit).
+ */
+export function loadKnown(): string[] | null {
+  try {
+    const raw = window.localStorage.getItem(KNOWN_KEY)
+    if (raw === null) return null
+    const parsed: unknown = JSON.parse(raw)
+    return Array.isArray(parsed) ? parsed.filter((c): c is string => typeof c === 'string') : null
+  } catch {
+    return null
+  }
+}
+
+export function saveKnown(codes: readonly string[]): void {
+  try {
+    window.localStorage.setItem(KNOWN_KEY, JSON.stringify(codes))
+  } catch {
+    // Not persisted; the choice still applies for this session.
+  }
+}
