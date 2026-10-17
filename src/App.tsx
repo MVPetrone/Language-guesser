@@ -41,8 +41,8 @@ function randomSeed(): number {
   return crypto.getRandomValues(new Uint32Array(1))[0] ?? Date.now() >>> 0
 }
 
-function clipUrl(code: string, phraseId: string): string {
-  return `${import.meta.env.BASE_URL}audio/${code}/${phraseId}.mp3`
+function clipUrl(code: string, voiceIndex: number, sentenceId: string): string {
+  return `${import.meta.env.BASE_URL}audio/${code}/${voiceIndex}/${sentenceId}.mp3`
 }
 
 export default function App() {
@@ -53,7 +53,10 @@ export default function App() {
   const [isNewBest, setIsNewBest] = useState(false)
 
   const game = state.screen === 'game' ? state.game : null
-  const src = game && game.phase !== 'over' ? clipUrl(game.round.language.code, game.round.phraseId) : null
+  const src =
+    game && game.phase !== 'over'
+      ? clipUrl(game.round.language.code, game.round.voiceIndex, game.round.sentenceId)
+      : null
   const audio = useAudio(src)
   const { setRate } = audio
 

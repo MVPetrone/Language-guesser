@@ -3,9 +3,9 @@ import type { Difficulty } from '../engine/game.ts'
 import { LIVES, ROUNDS } from '../engine/game.ts'
 
 const LEVELS: { id: Difficulty; label: string; hint: string }[] = [
-  { id: 'easy', label: 'Easy', hint: 'Big, famous languages' },
-  { id: 'normal', label: 'Normal', hint: 'Adds the recognisable ones' },
-  { id: 'hard', label: 'Hard', hint: 'Includes confusable pairs' },
+  { id: 'easy', label: 'Easy', hint: 'Big, famous languages · short sentences' },
+  { id: 'normal', label: 'Normal', hint: 'Adds the recognisable ones · longer sentences' },
+  { id: 'hard', label: 'Hard', hint: 'Includes confusable pairs · rare words' },
 ]
 
 interface Props {
@@ -20,7 +20,7 @@ export function StartScreen({ bestScore, onStart }: Props) {
     <main className="screen start">
       <h1 className="title">Guess the Language</h1>
       <p className="lede">
-        A voice says a short everyday phrase. Which language was it? {ROUNDS} rounds, {LIVES} lives.
+        A voice says a sentence. Which language was it? {ROUNDS} rounds, {LIVES} lives.
       </p>
 
       <fieldset className="levels">

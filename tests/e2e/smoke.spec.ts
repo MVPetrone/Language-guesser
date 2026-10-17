@@ -53,7 +53,7 @@ test('bundled mp3 decodes in this browser', async ({ page }) => {
   const errors = trackErrors(page)
   await page.goto('./')
   const result = await page.evaluate(async () => {
-    const res = await fetch('audio/fr-FR/hello.mp3')
+    const res = await fetch('audio/fr-FR/0/l1-children-asleep-dog-awake.mp3')
     const buf = await res.arrayBuffer()
     // Read the size first: decodeAudioData detaches the buffer.
     const bytes = buf.byteLength

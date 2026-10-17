@@ -1,4 +1,4 @@
-import { phraseById } from '../data/phrases.ts'
+import { sentenceById } from '../data/sentences.ts'
 import { SLOW_RATE, type RoundSpec } from '../engine/game.ts'
 import type { AudioControls } from '../hooks/useAudio.ts'
 import { useHotkeys } from '../hooks/useHotkeys.ts'
@@ -17,7 +17,7 @@ const canSpeak = typeof window !== 'undefined' && 'speechSynthesis' in window
 
 /** Last resort when the recorded clip is missing: the player's own OS voice. */
 function speakFallback(round: RoundSpec, slow: boolean) {
-  const u = new SpeechSynthesisUtterance(phraseById(round.phraseId).text[round.language.code])
+  const u = new SpeechSynthesisUtterance(sentenceById(round.sentenceId).text[round.language.code])
   u.lang = round.language.code
   u.rate = slow ? SLOW_RATE : 1
   window.speechSynthesis.cancel()

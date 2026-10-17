@@ -2,7 +2,8 @@
 // mutates its input; randomness comes only from seeded RNGs, so a seed fully
 // determines a game.
 import type { LangCode, Language, Tier } from '../data/languages.ts'
-import { PHRASE_IDS, type PhraseId } from '../data/phrases.ts'
+import { sentencesForLevel, type SentenceLevel } from '../data/sentences.ts'
+import { VOICES_BY_LANG } from '../data/voices.ts'
 import { mulberry32, randInt, shuffle, type Rng } from './rng.ts'
 
 export const ROUNDS = 10
@@ -24,11 +25,24 @@ export const DIFFICULTY_TIERS: Record<Difficulty, readonly Tier[]> = {
   hard: [1, 2, 3],
 }
 
+/** Which sentence level is spoken at each difficulty. */
+export const DIFFICULTY_LEVEL: Record<Difficulty, SentenceLevel> = {
+  easy: 1,
+  normal: 2,
+  hard: 3,
+}
+
+export function levelForDifficulty(difficulty: Difficulty): SentenceLevel {
+  return DIFFICULTY_LEVEL[difficulty]
+}
+
 export type Options = [Language, Language, Language, Language]
 
 export interface RoundSpec {
   language: Language
-  phraseId: PhraseId
+  sentenceId: string
+  /** Index into `VOICES_BY_LANG[language.code]`. */
+  voiceIndex: number
   options: Options
   correctIndex: number
 }
@@ -36,7 +50,8 @@ export interface RoundSpec {
 export interface RoundResult {
   roundNumber: number
   code: LangCode
-  phraseId: PhraseId
+  sentenceId: string
+  voiceIndex: number
   /** null when the round was skipped (e.g. the clip failed to load). */
   guessCode: LangCode | null
   correct: boolean
@@ -62,26 +77,73 @@ export interface GameState {
   lastResult: RoundResult | null
 }
 
+/** Identifies one recorded clip; the unit of "never hear the same thing twice". */
+export function clipKey(code: LangCode, voiceIndex: number, sentenceId: string): string {
+  return `${code}|${voiceIndex}|${sentenceId}`
+}
+
+/** What a new round should steer clear of. Every list is a preference, never a hard rule. */
+export interface Avoid {
+  /** Answer languages already used this game. */
+  codes?: readonly LangCode[]
+  /** Clip keys (see `clipKey`) already played this game. */
+  clips?: readonly string[]
+}
+
+interface Clip {
+  language: Language
+  sentenceId: string
+  voiceIndex: number
+}
+
 /**
- * Builds one round. The answer comes from the tiers allowed by `difficulty`;
+ * Picks the clip for a round. Candidates are every (language, sentence, voice)
+ * of the level; they are narrowed by the strictest filter that still leaves
+ * something, so running out of fresh clips degrades gracefully and never
+ * throws. The language is drawn first (uniform over languages that have a
+ * candidate), then one of its clips, so a few played clips do not skew which
+ * languages come up.
+ */
+function pickClip(rng: Rng, eligible: readonly Language[], level: SentenceLevel, avoid: Avoid): Clip {
+  const sentences = sentencesForLevel(level)
+  const all: Clip[] = eligible.flatMap((language) =>
+    sentences.flatMap((s) =>
+      VOICES_BY_LANG[language.code].map((_, voiceIndex) => ({ language, sentenceId: s.id, voiceIndex })),
+    ),
+  )
+  if (all.length === 0) throw new Error(`No clips for sentence level ${level}`)
+
+  const usedCodes = new Set(avoid.codes)
+  const played = new Set(avoid.clips)
+  const freshLanguage = (c: Clip) => !usedCodes.has(c.language.code)
+  const notPlayed = (c: Clip) => !played.has(clipKey(c.language.code, c.voiceIndex, c.sentenceId))
+  const preferences: ((c: Clip) => boolean)[] = [(c) => freshLanguage(c) && notPlayed(c), notPlayed]
+  const candidates = preferences.map((keep) => all.filter(keep)).find((cs) => cs.length > 0) ?? all
+
+  const languages = [...new Set(candidates.map((c) => c.language))]
+  const language = languages[randInt(rng, languages.length)] as Language
+  const mine = candidates.filter((c) => c.language === language)
+  return mine[randInt(rng, mine.length)] as Clip
+}
+
+/**
+ * Builds one round. The answer comes from the tiers allowed by `difficulty`
+ * and speaks a sentence of that difficulty's level in one of its voices;
  * distractors come from the answer's own tier so they are plausibly
  * confusable (falling back to other tiers only if that tier is too small).
- * `avoid` lists answers already used this game; it is honoured when possible.
+ * `avoid` steers away from answers and clips already used this game.
  */
 export function buildRound(
   rng: Rng,
   pool: readonly Language[],
   difficulty: Difficulty,
-  avoid: readonly LangCode[] = [],
+  avoid: Avoid = {},
 ): RoundSpec {
   const tiers = DIFFICULTY_TIERS[difficulty]
   const eligible = pool.filter((l) => tiers.includes(l.tier))
   if (eligible.length === 0) throw new Error(`No languages for difficulty "${difficulty}"`)
-  const fresh = eligible.filter((l) => !avoid.includes(l.code))
-  const candidates = fresh.length > 0 ? fresh : eligible
 
-  const language = candidates[randInt(rng, candidates.length)] as Language
-  const phraseId = PHRASE_IDS[randInt(rng, PHRASE_IDS.length)] as PhraseId
+  const { language, sentenceId, voiceIndex } = pickClip(rng, eligible, levelForDifficulty(difficulty), avoid)
 
   const others = pool.filter((l) => l.code !== language.code)
   const sameTier = shuffle(
@@ -98,7 +160,7 @@ export function buildRound(
   }
 
   const options = shuffle(rng, [language, ...distractors]) as Options
-  return { language, phraseId, options, correctIndex: options.indexOf(language) }
+  return { language, sentenceId, voiceIndex, options, correctIndex: options.indexOf(language) }
 }
 
 /** Per-round RNG derived from the game seed, so no mutable RNG lives in state. */
@@ -138,7 +200,12 @@ export function pointsFor(streakBefore: number): number {
  */
 export function scoreGuess(state: GameState, guessIndex: number | null): RoundResult {
   const { round, roundNumber } = state
-  const base = { roundNumber, code: round.language.code, phraseId: round.phraseId }
+  const base = {
+    roundNumber,
+    code: round.language.code,
+    sentenceId: round.sentenceId,
+    voiceIndex: round.voiceIndex,
+  }
   if (guessIndex === null) {
     return { ...base, guessCode: null, correct: false, skipped: true, points: 0 }
   }
@@ -190,7 +257,10 @@ export function nextRound(state: GameState): GameState {
   if (state.phase !== 'reveal') return state
   if (isOver(state)) return { ...state, phase: 'over' }
   const roundNumber = state.roundNumber + 1
-  const avoid = state.history.map((r) => r.code)
+  const avoid: Avoid = {
+    codes: state.history.map((r) => r.code),
+    clips: state.history.map((r) => clipKey(r.code, r.voiceIndex, r.sentenceId)),
+  }
   return {
     ...state,
     phase: 'round',

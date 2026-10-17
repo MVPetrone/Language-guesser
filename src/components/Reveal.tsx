@@ -1,5 +1,5 @@
 import { LANGUAGES } from '../data/languages.ts'
-import { phraseById } from '../data/phrases.ts'
+import { sentenceById } from '../data/sentences.ts'
 import type { RoundResult, RoundSpec } from '../engine/game.ts'
 import { useHotkeys } from '../hooks/useHotkeys.ts'
 import { GuessGrid } from './GuessGrid.tsx'
@@ -23,7 +23,7 @@ export function Reveal({ round, result, isFinal, onReplay, onNext }: Props) {
   useHotkeys({ enter: onNext, n: onNext, r: onReplay })
 
   const { language } = round
-  const phrase = phraseById(round.phraseId)
+  const sentence = sentenceById(round.sentenceId)
   const pickedIndex = round.options.findIndex((l) => l.code === result.guessCode)
   const { text, tone } = verdict(result)
 
@@ -47,9 +47,9 @@ export function Reveal({ round, result, isFinal, onReplay, onNext }: Props) {
         </div>
         <blockquote className="phrase">
           <p className="phrase-native" lang={language.code} dir="auto">
-            “{phrase.text[language.code]}”
+            “{sentence.text[language.code]}”
           </p>
-          <p className="phrase-en">“{phrase.english}”</p>
+          <p className="phrase-en">“{sentence.english}”</p>
         </blockquote>
         <p className="fact">💡 {language.fact}</p>
       </section>

@@ -1,8 +1,10 @@
 import { describe, expect, it } from 'vitest'
 import { LANGUAGES, type Language } from '../../src/data/languages.ts'
-import { PHRASE_IDS } from '../../src/data/phrases.ts'
+import { SENTENCES, sentencesForLevel } from '../../src/data/sentences.ts'
+import { VOICES_BY_LANG } from '../../src/data/voices.ts'
 import {
   BASE_POINTS,
+  DIFFICULTY_LEVEL,
   DIFFICULTY_TIERS,
   LIVES,
   OPTION_COUNT,
@@ -10,9 +12,11 @@ import {
   STREAK_BONUS,
   applyResult,
   buildRound,
+  clipKey,
   guess,
   initialState,
   isOver,
+  levelForDifficulty,
   nextRound,
   scoreGuess,
   shareGrid,
@@ -40,7 +44,7 @@ describe('buildRound', () => {
         expect(new Set(r.options.map((l) => l.code)).size).toBe(OPTION_COUNT)
         expect(r.options[r.correctIndex]).toBe(r.language)
         expect(r.options.filter((l) => l.code === r.language.code)).toHaveLength(1)
-        expect(PHRASE_IDS).toContain(r.phraseId)
+        expect(SENTENCES.map((x) => x.id)).toContain(r.sentenceId)
       }
     }
   })
@@ -100,7 +104,7 @@ describe('buildRound', () => {
     const tier1 = LANGUAGES.filter((l) => l.tier === 1)
     const avoid = tier1.slice(1).map((l) => l.code)
     for (let seed = 0; seed < 50; seed++) {
-      const r = buildRound(mulberry32(seed), LANGUAGES, 'easy', avoid)
+      const r = buildRound(mulberry32(seed), LANGUAGES, 'easy', { codes: avoid })
       expect(r.language.code).toBe(tier1[0]?.code)
     }
   })
@@ -241,7 +245,8 @@ describe('determinism', () => {
       while (s.phase !== 'over') {
         rounds.push({
           code: s.round.language.code,
-          phraseId: s.round.phraseId,
+          sentenceId: s.round.sentenceId,
+          voiceIndex: s.round.voiceIndex,
           options: s.round.options.map((l) => l.code),
           correctIndex: s.round.correctIndex,
         })
@@ -255,6 +260,108 @@ describe('determinism', () => {
       expect(run(seed)).toEqual(a)
     }
     expect(run(1)).not.toEqual(run(2))
+  })
+})
+
+describe('sentences and voices', () => {
+  const tier1 = LANGUAGES.filter((l) => l.tier === 1)
+  const smallPool = tier1.slice(0, 4)
+
+  it('maps easy → level 1, normal → level 2, hard → level 3', () => {
+    expect(DIFFICULTY_LEVEL).toEqual({ easy: 1, normal: 2, hard: 3 })
+    for (const difficulty of DIFFICULTIES) {
+      const level = levelForDifficulty(difficulty)
+      const ids = sentencesForLevel(level).map((x) => x.id)
+      const seen = new Set<string>()
+      const rng = mulberry32(31)
+      for (let i = 0; i < 500; i++) {
+        const r = buildRound(rng, LANGUAGES, difficulty)
+        expect(ids).toContain(r.sentenceId)
+        seen.add(r.sentenceId)
+      }
+      // Every sentence of the level actually comes up.
+      expect([...seen].sort()).toEqual([...ids].sort())
+    }
+  })
+
+  it('picks a voice index within VOICES_BY_LANG and uses every voice', () => {
+    const seen = new Set<number>()
+    const rng = mulberry32(17)
+    for (let i = 0; i < 2000; i++) {
+      const r = buildRound(rng, LANGUAGES, 'hard')
+      const voices = VOICES_BY_LANG[r.language.code]
+      expect(Number.isInteger(r.voiceIndex)).toBe(true)
+      expect(r.voiceIndex).toBeGreaterThanOrEqual(0)
+      expect(r.voiceIndex).toBeLessThan(voices.length)
+      seen.add(r.voiceIndex)
+    }
+    expect([...seen].sort()).toEqual([0, 1])
+  })
+
+  it('never repeats a clip within a game, even when answers must repeat', () => {
+    // 4 languages × 2 voices × 2 level-1 sentences = 16 clips for 10 rounds:
+    // languages have to repeat, clips must not.
+    for (let seed = 0; seed < 200; seed++) {
+      let s = initialState(seed, 'easy', smallPool)
+      while (s.phase !== 'over') s = play(s, true)
+      const keys = s.history.map((r) => clipKey(r.code, r.voiceIndex, r.sentenceId))
+      expect(keys).toHaveLength(ROUNDS)
+      expect(new Set(keys).size).toBe(ROUNDS)
+    }
+  })
+
+  it('prefers an unplayed clip of a used language over a played clip', () => {
+    const codes = smallPool.map((l) => l.code)
+    const target = smallPool[2]
+    if (!target) throw new Error('fixture')
+    const played = smallPool.flatMap((l) =>
+      sentencesForLevel(1).flatMap((x) => [0, 1].map((v) => clipKey(l.code, v, x.id))),
+    )
+    const fresh = clipKey(target.code, 1, sentencesForLevel(1)[0]?.id ?? '')
+    const clips = played.filter((k) => k !== fresh)
+    for (let seed = 0; seed < 50; seed++) {
+      const r = buildRound(mulberry32(seed), smallPool, 'easy', { codes, clips })
+      expect(clipKey(r.language.code, r.voiceIndex, r.sentenceId)).toBe(fresh)
+    }
+  })
+
+  it('falls back to the whole level pool when every clip has been played', () => {
+    const codes = smallPool.map((l) => l.code)
+    const clips = smallPool.flatMap((l) =>
+      sentencesForLevel(1).flatMap((x) => [0, 1].map((v) => clipKey(l.code, v, x.id))),
+    )
+    for (let seed = 0; seed < 50; seed++) {
+      const r = buildRound(mulberry32(seed), smallPool, 'easy', { codes, clips })
+      expect(codes).toContain(r.language.code)
+      expect(sentencesForLevel(1).map((x) => x.id)).toContain(r.sentenceId)
+      expect(r.options).toHaveLength(OPTION_COUNT)
+    }
+  })
+
+  it('a fixed seed reproduces the same language, sentence and voice', () => {
+    for (const difficulty of DIFFICULTIES) {
+      const a = buildRound(mulberry32(2026), LANGUAGES, difficulty)
+      const b = buildRound(mulberry32(2026), LANGUAGES, difficulty)
+      expect(b).toEqual(a)
+    }
+    const spec = (seed: number) => {
+      const s = initialState(seed, 'normal', LANGUAGES)
+      return [s.round.language.code, s.round.sentenceId, s.round.voiceIndex]
+    }
+    expect(spec(7)).toEqual(spec(7))
+    // Different seeds do vary the sentence/voice, not just the language.
+    const combos = new Set(Array.from({ length: 50 }, (_, i) => spec(i).slice(1).join('|')))
+    expect(combos.size).toBeGreaterThan(3)
+  })
+
+  it('records the sentence and voice of each round in the result', () => {
+    const s0 = initialState(12, 'hard', LANGUAGES)
+    const s1 = guess(s0, s0.round.correctIndex)
+    expect(s1.lastResult).toMatchObject({
+      code: s0.round.language.code,
+      sentenceId: s0.round.sentenceId,
+      voiceIndex: s0.round.voiceIndex,
+    })
   })
 })
 
