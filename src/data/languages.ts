@@ -50,7 +50,11 @@ export interface Language {
   flag: string
   family: string
   tier: Tier
-  /** Exact edge-tts voice id, validated against `edge-tts --list-voices`. */
+  /**
+   * Default edge-tts voice id, validated against `edge-tts --list-voices`. Clips
+   * are recorded with `VOICES_BY_LANG` (voices.ts); this is the fallback and
+   * defines the locale family those voices are drawn from.
+   */
   voice: string
   /** One-line fact shown on the reveal screen. */
   fact: string
