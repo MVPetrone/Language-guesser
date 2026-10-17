@@ -1,5 +1,5 @@
 import react from '@vitejs/plugin-react'
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vitest/config'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -7,4 +7,8 @@ export default defineConfig({
   // sites from https://<user>.github.io/<repo>/
   base: '/Language-guesser/',
   plugins: [react()],
+  test: {
+    environment: 'node',
+    include: ['tests/engine/**/*.test.ts'],
+  },
 })
