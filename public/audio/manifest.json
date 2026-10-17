@@ -1154,130 +1154,130 @@
   {
     "locale": "en-US",
     "voiceIndex": 0,
-    "voice": "en-US-AnaNeural",
+    "voice": "en-US-JennyNeural",
     "sentenceId": "l1-children-asleep-dog-awake",
-    "bytes": 26496,
-    "sha256": "291e2bbe13d31ccf5d5e59c0eb3891217437c6c6e1dc156bbf87f7be8db0bf41"
+    "bytes": 22608,
+    "sha256": "53dfd8678ef4ca42824c5a361e962d0c11bd6149d08f5201c204c9e50c17bf21"
   },
   {
     "locale": "en-US",
     "voiceIndex": 0,
-    "voice": "en-US-AnaNeural",
+    "voice": "en-US-JennyNeural",
     "sentenceId": "l1-rained-all-night-river-rose",
-    "bytes": 22464,
-    "sha256": "dcc8cc6d0188cb1e67bd1cad3d52a0961ad4d11e580fc655afe15177eaef8c4b"
+    "bytes": 19152,
+    "sha256": "2cd5ad418b36fac131ae70436d67b94f6e8f6ea574809743f6d101337cc901f0"
   },
   {
     "locale": "en-US",
     "voiceIndex": 0,
-    "voice": "en-US-AnaNeural",
+    "voice": "en-US-JennyNeural",
     "sentenceId": "l2-grandfather-whistles-mending-fence",
-    "bytes": 39024,
-    "sha256": "b1c281e41fe3e37da32d45b820d14c8df5777471d9f00be028117697d66fcdb6"
+    "bytes": 32400,
+    "sha256": "c1c2c1809b3af7d4ae35b74642f909084e63fa1201f34f5386bb18c9c901ddda"
   },
   {
     "locale": "en-US",
     "voiceIndex": 0,
-    "voice": "en-US-AnaNeural",
+    "voice": "en-US-JennyNeural",
     "sentenceId": "l2-left-umbrella-got-soaked",
-    "bytes": 32688,
-    "sha256": "ca36d1c940e209dda321f3f8b1c4be8acbfbb2fcb1e13058df19bd74b7db0e6f"
+    "bytes": 27792,
+    "sha256": "08e35dd8649b049f253fa684bfda3809e4dd591f085014b4cf849f06b500a481"
   },
   {
     "locale": "en-US",
     "voiceIndex": 0,
-    "voice": "en-US-AnaNeural",
+    "voice": "en-US-JennyNeural",
     "sentenceId": "l2-neighbour-kept-our-ladder",
-    "bytes": 31536,
-    "sha256": "546c5c5d2ea4d9cff05fc55aa1bfbeb0bc7b5e411abdc0888d27ad55460d4973"
+    "bytes": 26784,
+    "sha256": "1b00903d2bf1b46eb858a8f848d43c50c9463adc9f69ab879126be82bc4e59c9"
   },
   {
     "locale": "en-US",
     "voiceIndex": 0,
-    "voice": "en-US-AnaNeural",
+    "voice": "en-US-JennyNeural",
     "sentenceId": "l3-blacksmith-crooked-ploughshares",
-    "bytes": 56448,
-    "sha256": "c9b0792d5a185dba09f33efadf67c5f3a886521e2366a87a4c82fd90512108e3"
+    "bytes": 47232,
+    "sha256": "1fbfcced102c64745526c6d59892701819d69bf87d9b24c30073e968e0cf92db"
   },
   {
     "locale": "en-US",
     "voiceIndex": 0,
-    "voice": "en-US-AnaNeural",
+    "voice": "en-US-JennyNeural",
     "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
-    "bytes": 45936,
-    "sha256": "f0d39a8cfbc1cdaa7f4a58132397200d75eeb66eb7d3f3056a9064f0545c404f"
+    "bytes": 37872,
+    "sha256": "848e240f00803c539d328252d564233706306d598007d41f9643a418a2d92d11"
   },
   {
     "locale": "en-US",
     "voiceIndex": 0,
-    "voice": "en-US-AnaNeural",
+    "voice": "en-US-JennyNeural",
     "sentenceId": "l3-heron-motionless-in-reeds",
-    "bytes": 39456,
-    "sha256": "abb5d0e3603361e4912dccb410daf8c0a3d4e2a833eb5b9445449bfdb1e777e6"
+    "bytes": 32256,
+    "sha256": "75c62511527926056bfbb25e2aef39b7e4c8e79d87a7c09b5afd981d18c86b9c"
   },
   {
     "locale": "en-US",
     "voiceIndex": 1,
-    "voice": "en-US-AndrewMultilingualNeural",
+    "voice": "en-US-AndrewNeural",
     "sentenceId": "l1-children-asleep-dog-awake",
-    "bytes": 20304,
-    "sha256": "8c99b5eacace8cfb9d1cfd319a423b258bccdbf938f4c12ce5767bd84385535b"
+    "bytes": 19728,
+    "sha256": "013d663f35e3e3e16c89de164a48b0f477c94747163973e08572bb45f0eac359"
   },
   {
     "locale": "en-US",
     "voiceIndex": 1,
-    "voice": "en-US-AndrewMultilingualNeural",
+    "voice": "en-US-AndrewNeural",
     "sentenceId": "l1-rained-all-night-river-rose",
-    "bytes": 15840,
-    "sha256": "4d1c28523be23b020e372cfb1346d06f39699616501646e9bb3c2414cdeded93"
+    "bytes": 15984,
+    "sha256": "6b36f79fc20db20516a080cb543ec90d90b181c922359e584fabc7d3bcf576f1"
   },
   {
     "locale": "en-US",
     "voiceIndex": 1,
-    "voice": "en-US-AndrewMultilingualNeural",
+    "voice": "en-US-AndrewNeural",
     "sentenceId": "l2-grandfather-whistles-mending-fence",
-    "bytes": 36864,
-    "sha256": "2d7fbb62a7218edffd0601b7163a404ffa2e361eecd282c317e517578e4768c8"
+    "bytes": 33840,
+    "sha256": "a4290e6e19465c5397b5e9cd02e022c3ab44452677bf25be1a98ec39d4a3d6c6"
   },
   {
     "locale": "en-US",
     "voiceIndex": 1,
-    "voice": "en-US-AndrewMultilingualNeural",
+    "voice": "en-US-AndrewNeural",
     "sentenceId": "l2-left-umbrella-got-soaked",
-    "bytes": 22320,
-    "sha256": "225f5edf7db88974316dc0e46cb07de113503b48b4df02de80d5d10d582f18b7"
+    "bytes": 23328,
+    "sha256": "e0b746783b3b333034c0e30e1677eb7d71aab6138941a78f192353c438a9a8e8"
   },
   {
     "locale": "en-US",
     "voiceIndex": 1,
-    "voice": "en-US-AndrewMultilingualNeural",
+    "voice": "en-US-AndrewNeural",
     "sentenceId": "l2-neighbour-kept-our-ladder",
-    "bytes": 25200,
-    "sha256": "ec2141278998e7f0a503f81981248131265b637713a05878ad1eeec6eee3fef0"
+    "bytes": 23040,
+    "sha256": "ff1aada8015e82ee38adbeedf9af812014d121e29eb1d5873d074ab6628a58f8"
   },
   {
     "locale": "en-US",
     "voiceIndex": 1,
-    "voice": "en-US-AndrewMultilingualNeural",
+    "voice": "en-US-AndrewNeural",
     "sentenceId": "l3-blacksmith-crooked-ploughshares",
-    "bytes": 52272,
-    "sha256": "b1b320ba3a105c3b03b59d302e0ebdceb218eeaac019cce67bfe30dd999e872a"
+    "bytes": 50256,
+    "sha256": "abce8779fc93d4b734a6764d779def10f072fb5b20b1ff2ee6d37b96cd2b443d"
   },
   {
     "locale": "en-US",
     "voiceIndex": 1,
-    "voice": "en-US-AndrewMultilingualNeural",
+    "voice": "en-US-AndrewNeural",
     "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
-    "bytes": 40896,
-    "sha256": "f32e101cff48b24fa63fc757a85bc3a3f1fdf0c06090597251d97adc1ef77ca8"
+    "bytes": 37872,
+    "sha256": "43578d5818db354d1c4d33da7565b6e47335f952f36773e30cc9bdba3a659f4d"
   },
   {
     "locale": "en-US",
     "voiceIndex": 1,
-    "voice": "en-US-AndrewMultilingualNeural",
+    "voice": "en-US-AndrewNeural",
     "sentenceId": "l3-heron-motionless-in-reeds",
-    "bytes": 33120,
-    "sha256": "77793f12fbfa80f1749f68fdebf1213555e3a4a175088fbb68b31cf2af84bbed"
+    "bytes": 31104,
+    "sha256": "c1c1ae0735702e16a69506522ecc551f4c36739d1a6f107f2a2d230d66e8da70"
   },
   {
     "locale": "es-ES",

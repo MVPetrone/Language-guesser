@@ -10,7 +10,9 @@ import type { LangCode } from './languages.ts'
  * Checked against `edge-tts --list-voices` by `node scripts/validate_voices.mts`.
  */
 export const VOICES_BY_LANG: Record<LangCode, readonly string[]> = {
-  'en-US': ['en-US-AnaNeural', 'en-US-AndrewMultilingualNeural'],
+  // en-US hand-picked, NOT lowest-id: the lowest-id female is en-US-AnaNeural, a
+  // "Cartoon/Cute" child voice, which is wrong for a language-identification game.
+  'en-US': ['en-US-JennyNeural', 'en-US-AndrewNeural'],
   'es-ES': ['es-ES-ElviraNeural', 'es-ES-AlvaroNeural'],
   'fr-FR': ['fr-FR-DeniseNeural', 'fr-FR-HenriNeural'],
   'de-DE': ['de-DE-AmalaNeural', 'de-DE-ConradNeural'],
