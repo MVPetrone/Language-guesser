@@ -476,6 +476,103 @@ kbd {
   font-variant-numeric: tabular-nums;
 }
 
+.badge {
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--good-bg);
+  color: var(--good);
+  font-weight: 700;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  width: 100%;
+  margin: 0;
+}
+
+.stats div {
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.stats dt {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.stats dd {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.share-grid {
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  word-break: break-all;
+}
+
+.recap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+
+.recap li {
+  display: grid;
+  grid-template-columns: 24px 1fr auto;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: var(--surface);
+}
+
+.recap-mark {
+  font-weight: 800;
+  text-align: center;
+}
+
+.recap .is-hit .recap-mark {
+  color: var(--good);
+}
+
+.recap .is-miss .recap-mark {
+  color: var(--bad);
+}
+
+.recap-detail {
+  font-size: 0.85rem;
+  text-align: right;
+}
+
+.end .actions {
+  width: 100%;
+}
+
+.share-fallback {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  resize: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
