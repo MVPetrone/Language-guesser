@@ -1,0 +1,722 @@
+[
+  {
+    "locale": "af-ZA",
+    "phraseId": "coffee",
+    "bytes": 18000,
+    "sha256": "55112dada68f66a03edc26973760c4c41b1628aa6e759addb75394e21aa57a5b"
+  },
+  {
+    "locale": "af-ZA",
+    "phraseId": "hello",
+    "bytes": 16992,
+    "sha256": "21486fa259470ee09dbad5265dfef8982d281310ed3122fec2b2f9ae73e21d73"
+  },
+  {
+    "locale": "af-ZA",
+    "phraseId": "weather",
+    "bytes": 15696,
+    "sha256": "f857620573eb4efa9e545b604b7406cdd414f5daed684bd20f20161e9504b6ec"
+  },
+  {
+    "locale": "ar-EG",
+    "phraseId": "coffee",
+    "bytes": 18576,
+    "sha256": "60b917073893971d1ac9782c1299e102a531f7ec4261c8c8401340817a9dcec9"
+  },
+  {
+    "locale": "ar-EG",
+    "phraseId": "hello",
+    "bytes": 20304,
+    "sha256": "96a137ae3943ead1118ce1d58a94ca7658eff8468336ecd5649e1ac1aefb2d09"
+  },
+  {
+    "locale": "ar-EG",
+    "phraseId": "weather",
+    "bytes": 21168,
+    "sha256": "1283f61309b4b8cf585da54bd9d74a6d105c1b588d0dffe31464e25bd7577914"
+  },
+  {
+    "locale": "bg-BG",
+    "phraseId": "coffee",
+    "bytes": 18864,
+    "sha256": "15ed20122a352081a7f6cd38d23e2554b6a617851fbbdb3283e4226a0692fd55"
+  },
+  {
+    "locale": "bg-BG",
+    "phraseId": "hello",
+    "bytes": 15120,
+    "sha256": "fa31e90d3eea8f41fdc5cce5cba55784dd167a86d7deae66a7132bc328fc138b"
+  },
+  {
+    "locale": "bg-BG",
+    "phraseId": "weather",
+    "bytes": 18864,
+    "sha256": "272f09f401d846d0c7c52d11531b7ef3b3bc876c22ce29042e74131082ff81e8"
+  },
+  {
+    "locale": "bn-BD",
+    "phraseId": "coffee",
+    "bytes": 15840,
+    "sha256": "1754e7c88f55eb2fa5626ee3b06b02c61ec69e05d7e4520f1e5144149608122f"
+  },
+  {
+    "locale": "bn-BD",
+    "phraseId": "hello",
+    "bytes": 15840,
+    "sha256": "636d94eabc736660015bb8ce49a5d846df0558d1e55d2329e651d8b1f2b34d66"
+  },
+  {
+    "locale": "bn-BD",
+    "phraseId": "weather",
+    "bytes": 17712,
+    "sha256": "63ff2169999bfc0e6230172a91df60a79115eee2edbde6b111d0bfa365c806ef"
+  },
+  {
+    "locale": "cs-CZ",
+    "phraseId": "coffee",
+    "bytes": 18000,
+    "sha256": "763673d1909939f86ea9dbf3f7b0cc463a3c6bfb2c5b639987953ab112e59d54"
+  },
+  {
+    "locale": "cs-CZ",
+    "phraseId": "hello",
+    "bytes": 16272,
+    "sha256": "a52cb6cd790dc4833cff50aeed454fd7b476a4a531f613b7985cafd980367902"
+  },
+  {
+    "locale": "cs-CZ",
+    "phraseId": "weather",
+    "bytes": 18720,
+    "sha256": "6fc609b6831aca6a7ecb208bb5d9fb3f1cafe43cabe6490fce3d0944e46a76d9"
+  },
+  {
+    "locale": "cy-GB",
+    "phraseId": "coffee",
+    "bytes": 17280,
+    "sha256": "9254774bad7592696370dd08e054aec45fa85b0917e9217017343974955f9b2a"
+  },
+  {
+    "locale": "cy-GB",
+    "phraseId": "hello",
+    "bytes": 18000,
+    "sha256": "577f5e65961c8c6b8a42d0536a6018320c5c29c844c191818eb2c06410e7561a"
+  },
+  {
+    "locale": "cy-GB",
+    "phraseId": "weather",
+    "bytes": 18288,
+    "sha256": "41af3e3df1453741deaab5186abc306380bd49d704c6455f14790f21d2908118"
+  },
+  {
+    "locale": "da-DK",
+    "phraseId": "coffee",
+    "bytes": 17712,
+    "sha256": "efd7474e8fb92bda0be7bc1f5bd3be33382b385335f09bfbe18322e11d3fa955"
+  },
+  {
+    "locale": "da-DK",
+    "phraseId": "hello",
+    "bytes": 16128,
+    "sha256": "24b2cc2a0726ba3a6e6b9a950c69a071f2e3e26377abde210f85e02078ca7ffd"
+  },
+  {
+    "locale": "da-DK",
+    "phraseId": "weather",
+    "bytes": 14832,
+    "sha256": "435f7b9a0dd744c4bbe1303c14ffeef3fcf7bdea34a7756628d2225f9fa1d4fd"
+  },
+  {
+    "locale": "de-DE",
+    "phraseId": "coffee",
+    "bytes": 18432,
+    "sha256": "1bdb53f4cc6309b81bde2c8639fc9e29c6a8a7b72c8256fbc9600a4797a5131f"
+  },
+  {
+    "locale": "de-DE",
+    "phraseId": "hello",
+    "bytes": 17712,
+    "sha256": "4dd0a805949c771f51ab27845b7a3d6cc08ff64a2b8115eb0ddfdcfbe215cc69"
+  },
+  {
+    "locale": "de-DE",
+    "phraseId": "weather",
+    "bytes": 18144,
+    "sha256": "d56a1a081774c4fcf21b08b5136f7b63ecdb6910a4e12d4c45eabbd3ddf73532"
+  },
+  {
+    "locale": "el-GR",
+    "phraseId": "coffee",
+    "bytes": 16992,
+    "sha256": "cac2cd54a092e3ebf3e3ebb0ad8cc6a8b7b3d305a28b813e5b19dc5de74872a1"
+  },
+  {
+    "locale": "el-GR",
+    "phraseId": "hello",
+    "bytes": 15264,
+    "sha256": "79d8ea02e4d48187bb09cf380c1d5354d859293bbdd00f05709886ad5e0565d9"
+  },
+  {
+    "locale": "el-GR",
+    "phraseId": "weather",
+    "bytes": 17568,
+    "sha256": "51e5a7d34263534cd6d41203eef888bb4ce898eb49b3c4328dcb67a8e66200f6"
+  },
+  {
+    "locale": "en-US",
+    "phraseId": "coffee",
+    "bytes": 16272,
+    "sha256": "e325da94372cf6ab4e4e48669ce45f8a5b532eb057e0d4ef37df8c008a9a435d"
+  },
+  {
+    "locale": "en-US",
+    "phraseId": "hello",
+    "bytes": 15120,
+    "sha256": "ace91eb8bb26c8241cf6271656b05bb6495340c6a27091574b7dac748885fc7b"
+  },
+  {
+    "locale": "en-US",
+    "phraseId": "weather",
+    "bytes": 15984,
+    "sha256": "ed637dd0dac14d51df6c0c756ae0ef0b575655305a284609e030148666d6a75f"
+  },
+  {
+    "locale": "es-ES",
+    "phraseId": "coffee",
+    "bytes": 16848,
+    "sha256": "cb98966ddd64e3d6b514fef81a80befe2be28aedcb527a3098c105e6f00dac02"
+  },
+  {
+    "locale": "es-ES",
+    "phraseId": "hello",
+    "bytes": 14256,
+    "sha256": "d2916b6fabfc04be34331b67278f27ed52835c6a3c72d582aecc72cdd319f04e"
+  },
+  {
+    "locale": "es-ES",
+    "phraseId": "weather",
+    "bytes": 18288,
+    "sha256": "60feabdbe1a67cbea4ab562becc1d21227cbbb039825553f4052a198ce3bfcdc"
+  },
+  {
+    "locale": "fa-IR",
+    "phraseId": "coffee",
+    "bytes": 14832,
+    "sha256": "6f155780c34af4bfc6503a9c973e3768360775dc158da3605266d07c1c99792b"
+  },
+  {
+    "locale": "fa-IR",
+    "phraseId": "hello",
+    "bytes": 15984,
+    "sha256": "e8086b35ec5467850ea7621765778c94175fab687abba5647a78db3860758cb5"
+  },
+  {
+    "locale": "fa-IR",
+    "phraseId": "weather",
+    "bytes": 15840,
+    "sha256": "84c26d4bf1f526491e6e2cea95ad83e3608fd04eccce772d8dd496b48c665102"
+  },
+  {
+    "locale": "fi-FI",
+    "phraseId": "coffee",
+    "bytes": 16992,
+    "sha256": "48b4e5a5a5586bc5f16cab3c618a7ece4d0002db89fb5651396e04692bd1cf37"
+  },
+  {
+    "locale": "fi-FI",
+    "phraseId": "hello",
+    "bytes": 17424,
+    "sha256": "58c2b8bb88c334985eaf642eb2b12fa43a914d5a23ae04c00aabcdab8eacd98c"
+  },
+  {
+    "locale": "fi-FI",
+    "phraseId": "weather",
+    "bytes": 16848,
+    "sha256": "8a621f68cc3bbcbb939cce562a341a7637ca94b0409a1e03b93661e189526c40"
+  },
+  {
+    "locale": "fil-PH",
+    "phraseId": "coffee",
+    "bytes": 16272,
+    "sha256": "89c6cd1c4fb98460d9d3313481b4f33d3471bbcae26ab0e7436f91613db4b5cd"
+  },
+  {
+    "locale": "fil-PH",
+    "phraseId": "hello",
+    "bytes": 17424,
+    "sha256": "827bd05e46c2a51c22557166e40188897b059fec260988f006e7f5affeb7fd79"
+  },
+  {
+    "locale": "fil-PH",
+    "phraseId": "weather",
+    "bytes": 16848,
+    "sha256": "bb904880a896eb0a46e03c3de651011a763dc3e0123577718f8e40d98ebf5f73"
+  },
+  {
+    "locale": "fr-FR",
+    "phraseId": "coffee",
+    "bytes": 18144,
+    "sha256": "fd5e8269f1f72223ff1f50638e3473f20f4a7db71d01673adfee8c4c4637ddfe"
+  },
+  {
+    "locale": "fr-FR",
+    "phraseId": "hello",
+    "bytes": 18576,
+    "sha256": "de5abb7f155b253d6170b024de0518df2b0c2b7eb606cd2cb307c50cda29fa58"
+  },
+  {
+    "locale": "fr-FR",
+    "phraseId": "weather",
+    "bytes": 13392,
+    "sha256": "52765e893909c0b6fd3d6142e21fbeab1198f0e003125d8a0b93b32a3886008a"
+  },
+  {
+    "locale": "he-IL",
+    "phraseId": "coffee",
+    "bytes": 18000,
+    "sha256": "030b65fbb7cc5f16a48aa6c54c558c395178099c12ff33bdd80f36909047471a"
+  },
+  {
+    "locale": "he-IL",
+    "phraseId": "hello",
+    "bytes": 18288,
+    "sha256": "08ccc0306b98ef88721eadbae677195135277186dded9998f51aac3a1a44bfcb"
+  },
+  {
+    "locale": "he-IL",
+    "phraseId": "weather",
+    "bytes": 16992,
+    "sha256": "084d029604ffb5b50c811825a22b639bb678b363f2eac21ed89509afa251c357"
+  },
+  {
+    "locale": "hi-IN",
+    "phraseId": "coffee",
+    "bytes": 20880,
+    "sha256": "56662fd9f8cd81a5a0fcd27049b399061c1e77b764a05a507a243773f3ffe556"
+  },
+  {
+    "locale": "hi-IN",
+    "phraseId": "hello",
+    "bytes": 19728,
+    "sha256": "4fc362de13aa98d482cde12cee0d0cc0cd6a46a7ada71cf14433d3885a4cbdb0"
+  },
+  {
+    "locale": "hi-IN",
+    "phraseId": "weather",
+    "bytes": 20736,
+    "sha256": "c3d61cd36439b6f3b7b977c3624982d79f93cb4ee638121a44702f77f6ec9146"
+  },
+  {
+    "locale": "hu-HU",
+    "phraseId": "coffee",
+    "bytes": 21600,
+    "sha256": "ef003dd29449968a2a285b853f737fb03cb8207264b20e714e59dae04db118b6"
+  },
+  {
+    "locale": "hu-HU",
+    "phraseId": "hello",
+    "bytes": 15840,
+    "sha256": "b27764a0264207798f90a8394a11db2e51837a8d785c487454ae563295be9950"
+  },
+  {
+    "locale": "hu-HU",
+    "phraseId": "weather",
+    "bytes": 16704,
+    "sha256": "73178266015f7229f1a6dc172b621cfe20a9bcbdecffbd41474ad12df3714e98"
+  },
+  {
+    "locale": "id-ID",
+    "phraseId": "coffee",
+    "bytes": 23328,
+    "sha256": "e3775d0651d1d2ede4edf016abb4046eb5309b18d9fa29130de034d0a5e3ffa6"
+  },
+  {
+    "locale": "id-ID",
+    "phraseId": "hello",
+    "bytes": 20736,
+    "sha256": "87610ffbbb402762aa7a1ee23ce11337a8e9e8033cb05fee273f2b7241e3cc0e"
+  },
+  {
+    "locale": "id-ID",
+    "phraseId": "weather",
+    "bytes": 19296,
+    "sha256": "f44355bc26cd2c64d4a2a1b41d8ee7bba0994947bad8eb9f6530cc37087d606a"
+  },
+  {
+    "locale": "it-IT",
+    "phraseId": "coffee",
+    "bytes": 13680,
+    "sha256": "8a50260233643c596c88f6db9bf87de8fd7c519979b451aba4532e403b22ecad"
+  },
+  {
+    "locale": "it-IT",
+    "phraseId": "hello",
+    "bytes": 11664,
+    "sha256": "fda958c3e9ebacc7e899c0f054b2778ebbf0264c38fdb326d3748c5b8aeccdbc"
+  },
+  {
+    "locale": "it-IT",
+    "phraseId": "weather",
+    "bytes": 14688,
+    "sha256": "365065cae8b81b493add29f02ee562fac223c44d4e0840dafd5225d57c773b7e"
+  },
+  {
+    "locale": "ja-JP",
+    "phraseId": "coffee",
+    "bytes": 15984,
+    "sha256": "2721a72a1b0fdb72a39cedb2295e38d8188ce667f14204a2d4c43fc8da771ae8"
+  },
+  {
+    "locale": "ja-JP",
+    "phraseId": "hello",
+    "bytes": 21456,
+    "sha256": "ba82e9eb99869ddd0ceb29c94a858b4f3c037b2f772c3f63e216b96efffbd467"
+  },
+  {
+    "locale": "ja-JP",
+    "phraseId": "weather",
+    "bytes": 18432,
+    "sha256": "7bfcd302624d32deb2b7b8610e9ffb50330551195c487b01d218952cb15c23c3"
+  },
+  {
+    "locale": "ko-KR",
+    "phraseId": "coffee",
+    "bytes": 13392,
+    "sha256": "fa83bca0c5b6d1e397fca3bc5ee349e65ac8c5aee46cfe5ca8db053d991fd3a4"
+  },
+  {
+    "locale": "ko-KR",
+    "phraseId": "hello",
+    "bytes": 22896,
+    "sha256": "b79469e2160f489e48ee4474603247c2c5a1f768e62a28aea16467cb4b71410e"
+  },
+  {
+    "locale": "ko-KR",
+    "phraseId": "weather",
+    "bytes": 18864,
+    "sha256": "6d1eb3bd70197ce7101f31efd1eb19e1537c7ad92e995289dcf46f5e09845786"
+  },
+  {
+    "locale": "ms-MY",
+    "phraseId": "coffee",
+    "bytes": 22032,
+    "sha256": "b038334f7920a8a76b2be2f84b5efbe264d1f55e7d861ac7aea30de1bacfe55e"
+  },
+  {
+    "locale": "ms-MY",
+    "phraseId": "hello",
+    "bytes": 20160,
+    "sha256": "cb54dae8b9e96cdc7852f6d35bab4f99d7fb091284d44c630b8c204014c0748b"
+  },
+  {
+    "locale": "ms-MY",
+    "phraseId": "weather",
+    "bytes": 18576,
+    "sha256": "1ab7bd3d08d3cfe13047503b74368cca5fc9d7de9f4adb107a1d0011015a5f71"
+  },
+  {
+    "locale": "nl-NL",
+    "phraseId": "coffee",
+    "bytes": 20592,
+    "sha256": "e6d83b48631230cfd48e3814cc25f745ce3552e92e52dbc48f3dac7e96557d8d"
+  },
+  {
+    "locale": "nl-NL",
+    "phraseId": "hello",
+    "bytes": 18720,
+    "sha256": "a93518d7d347bb7258fb33f4ac3b3a0a5871fbfad78c52d88da329a55c1df047"
+  },
+  {
+    "locale": "nl-NL",
+    "phraseId": "weather",
+    "bytes": 16704,
+    "sha256": "9c0545ee38b2e85a44859909e10d2fa0b1837b3cd33b7e37f6628d06b0e634fb"
+  },
+  {
+    "locale": "no-NO",
+    "phraseId": "coffee",
+    "bytes": 17424,
+    "sha256": "a5fa46d7733ebd6b6585b3f57917cda43c7b08f03fc06c17337403d1b2973c3f"
+  },
+  {
+    "locale": "no-NO",
+    "phraseId": "hello",
+    "bytes": 15552,
+    "sha256": "8ed3e87d1c9c65ee620bcbbab64f0eb82b9fcae2bbdc06067a15470cf1eb0526"
+  },
+  {
+    "locale": "no-NO",
+    "phraseId": "weather",
+    "bytes": 14832,
+    "sha256": "d69cbdd3fafa4a2320099f6e8d5381c5642596294382762a89ccdd0b9709bada"
+  },
+  {
+    "locale": "pl-PL",
+    "phraseId": "coffee",
+    "bytes": 11232,
+    "sha256": "7103b20ef5d19f8a787d73ec0b5db3526a82b095f0fe74dcc27fa7b9eab0923c"
+  },
+  {
+    "locale": "pl-PL",
+    "phraseId": "hello",
+    "bytes": 14976,
+    "sha256": "2a8b39389a5fb54e44a50dff90ac6ebe40aefcc77808a8920401211bc6bc71bc"
+  },
+  {
+    "locale": "pl-PL",
+    "phraseId": "weather",
+    "bytes": 16704,
+    "sha256": "b7e4c54d59484a2596113ca9c6a8c6c7c406c642c422a282214a6492a47a2c00"
+  },
+  {
+    "locale": "pt-BR",
+    "phraseId": "coffee",
+    "bytes": 16992,
+    "sha256": "5d4da838774815c4d36b55fa42821b0a2c87eca161e82e8fad6740033ad26e71"
+  },
+  {
+    "locale": "pt-BR",
+    "phraseId": "hello",
+    "bytes": 16416,
+    "sha256": "3beda111cb8f28e722c1c68d7b440211fce627f1ec0923bf3100410aa9f53ab2"
+  },
+  {
+    "locale": "pt-BR",
+    "phraseId": "weather",
+    "bytes": 15840,
+    "sha256": "2467ef3c8026fd83c52c376b01bc939f782ba713ab15c162ed54b62a08bbe5d0"
+  },
+  {
+    "locale": "ro-RO",
+    "phraseId": "coffee",
+    "bytes": 17136,
+    "sha256": "5dfa1c5b07952e11b57dea8b28df1d2093116a4a90499234c3b7c44af8cc32ed"
+  },
+  {
+    "locale": "ro-RO",
+    "phraseId": "hello",
+    "bytes": 17856,
+    "sha256": "a3203efb2cda19c11be388c18dd463fe76ef596fc4d4679f7f433e1588530c80"
+  },
+  {
+    "locale": "ro-RO",
+    "phraseId": "weather",
+    "bytes": 20592,
+    "sha256": "715d1137bf69ec82e4fc66dffa594691d6d7fd9b02cebe722e76e258fdb7641f"
+  },
+  {
+    "locale": "ru-RU",
+    "phraseId": "coffee",
+    "bytes": 18288,
+    "sha256": "f0732c3e68485ca1fdd9ee966566dc30307b967b92c5a0aa108752293b26b787"
+  },
+  {
+    "locale": "ru-RU",
+    "phraseId": "hello",
+    "bytes": 19584,
+    "sha256": "7ca2b731602498361f24913a6fe40a8de94c8f69caddc639436cb57e8411da6a"
+  },
+  {
+    "locale": "ru-RU",
+    "phraseId": "weather",
+    "bytes": 19152,
+    "sha256": "2d4115dc0acda30b6a9f4befc7229ec841d5ab752d08cf5a22a439eaa5683716"
+  },
+  {
+    "locale": "sk-SK",
+    "phraseId": "coffee",
+    "bytes": 17136,
+    "sha256": "c22334f53022355477a5b128c41b6acfce587469f30606f832d5a61891356293"
+  },
+  {
+    "locale": "sk-SK",
+    "phraseId": "hello",
+    "bytes": 14976,
+    "sha256": "65c2b068d74ddef8478b6118af1f75e1a0137b795e1a916710b98f46ca4590b6"
+  },
+  {
+    "locale": "sk-SK",
+    "phraseId": "weather",
+    "bytes": 17424,
+    "sha256": "c5af1f63d543bcc0e670686ef29edbd98d3296d7c7f70e58c874265001be5e5f"
+  },
+  {
+    "locale": "sv-SE",
+    "phraseId": "coffee",
+    "bytes": 19440,
+    "sha256": "8f0061e8d450c8c51ae4ad97106840a195b59406fa42d69c7dbf2bf973753949"
+  },
+  {
+    "locale": "sv-SE",
+    "phraseId": "hello",
+    "bytes": 17568,
+    "sha256": "fd98aa7179a7546da5138b8291d56e748e89a6d8619f102d587eea9e9f93897d"
+  },
+  {
+    "locale": "sv-SE",
+    "phraseId": "weather",
+    "bytes": 18432,
+    "sha256": "f222a574ba59acc9b3d3f95e2a0f9ee75b6819c3a10a1fd9571c0803cade7557"
+  },
+  {
+    "locale": "sw-KE",
+    "phraseId": "coffee",
+    "bytes": 18000,
+    "sha256": "ffde7f704e9adc01e94e786999cf8e56c4ae09497c1c9ea1ab07277fd3baab40"
+  },
+  {
+    "locale": "sw-KE",
+    "phraseId": "hello",
+    "bytes": 17136,
+    "sha256": "c5962b79a7b144863ebd23bf96482077e9a254ec39bd367eac221586769d428a"
+  },
+  {
+    "locale": "sw-KE",
+    "phraseId": "weather",
+    "bytes": 20160,
+    "sha256": "9e0cbebbd290710c0a37b7d25dfd5a319b023ae4b8bd30e963fcc33fb0e51bdf"
+  },
+  {
+    "locale": "ta-IN",
+    "phraseId": "coffee",
+    "bytes": 17568,
+    "sha256": "650137d6d9972d5da8ccfe65d81cec1f6b569ff29354b5f0657f63cd51a8d7c0"
+  },
+  {
+    "locale": "ta-IN",
+    "phraseId": "hello",
+    "bytes": 18864,
+    "sha256": "73f9ad889cd0bb7c7aa79e7ef4a0409a4249b58e02a1b760d0a95221fab39930"
+  },
+  {
+    "locale": "ta-IN",
+    "phraseId": "weather",
+    "bytes": 20448,
+    "sha256": "45f92800f58ac1cb920af3c874db9c2d57ba93f21555ffd86bdc0241f6d8827f"
+  },
+  {
+    "locale": "th-TH",
+    "phraseId": "coffee",
+    "bytes": 14544,
+    "sha256": "22da851b7d8e85b2bce916ebdd0a8e596d5a8f261e54b942230786cf3a60832e"
+  },
+  {
+    "locale": "th-TH",
+    "phraseId": "hello",
+    "bytes": 18720,
+    "sha256": "d23c09ad1d8c993f7ff588fd5517ee5fd3730599e90bf8737af1f1dc22b04402"
+  },
+  {
+    "locale": "th-TH",
+    "phraseId": "weather",
+    "bytes": 15408,
+    "sha256": "c8e18c0aeb29cd2e7ba1d75df4a25c2ee21256fdded09e061f5db41ecc8ad56d"
+  },
+  {
+    "locale": "tr-TR",
+    "phraseId": "coffee",
+    "bytes": 18432,
+    "sha256": "8371c064f934c26b9fcc63079d165858cfc5e9f15f4480d7c2fd2800a38e716c"
+  },
+  {
+    "locale": "tr-TR",
+    "phraseId": "hello",
+    "bytes": 15984,
+    "sha256": "97cece6eb0fc07b294bc63d28d090bb249e880a71029cac7dd2aff38c1c40953"
+  },
+  {
+    "locale": "tr-TR",
+    "phraseId": "weather",
+    "bytes": 15840,
+    "sha256": "b7073b5d493eae2f9729247c866baa2375c2b063151fae35d16c3d66bac5182b"
+  },
+  {
+    "locale": "uk-UA",
+    "phraseId": "coffee",
+    "bytes": 18000,
+    "sha256": "b9374fc55670dfa2b15ee76dee65e4843d83df286fa20afb7364b70d4c995417"
+  },
+  {
+    "locale": "uk-UA",
+    "phraseId": "hello",
+    "bytes": 19872,
+    "sha256": "2758014386f94b0f5fb6a8de56c713324d19c34703279d33960b1aa659d17307"
+  },
+  {
+    "locale": "uk-UA",
+    "phraseId": "weather",
+    "bytes": 17712,
+    "sha256": "250677870227cdef797af5e6a2f73992a4af9d685bba90eb7441c51553812963"
+  },
+  {
+    "locale": "ur-PK",
+    "phraseId": "coffee",
+    "bytes": 17568,
+    "sha256": "c67e6e7e29336ef23c9317592c7d21439e9e87e3b3c25f394a92364fdf0aac1c"
+  },
+  {
+    "locale": "ur-PK",
+    "phraseId": "hello",
+    "bytes": 14112,
+    "sha256": "a234a9f39fd5a64a916679fc78847543d565ba56efac46c7f112e2ce52d9e5b3"
+  },
+  {
+    "locale": "ur-PK",
+    "phraseId": "weather",
+    "bytes": 17424,
+    "sha256": "64964c379eb5368618607230716fcaca049567539b57970adfb134e22ab68922"
+  },
+  {
+    "locale": "vi-VN",
+    "phraseId": "coffee",
+    "bytes": 19152,
+    "sha256": "e01ea1ba3864eac3058ffed2d1fdc485eb2b2013cbd39c34b672b262740eea08"
+  },
+  {
+    "locale": "vi-VN",
+    "phraseId": "hello",
+    "bytes": 17856,
+    "sha256": "08d1f30bd4f17ac5b9f824b88b664144f698a63bf846fb77c2a82d02d1192a1e"
+  },
+  {
+    "locale": "vi-VN",
+    "phraseId": "weather",
+    "bytes": 14688,
+    "sha256": "7a92c3b5a3efd34d429422a4e85233c0bebcdb65c0febed505a184392e734a2e"
+  },
+  {
+    "locale": "zh-CN",
+    "phraseId": "coffee",
+    "bytes": 12096,
+    "sha256": "a90f436243d96336c00672c3d7248abfa410b79233a8700011b95e526a3e9cd1"
+  },
+  {
+    "locale": "zh-CN",
+    "phraseId": "hello",
+    "bytes": 13824,
+    "sha256": "fe250f0e5f052e4aa521ef6aa86e72ede7e7c38141a8d8bccb511e60b04b8777"
+  },
+  {
+    "locale": "zh-CN",
+    "phraseId": "weather",
+    "bytes": 14256,
+    "sha256": "206673192a6b409e1b056d9efbe019a2339e8eadc4a836ab205a42de33463c4e"
+  },
+  {
+    "locale": "zh-TW",
+    "phraseId": "coffee",
+    "bytes": 14256,
+    "sha256": "d2d573f9bb87b66e20a641ead9fbd2236f79ab14ca9cbf4bf49e8d75f35c9da0"
+  },
+  {
+    "locale": "zh-TW",
+    "phraseId": "hello",
+    "bytes": 16992,
+    "sha256": "04a3bbf00fda383561b03fdeccef69745304cf81eb24440d694693c80c751ae3"
+  },
+  {
+    "locale": "zh-TW",
+    "phraseId": "weather",
+    "bytes": 16272,
+    "sha256": "aec4da1121477dbda38fa1e00b1b0db468455cfa410063975cb37111627b795b"
+  }
+]
