@@ -1,722 +1,5122 @@
 [
   {
     "locale": "af-ZA",
-    "phraseId": "coffee",
-    "bytes": 18000,
-    "sha256": "55112dada68f66a03edc26973760c4c41b1628aa6e759addb75394e21aa57a5b"
-  },
-  {
-    "locale": "af-ZA",
-    "phraseId": "hello",
-    "bytes": 16992,
-    "sha256": "21486fa259470ee09dbad5265dfef8982d281310ed3122fec2b2f9ae73e21d73"
-  },
-  {
-    "locale": "af-ZA",
-    "phraseId": "weather",
-    "bytes": 15696,
-    "sha256": "f857620573eb4efa9e545b604b7406cdd414f5daed684bd20f20161e9504b6ec"
-  },
-  {
-    "locale": "ar-EG",
-    "phraseId": "coffee",
-    "bytes": 18576,
-    "sha256": "60b917073893971d1ac9782c1299e102a531f7ec4261c8c8401340817a9dcec9"
-  },
-  {
-    "locale": "ar-EG",
-    "phraseId": "hello",
-    "bytes": 20304,
-    "sha256": "96a137ae3943ead1118ce1d58a94ca7658eff8468336ecd5649e1ac1aefb2d09"
-  },
-  {
-    "locale": "ar-EG",
-    "phraseId": "weather",
-    "bytes": 21168,
-    "sha256": "1283f61309b4b8cf585da54bd9d74a6d105c1b588d0dffe31464e25bd7577914"
-  },
-  {
-    "locale": "bg-BG",
-    "phraseId": "coffee",
-    "bytes": 18864,
-    "sha256": "15ed20122a352081a7f6cd38d23e2554b6a617851fbbdb3283e4226a0692fd55"
-  },
-  {
-    "locale": "bg-BG",
-    "phraseId": "hello",
-    "bytes": 15120,
-    "sha256": "fa31e90d3eea8f41fdc5cce5cba55784dd167a86d7deae66a7132bc328fc138b"
-  },
-  {
-    "locale": "bg-BG",
-    "phraseId": "weather",
-    "bytes": 18864,
-    "sha256": "272f09f401d846d0c7c52d11531b7ef3b3bc876c22ce29042e74131082ff81e8"
-  },
-  {
-    "locale": "bn-BD",
-    "phraseId": "coffee",
-    "bytes": 15840,
-    "sha256": "1754e7c88f55eb2fa5626ee3b06b02c61ec69e05d7e4520f1e5144149608122f"
-  },
-  {
-    "locale": "bn-BD",
-    "phraseId": "hello",
-    "bytes": 15840,
-    "sha256": "636d94eabc736660015bb8ce49a5d846df0558d1e55d2329e651d8b1f2b34d66"
-  },
-  {
-    "locale": "bn-BD",
-    "phraseId": "weather",
-    "bytes": 17712,
-    "sha256": "63ff2169999bfc0e6230172a91df60a79115eee2edbde6b111d0bfa365c806ef"
-  },
-  {
-    "locale": "cs-CZ",
-    "phraseId": "coffee",
-    "bytes": 18000,
-    "sha256": "763673d1909939f86ea9dbf3f7b0cc463a3c6bfb2c5b639987953ab112e59d54"
-  },
-  {
-    "locale": "cs-CZ",
-    "phraseId": "hello",
-    "bytes": 16272,
-    "sha256": "a52cb6cd790dc4833cff50aeed454fd7b476a4a531f613b7985cafd980367902"
-  },
-  {
-    "locale": "cs-CZ",
-    "phraseId": "weather",
-    "bytes": 18720,
-    "sha256": "6fc609b6831aca6a7ecb208bb5d9fb3f1cafe43cabe6490fce3d0944e46a76d9"
-  },
-  {
-    "locale": "cy-GB",
-    "phraseId": "coffee",
-    "bytes": 17280,
-    "sha256": "9254774bad7592696370dd08e054aec45fa85b0917e9217017343974955f9b2a"
-  },
-  {
-    "locale": "cy-GB",
-    "phraseId": "hello",
-    "bytes": 18000,
-    "sha256": "577f5e65961c8c6b8a42d0536a6018320c5c29c844c191818eb2c06410e7561a"
-  },
-  {
-    "locale": "cy-GB",
-    "phraseId": "weather",
-    "bytes": 18288,
-    "sha256": "41af3e3df1453741deaab5186abc306380bd49d704c6455f14790f21d2908118"
-  },
-  {
-    "locale": "da-DK",
-    "phraseId": "coffee",
-    "bytes": 17712,
-    "sha256": "efd7474e8fb92bda0be7bc1f5bd3be33382b385335f09bfbe18322e11d3fa955"
-  },
-  {
-    "locale": "da-DK",
-    "phraseId": "hello",
-    "bytes": 16128,
-    "sha256": "24b2cc2a0726ba3a6e6b9a950c69a071f2e3e26377abde210f85e02078ca7ffd"
-  },
-  {
-    "locale": "da-DK",
-    "phraseId": "weather",
-    "bytes": 14832,
-    "sha256": "435f7b9a0dd744c4bbe1303c14ffeef3fcf7bdea34a7756628d2225f9fa1d4fd"
-  },
-  {
-    "locale": "de-DE",
-    "phraseId": "coffee",
-    "bytes": 18432,
-    "sha256": "1bdb53f4cc6309b81bde2c8639fc9e29c6a8a7b72c8256fbc9600a4797a5131f"
-  },
-  {
-    "locale": "de-DE",
-    "phraseId": "hello",
-    "bytes": 17712,
-    "sha256": "4dd0a805949c771f51ab27845b7a3d6cc08ff64a2b8115eb0ddfdcfbe215cc69"
-  },
-  {
-    "locale": "de-DE",
-    "phraseId": "weather",
-    "bytes": 18144,
-    "sha256": "d56a1a081774c4fcf21b08b5136f7b63ecdb6910a4e12d4c45eabbd3ddf73532"
-  },
-  {
-    "locale": "el-GR",
-    "phraseId": "coffee",
-    "bytes": 16992,
-    "sha256": "cac2cd54a092e3ebf3e3ebb0ad8cc6a8b7b3d305a28b813e5b19dc5de74872a1"
-  },
-  {
-    "locale": "el-GR",
-    "phraseId": "hello",
-    "bytes": 15264,
-    "sha256": "79d8ea02e4d48187bb09cf380c1d5354d859293bbdd00f05709886ad5e0565d9"
-  },
-  {
-    "locale": "el-GR",
-    "phraseId": "weather",
-    "bytes": 17568,
-    "sha256": "51e5a7d34263534cd6d41203eef888bb4ce898eb49b3c4328dcb67a8e66200f6"
-  },
-  {
-    "locale": "en-US",
-    "phraseId": "coffee",
-    "bytes": 16272,
-    "sha256": "e325da94372cf6ab4e4e48669ce45f8a5b532eb057e0d4ef37df8c008a9a435d"
-  },
-  {
-    "locale": "en-US",
-    "phraseId": "hello",
-    "bytes": 15120,
-    "sha256": "ace91eb8bb26c8241cf6271656b05bb6495340c6a27091574b7dac748885fc7b"
-  },
-  {
-    "locale": "en-US",
-    "phraseId": "weather",
-    "bytes": 15984,
-    "sha256": "ed637dd0dac14d51df6c0c756ae0ef0b575655305a284609e030148666d6a75f"
-  },
-  {
-    "locale": "es-ES",
-    "phraseId": "coffee",
-    "bytes": 16848,
-    "sha256": "cb98966ddd64e3d6b514fef81a80befe2be28aedcb527a3098c105e6f00dac02"
-  },
-  {
-    "locale": "es-ES",
-    "phraseId": "hello",
-    "bytes": 14256,
-    "sha256": "d2916b6fabfc04be34331b67278f27ed52835c6a3c72d582aecc72cdd319f04e"
-  },
-  {
-    "locale": "es-ES",
-    "phraseId": "weather",
-    "bytes": 18288,
-    "sha256": "60feabdbe1a67cbea4ab562becc1d21227cbbb039825553f4052a198ce3bfcdc"
-  },
-  {
-    "locale": "fa-IR",
-    "phraseId": "coffee",
-    "bytes": 14832,
-    "sha256": "6f155780c34af4bfc6503a9c973e3768360775dc158da3605266d07c1c99792b"
-  },
-  {
-    "locale": "fa-IR",
-    "phraseId": "hello",
-    "bytes": 15984,
-    "sha256": "e8086b35ec5467850ea7621765778c94175fab687abba5647a78db3860758cb5"
-  },
-  {
-    "locale": "fa-IR",
-    "phraseId": "weather",
-    "bytes": 15840,
-    "sha256": "84c26d4bf1f526491e6e2cea95ad83e3608fd04eccce772d8dd496b48c665102"
-  },
-  {
-    "locale": "fi-FI",
-    "phraseId": "coffee",
-    "bytes": 16992,
-    "sha256": "48b4e5a5a5586bc5f16cab3c618a7ece4d0002db89fb5651396e04692bd1cf37"
-  },
-  {
-    "locale": "fi-FI",
-    "phraseId": "hello",
-    "bytes": 17424,
-    "sha256": "58c2b8bb88c334985eaf642eb2b12fa43a914d5a23ae04c00aabcdab8eacd98c"
-  },
-  {
-    "locale": "fi-FI",
-    "phraseId": "weather",
-    "bytes": 16848,
-    "sha256": "8a621f68cc3bbcbb939cce562a341a7637ca94b0409a1e03b93661e189526c40"
-  },
-  {
-    "locale": "fil-PH",
-    "phraseId": "coffee",
-    "bytes": 16272,
-    "sha256": "89c6cd1c4fb98460d9d3313481b4f33d3471bbcae26ab0e7436f91613db4b5cd"
-  },
-  {
-    "locale": "fil-PH",
-    "phraseId": "hello",
-    "bytes": 17424,
-    "sha256": "827bd05e46c2a51c22557166e40188897b059fec260988f006e7f5affeb7fd79"
-  },
-  {
-    "locale": "fil-PH",
-    "phraseId": "weather",
-    "bytes": 16848,
-    "sha256": "bb904880a896eb0a46e03c3de651011a763dc3e0123577718f8e40d98ebf5f73"
-  },
-  {
-    "locale": "fr-FR",
-    "phraseId": "coffee",
-    "bytes": 18144,
-    "sha256": "fd5e8269f1f72223ff1f50638e3473f20f4a7db71d01673adfee8c4c4637ddfe"
-  },
-  {
-    "locale": "fr-FR",
-    "phraseId": "hello",
-    "bytes": 18576,
-    "sha256": "de5abb7f155b253d6170b024de0518df2b0c2b7eb606cd2cb307c50cda29fa58"
-  },
-  {
-    "locale": "fr-FR",
-    "phraseId": "weather",
-    "bytes": 13392,
-    "sha256": "52765e893909c0b6fd3d6142e21fbeab1198f0e003125d8a0b93b32a3886008a"
-  },
-  {
-    "locale": "he-IL",
-    "phraseId": "coffee",
-    "bytes": 18000,
-    "sha256": "030b65fbb7cc5f16a48aa6c54c558c395178099c12ff33bdd80f36909047471a"
-  },
-  {
-    "locale": "he-IL",
-    "phraseId": "hello",
-    "bytes": 18288,
-    "sha256": "08ccc0306b98ef88721eadbae677195135277186dded9998f51aac3a1a44bfcb"
-  },
-  {
-    "locale": "he-IL",
-    "phraseId": "weather",
-    "bytes": 16992,
-    "sha256": "084d029604ffb5b50c811825a22b639bb678b363f2eac21ed89509afa251c357"
-  },
-  {
-    "locale": "hi-IN",
-    "phraseId": "coffee",
-    "bytes": 20880,
-    "sha256": "56662fd9f8cd81a5a0fcd27049b399061c1e77b764a05a507a243773f3ffe556"
-  },
-  {
-    "locale": "hi-IN",
-    "phraseId": "hello",
-    "bytes": 19728,
-    "sha256": "4fc362de13aa98d482cde12cee0d0cc0cd6a46a7ada71cf14433d3885a4cbdb0"
-  },
-  {
-    "locale": "hi-IN",
-    "phraseId": "weather",
-    "bytes": 20736,
-    "sha256": "c3d61cd36439b6f3b7b977c3624982d79f93cb4ee638121a44702f77f6ec9146"
-  },
-  {
-    "locale": "hu-HU",
-    "phraseId": "coffee",
-    "bytes": 21600,
-    "sha256": "ef003dd29449968a2a285b853f737fb03cb8207264b20e714e59dae04db118b6"
-  },
-  {
-    "locale": "hu-HU",
-    "phraseId": "hello",
-    "bytes": 15840,
-    "sha256": "b27764a0264207798f90a8394a11db2e51837a8d785c487454ae563295be9950"
-  },
-  {
-    "locale": "hu-HU",
-    "phraseId": "weather",
-    "bytes": 16704,
-    "sha256": "73178266015f7229f1a6dc172b621cfe20a9bcbdecffbd41474ad12df3714e98"
-  },
-  {
-    "locale": "id-ID",
-    "phraseId": "coffee",
-    "bytes": 23328,
-    "sha256": "e3775d0651d1d2ede4edf016abb4046eb5309b18d9fa29130de034d0a5e3ffa6"
-  },
-  {
-    "locale": "id-ID",
-    "phraseId": "hello",
-    "bytes": 20736,
-    "sha256": "87610ffbbb402762aa7a1ee23ce11337a8e9e8033cb05fee273f2b7241e3cc0e"
-  },
-  {
-    "locale": "id-ID",
-    "phraseId": "weather",
-    "bytes": 19296,
-    "sha256": "f44355bc26cd2c64d4a2a1b41d8ee7bba0994947bad8eb9f6530cc37087d606a"
-  },
-  {
-    "locale": "it-IT",
-    "phraseId": "coffee",
-    "bytes": 13680,
-    "sha256": "8a50260233643c596c88f6db9bf87de8fd7c519979b451aba4532e403b22ecad"
-  },
-  {
-    "locale": "it-IT",
-    "phraseId": "hello",
-    "bytes": 11664,
-    "sha256": "fda958c3e9ebacc7e899c0f054b2778ebbf0264c38fdb326d3748c5b8aeccdbc"
-  },
-  {
-    "locale": "it-IT",
-    "phraseId": "weather",
-    "bytes": 14688,
-    "sha256": "365065cae8b81b493add29f02ee562fac223c44d4e0840dafd5225d57c773b7e"
-  },
-  {
-    "locale": "ja-JP",
-    "phraseId": "coffee",
-    "bytes": 15984,
-    "sha256": "2721a72a1b0fdb72a39cedb2295e38d8188ce667f14204a2d4c43fc8da771ae8"
-  },
-  {
-    "locale": "ja-JP",
-    "phraseId": "hello",
-    "bytes": 21456,
-    "sha256": "ba82e9eb99869ddd0ceb29c94a858b4f3c037b2f772c3f63e216b96efffbd467"
-  },
-  {
-    "locale": "ja-JP",
-    "phraseId": "weather",
-    "bytes": 18432,
-    "sha256": "7bfcd302624d32deb2b7b8610e9ffb50330551195c487b01d218952cb15c23c3"
-  },
-  {
-    "locale": "ko-KR",
-    "phraseId": "coffee",
-    "bytes": 13392,
-    "sha256": "fa83bca0c5b6d1e397fca3bc5ee349e65ac8c5aee46cfe5ca8db053d991fd3a4"
-  },
-  {
-    "locale": "ko-KR",
-    "phraseId": "hello",
-    "bytes": 22896,
-    "sha256": "b79469e2160f489e48ee4474603247c2c5a1f768e62a28aea16467cb4b71410e"
-  },
-  {
-    "locale": "ko-KR",
-    "phraseId": "weather",
-    "bytes": 18864,
-    "sha256": "6d1eb3bd70197ce7101f31efd1eb19e1537c7ad92e995289dcf46f5e09845786"
-  },
-  {
-    "locale": "ms-MY",
-    "phraseId": "coffee",
-    "bytes": 22032,
-    "sha256": "b038334f7920a8a76b2be2f84b5efbe264d1f55e7d861ac7aea30de1bacfe55e"
-  },
-  {
-    "locale": "ms-MY",
-    "phraseId": "hello",
+    "voiceIndex": 0,
+    "voice": "af-ZA-AdriNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
     "bytes": 20160,
-    "sha256": "cb54dae8b9e96cdc7852f6d35bab4f99d7fb091284d44c630b8c204014c0748b"
+    "sha256": "0f8f63359da71f951c847d76e32229efdcf4f9eac7d38042a9ee6c4ec22f0aab"
   },
   {
-    "locale": "ms-MY",
-    "phraseId": "weather",
-    "bytes": 18576,
-    "sha256": "1ab7bd3d08d3cfe13047503b74368cca5fc9d7de9f4adb107a1d0011015a5f71"
+    "locale": "af-ZA",
+    "voiceIndex": 0,
+    "voice": "af-ZA-AdriNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 22176,
+    "sha256": "353c782f67d39e78ddf0c0b78a500269b05e40e8481db6d8a6cf152c958c8a28"
   },
   {
-    "locale": "nl-NL",
-    "phraseId": "coffee",
-    "bytes": 20592,
-    "sha256": "e6d83b48631230cfd48e3814cc25f745ce3552e92e52dbc48f3dac7e96557d8d"
+    "locale": "af-ZA",
+    "voiceIndex": 0,
+    "voice": "af-ZA-AdriNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 33696,
+    "sha256": "ef2bae49e72a443907e6ad48e292402291c712284ef0f5edfa26c8e674715f65"
   },
   {
-    "locale": "nl-NL",
-    "phraseId": "hello",
-    "bytes": 18720,
-    "sha256": "a93518d7d347bb7258fb33f4ac3b3a0a5871fbfad78c52d88da329a55c1df047"
+    "locale": "af-ZA",
+    "voiceIndex": 0,
+    "voice": "af-ZA-AdriNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 29088,
+    "sha256": "dfdbec9364d28b8f571f4d0cf15f7b432d6a59a3f6437b1b946a2dd7070c8874"
   },
   {
-    "locale": "nl-NL",
-    "phraseId": "weather",
-    "bytes": 16704,
-    "sha256": "9c0545ee38b2e85a44859909e10d2fa0b1837b3cd33b7e37f6628d06b0e634fb"
+    "locale": "af-ZA",
+    "voiceIndex": 0,
+    "voice": "af-ZA-AdriNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 32976,
+    "sha256": "d65401ad18765f57157b3690b58256c4a140feb7430d1a2f2c9bfc9fdfd9ab5b"
   },
   {
-    "locale": "no-NO",
-    "phraseId": "coffee",
-    "bytes": 17424,
-    "sha256": "a5fa46d7733ebd6b6585b3f57917cda43c7b08f03fc06c17337403d1b2973c3f"
+    "locale": "af-ZA",
+    "voiceIndex": 0,
+    "voice": "af-ZA-AdriNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 48816,
+    "sha256": "980e262bb9448902e873d473ec8d8686e0ba77b96a08432e7bd25fa1335bc01c"
   },
   {
-    "locale": "no-NO",
-    "phraseId": "hello",
-    "bytes": 15552,
-    "sha256": "8ed3e87d1c9c65ee620bcbbab64f0eb82b9fcae2bbdc06067a15470cf1eb0526"
+    "locale": "af-ZA",
+    "voiceIndex": 0,
+    "voice": "af-ZA-AdriNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 46656,
+    "sha256": "27fdd2de084e9c134af84498fe81f14a5f53fff18d2769695fa5cf86ecf8972d"
   },
   {
-    "locale": "no-NO",
-    "phraseId": "weather",
-    "bytes": 14832,
-    "sha256": "d69cbdd3fafa4a2320099f6e8d5381c5642596294382762a89ccdd0b9709bada"
+    "locale": "af-ZA",
+    "voiceIndex": 0,
+    "voice": "af-ZA-AdriNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 36720,
+    "sha256": "3b9626ae1e1b7a91291f5f9f98c6830e96b38a0eaa83ab6a4d8651dbf927c4fe"
   },
   {
-    "locale": "pl-PL",
-    "phraseId": "coffee",
-    "bytes": 11232,
-    "sha256": "7103b20ef5d19f8a787d73ec0b5db3526a82b095f0fe74dcc27fa7b9eab0923c"
-  },
-  {
-    "locale": "pl-PL",
-    "phraseId": "hello",
-    "bytes": 14976,
-    "sha256": "2a8b39389a5fb54e44a50dff90ac6ebe40aefcc77808a8920401211bc6bc71bc"
-  },
-  {
-    "locale": "pl-PL",
-    "phraseId": "weather",
-    "bytes": 16704,
-    "sha256": "b7e4c54d59484a2596113ca9c6a8c6c7c406c642c422a282214a6492a47a2c00"
-  },
-  {
-    "locale": "pt-BR",
-    "phraseId": "coffee",
-    "bytes": 16992,
-    "sha256": "5d4da838774815c4d36b55fa42821b0a2c87eca161e82e8fad6740033ad26e71"
-  },
-  {
-    "locale": "pt-BR",
-    "phraseId": "hello",
-    "bytes": 16416,
-    "sha256": "3beda111cb8f28e722c1c68d7b440211fce627f1ec0923bf3100410aa9f53ab2"
-  },
-  {
-    "locale": "pt-BR",
-    "phraseId": "weather",
-    "bytes": 15840,
-    "sha256": "2467ef3c8026fd83c52c376b01bc939f782ba713ab15c162ed54b62a08bbe5d0"
-  },
-  {
-    "locale": "ro-RO",
-    "phraseId": "coffee",
-    "bytes": 17136,
-    "sha256": "5dfa1c5b07952e11b57dea8b28df1d2093116a4a90499234c3b7c44af8cc32ed"
-  },
-  {
-    "locale": "ro-RO",
-    "phraseId": "hello",
-    "bytes": 17856,
-    "sha256": "a3203efb2cda19c11be388c18dd463fe76ef596fc4d4679f7f433e1588530c80"
-  },
-  {
-    "locale": "ro-RO",
-    "phraseId": "weather",
-    "bytes": 20592,
-    "sha256": "715d1137bf69ec82e4fc66dffa594691d6d7fd9b02cebe722e76e258fdb7641f"
-  },
-  {
-    "locale": "ru-RU",
-    "phraseId": "coffee",
-    "bytes": 18288,
-    "sha256": "f0732c3e68485ca1fdd9ee966566dc30307b967b92c5a0aa108752293b26b787"
-  },
-  {
-    "locale": "ru-RU",
-    "phraseId": "hello",
-    "bytes": 19584,
-    "sha256": "7ca2b731602498361f24913a6fe40a8de94c8f69caddc639436cb57e8411da6a"
-  },
-  {
-    "locale": "ru-RU",
-    "phraseId": "weather",
-    "bytes": 19152,
-    "sha256": "2d4115dc0acda30b6a9f4befc7229ec841d5ab752d08cf5a22a439eaa5683716"
-  },
-  {
-    "locale": "sk-SK",
-    "phraseId": "coffee",
-    "bytes": 17136,
-    "sha256": "c22334f53022355477a5b128c41b6acfce587469f30606f832d5a61891356293"
-  },
-  {
-    "locale": "sk-SK",
-    "phraseId": "hello",
-    "bytes": 14976,
-    "sha256": "65c2b068d74ddef8478b6118af1f75e1a0137b795e1a916710b98f46ca4590b6"
-  },
-  {
-    "locale": "sk-SK",
-    "phraseId": "weather",
-    "bytes": 17424,
-    "sha256": "c5af1f63d543bcc0e670686ef29edbd98d3296d7c7f70e58c874265001be5e5f"
-  },
-  {
-    "locale": "sv-SE",
-    "phraseId": "coffee",
+    "locale": "af-ZA",
+    "voiceIndex": 1,
+    "voice": "af-ZA-WillemNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
     "bytes": 19440,
-    "sha256": "8f0061e8d450c8c51ae4ad97106840a195b59406fa42d69c7dbf2bf973753949"
+    "sha256": "913e517d2b9e9b1986ddccc46a508b59defdce3260a3d2e3bb9e1ff5887d6ad4"
   },
   {
-    "locale": "sv-SE",
-    "phraseId": "hello",
+    "locale": "af-ZA",
+    "voiceIndex": 1,
+    "voice": "af-ZA-WillemNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 20592,
+    "sha256": "2f5fe836ccd90ce788d354c7b7375cd7373a4d21667ca8d6c0b8e5addc2a6d02"
+  },
+  {
+    "locale": "af-ZA",
+    "voiceIndex": 1,
+    "voice": "af-ZA-WillemNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 32832,
+    "sha256": "8d08cd564fe990fe6dd2c5aeac3717622d823694dfe312ff468e0236aed3ef8d"
+  },
+  {
+    "locale": "af-ZA",
+    "voiceIndex": 1,
+    "voice": "af-ZA-WillemNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 28368,
+    "sha256": "fd89dac955b49882b1deb68a985760fd64976a4e39ef821bcfba5bf92a827987"
+  },
+  {
+    "locale": "af-ZA",
+    "voiceIndex": 1,
+    "voice": "af-ZA-WillemNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 30816,
+    "sha256": "c83aeba4183c4bbc49c98c61accdee82c5cf728b47d6b96e9d148e03cec57f54"
+  },
+  {
+    "locale": "af-ZA",
+    "voiceIndex": 1,
+    "voice": "af-ZA-WillemNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 47232,
+    "sha256": "c11826f49fda6f8fb497dec41985de43865e686eda0bd94f2d4b1b1bfb746303"
+  },
+  {
+    "locale": "af-ZA",
+    "voiceIndex": 1,
+    "voice": "af-ZA-WillemNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 44496,
+    "sha256": "01532f1138924ffa4a59d80c4ca264946e00c877a7f593a5b697cae0f86d7fe3"
+  },
+  {
+    "locale": "af-ZA",
+    "voiceIndex": 1,
+    "voice": "af-ZA-WillemNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 34272,
+    "sha256": "852c7859c1b821d91ce8ae1d1f707d10244d3f9fab3ee8a0a19dfb8af0f20003"
+  },
+  {
+    "locale": "ar-EG",
+    "voiceIndex": 0,
+    "voice": "ar-EG-SalmaNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 29808,
+    "sha256": "1ca57f0c65df47f4fa65cc99892e13af4440756c64e7f36c9ca4bd0949990cd4"
+  },
+  {
+    "locale": "ar-EG",
+    "voiceIndex": 0,
+    "voice": "ar-EG-SalmaNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 25056,
+    "sha256": "08e9764fa9534529f23496b3d290c119809e7a0058d2aa4a4659d9c0766a2da3"
+  },
+  {
+    "locale": "ar-EG",
+    "voiceIndex": 0,
+    "voice": "ar-EG-SalmaNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 36432,
+    "sha256": "6d4bd2ad6c96b4a5c4644b566f90a0ae476cd1fff0301f198fd90f9565cec949"
+  },
+  {
+    "locale": "ar-EG",
+    "voiceIndex": 0,
+    "voice": "ar-EG-SalmaNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 34272,
+    "sha256": "0f5327db8c7f90be8f67bb99b39f1eac024205afea1a8b2b79e6f7c7957ef3c7"
+  },
+  {
+    "locale": "ar-EG",
+    "voiceIndex": 0,
+    "voice": "ar-EG-SalmaNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 37872,
+    "sha256": "42a2a39bdd4d361802f1921038a9a85587141ccc312e2f54c9e29166a9bdb063"
+  },
+  {
+    "locale": "ar-EG",
+    "voiceIndex": 0,
+    "voice": "ar-EG-SalmaNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 62784,
+    "sha256": "676e97c7957b670b769cfbc1ecc5d774a9878c28ef6429eb41cc370f50a9e3df"
+  },
+  {
+    "locale": "ar-EG",
+    "voiceIndex": 0,
+    "voice": "ar-EG-SalmaNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 63216,
+    "sha256": "8ef32234c5b00cc3a4dc0b412ce99f28581115e0f630aba55e8103c80fe3fe7b"
+  },
+  {
+    "locale": "ar-EG",
+    "voiceIndex": 0,
+    "voice": "ar-EG-SalmaNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 44208,
+    "sha256": "156866b5785f0a1fe5681927be61c8c0aa62e2064cc36e9eba4ba4a04523e16b"
+  },
+  {
+    "locale": "ar-EG",
+    "voiceIndex": 1,
+    "voice": "ar-EG-ShakirNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 28368,
+    "sha256": "767b07ac92efa00f626cf0d5d6d4dc572ffd10cdd55dc85702c94211742c3be7"
+  },
+  {
+    "locale": "ar-EG",
+    "voiceIndex": 1,
+    "voice": "ar-EG-ShakirNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 25920,
+    "sha256": "16cd74ea554ee61b8aad3793ab11e94e1eb7e7ba86f91c9d78e2d10fd4be11be"
+  },
+  {
+    "locale": "ar-EG",
+    "voiceIndex": 1,
+    "voice": "ar-EG-ShakirNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 34704,
+    "sha256": "08cf9f58081a4fc5e54753554f85fd004a8cca9d31a2bfd799b78a802f7cb793"
+  },
+  {
+    "locale": "ar-EG",
+    "voiceIndex": 1,
+    "voice": "ar-EG-ShakirNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 33408,
+    "sha256": "e17c70c5f0e63cad8e32597e0abfcb5c67e158af3b5748ca524ce0c2215d452c"
+  },
+  {
+    "locale": "ar-EG",
+    "voiceIndex": 1,
+    "voice": "ar-EG-ShakirNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 31392,
+    "sha256": "251b5f73f4bc152faafed0a1326104daf80efa54fd8cebd616b3ad9f3dc4f050"
+  },
+  {
+    "locale": "ar-EG",
+    "voiceIndex": 1,
+    "voice": "ar-EG-ShakirNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 52704,
+    "sha256": "6c5be011aca10eecb183c0c20d230fd8a82d5152c209f67ca7a91b008496adb3"
+  },
+  {
+    "locale": "ar-EG",
+    "voiceIndex": 1,
+    "voice": "ar-EG-ShakirNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 49392,
+    "sha256": "8a55966956c268cc1ccc6400aa1a5c9beb317ae4a989583ed71738803584de79"
+  },
+  {
+    "locale": "ar-EG",
+    "voiceIndex": 1,
+    "voice": "ar-EG-ShakirNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 39456,
+    "sha256": "afaa0c8ab8cf4b7830bd777647e48a686040cab38c232d2ec9c30ceb7d8ecee1"
+  },
+  {
+    "locale": "bg-BG",
+    "voiceIndex": 0,
+    "voice": "bg-BG-KalinaNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 24048,
+    "sha256": "bd52d5b1e6847fc89db16476a4a70233587f75de207ff287ee2fe2d0fac2dcff"
+  },
+  {
+    "locale": "bg-BG",
+    "voiceIndex": 0,
+    "voice": "bg-BG-KalinaNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 20880,
+    "sha256": "3f077e8d3600be9fbba8ff752fbafec683b2aa1b06ba359dc781acdf7a5d1941"
+  },
+  {
+    "locale": "bg-BG",
+    "voiceIndex": 0,
+    "voice": "bg-BG-KalinaNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 43488,
+    "sha256": "d6d0ede48ab69ff8d8fb0b2d5bfe3acc2cd0851958e5bbdccd436c063cdf009d"
+  },
+  {
+    "locale": "bg-BG",
+    "voiceIndex": 0,
+    "voice": "bg-BG-KalinaNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 31824,
+    "sha256": "667b72b6e18c80080a246207eeffa62e8072917a4a8d2639a0c721a447273236"
+  },
+  {
+    "locale": "bg-BG",
+    "voiceIndex": 0,
+    "voice": "bg-BG-KalinaNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 34992,
+    "sha256": "a65419eba59ffbc3927e4f0b3fe89723d62df31c5f72eef3e8aea9e101944c02"
+  },
+  {
+    "locale": "bg-BG",
+    "voiceIndex": 0,
+    "voice": "bg-BG-KalinaNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 52992,
+    "sha256": "68441bacdc5ec1054088c2c94a227462842be88b232ccc6a0fade0a63b5ac746"
+  },
+  {
+    "locale": "bg-BG",
+    "voiceIndex": 0,
+    "voice": "bg-BG-KalinaNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 50688,
+    "sha256": "520a53daf9a2b97bcdd779d95691f827ea2583fc58e8d711bc3c863b9aeea188"
+  },
+  {
+    "locale": "bg-BG",
+    "voiceIndex": 0,
+    "voice": "bg-BG-KalinaNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 42480,
+    "sha256": "dc7c75e4467b3f274f86d7fa2e67a227c0aa81d11e3fcba0c3794aa5218ce38a"
+  },
+  {
+    "locale": "bg-BG",
+    "voiceIndex": 1,
+    "voice": "bg-BG-BorislavNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 22176,
+    "sha256": "de76ec0aad845a28d6d05cf44c3b561b3561bbf382dcf52f0af809c7e546632a"
+  },
+  {
+    "locale": "bg-BG",
+    "voiceIndex": 1,
+    "voice": "bg-BG-BorislavNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 18144,
+    "sha256": "c76da6a7d5e1b77dfb261c05fa9c1cfbc271d38ead5c23391015926008afaea6"
+  },
+  {
+    "locale": "bg-BG",
+    "voiceIndex": 1,
+    "voice": "bg-BG-BorislavNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 40752,
+    "sha256": "c6074b4bb05d491cb576f6d06409e10bc6e45e4087cc0c4938daf5cd830b97bf"
+  },
+  {
+    "locale": "bg-BG",
+    "voiceIndex": 1,
+    "voice": "bg-BG-BorislavNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 30960,
+    "sha256": "b7142256c940ff6075e4cd6c59e9177314b2fc3c6d011d6d7fed023423ccdfc1"
+  },
+  {
+    "locale": "bg-BG",
+    "voiceIndex": 1,
+    "voice": "bg-BG-BorislavNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 32544,
+    "sha256": "0b07da158e7361ecf4d94c701ea2aee854be89abfa6a47f5f235b8f27374886a"
+  },
+  {
+    "locale": "bg-BG",
+    "voiceIndex": 1,
+    "voice": "bg-BG-BorislavNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 49680,
+    "sha256": "8bdaf36d6dd857c3cd9f1ea9ace464867cb6d0203da246d6e48b5e4b56e21a2c"
+  },
+  {
+    "locale": "bg-BG",
+    "voiceIndex": 1,
+    "voice": "bg-BG-BorislavNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 50112,
+    "sha256": "6e839b1d04ff3acf620d41c97cd6c8d047a2c214ad1a0443241fb85e954b571c"
+  },
+  {
+    "locale": "bg-BG",
+    "voiceIndex": 1,
+    "voice": "bg-BG-BorislavNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 41040,
+    "sha256": "0c5dc04d98e3a541cdf278eb847bdab0d4586933116da06ccbf01e8eaa6461ae"
+  },
+  {
+    "locale": "bn-BD",
+    "voiceIndex": 0,
+    "voice": "bn-BD-NabanitaNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 24768,
+    "sha256": "c99fe10395c7c0e05a393045599cae2e7049f4b559bb1d80bb5908ef54af1e1c"
+  },
+  {
+    "locale": "bn-BD",
+    "voiceIndex": 0,
+    "voice": "bn-BD-NabanitaNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 23040,
+    "sha256": "e83c77646c1b9405993d1118e8a6ba7d3b466bd56377d827993622868edb4b43"
+  },
+  {
+    "locale": "bn-BD",
+    "voiceIndex": 0,
+    "voice": "bn-BD-NabanitaNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 37872,
+    "sha256": "0afb1e3ac625ecf824a6873858c96e742167743d90d74921b09ab948ba30d948"
+  },
+  {
+    "locale": "bn-BD",
+    "voiceIndex": 0,
+    "voice": "bn-BD-NabanitaNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 30816,
+    "sha256": "ca76f8be1a0e54519547d5b4915ee8012c42dbf9e9b23ec8d73bac2c8f456fe7"
+  },
+  {
+    "locale": "bn-BD",
+    "voiceIndex": 0,
+    "voice": "bn-BD-NabanitaNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 37296,
+    "sha256": "a6fd921277c5e7714c598eea8581dcc3cc5c2adcdbc20caa9cf1a25c36081f3e"
+  },
+  {
+    "locale": "bn-BD",
+    "voiceIndex": 0,
+    "voice": "bn-BD-NabanitaNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 52128,
+    "sha256": "08b30e874bd33dd1a0e429df69643097f2cce1b2b278e35b5eadb27f386f1f93"
+  },
+  {
+    "locale": "bn-BD",
+    "voiceIndex": 0,
+    "voice": "bn-BD-NabanitaNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 54720,
+    "sha256": "f0c9c5a17aba029c54f23b56c8678894e2c6262d5547f73f5ab4be87328094f5"
+  },
+  {
+    "locale": "bn-BD",
+    "voiceIndex": 0,
+    "voice": "bn-BD-NabanitaNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 40608,
+    "sha256": "6f88855a141348bd7345c23cab0ee248b3ec41f19fa850751a55223e7ede02c1"
+  },
+  {
+    "locale": "bn-BD",
+    "voiceIndex": 1,
+    "voice": "bn-BD-PradeepNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 24912,
+    "sha256": "d2875a3df0b4e5ab5e0aa33413dcf8dc3c0ced0270a03f8436d0a0006dde7e3d"
+  },
+  {
+    "locale": "bn-BD",
+    "voiceIndex": 1,
+    "voice": "bn-BD-PradeepNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 23184,
+    "sha256": "8e4d8f38bf8ee6d28c3527d15ca408bb081b5e5a59b459c3671e07ce6c5a9583"
+  },
+  {
+    "locale": "bn-BD",
+    "voiceIndex": 1,
+    "voice": "bn-BD-PradeepNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 37440,
+    "sha256": "70e3e26a14ae5b50141227e91211045bbff8615af9d276a3d0672c9b9c746093"
+  },
+  {
+    "locale": "bn-BD",
+    "voiceIndex": 1,
+    "voice": "bn-BD-PradeepNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 31104,
+    "sha256": "e724ec8e84abca89b1ed679ca9ac757127eb697f4f1d1ec6c9d9d4f0d6832c63"
+  },
+  {
+    "locale": "bn-BD",
+    "voiceIndex": 1,
+    "voice": "bn-BD-PradeepNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 37008,
+    "sha256": "49ed18fdb593e5a19f2be710e6a711ff776cbc9b230d5e3b0deec71a898f9d50"
+  },
+  {
+    "locale": "bn-BD",
+    "voiceIndex": 1,
+    "voice": "bn-BD-PradeepNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 50976,
+    "sha256": "3dc50d5c4b2ff02d1d597a320d40059c06402d8748e6a42833d169fa7029359c"
+  },
+  {
+    "locale": "bn-BD",
+    "voiceIndex": 1,
+    "voice": "bn-BD-PradeepNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 53856,
+    "sha256": "59d284938057c44dd70390b1986e4125db24797964167420c9f419e86b908abc"
+  },
+  {
+    "locale": "bn-BD",
+    "voiceIndex": 1,
+    "voice": "bn-BD-PradeepNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 39024,
+    "sha256": "fd2eed781570b8b0c361ae173c66edd56875b8a28d3b2013d578ebca3925e198"
+  },
+  {
+    "locale": "cs-CZ",
+    "voiceIndex": 0,
+    "voice": "cs-CZ-VlastaNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 23616,
+    "sha256": "df507af08b425c6f592aa717e5a0b3e309582db501fcd859d1753c13a408c5a9"
+  },
+  {
+    "locale": "cs-CZ",
+    "voiceIndex": 0,
+    "voice": "cs-CZ-VlastaNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 19296,
+    "sha256": "4ab157dded78cba0efe8851f2ee6fe76e787b820b14e9ceffdf18ef81ad78178"
+  },
+  {
+    "locale": "cs-CZ",
+    "voiceIndex": 0,
+    "voice": "cs-CZ-VlastaNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 41760,
+    "sha256": "53ffb3cd273f8adf46f47a049cf45e49b9750e178a86faeb0fa78e6401b6c6ee"
+  },
+  {
+    "locale": "cs-CZ",
+    "voiceIndex": 0,
+    "voice": "cs-CZ-VlastaNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 33120,
+    "sha256": "49ee8e5aeab78c191401f4823d7f176750622485e175196717ec30abaaf9971b"
+  },
+  {
+    "locale": "cs-CZ",
+    "voiceIndex": 0,
+    "voice": "cs-CZ-VlastaNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 34848,
+    "sha256": "0f7e2d02453774db0a9d274c2193785a81a818997c4fbe8ad99de59511b019a0"
+  },
+  {
+    "locale": "cs-CZ",
+    "voiceIndex": 0,
+    "voice": "cs-CZ-VlastaNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 51408,
+    "sha256": "d4bc498219dcdc78ed8c31d39ab4741bc9a39875874170c78df8acf8b1ddf490"
+  },
+  {
+    "locale": "cs-CZ",
+    "voiceIndex": 0,
+    "voice": "cs-CZ-VlastaNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 45792,
+    "sha256": "299041d021568a7afcceb55632b1d14f2796c940e0e4f45f6a3d4797b682e4d3"
+  },
+  {
+    "locale": "cs-CZ",
+    "voiceIndex": 0,
+    "voice": "cs-CZ-VlastaNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 37440,
+    "sha256": "ae1f651d68ac3ed1f1261962af9072db519f1c5005fd74905cc29247354f6bf7"
+  },
+  {
+    "locale": "cs-CZ",
+    "voiceIndex": 1,
+    "voice": "cs-CZ-AntoninNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 20016,
+    "sha256": "c7a368a8052d54d8033e72a2a2704fbf28a99b3675b152a236995b7721511dab"
+  },
+  {
+    "locale": "cs-CZ",
+    "voiceIndex": 1,
+    "voice": "cs-CZ-AntoninNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
     "bytes": 17568,
-    "sha256": "fd98aa7179a7546da5138b8291d56e748e89a6d8619f102d587eea9e9f93897d"
+    "sha256": "f53ac1ec8bf7ea04fddf8f7be7c8c7a229e61dfe3d7c2efb109e6217fb2e4667"
   },
   {
-    "locale": "sv-SE",
-    "phraseId": "weather",
-    "bytes": 18432,
-    "sha256": "f222a574ba59acc9b3d3f95e2a0f9ee75b6819c3a10a1fd9571c0803cade7557"
+    "locale": "cs-CZ",
+    "voiceIndex": 1,
+    "voice": "cs-CZ-AntoninNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 34848,
+    "sha256": "e403859cf4141961b2ca40ecac5e087ac20623c584566282db05687ff87e0d12"
   },
   {
-    "locale": "sw-KE",
-    "phraseId": "coffee",
-    "bytes": 18000,
-    "sha256": "ffde7f704e9adc01e94e786999cf8e56c4ae09497c1c9ea1ab07277fd3baab40"
+    "locale": "cs-CZ",
+    "voiceIndex": 1,
+    "voice": "cs-CZ-AntoninNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 27792,
+    "sha256": "bab7aeb914ed82f2fcf467de706559958cba7b36a8ec60b907d1e256a4fdb8cb"
   },
   {
-    "locale": "sw-KE",
-    "phraseId": "hello",
-    "bytes": 17136,
-    "sha256": "c5962b79a7b144863ebd23bf96482077e9a254ec39bd367eac221586769d428a"
+    "locale": "cs-CZ",
+    "voiceIndex": 1,
+    "voice": "cs-CZ-AntoninNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 28944,
+    "sha256": "666f9246ef24af4c91e421dd556dca480bcc4d634216d415aa1c7f51bd5ef692"
   },
   {
-    "locale": "sw-KE",
-    "phraseId": "weather",
-    "bytes": 20160,
-    "sha256": "9e0cbebbd290710c0a37b7d25dfd5a319b023ae4b8bd30e963fcc33fb0e51bdf"
+    "locale": "cs-CZ",
+    "voiceIndex": 1,
+    "voice": "cs-CZ-AntoninNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 43056,
+    "sha256": "49ffe5b81a3568f1fc9ab4f5a92c427328713cd21e7b61939ca35872ce55363e"
   },
   {
-    "locale": "ta-IN",
-    "phraseId": "coffee",
-    "bytes": 17568,
-    "sha256": "650137d6d9972d5da8ccfe65d81cec1f6b569ff29354b5f0657f63cd51a8d7c0"
+    "locale": "cs-CZ",
+    "voiceIndex": 1,
+    "voice": "cs-CZ-AntoninNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 38448,
+    "sha256": "e589c76033471c69016ade206176afcb7228f1789bbe557dd36be697a316ce22"
   },
   {
-    "locale": "ta-IN",
-    "phraseId": "hello",
-    "bytes": 18864,
-    "sha256": "73f9ad889cd0bb7c7aa79e7ef4a0409a4249b58e02a1b760d0a95221fab39930"
+    "locale": "cs-CZ",
+    "voiceIndex": 1,
+    "voice": "cs-CZ-AntoninNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 32112,
+    "sha256": "ac473c35d2e3bef5e1f31eb9e717ec823d167e4b99258098553ed5b2ff56b422"
   },
   {
-    "locale": "ta-IN",
-    "phraseId": "weather",
-    "bytes": 20448,
-    "sha256": "45f92800f58ac1cb920af3c874db9c2d57ba93f21555ffd86bdc0241f6d8827f"
+    "locale": "cy-GB",
+    "voiceIndex": 0,
+    "voice": "cy-GB-NiaNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 24480,
+    "sha256": "54dc651112de4641c02b6f4ea088b3ec21dabb30c056620226af51d32cf47041"
   },
   {
-    "locale": "th-TH",
-    "phraseId": "coffee",
-    "bytes": 14544,
-    "sha256": "22da851b7d8e85b2bce916ebdd0a8e596d5a8f261e54b942230786cf3a60832e"
+    "locale": "cy-GB",
+    "voiceIndex": 0,
+    "voice": "cy-GB-NiaNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 23760,
+    "sha256": "9b735f80a824af773918feb18777de4248678d68bd1fee9f9fd5f3ba3a7f4313"
   },
   {
-    "locale": "th-TH",
-    "phraseId": "hello",
-    "bytes": 18720,
-    "sha256": "d23c09ad1d8c993f7ff588fd5517ee5fd3730599e90bf8737af1f1dc22b04402"
+    "locale": "cy-GB",
+    "voiceIndex": 0,
+    "voice": "cy-GB-NiaNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 38016,
+    "sha256": "ab88460e70fbb2a7f87533625853b24ea50b5a3345ac7e0dc880d8b1b5ba30c3"
   },
   {
-    "locale": "th-TH",
-    "phraseId": "weather",
-    "bytes": 15408,
-    "sha256": "c8e18c0aeb29cd2e7ba1d75df4a25c2ee21256fdded09e061f5db41ecc8ad56d"
+    "locale": "cy-GB",
+    "voiceIndex": 0,
+    "voice": "cy-GB-NiaNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 36288,
+    "sha256": "d6e0e71cf175ea65321e5a29abb285ccba75202a4cea15376ab2dc514377fdd6"
   },
   {
-    "locale": "tr-TR",
-    "phraseId": "coffee",
-    "bytes": 18432,
-    "sha256": "8371c064f934c26b9fcc63079d165858cfc5e9f15f4480d7c2fd2800a38e716c"
+    "locale": "cy-GB",
+    "voiceIndex": 0,
+    "voice": "cy-GB-NiaNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 33696,
+    "sha256": "a29c8c6141e7ddda4006e8ece9fa91938d8cad35403dcb7d38246362daf8c554"
   },
   {
-    "locale": "tr-TR",
-    "phraseId": "hello",
-    "bytes": 15984,
-    "sha256": "97cece6eb0fc07b294bc63d28d090bb249e880a71029cac7dd2aff38c1c40953"
+    "locale": "cy-GB",
+    "voiceIndex": 0,
+    "voice": "cy-GB-NiaNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 51984,
+    "sha256": "a9d656c388ae3d4f9d003b6e5d6211421f0e9815de6add79b6ea72b51cb08547"
   },
   {
-    "locale": "tr-TR",
-    "phraseId": "weather",
+    "locale": "cy-GB",
+    "voiceIndex": 0,
+    "voice": "cy-GB-NiaNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 48384,
+    "sha256": "c6a592be6ce6906c244ac4ef87b97507d5d97d45cb3c8348ae138e4a3e68cd86"
+  },
+  {
+    "locale": "cy-GB",
+    "voiceIndex": 0,
+    "voice": "cy-GB-NiaNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 44208,
+    "sha256": "adf85832769dd8f96cda984336e3b04329dd07b52bc42e044b2733185f24ac3e"
+  },
+  {
+    "locale": "cy-GB",
+    "voiceIndex": 1,
+    "voice": "cy-GB-AledNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 22464,
+    "sha256": "bd90603e3dde8f02222b97518dc9d45dbe9fda60359094246b4f1c8d3665433d"
+  },
+  {
+    "locale": "cy-GB",
+    "voiceIndex": 1,
+    "voice": "cy-GB-AledNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 21456,
+    "sha256": "42e2b4647b9c129e8aa5efb8734f496c6da7ca46c020416643ebb48f686ac2fd"
+  },
+  {
+    "locale": "cy-GB",
+    "voiceIndex": 1,
+    "voice": "cy-GB-AledNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 34704,
+    "sha256": "13e8cadc5a6bb102e9ad20b7fe319caca8ee8c38e7317a193d098611fea9d31f"
+  },
+  {
+    "locale": "cy-GB",
+    "voiceIndex": 1,
+    "voice": "cy-GB-AledNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 32976,
+    "sha256": "a5d8aacb415e2e6a34b34cf5ced36025e8f691a15727d58d550f55217beb439e"
+  },
+  {
+    "locale": "cy-GB",
+    "voiceIndex": 1,
+    "voice": "cy-GB-AledNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 31968,
+    "sha256": "829c19596952fd00e081d60ea0387b91bd2663d0e44d8c8575d7d5ab10ba5b22"
+  },
+  {
+    "locale": "cy-GB",
+    "voiceIndex": 1,
+    "voice": "cy-GB-AledNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 49104,
+    "sha256": "d5b6bf9daf664b788774f10443d8689e204dbef6add219aa2a57296a97ff8b24"
+  },
+  {
+    "locale": "cy-GB",
+    "voiceIndex": 1,
+    "voice": "cy-GB-AledNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 44928,
+    "sha256": "a3f4408e91e0f5bf09fe5ad044b3aab5eab971e979200a44a817418126e0c3b0"
+  },
+  {
+    "locale": "cy-GB",
+    "voiceIndex": 1,
+    "voice": "cy-GB-AledNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 40320,
+    "sha256": "01346f01055c31b4a2f8eb743c13726461d3848bf25af0b644ececb50d167d60"
+  },
+  {
+    "locale": "da-DK",
+    "voiceIndex": 0,
+    "voice": "da-DK-ChristelNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 20736,
+    "sha256": "aeb09d9c7c51e5063419b794c179394eef1f3a732dfec6411f41a8555242a358"
+  },
+  {
+    "locale": "da-DK",
+    "voiceIndex": 0,
+    "voice": "da-DK-ChristelNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 21456,
+    "sha256": "5a54faf5c054cbb9de24cd85a2071f3454b793e0f38af2b07d1c184133413f81"
+  },
+  {
+    "locale": "da-DK",
+    "voiceIndex": 0,
+    "voice": "da-DK-ChristelNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 30672,
+    "sha256": "1c553e9594e7342d3bf95b71cb29ee06a77023c64f87753b192b1a48ce707414"
+  },
+  {
+    "locale": "da-DK",
+    "voiceIndex": 0,
+    "voice": "da-DK-ChristelNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 27072,
+    "sha256": "5213403bdc33ff25e2fafc4d15d9ffaa100910595c4a526dc63bfe7ed10b727b"
+  },
+  {
+    "locale": "da-DK",
+    "voiceIndex": 0,
+    "voice": "da-DK-ChristelNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 30672,
+    "sha256": "7e73bdb74826cc3ea86c1b8b7e8e64127b98c3cf925abbe6eefcc939772239ab"
+  },
+  {
+    "locale": "da-DK",
+    "voiceIndex": 0,
+    "voice": "da-DK-ChristelNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 47952,
+    "sha256": "8f5e9f93d44405177662c83e94b27c6f7e352f7b0d06d8bef8223e1dd364f659"
+  },
+  {
+    "locale": "da-DK",
+    "voiceIndex": 0,
+    "voice": "da-DK-ChristelNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 35712,
+    "sha256": "fb9768c26de12121562e73d5ea135376832c91914bb1a01f440aaa803b6e39a7"
+  },
+  {
+    "locale": "da-DK",
+    "voiceIndex": 0,
+    "voice": "da-DK-ChristelNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 31968,
+    "sha256": "fc927d002114d609307295d5348894645cddaf16e81b686415b3d18d3f376915"
+  },
+  {
+    "locale": "da-DK",
+    "voiceIndex": 1,
+    "voice": "da-DK-JeppeNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 21024,
+    "sha256": "084d4f4845540eee80908059884ad2cdb382c5c382946bc9674e8014a5a0a0ff"
+  },
+  {
+    "locale": "da-DK",
+    "voiceIndex": 1,
+    "voice": "da-DK-JeppeNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 19440,
+    "sha256": "419d09b375e9aa257d240c49cabe82d9a3498c6e09e062233f6a0e8b5125e927"
+  },
+  {
+    "locale": "da-DK",
+    "voiceIndex": 1,
+    "voice": "da-DK-JeppeNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 31824,
+    "sha256": "cad144b026c07d3eef6512f0886a1caf6af05978cd578d0560728843675f10a5"
+  },
+  {
+    "locale": "da-DK",
+    "voiceIndex": 1,
+    "voice": "da-DK-JeppeNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 27072,
+    "sha256": "5272f51196bcd759c17515d976d8a80dd06cfcec57cba7e5d3ae8b776b3d1bba"
+  },
+  {
+    "locale": "da-DK",
+    "voiceIndex": 1,
+    "voice": "da-DK-JeppeNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 30528,
+    "sha256": "bd16b1848274b6813b4596fd71c90f324d84edd496497131c0f6fba2a7f47d30"
+  },
+  {
+    "locale": "da-DK",
+    "voiceIndex": 1,
+    "voice": "da-DK-JeppeNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 49680,
+    "sha256": "ba73154036f77a8272358f41f62a881cde333ef22ac71151757471a8bed4f7c9"
+  },
+  {
+    "locale": "da-DK",
+    "voiceIndex": 1,
+    "voice": "da-DK-JeppeNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 37296,
+    "sha256": "1452d56f3f0a1b6c079bacdd80011ac3bc96a07958b0b64c96776f82440cac3a"
+  },
+  {
+    "locale": "da-DK",
+    "voiceIndex": 1,
+    "voice": "da-DK-JeppeNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 32544,
+    "sha256": "2a04e50a1023f7835c6a97b4c8f3384f87ae7ed60dc4127fc4c388d3460c0a63"
+  },
+  {
+    "locale": "de-DE",
+    "voiceIndex": 0,
+    "voice": "de-DE-AmalaNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 24624,
+    "sha256": "2dc789be607aab50b2aa3060126635c47db533fa8d9cb3e5ed70098635945a59"
+  },
+  {
+    "locale": "de-DE",
+    "voiceIndex": 0,
+    "voice": "de-DE-AmalaNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 27072,
+    "sha256": "cd15c34a344166ccc639b3c2c03f533e3632ace8f7acd3f6423abf2788985ebb"
+  },
+  {
+    "locale": "de-DE",
+    "voiceIndex": 0,
+    "voice": "de-DE-AmalaNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 37008,
+    "sha256": "5872f57e42db986ec8091902741d94fc8a4ff0039b2b827979a56a0748f88322"
+  },
+  {
+    "locale": "de-DE",
+    "voiceIndex": 0,
+    "voice": "de-DE-AmalaNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 36576,
+    "sha256": "d98cad3c73c82d66c8f20691141cfdbca2cd7171ad78e446742326741b675ee2"
+  },
+  {
+    "locale": "de-DE",
+    "voiceIndex": 0,
+    "voice": "de-DE-AmalaNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 40176,
+    "sha256": "4a3b53c8f561a5cb3d10ad3382cefeb351401272b13da3e2233441a43a654c07"
+  },
+  {
+    "locale": "de-DE",
+    "voiceIndex": 0,
+    "voice": "de-DE-AmalaNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 56304,
+    "sha256": "d1a8eb1ea39abb06a6b0cf25d03ef75b4fa795d705916ab504351888e2867919"
+  },
+  {
+    "locale": "de-DE",
+    "voiceIndex": 0,
+    "voice": "de-DE-AmalaNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 46800,
+    "sha256": "1ef2c346046db9fcce3b3993ea122d30ee44f7fd059964b348af383a029cf2d5"
+  },
+  {
+    "locale": "de-DE",
+    "voiceIndex": 0,
+    "voice": "de-DE-AmalaNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 42912,
+    "sha256": "064ecca36156ac7d504b133ec83639aeb7631442f4b3c3c013d1d7d952d14336"
+  },
+  {
+    "locale": "de-DE",
+    "voiceIndex": 1,
+    "voice": "de-DE-ConradNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 20592,
+    "sha256": "0361a1ace114c11495c69b6baec100a41d0b8f0fa6720e8b68bad94c84d7d5f6"
+  },
+  {
+    "locale": "de-DE",
+    "voiceIndex": 1,
+    "voice": "de-DE-ConradNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 20736,
+    "sha256": "4550fa96cd9e8417938cae4274dcd10b8e68f237382bface69c3e73c8fe08547"
+  },
+  {
+    "locale": "de-DE",
+    "voiceIndex": 1,
+    "voice": "de-DE-ConradNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 34704,
+    "sha256": "d9fd0eb864d27c1b51e29cbc787d9ac9d70f619d95530e283be1a681b9d83996"
+  },
+  {
+    "locale": "de-DE",
+    "voiceIndex": 1,
+    "voice": "de-DE-ConradNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 34848,
+    "sha256": "ffff1cec80763b1070f1d162dd3991008ae02a5847f970b43ed090d489125465"
+  },
+  {
+    "locale": "de-DE",
+    "voiceIndex": 1,
+    "voice": "de-DE-ConradNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 34848,
+    "sha256": "c246ad644bce37921acfd8c9f09748f117064003a8d1e4efa0738c859735e793"
+  },
+  {
+    "locale": "de-DE",
+    "voiceIndex": 1,
+    "voice": "de-DE-ConradNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 48384,
+    "sha256": "bec2807add324d7e0022fe9e46bfc2a4bb760b0b35ca39fbc8f38dcced0d0f9c"
+  },
+  {
+    "locale": "de-DE",
+    "voiceIndex": 1,
+    "voice": "de-DE-ConradNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 42336,
+    "sha256": "d164637a778250c94658924e7cd45fdfcf969c30b01af10e10344a3144095462"
+  },
+  {
+    "locale": "de-DE",
+    "voiceIndex": 1,
+    "voice": "de-DE-ConradNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 41184,
+    "sha256": "432e1f54f5f888eaebfd3287396ec87fbca3271d7cd301ceee251537f249c3ce"
+  },
+  {
+    "locale": "el-GR",
+    "voiceIndex": 0,
+    "voice": "el-GR-AthinaNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 21744,
+    "sha256": "6b4ab6b638613da5654f768ed27edcb95979907a6b2b1ed083738ab37df6c87b"
+  },
+  {
+    "locale": "el-GR",
+    "voiceIndex": 0,
+    "voice": "el-GR-AthinaNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 18288,
+    "sha256": "6d0bde4cf82a708f4a9c495707a54eb60d644b75b6f098476801974c1c43d631"
+  },
+  {
+    "locale": "el-GR",
+    "voiceIndex": 0,
+    "voice": "el-GR-AthinaNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 31968,
+    "sha256": "e470cf2dc8ad4b68015477a558a96d81abef8ed50caeefa4c7310faf1302ca92"
+  },
+  {
+    "locale": "el-GR",
+    "voiceIndex": 0,
+    "voice": "el-GR-AthinaNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 29520,
+    "sha256": "f703e72300ca8cc68f0381e6c3641b716a5d392a19d5e50c5020058b33f0c069"
+  },
+  {
+    "locale": "el-GR",
+    "voiceIndex": 0,
+    "voice": "el-GR-AthinaNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 29376,
+    "sha256": "13f81246b1e9af1913473f7bccfeeefbc2bd90198016be66194ca76a7c431112"
+  },
+  {
+    "locale": "el-GR",
+    "voiceIndex": 0,
+    "voice": "el-GR-AthinaNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 40752,
+    "sha256": "29a4ec2847a60f86af2ac39fdf0e8347e4147af0391e552d50af9a4ba1be512c"
+  },
+  {
+    "locale": "el-GR",
+    "voiceIndex": 0,
+    "voice": "el-GR-AthinaNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 41904,
+    "sha256": "d492b710db402ab4263de0d8b2b5aef45990c04b33fe727ee40c8fd6de898788"
+  },
+  {
+    "locale": "el-GR",
+    "voiceIndex": 0,
+    "voice": "el-GR-AthinaNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 37008,
+    "sha256": "779f76f1d99abb5c236889f39e0ed2ed3f5702ee58f123a354a7f158306bb6b0"
+  },
+  {
+    "locale": "el-GR",
+    "voiceIndex": 1,
+    "voice": "el-GR-NestorasNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 23040,
+    "sha256": "4371e290304906ddf08a04468aa104309ee535efe5ee1c3b0756bea9777fd49d"
+  },
+  {
+    "locale": "el-GR",
+    "voiceIndex": 1,
+    "voice": "el-GR-NestorasNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 19008,
+    "sha256": "91a8ba970766f1758667e9005cd931fcb5b86029220cba86a529c61efef52b71"
+  },
+  {
+    "locale": "el-GR",
+    "voiceIndex": 1,
+    "voice": "el-GR-NestorasNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 33840,
+    "sha256": "0e2565e26483402a5b69bc7c7ac4fb77c26f089457850f4b67f151ac32886006"
+  },
+  {
+    "locale": "el-GR",
+    "voiceIndex": 1,
+    "voice": "el-GR-NestorasNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 31392,
+    "sha256": "7193dfd7964c4bc83c23d40371d174065b2b07480600530764e681505f1fb62d"
+  },
+  {
+    "locale": "el-GR",
+    "voiceIndex": 1,
+    "voice": "el-GR-NestorasNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 29808,
+    "sha256": "ecc01104ea20e924164218253567f32115af4e630aeec97cacd8cbb79a29f483"
+  },
+  {
+    "locale": "el-GR",
+    "voiceIndex": 1,
+    "voice": "el-GR-NestorasNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 41616,
+    "sha256": "fae96cf414f5482fe6f5e3a7f93ab785c5c4f59d644289c96df88c27e27cfd2e"
+  },
+  {
+    "locale": "el-GR",
+    "voiceIndex": 1,
+    "voice": "el-GR-NestorasNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 40464,
+    "sha256": "9865de24002bb3b84430143a66474e8f46e69d8ef7dec0e24a2d9f2599fc425b"
+  },
+  {
+    "locale": "el-GR",
+    "voiceIndex": 1,
+    "voice": "el-GR-NestorasNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 39168,
+    "sha256": "1591e4d74130e520f09aaaad2b1b5b50385d21f5c096f04d6577697489ad1ec3"
+  },
+  {
+    "locale": "en-US",
+    "voiceIndex": 0,
+    "voice": "en-US-AnaNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 26496,
+    "sha256": "291e2bbe13d31ccf5d5e59c0eb3891217437c6c6e1dc156bbf87f7be8db0bf41"
+  },
+  {
+    "locale": "en-US",
+    "voiceIndex": 0,
+    "voice": "en-US-AnaNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 22464,
+    "sha256": "dcc8cc6d0188cb1e67bd1cad3d52a0961ad4d11e580fc655afe15177eaef8c4b"
+  },
+  {
+    "locale": "en-US",
+    "voiceIndex": 0,
+    "voice": "en-US-AnaNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 39024,
+    "sha256": "b1c281e41fe3e37da32d45b820d14c8df5777471d9f00be028117697d66fcdb6"
+  },
+  {
+    "locale": "en-US",
+    "voiceIndex": 0,
+    "voice": "en-US-AnaNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 32688,
+    "sha256": "ca36d1c940e209dda321f3f8b1c4be8acbfbb2fcb1e13058df19bd74b7db0e6f"
+  },
+  {
+    "locale": "en-US",
+    "voiceIndex": 0,
+    "voice": "en-US-AnaNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 31536,
+    "sha256": "546c5c5d2ea4d9cff05fc55aa1bfbeb0bc7b5e411abdc0888d27ad55460d4973"
+  },
+  {
+    "locale": "en-US",
+    "voiceIndex": 0,
+    "voice": "en-US-AnaNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 56448,
+    "sha256": "c9b0792d5a185dba09f33efadf67c5f3a886521e2366a87a4c82fd90512108e3"
+  },
+  {
+    "locale": "en-US",
+    "voiceIndex": 0,
+    "voice": "en-US-AnaNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 45936,
+    "sha256": "f0d39a8cfbc1cdaa7f4a58132397200d75eeb66eb7d3f3056a9064f0545c404f"
+  },
+  {
+    "locale": "en-US",
+    "voiceIndex": 0,
+    "voice": "en-US-AnaNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 39456,
+    "sha256": "abb5d0e3603361e4912dccb410daf8c0a3d4e2a833eb5b9445449bfdb1e777e6"
+  },
+  {
+    "locale": "en-US",
+    "voiceIndex": 1,
+    "voice": "en-US-AndrewMultilingualNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 20304,
+    "sha256": "8c99b5eacace8cfb9d1cfd319a423b258bccdbf938f4c12ce5767bd84385535b"
+  },
+  {
+    "locale": "en-US",
+    "voiceIndex": 1,
+    "voice": "en-US-AndrewMultilingualNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
     "bytes": 15840,
-    "sha256": "b7073b5d493eae2f9729247c866baa2375c2b063151fae35d16c3d66bac5182b"
+    "sha256": "4d1c28523be23b020e372cfb1346d06f39699616501646e9bb3c2414cdeded93"
   },
   {
-    "locale": "uk-UA",
-    "phraseId": "coffee",
-    "bytes": 18000,
-    "sha256": "b9374fc55670dfa2b15ee76dee65e4843d83df286fa20afb7364b70d4c995417"
+    "locale": "en-US",
+    "voiceIndex": 1,
+    "voice": "en-US-AndrewMultilingualNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 36864,
+    "sha256": "2d7fbb62a7218edffd0601b7163a404ffa2e361eecd282c317e517578e4768c8"
   },
   {
-    "locale": "uk-UA",
-    "phraseId": "hello",
-    "bytes": 19872,
-    "sha256": "2758014386f94b0f5fb6a8de56c713324d19c34703279d33960b1aa659d17307"
+    "locale": "en-US",
+    "voiceIndex": 1,
+    "voice": "en-US-AndrewMultilingualNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 22320,
+    "sha256": "225f5edf7db88974316dc0e46cb07de113503b48b4df02de80d5d10d582f18b7"
   },
   {
-    "locale": "uk-UA",
-    "phraseId": "weather",
-    "bytes": 17712,
-    "sha256": "250677870227cdef797af5e6a2f73992a4af9d685bba90eb7441c51553812963"
+    "locale": "en-US",
+    "voiceIndex": 1,
+    "voice": "en-US-AndrewMultilingualNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 25200,
+    "sha256": "ec2141278998e7f0a503f81981248131265b637713a05878ad1eeec6eee3fef0"
   },
   {
-    "locale": "ur-PK",
-    "phraseId": "coffee",
-    "bytes": 17568,
-    "sha256": "c67e6e7e29336ef23c9317592c7d21439e9e87e3b3c25f394a92364fdf0aac1c"
+    "locale": "en-US",
+    "voiceIndex": 1,
+    "voice": "en-US-AndrewMultilingualNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 52272,
+    "sha256": "b1b320ba3a105c3b03b59d302e0ebdceb218eeaac019cce67bfe30dd999e872a"
   },
   {
-    "locale": "ur-PK",
-    "phraseId": "hello",
-    "bytes": 14112,
-    "sha256": "a234a9f39fd5a64a916679fc78847543d565ba56efac46c7f112e2ce52d9e5b3"
+    "locale": "en-US",
+    "voiceIndex": 1,
+    "voice": "en-US-AndrewMultilingualNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 40896,
+    "sha256": "f32e101cff48b24fa63fc757a85bc3a3f1fdf0c06090597251d97adc1ef77ca8"
   },
   {
-    "locale": "ur-PK",
-    "phraseId": "weather",
-    "bytes": 17424,
-    "sha256": "64964c379eb5368618607230716fcaca049567539b57970adfb134e22ab68922"
+    "locale": "en-US",
+    "voiceIndex": 1,
+    "voice": "en-US-AndrewMultilingualNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 33120,
+    "sha256": "77793f12fbfa80f1749f68fdebf1213555e3a4a175088fbb68b31cf2af84bbed"
   },
   {
-    "locale": "vi-VN",
-    "phraseId": "coffee",
+    "locale": "es-ES",
+    "voiceIndex": 0,
+    "voice": "es-ES-ElviraNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 25056,
+    "sha256": "d27a6755123cabab8c1775de3caf4b4997324838d501b1acdc40f3e1514f8461"
+  },
+  {
+    "locale": "es-ES",
+    "voiceIndex": 0,
+    "voice": "es-ES-ElviraNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 18864,
+    "sha256": "b93590e7a33c2aa0ec01862315d3cc1efcc2ae6c1fecb1722bf503b447d2aba2"
+  },
+  {
+    "locale": "es-ES",
+    "voiceIndex": 0,
+    "voice": "es-ES-ElviraNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 33264,
+    "sha256": "d7cf4f14a3f74a8c62282b67ad072b1e10905df3c2b06c7ca2ee2567c4f7f55d"
+  },
+  {
+    "locale": "es-ES",
+    "voiceIndex": 0,
+    "voice": "es-ES-ElviraNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 26064,
+    "sha256": "7d38ee4fc690e6a971528b2feadd3d0f019264ed2d5f82f59cbffb24d565e1c7"
+  },
+  {
+    "locale": "es-ES",
+    "voiceIndex": 0,
+    "voice": "es-ES-ElviraNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 34704,
+    "sha256": "dbcce716581765fe3299b9cf985ac0586faeab950aef484d7f19d2d2fca2dd7e"
+  },
+  {
+    "locale": "es-ES",
+    "voiceIndex": 0,
+    "voice": "es-ES-ElviraNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 49968,
+    "sha256": "3e5584ee9802380ea84bcfd9cb9d153ddeb812c9fe3a2fa5a73ec4d370a1d40d"
+  },
+  {
+    "locale": "es-ES",
+    "voiceIndex": 0,
+    "voice": "es-ES-ElviraNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 42480,
+    "sha256": "1a5672dacda782b3e3b72bab8e1cdb4cd4d17753ef5d1321a1af1ecbe42dc1b1"
+  },
+  {
+    "locale": "es-ES",
+    "voiceIndex": 0,
+    "voice": "es-ES-ElviraNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 39600,
+    "sha256": "d6dd404962ff68c80cea83722a2dd3db9d38384b0205d97522b254481a52d56e"
+  },
+  {
+    "locale": "es-ES",
+    "voiceIndex": 1,
+    "voice": "es-ES-AlvaroNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 25920,
+    "sha256": "0a943fec16595ff2f2013344730351f0db60ee2a39611167df3ac0eb62b49d86"
+  },
+  {
+    "locale": "es-ES",
+    "voiceIndex": 1,
+    "voice": "es-ES-AlvaroNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 18720,
+    "sha256": "8e2a1abef4be596e55235799cf5b5b376830edcb3486a02d446161110ee4b725"
+  },
+  {
+    "locale": "es-ES",
+    "voiceIndex": 1,
+    "voice": "es-ES-AlvaroNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 32688,
+    "sha256": "ce1ddaa7e5894490fb85580a0a01e6bfa3cb9381cdd77aa56728b9ccd6cd90ab"
+  },
+  {
+    "locale": "es-ES",
+    "voiceIndex": 1,
+    "voice": "es-ES-AlvaroNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 25488,
+    "sha256": "504563b77cd2c1dd21aa16d7f8e8c8444115e85ebeb020e705619c118637b38e"
+  },
+  {
+    "locale": "es-ES",
+    "voiceIndex": 1,
+    "voice": "es-ES-AlvaroNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 35280,
+    "sha256": "da1e189b4913f198ad6e6c086506822f8716e38f3771190e960168fe794e8e4c"
+  },
+  {
+    "locale": "es-ES",
+    "voiceIndex": 1,
+    "voice": "es-ES-AlvaroNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 51264,
+    "sha256": "f720a0621ec9bf7cd5a282b2d26d7aec0bda27bee9e7c6ecd1e6c644bef9213a"
+  },
+  {
+    "locale": "es-ES",
+    "voiceIndex": 1,
+    "voice": "es-ES-AlvaroNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 37728,
+    "sha256": "91d60c1ebc0d91c5c7ccd8c9e274dc8ea9948743d5581ef5a0104b045696be8d"
+  },
+  {
+    "locale": "es-ES",
+    "voiceIndex": 1,
+    "voice": "es-ES-AlvaroNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 39600,
+    "sha256": "5804f6d8bc97797a9883c7a891476845c8537cacb7510a7b8fd4f2f76beecbec"
+  },
+  {
+    "locale": "fa-IR",
+    "voiceIndex": 0,
+    "voice": "fa-IR-DilaraNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 21744,
+    "sha256": "5b21472b8c2ac98317d145cd9ef0982e30e9eb1891ebd1373b984145c60eb55f"
+  },
+  {
+    "locale": "fa-IR",
+    "voiceIndex": 0,
+    "voice": "fa-IR-DilaraNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 21888,
+    "sha256": "3d3ce2c986f5b417658c80ab2af0f1253f52dfe9ceef156f7bd73352a76be5a7"
+  },
+  {
+    "locale": "fa-IR",
+    "voiceIndex": 0,
+    "voice": "fa-IR-DilaraNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 39312,
+    "sha256": "9286d27149f1c703d9d6e2c5925821a0f3fd26e5d453b8c1e36a6a40476b913f"
+  },
+  {
+    "locale": "fa-IR",
+    "voiceIndex": 0,
+    "voice": "fa-IR-DilaraNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 28944,
+    "sha256": "fe61cd0c46c95f756ee177d7572d96701344f440cbf5bb70860316cd8dc53e69"
+  },
+  {
+    "locale": "fa-IR",
+    "voiceIndex": 0,
+    "voice": "fa-IR-DilaraNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 36144,
+    "sha256": "c4520915a47812252fdfcf9959c0af7d165f517308de3dade59d6710378dddad"
+  },
+  {
+    "locale": "fa-IR",
+    "voiceIndex": 0,
+    "voice": "fa-IR-DilaraNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 52272,
+    "sha256": "5298b3b81a6ef9a0d85ecbbd53d7c940162513cd64aa2e8db40da8f3be597eb5"
+  },
+  {
+    "locale": "fa-IR",
+    "voiceIndex": 0,
+    "voice": "fa-IR-DilaraNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 49536,
+    "sha256": "ff2c69892874d557cd4e7611eb30a6850888e47f2cdb88bef6ae3b30c1ae802e"
+  },
+  {
+    "locale": "fa-IR",
+    "voiceIndex": 0,
+    "voice": "fa-IR-DilaraNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 39024,
+    "sha256": "87e80f3e92c370a2e3b1b5ed112e10b0468346564c1154891430be788e82c15d"
+  },
+  {
+    "locale": "fa-IR",
+    "voiceIndex": 1,
+    "voice": "fa-IR-FaridNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 22896,
+    "sha256": "245f085777f842a8a973254d55daeaf610b16c26227f2723f00f1ad38958dec3"
+  },
+  {
+    "locale": "fa-IR",
+    "voiceIndex": 1,
+    "voice": "fa-IR-FaridNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 22464,
+    "sha256": "7d1fa58bb6c44abd1eda7cc732285f210a371e11bc0e417fb6f1ffdd77b8f9e7"
+  },
+  {
+    "locale": "fa-IR",
+    "voiceIndex": 1,
+    "voice": "fa-IR-FaridNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 39168,
+    "sha256": "69d3053797529d3e7b54d7d8a7d310863834a5ae011c9f9a8f4b1958c17f2a2b"
+  },
+  {
+    "locale": "fa-IR",
+    "voiceIndex": 1,
+    "voice": "fa-IR-FaridNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 30096,
+    "sha256": "89554594cbd61b70d3e3d0df6538010660bc209584d8eb4d629dd6e3daa344a0"
+  },
+  {
+    "locale": "fa-IR",
+    "voiceIndex": 1,
+    "voice": "fa-IR-FaridNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 35712,
+    "sha256": "99b8f5e1a8b49185736aa015394451f9a5c7f119db8c4a455aaff060d625819e"
+  },
+  {
+    "locale": "fa-IR",
+    "voiceIndex": 1,
+    "voice": "fa-IR-FaridNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 55008,
+    "sha256": "88d13fcfaebdc1f7a0d070c846c3007ddbdfa782cc8901c1f3994a500eaecc5f"
+  },
+  {
+    "locale": "fa-IR",
+    "voiceIndex": 1,
+    "voice": "fa-IR-FaridNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 50400,
+    "sha256": "f47d0a2904abc09e53d9d403c17d0f099bb9a902640c5e5c02d06bda44d1d249"
+  },
+  {
+    "locale": "fa-IR",
+    "voiceIndex": 1,
+    "voice": "fa-IR-FaridNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 39888,
+    "sha256": "753b2ddf872f99d83dee260bf69459aae34a7d8521ea520c51c2f62917f8306c"
+  },
+  {
+    "locale": "fi-FI",
+    "voiceIndex": 0,
+    "voice": "fi-FI-NooraNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 22896,
+    "sha256": "4dbe29a6700c983cb469d51ec86e3c52fc2aa67faf0bbc545c3946e386cf1613"
+  },
+  {
+    "locale": "fi-FI",
+    "voiceIndex": 0,
+    "voice": "fi-FI-NooraNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 19440,
+    "sha256": "351cefa19d2cad209c21e64f290a615a4881f2a57ebd0f8ff5c4f76e7a999050"
+  },
+  {
+    "locale": "fi-FI",
+    "voiceIndex": 0,
+    "voice": "fi-FI-NooraNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 35856,
+    "sha256": "e84f5b0f4b9c45efcdbea33aab8e8934fcafb3577892efe6bae691583b1454e1"
+  },
+  {
+    "locale": "fi-FI",
+    "voiceIndex": 0,
+    "voice": "fi-FI-NooraNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 33552,
+    "sha256": "00e3cf6ba1c1692e49006468487d7db6016a640ac2b54a96de5d38de74cd167b"
+  },
+  {
+    "locale": "fi-FI",
+    "voiceIndex": 0,
+    "voice": "fi-FI-NooraNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 33984,
+    "sha256": "3b840d801a1b4ec58806b38c3fe40c06bdcfaf127ba84f42bc68bd7fcb0b2f0b"
+  },
+  {
+    "locale": "fi-FI",
+    "voiceIndex": 0,
+    "voice": "fi-FI-NooraNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 51120,
+    "sha256": "6c83e1ce7d9e12147a7c94685ca033edb2c2ed73d220efe0c28ae0cc828c02d4"
+  },
+  {
+    "locale": "fi-FI",
+    "voiceIndex": 0,
+    "voice": "fi-FI-NooraNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 50832,
+    "sha256": "19bfdb35c35abdc70cbd2c82b099555ef32bc7a329c6246b8779536c86a09413"
+  },
+  {
+    "locale": "fi-FI",
+    "voiceIndex": 0,
+    "voice": "fi-FI-NooraNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 36720,
+    "sha256": "1aeb2907a0192763a0f113a875a42aaf2637baa125350d1af2f7834c80bbae8d"
+  },
+  {
+    "locale": "fi-FI",
+    "voiceIndex": 1,
+    "voice": "fi-FI-HarriNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 24624,
+    "sha256": "3aa7fdbcd590f9c6b2c873b0b64da4e6fe825904f74263b63a6ad3ebb77dcf0b"
+  },
+  {
+    "locale": "fi-FI",
+    "voiceIndex": 1,
+    "voice": "fi-FI-HarriNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 20736,
+    "sha256": "940ae9784805d24da278996f71f33f8a34dbb2e75ea209f8cfc630d10f32582d"
+  },
+  {
+    "locale": "fi-FI",
+    "voiceIndex": 1,
+    "voice": "fi-FI-HarriNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 35712,
+    "sha256": "d6187228fa912f974c4e516b59e97cb183ee3ef0cf2d93d5545570ad29ca3ed2"
+  },
+  {
+    "locale": "fi-FI",
+    "voiceIndex": 1,
+    "voice": "fi-FI-HarriNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 32832,
+    "sha256": "deb9adc79d028961dd15887a1e21c63d9c30a0adfba29394a60177366ca530ce"
+  },
+  {
+    "locale": "fi-FI",
+    "voiceIndex": 1,
+    "voice": "fi-FI-HarriNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 34416,
+    "sha256": "3e2371393b907498273da4ca616a9e8cfe6965d007170bb058707869dc388e2a"
+  },
+  {
+    "locale": "fi-FI",
+    "voiceIndex": 1,
+    "voice": "fi-FI-HarriNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 52848,
+    "sha256": "2b8c1e1039604681462670177616c6db5a9ea760406a6429e954581b26f61702"
+  },
+  {
+    "locale": "fi-FI",
+    "voiceIndex": 1,
+    "voice": "fi-FI-HarriNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 49248,
+    "sha256": "9b2f4a785100eb7166551b4e47c6a8d1461e5e5c35a148f38c9a02c74340defa"
+  },
+  {
+    "locale": "fi-FI",
+    "voiceIndex": 1,
+    "voice": "fi-FI-HarriNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 35568,
+    "sha256": "8b73ce5a01221deb5f091667a5b6d7c9b5f009cc25e22d0b9958571dadecb4cd"
+  },
+  {
+    "locale": "fil-PH",
+    "voiceIndex": 0,
+    "voice": "fil-PH-BlessicaNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 22176,
+    "sha256": "186b74b44abaef5311c9ff2e2d21a10ad340437667beee99293efda3e2aac2d4"
+  },
+  {
+    "locale": "fil-PH",
+    "voiceIndex": 0,
+    "voice": "fil-PH-BlessicaNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 19440,
+    "sha256": "5c31c27470d0a0f5e98764469847f844aa7b42d0bf079cf679d76f7533b665e5"
+  },
+  {
+    "locale": "fil-PH",
+    "voiceIndex": 0,
+    "voice": "fil-PH-BlessicaNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 35712,
+    "sha256": "c4c777aa84f7ef1935bade813de485e58508f4a0ac548183039b021f81f3be32"
+  },
+  {
+    "locale": "fil-PH",
+    "voiceIndex": 0,
+    "voice": "fil-PH-BlessicaNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 28080,
+    "sha256": "d730a4aadeaf2794804e2413c17f975178c9af09a08d05eb7b36ba8f5428a112"
+  },
+  {
+    "locale": "fil-PH",
+    "voiceIndex": 0,
+    "voice": "fil-PH-BlessicaNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 37008,
+    "sha256": "29edcd3f188f40738d312a13e74777cdafee76bc49fafe693df477781e54b9a8"
+  },
+  {
+    "locale": "fil-PH",
+    "voiceIndex": 0,
+    "voice": "fil-PH-BlessicaNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 50544,
+    "sha256": "917dbf1104c25a594f3446fef0ffd580d0ab32f73b81c92207cde46a2e63a96b"
+  },
+  {
+    "locale": "fil-PH",
+    "voiceIndex": 0,
+    "voice": "fil-PH-BlessicaNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 47376,
+    "sha256": "12a1abe2a219764e9ed9ed21b35a6dcf1b4ab6882cbd0084c1962fbb3e0c4908"
+  },
+  {
+    "locale": "fil-PH",
+    "voiceIndex": 0,
+    "voice": "fil-PH-BlessicaNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 42480,
+    "sha256": "5b50b8fa04097df341bbd50285a055159c4c7cff6df325d2bbfe0367012e5e2e"
+  },
+  {
+    "locale": "fil-PH",
+    "voiceIndex": 1,
+    "voice": "fil-PH-AngeloNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 21312,
+    "sha256": "2ecc651e4704ab8d749a2e2ce572ba5a24a5a28fa917808a58644e8bbc577fc6"
+  },
+  {
+    "locale": "fil-PH",
+    "voiceIndex": 1,
+    "voice": "fil-PH-AngeloNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 18576,
+    "sha256": "4eeaff2b83cfac75cb96a42d3b2eff921acb31e96f53fb39737d36782da0847d"
+  },
+  {
+    "locale": "fil-PH",
+    "voiceIndex": 1,
+    "voice": "fil-PH-AngeloNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 35424,
+    "sha256": "516e04789ff94f805e8854cedeada46dda05a183103d1695af37046df535e067"
+  },
+  {
+    "locale": "fil-PH",
+    "voiceIndex": 1,
+    "voice": "fil-PH-AngeloNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 28080,
+    "sha256": "dcb28b0fd2b5953073e803433c4999684e7d7a90733dd6b60974a5c5395db840"
+  },
+  {
+    "locale": "fil-PH",
+    "voiceIndex": 1,
+    "voice": "fil-PH-AngeloNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 34128,
+    "sha256": "d979f92fec3c382e24ed358de75336ba2c863416df36084ea4882e30974b9bb6"
+  },
+  {
+    "locale": "fil-PH",
+    "voiceIndex": 1,
+    "voice": "fil-PH-AngeloNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 48384,
+    "sha256": "91214c0d64e801e2ae08fe5d975e9e2c8554b0a9fe0f1ff844d099938b787387"
+  },
+  {
+    "locale": "fil-PH",
+    "voiceIndex": 1,
+    "voice": "fil-PH-AngeloNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 46224,
+    "sha256": "26a1f49c6b72e0ed887cfa0bcfa3c53f93c8c07827738045d3b758bdd7291a8d"
+  },
+  {
+    "locale": "fil-PH",
+    "voiceIndex": 1,
+    "voice": "fil-PH-AngeloNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 42480,
+    "sha256": "27fd099d05cf6255a954f8d373132c7632f662412a6640882d3bf99fc94f5011"
+  },
+  {
+    "locale": "fr-FR",
+    "voiceIndex": 0,
+    "voice": "fr-FR-DeniseNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 23616,
+    "sha256": "70d6535f8c3dff57b56a99a5fa66b5c2f68820110f5000aeb868196d4b478c5e"
+  },
+  {
+    "locale": "fr-FR",
+    "voiceIndex": 0,
+    "voice": "fr-FR-DeniseNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 21456,
+    "sha256": "ef6a6d6b6d4f5e1acf33af1c893ecb2341c99eeb416ea9c9e41a418bb04955bd"
+  },
+  {
+    "locale": "fr-FR",
+    "voiceIndex": 0,
+    "voice": "fr-FR-DeniseNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 34992,
+    "sha256": "2ee1d3073622ea1c3016c0626cd13ec698aa061ed1f359cf59f07d1b6750096c"
+  },
+  {
+    "locale": "fr-FR",
+    "voiceIndex": 0,
+    "voice": "fr-FR-DeniseNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 31968,
+    "sha256": "7900c4f346fe3b141b284af6a98d21960363eaa17983b741b54e006726026993"
+  },
+  {
+    "locale": "fr-FR",
+    "voiceIndex": 0,
+    "voice": "fr-FR-DeniseNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 29088,
+    "sha256": "a60adc70bc5b5cb46d88e46fbce79aab0942fd67c5176be7d47846fabe07742e"
+  },
+  {
+    "locale": "fr-FR",
+    "voiceIndex": 0,
+    "voice": "fr-FR-DeniseNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 51408,
+    "sha256": "53c2a30b3df9465b5a1ca8edd232096b13be9f75ac166635bc35d20a06c0972d"
+  },
+  {
+    "locale": "fr-FR",
+    "voiceIndex": 0,
+    "voice": "fr-FR-DeniseNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 39456,
+    "sha256": "0904692af4a3c2f2f6253ea3ec445a3f8cd96636d4ff1340a256e4c1f70c7f3e"
+  },
+  {
+    "locale": "fr-FR",
+    "voiceIndex": 0,
+    "voice": "fr-FR-DeniseNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 36288,
+    "sha256": "86e90a4c780a2e820886aeb1f8dea0125eae9dfa38fa73a46e525ded4cef4f7e"
+  },
+  {
+    "locale": "fr-FR",
+    "voiceIndex": 1,
+    "voice": "fr-FR-HenriNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 21168,
+    "sha256": "9e1929caa9dd806a2a6350193e01d8be00010afa3dfbfdbb854d00b3bfb87c6e"
+  },
+  {
+    "locale": "fr-FR",
+    "voiceIndex": 1,
+    "voice": "fr-FR-HenriNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 20592,
+    "sha256": "1561ff24235de43f4405589f798aa6957bcfbbc75f587a6f248c02f7dbd148ca"
+  },
+  {
+    "locale": "fr-FR",
+    "voiceIndex": 1,
+    "voice": "fr-FR-HenriNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 33408,
+    "sha256": "26e6bf29cc5a096fefc19f0db23b23cca5c56d498c39ef76b52684213c556656"
+  },
+  {
+    "locale": "fr-FR",
+    "voiceIndex": 1,
+    "voice": "fr-FR-HenriNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 31968,
+    "sha256": "b39d80f0854415d993463dc4b5ae9e0e7189925b9a948be8cb0eab24e1b20fc1"
+  },
+  {
+    "locale": "fr-FR",
+    "voiceIndex": 1,
+    "voice": "fr-FR-HenriNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 27792,
+    "sha256": "0e2e1c2dd3b6b86bb1c867027fe67d3cf61a37d7eaabc09ecf3978c7423b9764"
+  },
+  {
+    "locale": "fr-FR",
+    "voiceIndex": 1,
+    "voice": "fr-FR-HenriNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 48672,
+    "sha256": "38715cacd3e3508f0d223399ae2cdf4b71644a3eb40db30ffcfa5f6d469f9c55"
+  },
+  {
+    "locale": "fr-FR",
+    "voiceIndex": 1,
+    "voice": "fr-FR-HenriNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 36000,
+    "sha256": "cca626a2d0352f314936700f2447e1cf59609614e02cbd2f9bdaed8612b67b60"
+  },
+  {
+    "locale": "fr-FR",
+    "voiceIndex": 1,
+    "voice": "fr-FR-HenriNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 33984,
+    "sha256": "4f574993493b33c328c46ffcc2cbbdab017b98f8fb110552c9d83ef3ec92a688"
+  },
+  {
+    "locale": "he-IL",
+    "voiceIndex": 0,
+    "voice": "he-IL-HilaNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 23760,
+    "sha256": "b0cb940ec08b4b2e4916cb250fbe08f60db95b524402dbd23eeebea5f416c98e"
+  },
+  {
+    "locale": "he-IL",
+    "voiceIndex": 0,
+    "voice": "he-IL-HilaNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 21600,
+    "sha256": "046079fb2bfa685435395417e0c65700b88fa2f2ed58a817f86652db641495de"
+  },
+  {
+    "locale": "he-IL",
+    "voiceIndex": 0,
+    "voice": "he-IL-HilaNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 33552,
+    "sha256": "bcae9be243f499fd3c305009aeda6a070a917925ea33bfd7761efe4651991662"
+  },
+  {
+    "locale": "he-IL",
+    "voiceIndex": 0,
+    "voice": "he-IL-HilaNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 34128,
+    "sha256": "21d0b5eebbbe4e6c4465c174683bdce826ca82cfc6d03ca31b758144dc41a2bb"
+  },
+  {
+    "locale": "he-IL",
+    "voiceIndex": 0,
+    "voice": "he-IL-HilaNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 31536,
+    "sha256": "bf66eb899c56f71b78f54449700fb6dacf48d8ff2236d3fafc71ed94b7648d39"
+  },
+  {
+    "locale": "he-IL",
+    "voiceIndex": 0,
+    "voice": "he-IL-HilaNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 48672,
+    "sha256": "906183d2d91e6edc9d9be0e76dd07ccb8150b44a5cbcb0feb94ac8e1609d3053"
+  },
+  {
+    "locale": "he-IL",
+    "voiceIndex": 0,
+    "voice": "he-IL-HilaNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 38592,
+    "sha256": "6be5fc720234d202e9609492c710c9ad4069f49c528d42f92b6a77f742a0fa50"
+  },
+  {
+    "locale": "he-IL",
+    "voiceIndex": 0,
+    "voice": "he-IL-HilaNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 37152,
+    "sha256": "0cf60dd37cfd95d7c8e2c39518434f2faffe1fa235c6bd524724b0145da9b653"
+  },
+  {
+    "locale": "he-IL",
+    "voiceIndex": 1,
+    "voice": "he-IL-AvriNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 23904,
+    "sha256": "7ca89bb4dfcec9552087e962984588a999a77890ce1b2922c3ecd692866e5659"
+  },
+  {
+    "locale": "he-IL",
+    "voiceIndex": 1,
+    "voice": "he-IL-AvriNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 22752,
+    "sha256": "62284f09fd3bf0915622ae9eee36ff835554dd6c75478a56c9bf4b30cb3d48f5"
+  },
+  {
+    "locale": "he-IL",
+    "voiceIndex": 1,
+    "voice": "he-IL-AvriNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 35856,
+    "sha256": "c9739fd38c6d5e1ea7a340af9fa9602f920213186db9857b06814d2520d4bbe6"
+  },
+  {
+    "locale": "he-IL",
+    "voiceIndex": 1,
+    "voice": "he-IL-AvriNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 36576,
+    "sha256": "a9d0d70948e53e060a1e02a6cb3afc74bc17c7b32b3abbc51a6f4b9c39d7ed02"
+  },
+  {
+    "locale": "he-IL",
+    "voiceIndex": 1,
+    "voice": "he-IL-AvriNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 33408,
+    "sha256": "4a07c5c3067357bd84b7f4c8ab08d6a0d07d1ad4d55d90b0e7c834e851810c62"
+  },
+  {
+    "locale": "he-IL",
+    "voiceIndex": 1,
+    "voice": "he-IL-AvriNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 51552,
+    "sha256": "3e5ecf0922b549eedf0024f1ae5bf106918bef17366b25ba93f33e8663f4feb9"
+  },
+  {
+    "locale": "he-IL",
+    "voiceIndex": 1,
+    "voice": "he-IL-AvriNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 41904,
+    "sha256": "33663be941b23c374bc1ea6391e3a397f9cacca546426e4044233b2ef037372c"
+  },
+  {
+    "locale": "he-IL",
+    "voiceIndex": 1,
+    "voice": "he-IL-AvriNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 39168,
+    "sha256": "4844db514c410ff8572f41df1c23f08284845b19d980a020283bab592c44169f"
+  },
+  {
+    "locale": "hi-IN",
+    "voiceIndex": 0,
+    "voice": "hi-IN-SwaraNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 29232,
+    "sha256": "ca79fffbf27f7f3517541bbff4a719132f628f3a7a4d6e75128279ea29eb6918"
+  },
+  {
+    "locale": "hi-IN",
+    "voiceIndex": 0,
+    "voice": "hi-IN-SwaraNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 30096,
+    "sha256": "da7a76cbdfa2fbc72b2b0c84bb810219fad5a28ddfd258c6719b547ddcff2627"
+  },
+  {
+    "locale": "hi-IN",
+    "voiceIndex": 0,
+    "voice": "hi-IN-SwaraNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 46080,
+    "sha256": "1a22f26fd34a6ffbf0befcef5425a3ef2670f2b685e839c35378974d7aeacdec"
+  },
+  {
+    "locale": "hi-IN",
+    "voiceIndex": 0,
+    "voice": "hi-IN-SwaraNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 43776,
+    "sha256": "fda3e95ab5419ee860f133875b2a307b1f14cff00d05495c57cbcf66ed0079a5"
+  },
+  {
+    "locale": "hi-IN",
+    "voiceIndex": 0,
+    "voice": "hi-IN-SwaraNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 50400,
+    "sha256": "e58f30af7b037eeb847713ce581250ac48ee6dfcc7a0603637a2bcd800bbb8c6"
+  },
+  {
+    "locale": "hi-IN",
+    "voiceIndex": 0,
+    "voice": "hi-IN-SwaraNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 73008,
+    "sha256": "2c334a3504bee9ace894eec5ddb94f305f893b72f19b1853c7b258ce24e2a635"
+  },
+  {
+    "locale": "hi-IN",
+    "voiceIndex": 0,
+    "voice": "hi-IN-SwaraNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 65808,
+    "sha256": "1e4297897d09233f292e8cac61a2b35bc5fb73cd883e8b2c14ac0e699bee096d"
+  },
+  {
+    "locale": "hi-IN",
+    "voiceIndex": 0,
+    "voice": "hi-IN-SwaraNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 55296,
+    "sha256": "c1dc46d2e9d9525947f3f37cfaa49f30df436215647962c3f9dd0cc6c49c86e1"
+  },
+  {
+    "locale": "hi-IN",
+    "voiceIndex": 1,
+    "voice": "hi-IN-MadhurNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 31104,
+    "sha256": "1254606b52d3dc0792d96a7334bf7587d4f761c8765e00b880d45aa92249c5bd"
+  },
+  {
+    "locale": "hi-IN",
+    "voiceIndex": 1,
+    "voice": "hi-IN-MadhurNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 28656,
+    "sha256": "ffae2e626c9b0175d166eddab6d4cbefb505700a6e7774fc7992a4030d1f9806"
+  },
+  {
+    "locale": "hi-IN",
+    "voiceIndex": 1,
+    "voice": "hi-IN-MadhurNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 49392,
+    "sha256": "893766baad61875ca4d3ed17a74d1ea48a85dd27a404839be088813db0e5ec19"
+  },
+  {
+    "locale": "hi-IN",
+    "voiceIndex": 1,
+    "voice": "hi-IN-MadhurNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 42768,
+    "sha256": "3708b91fdbedc46c92cf464ccb28a940ff9e3ebdb2353e990545dfb3fcef82ce"
+  },
+  {
+    "locale": "hi-IN",
+    "voiceIndex": 1,
+    "voice": "hi-IN-MadhurNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 44640,
+    "sha256": "3e6e73f050cec075e3eec8cd92d80ec6e93deee030e2b4a8c4c05db67b2638e0"
+  },
+  {
+    "locale": "hi-IN",
+    "voiceIndex": 1,
+    "voice": "hi-IN-MadhurNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 69984,
+    "sha256": "31fa8edde98322c2ca17f572335845957157363f0dfd826480ca14f3a3fe15a3"
+  },
+  {
+    "locale": "hi-IN",
+    "voiceIndex": 1,
+    "voice": "hi-IN-MadhurNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 62352,
+    "sha256": "71ba5ccea8d8bb86345b9e383c7a7802c5a5a8101ab508193e72c360e3230750"
+  },
+  {
+    "locale": "hi-IN",
+    "voiceIndex": 1,
+    "voice": "hi-IN-MadhurNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 54000,
+    "sha256": "078950880100ce0f6e7c9bd6fb7cce700315cb17f163b875472d7a3d9f3b7858"
+  },
+  {
+    "locale": "hu-HU",
+    "voiceIndex": 0,
+    "voice": "hu-HU-NoemiNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 23904,
+    "sha256": "e902ebae30208aac0ae40329e019622b22f446f5f5440d9eb98379b2317eccc2"
+  },
+  {
+    "locale": "hu-HU",
+    "voiceIndex": 0,
+    "voice": "hu-HU-NoemiNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 23328,
+    "sha256": "b5af39ed1b0558f96f6767a9ca37f8ae70fd2fb93a05c0dd7c3bf0b548854194"
+  },
+  {
+    "locale": "hu-HU",
+    "voiceIndex": 0,
+    "voice": "hu-HU-NoemiNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 39744,
+    "sha256": "b0b032d5e6c7287caadb0d8357e2690df26647bae04fa71bc711d2e0d2de224e"
+  },
+  {
+    "locale": "hu-HU",
+    "voiceIndex": 0,
+    "voice": "hu-HU-NoemiNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 30960,
+    "sha256": "d51e25facfc6c18c716238a17df6e37f85f02111c8d40b01c3bf13687856dfe5"
+  },
+  {
+    "locale": "hu-HU",
+    "voiceIndex": 0,
+    "voice": "hu-HU-NoemiNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 37008,
+    "sha256": "8188504cd3d3a9b9235a1e4cd1dfc7a0ad543ef9879306b6b67825c15eb31dda"
+  },
+  {
+    "locale": "hu-HU",
+    "voiceIndex": 0,
+    "voice": "hu-HU-NoemiNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 56160,
+    "sha256": "ad565e1661df9c74494ba17183a47876e5ab3a30aa71c3dcfebb60156f86dfaf"
+  },
+  {
+    "locale": "hu-HU",
+    "voiceIndex": 0,
+    "voice": "hu-HU-NoemiNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 54720,
+    "sha256": "65f4b650a0bad2baa4a7c867382c3edb6c2c519c3ff71bb3ec6ffb28e8ec5cf0"
+  },
+  {
+    "locale": "hu-HU",
+    "voiceIndex": 0,
+    "voice": "hu-HU-NoemiNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 38016,
+    "sha256": "f45796eada48c8789c06a9eb1323e3056ac6c168557060585e8d2862473cbb27"
+  },
+  {
+    "locale": "hu-HU",
+    "voiceIndex": 1,
+    "voice": "hu-HU-TamasNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 20448,
+    "sha256": "3f1e73d15b9ccaa735d1a6f6c4104d42c4e6c372f4a9ecf5bc88f9ed37513c68"
+  },
+  {
+    "locale": "hu-HU",
+    "voiceIndex": 1,
+    "voice": "hu-HU-TamasNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
     "bytes": 19152,
-    "sha256": "e01ea1ba3864eac3058ffed2d1fdc485eb2b2013cbd39c34b672b262740eea08"
+    "sha256": "66b79c7ea870f116078a0b691c89348d6c43f315cb935eeb27a87c73dc984191"
   },
   {
-    "locale": "vi-VN",
-    "phraseId": "hello",
-    "bytes": 17856,
-    "sha256": "08d1f30bd4f17ac5b9f824b88b664144f698a63bf846fb77c2a82d02d1192a1e"
+    "locale": "hu-HU",
+    "voiceIndex": 1,
+    "voice": "hu-HU-TamasNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 36288,
+    "sha256": "5d28372b8fd959824a9feeb186bf2bcc001b5968dba2c69bcb2d6e59d646a69a"
   },
   {
-    "locale": "vi-VN",
-    "phraseId": "weather",
-    "bytes": 14688,
-    "sha256": "7a92c3b5a3efd34d429422a4e85233c0bebcdb65c0febed505a184392e734a2e"
+    "locale": "hu-HU",
+    "voiceIndex": 1,
+    "voice": "hu-HU-TamasNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 27504,
+    "sha256": "19a18b72a3ca67466525faabd64d97c6ca7267b31f6c619562cd3514f0638cfb"
   },
   {
-    "locale": "zh-CN",
-    "phraseId": "coffee",
-    "bytes": 12096,
-    "sha256": "a90f436243d96336c00672c3d7248abfa410b79233a8700011b95e526a3e9cd1"
+    "locale": "hu-HU",
+    "voiceIndex": 1,
+    "voice": "hu-HU-TamasNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 33264,
+    "sha256": "6a20caac4c73178b7acad6eb5fd75a84f774a5559a267da5403efc7f0e71599d"
   },
   {
-    "locale": "zh-CN",
-    "phraseId": "hello",
-    "bytes": 13824,
-    "sha256": "fe250f0e5f052e4aa521ef6aa86e72ede7e7c38141a8d8bccb511e60b04b8777"
+    "locale": "hu-HU",
+    "voiceIndex": 1,
+    "voice": "hu-HU-TamasNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 48960,
+    "sha256": "157e500fdf55326c9118375ffcc31aa8a7fb2e8f4aaab77b2e199c86cfdccdc3"
   },
   {
-    "locale": "zh-CN",
-    "phraseId": "weather",
-    "bytes": 14256,
-    "sha256": "206673192a6b409e1b056d9efbe019a2339e8eadc4a836ab205a42de33463c4e"
+    "locale": "hu-HU",
+    "voiceIndex": 1,
+    "voice": "hu-HU-TamasNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 50256,
+    "sha256": "3c3f87d474ff8774a12c4af8bd41ab7958da0963dde4cd8cbf07fe2c38b8a094"
   },
   {
-    "locale": "zh-TW",
-    "phraseId": "coffee",
-    "bytes": 14256,
-    "sha256": "d2d573f9bb87b66e20a641ead9fbd2236f79ab14ca9cbf4bf49e8d75f35c9da0"
+    "locale": "hu-HU",
+    "voiceIndex": 1,
+    "voice": "hu-HU-TamasNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 34272,
+    "sha256": "49d7d09c4e179b5d35b49ebc61b8a55f4d6cf11e09274b044609daf198eb9ea1"
   },
   {
-    "locale": "zh-TW",
-    "phraseId": "hello",
-    "bytes": 16992,
-    "sha256": "04a3bbf00fda383561b03fdeccef69745304cf81eb24440d694693c80c751ae3"
+    "locale": "id-ID",
+    "voiceIndex": 0,
+    "voice": "id-ID-GadisNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 30672,
+    "sha256": "b2720e97fed462b451d1df3682faabe2c75d70e3e10101758973532f63f7cc48"
   },
   {
-    "locale": "zh-TW",
-    "phraseId": "weather",
+    "locale": "id-ID",
+    "voiceIndex": 0,
+    "voice": "id-ID-GadisNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 27648,
+    "sha256": "15992f5275ef64f3b7a2126efea3322dd484333ea887c807db913ac84a79bdaa"
+  },
+  {
+    "locale": "id-ID",
+    "voiceIndex": 0,
+    "voice": "id-ID-GadisNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 45072,
+    "sha256": "104a1f92fe6721f5313a5b3b72eff71bab4c1082b64fc1c61d2c4d9bd32f0e6b"
+  },
+  {
+    "locale": "id-ID",
+    "voiceIndex": 0,
+    "voice": "id-ID-GadisNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 37296,
+    "sha256": "345ed889cc5a7273d8270f978161069ddd47c8b127aa6068ff34a26d850f592d"
+  },
+  {
+    "locale": "id-ID",
+    "voiceIndex": 0,
+    "voice": "id-ID-GadisNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 35136,
+    "sha256": "7e3a4e2a1c5a4c888b6c14855c84f1fc15dfed7606375d5db76d1465afe7419d"
+  },
+  {
+    "locale": "id-ID",
+    "voiceIndex": 0,
+    "voice": "id-ID-GadisNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 60912,
+    "sha256": "838c68ed2a7bd3a4b22893cbccb5fe4dff2b1a4de732d014502ed754d2289784"
+  },
+  {
+    "locale": "id-ID",
+    "voiceIndex": 0,
+    "voice": "id-ID-GadisNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 53136,
+    "sha256": "cc009c002631e0e70557e2f5e0bfc33c7c1a5237ac04d98d6acbac6831073982"
+  },
+  {
+    "locale": "id-ID",
+    "voiceIndex": 0,
+    "voice": "id-ID-GadisNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 48240,
+    "sha256": "611f04b2fe95bc578aaf066544d6d9a7c499084b856ca90718e399639277f337"
+  },
+  {
+    "locale": "id-ID",
+    "voiceIndex": 1,
+    "voice": "id-ID-ArdiNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 24336,
+    "sha256": "93a3549b246d38fdefd1244efb2627c97f97cc919a308cf8fef54ac88c20a5b1"
+  },
+  {
+    "locale": "id-ID",
+    "voiceIndex": 1,
+    "voice": "id-ID-ArdiNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 23904,
+    "sha256": "0730d09795b8b3227d87010f089846b8fec15f27d571a20053c1164b8b978039"
+  },
+  {
+    "locale": "id-ID",
+    "voiceIndex": 1,
+    "voice": "id-ID-ArdiNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 34704,
+    "sha256": "f489ad7cc0b673183961a5481e366abbbaac95f2e74be9f1b2591b3b22267e98"
+  },
+  {
+    "locale": "id-ID",
+    "voiceIndex": 1,
+    "voice": "id-ID-ArdiNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 28512,
+    "sha256": "7717618c38ef2fa6ece34a8400d90d6c69f177a768b6d2bfbf0e73331c91ebbf"
+  },
+  {
+    "locale": "id-ID",
+    "voiceIndex": 1,
+    "voice": "id-ID-ArdiNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 27504,
+    "sha256": "c62e69fba4e6ffff5276361219524a0eaaf254e2f289c00d1e59b4e56cd83826"
+  },
+  {
+    "locale": "id-ID",
+    "voiceIndex": 1,
+    "voice": "id-ID-ArdiNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 48096,
+    "sha256": "646592278d973797db7009c3ef5bbf102754535def53fe434edb6ca3eea115f9"
+  },
+  {
+    "locale": "id-ID",
+    "voiceIndex": 1,
+    "voice": "id-ID-ArdiNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 41184,
+    "sha256": "a6240faa754744698cf41f4cafeecf241dd7ab09f7714c5126d25bad57afa7dd"
+  },
+  {
+    "locale": "id-ID",
+    "voiceIndex": 1,
+    "voice": "id-ID-ArdiNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 37584,
+    "sha256": "61783852d5174bed7ab87640831021dbde28c76a4907abeeaa9059d2cc67ddd1"
+  },
+  {
+    "locale": "it-IT",
+    "voiceIndex": 0,
+    "voice": "it-IT-ElsaNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 20880,
+    "sha256": "24443b6f18d593e629dbfd8ad71f8b4541ad3b100f8cf19b199f24ad9183cf3c"
+  },
+  {
+    "locale": "it-IT",
+    "voiceIndex": 0,
+    "voice": "it-IT-ElsaNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 20304,
+    "sha256": "e5bf6b5305687fc8dda40604a74ad247bda2bc0b186be286e68ad46f8158af8c"
+  },
+  {
+    "locale": "it-IT",
+    "voiceIndex": 0,
+    "voice": "it-IT-ElsaNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 34416,
+    "sha256": "74b1ef675d5275033dc95e6af3c152f7d27fe05f96792e8b367c84ac6b38ad99"
+  },
+  {
+    "locale": "it-IT",
+    "voiceIndex": 0,
+    "voice": "it-IT-ElsaNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 30672,
+    "sha256": "9599d1b70843530a16afa74375905308f1d3ce69ef39f44c441ea46b37747fc4"
+  },
+  {
+    "locale": "it-IT",
+    "voiceIndex": 0,
+    "voice": "it-IT-ElsaNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 33840,
+    "sha256": "7eb1b4a3a8b4ad320637b36748d130c5c7d7b1a8c78f345651655795e181c779"
+  },
+  {
+    "locale": "it-IT",
+    "voiceIndex": 0,
+    "voice": "it-IT-ElsaNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 55728,
+    "sha256": "5e1f88fe352275d97bfa3eebff969cf7c4f768ecbd7392fabb26bb9474517299"
+  },
+  {
+    "locale": "it-IT",
+    "voiceIndex": 0,
+    "voice": "it-IT-ElsaNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 43920,
+    "sha256": "45cef0d082d4ec0b7cb081ae913ab536dc6876c639cc4e388ee4b0d2c7f6d3c1"
+  },
+  {
+    "locale": "it-IT",
+    "voiceIndex": 0,
+    "voice": "it-IT-ElsaNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 40032,
+    "sha256": "30c4ce1f4609dcecd42b3096dff5d9c07f4441c9a5aa3d5211e2c0ef7b2e65df"
+  },
+  {
+    "locale": "it-IT",
+    "voiceIndex": 1,
+    "voice": "it-IT-DiegoNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 24624,
+    "sha256": "8d84526b69454320061fe7896a6e5f097b113f5938b960b4b28b396d2943b9d2"
+  },
+  {
+    "locale": "it-IT",
+    "voiceIndex": 1,
+    "voice": "it-IT-DiegoNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 24624,
+    "sha256": "09d726f9c00a2d1c339036e82892258f3194c0c41a84b4a79228efe6ea4036d3"
+  },
+  {
+    "locale": "it-IT",
+    "voiceIndex": 1,
+    "voice": "it-IT-DiegoNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 37872,
+    "sha256": "a6c7cb1ec9a672b037ba5931ac7ec030223ad8cda57bfbf5a2f7f0d3f9303546"
+  },
+  {
+    "locale": "it-IT",
+    "voiceIndex": 1,
+    "voice": "it-IT-DiegoNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 36144,
+    "sha256": "1f0998a386b3d597c85ceadfd6416052f1d8c5626d54d22f117c7e4d233673cd"
+  },
+  {
+    "locale": "it-IT",
+    "voiceIndex": 1,
+    "voice": "it-IT-DiegoNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 35856,
+    "sha256": "4f9166779872c5dfaf2c3de62f3149d426ecd0ea76655d4fa673a968a550a47b"
+  },
+  {
+    "locale": "it-IT",
+    "voiceIndex": 1,
+    "voice": "it-IT-DiegoNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 59184,
+    "sha256": "584e8d15e995206583b8de5d4755259292da3f6ffc6ea57c17dddbc77b5fd32f"
+  },
+  {
+    "locale": "it-IT",
+    "voiceIndex": 1,
+    "voice": "it-IT-DiegoNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 50112,
+    "sha256": "565e3d40da9e75ff2d39fe16740fd8a71eac9c6921980db842373cdcc382f174"
+  },
+  {
+    "locale": "it-IT",
+    "voiceIndex": 1,
+    "voice": "it-IT-DiegoNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 43200,
+    "sha256": "6aae0388189001acbd8700f50bc6fadecfa485e35cee6587ce827429df8e92c9"
+  },
+  {
+    "locale": "ja-JP",
+    "voiceIndex": 0,
+    "voice": "ja-JP-NanamiNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 24912,
+    "sha256": "eebb23664e5b5cee9746fae1263f1917505c94f9ae54d1633513264ba92e6764"
+  },
+  {
+    "locale": "ja-JP",
+    "voiceIndex": 0,
+    "voice": "ja-JP-NanamiNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 24624,
+    "sha256": "133d65df56096547f0c010be43aea94f41cb7a1c0f350d0791483d5ac7d1fbdb"
+  },
+  {
+    "locale": "ja-JP",
+    "voiceIndex": 0,
+    "voice": "ja-JP-NanamiNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 39744,
+    "sha256": "02e12265ad7d74e7560f6b17cc09377dc76a71d35c17fa8eba312f8612ca49b2"
+  },
+  {
+    "locale": "ja-JP",
+    "voiceIndex": 0,
+    "voice": "ja-JP-NanamiNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 37728,
+    "sha256": "1e10a110bd4d810867a1d5f02da8ecb1a4e78bdf2ad5da415776acbb73654d43"
+  },
+  {
+    "locale": "ja-JP",
+    "voiceIndex": 0,
+    "voice": "ja-JP-NanamiNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 37728,
+    "sha256": "5f583b9e53b58332f51c117324b8322c0cc4882b9377be0d3efc05562320cb0e"
+  },
+  {
+    "locale": "ja-JP",
+    "voiceIndex": 0,
+    "voice": "ja-JP-NanamiNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 68400,
+    "sha256": "8232f5971705d1df33609875c5f89b85df49ea1174a9a888e6a88bb64e47bab4"
+  },
+  {
+    "locale": "ja-JP",
+    "voiceIndex": 0,
+    "voice": "ja-JP-NanamiNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 61344,
+    "sha256": "f66a7d087cf4655db3e4f2d02296e7baca79860dd5d5a9be79030236917b99a1"
+  },
+  {
+    "locale": "ja-JP",
+    "voiceIndex": 0,
+    "voice": "ja-JP-NanamiNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 49392,
+    "sha256": "a5e3d3597c74d5b5d0aaeec3b84194bc2ab6c7b5887762b0fe7cd7ab30f49317"
+  },
+  {
+    "locale": "ja-JP",
+    "voiceIndex": 1,
+    "voice": "ja-JP-KeitaNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 22608,
+    "sha256": "1ea71897811814cda20d3aea8f4c1d030f1ad4ad46764d3636045892b3b2fbba"
+  },
+  {
+    "locale": "ja-JP",
+    "voiceIndex": 1,
+    "voice": "ja-JP-KeitaNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 23184,
+    "sha256": "9742fe7e4fc24921f5791e0c9dfab3425042bfe6c796e30dc51178c83dd78396"
+  },
+  {
+    "locale": "ja-JP",
+    "voiceIndex": 1,
+    "voice": "ja-JP-KeitaNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 34848,
+    "sha256": "c3fb43bb6caeb597ca3ef204c9da541a20a3afd537aea75caecc9df9c3430bdf"
+  },
+  {
+    "locale": "ja-JP",
+    "voiceIndex": 1,
+    "voice": "ja-JP-KeitaNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 33408,
+    "sha256": "a311ab48c2f642b14caf3bdb8a023f89ce9da472a6af4fb3f30c20321c2b7ad4"
+  },
+  {
+    "locale": "ja-JP",
+    "voiceIndex": 1,
+    "voice": "ja-JP-KeitaNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 34992,
+    "sha256": "f5203c319d398483ace753c330eb446f7f5fc0ac48562d7a32279f3d7437e7fc"
+  },
+  {
+    "locale": "ja-JP",
+    "voiceIndex": 1,
+    "voice": "ja-JP-KeitaNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 57312,
+    "sha256": "1aac71703f99ea49e9fcc5b8b1efe41d708a036d257e68fe0cda9817ca8037ac"
+  },
+  {
+    "locale": "ja-JP",
+    "voiceIndex": 1,
+    "voice": "ja-JP-KeitaNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 54576,
+    "sha256": "cd8859b3fbd29c81c3b1d5a74bef00ed205f21c30db79151a981e5145c6a1968"
+  },
+  {
+    "locale": "ja-JP",
+    "voiceIndex": 1,
+    "voice": "ja-JP-KeitaNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 43056,
+    "sha256": "481a82c1026804439b22617327a5c7b6cbb34561987b5d824a9646d9e4a6affe"
+  },
+  {
+    "locale": "ko-KR",
+    "voiceIndex": 0,
+    "voice": "ko-KR-SunHiNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 27504,
+    "sha256": "96bb0a529c710528052f772fbf12e494567968e16cda5b0ceff3628c1759cf93"
+  },
+  {
+    "locale": "ko-KR",
+    "voiceIndex": 0,
+    "voice": "ko-KR-SunHiNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 25056,
+    "sha256": "0c741a53ad9cf4eeb4a42fbc7665cc54d0b146b14ec4471bf12b512e929f1a24"
+  },
+  {
+    "locale": "ko-KR",
+    "voiceIndex": 0,
+    "voice": "ko-KR-SunHiNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 41616,
+    "sha256": "af5faf7ddb336fdc8484b94d07cb2b4dbdfa241035bd5b73cff59f040282f022"
+  },
+  {
+    "locale": "ko-KR",
+    "voiceIndex": 0,
+    "voice": "ko-KR-SunHiNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 31680,
+    "sha256": "f484c73d59cd78348ceb511cc18c51d0be6018e317c9d07f88357646a156262d"
+  },
+  {
+    "locale": "ko-KR",
+    "voiceIndex": 0,
+    "voice": "ko-KR-SunHiNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 37440,
+    "sha256": "57b69ea8c430536d574dff3a8918f63102d953e096ea5d24b853614046ed606d"
+  },
+  {
+    "locale": "ko-KR",
+    "voiceIndex": 0,
+    "voice": "ko-KR-SunHiNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 57600,
+    "sha256": "242f72e23206eb4081b630ece46e1cf5a578044097e88e66f28cd2c83fb63800"
+  },
+  {
+    "locale": "ko-KR",
+    "voiceIndex": 0,
+    "voice": "ko-KR-SunHiNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 54720,
+    "sha256": "e5b5224dc1ecf5f45d09f3e4497f104d9cbb7127c7dbb9fc97a75d5da429564f"
+  },
+  {
+    "locale": "ko-KR",
+    "voiceIndex": 0,
+    "voice": "ko-KR-SunHiNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 45216,
+    "sha256": "213e93b2a4ffb9e8256c18fd6aefb9385420500e9b46432ee4c58df75ad73df5"
+  },
+  {
+    "locale": "ko-KR",
+    "voiceIndex": 1,
+    "voice": "ko-KR-HyunsuMultilingualNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 26352,
+    "sha256": "b2634d6f865ea696aa4f6542dab75ec6680b7689f89ab877dcffe8ae622673a1"
+  },
+  {
+    "locale": "ko-KR",
+    "voiceIndex": 1,
+    "voice": "ko-KR-HyunsuMultilingualNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 24768,
+    "sha256": "f2be7a55593f432a9fdfa3e2dbc9d2b0b5b19ea49a84511e6376c2a3329d7916"
+  },
+  {
+    "locale": "ko-KR",
+    "voiceIndex": 1,
+    "voice": "ko-KR-HyunsuMultilingualNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 46512,
+    "sha256": "bc9ec16450d44606d2154c22ffcc608a7585d733fa82df0d34961189e5e03acb"
+  },
+  {
+    "locale": "ko-KR",
+    "voiceIndex": 1,
+    "voice": "ko-KR-HyunsuMultilingualNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 32688,
+    "sha256": "990d99385204baa0c7f78b4f80b390c2cf8514e164f48bc0dfd11949e8ab4853"
+  },
+  {
+    "locale": "ko-KR",
+    "voiceIndex": 1,
+    "voice": "ko-KR-HyunsuMultilingualNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 38736,
+    "sha256": "a0d6686357db5f89f9d241146d2d97b4d5d686a9ccc7a2ce78c05d162def63ea"
+  },
+  {
+    "locale": "ko-KR",
+    "voiceIndex": 1,
+    "voice": "ko-KR-HyunsuMultilingualNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 56304,
+    "sha256": "e8cdcf1467993cfceb23d54c99951a96d92b7f2345a202b15b6253b6520f93c6"
+  },
+  {
+    "locale": "ko-KR",
+    "voiceIndex": 1,
+    "voice": "ko-KR-HyunsuMultilingualNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 51696,
+    "sha256": "ebe438307d4d27c0ee028b4f34246ba03fc84346806a1fadd7c36fef8e34ead5"
+  },
+  {
+    "locale": "ko-KR",
+    "voiceIndex": 1,
+    "voice": "ko-KR-HyunsuMultilingualNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 46368,
+    "sha256": "7416ad101763261639420e55e59b2e77491b2d0aa10efe2be718273a145822c0"
+  },
+  {
+    "locale": "ms-MY",
+    "voiceIndex": 0,
+    "voice": "ms-MY-YasminNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 28800,
+    "sha256": "de25dbbc82d88933933394a25e92c7babc7386ac7a309465f1f2a15772d59504"
+  },
+  {
+    "locale": "ms-MY",
+    "voiceIndex": 0,
+    "voice": "ms-MY-YasminNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 28944,
+    "sha256": "bbdd56172929a120d3e8da90de042867e38cf1a97ffd90e926ea433fa1958471"
+  },
+  {
+    "locale": "ms-MY",
+    "voiceIndex": 0,
+    "voice": "ms-MY-YasminNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 42336,
+    "sha256": "8924b2a64e00c2be43d03645579f31d3a28730f175daa3dd2e108bd9df33c3f4"
+  },
+  {
+    "locale": "ms-MY",
+    "voiceIndex": 0,
+    "voice": "ms-MY-YasminNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 37008,
+    "sha256": "3efb538cef28d36ac1bbc4fd5fba252d0c8bdc1e172f5eed761d6695a998bef3"
+  },
+  {
+    "locale": "ms-MY",
+    "voiceIndex": 0,
+    "voice": "ms-MY-YasminNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 36576,
+    "sha256": "a64f4f052d801e6d91e10c4299c2cde70f22c79f61a1a7029f131c6e23781201"
+  },
+  {
+    "locale": "ms-MY",
+    "voiceIndex": 0,
+    "voice": "ms-MY-YasminNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 59040,
+    "sha256": "0787176a53513a344733e2fba46bfa9b562e88fd37805c09e4b87d9f35df86b0"
+  },
+  {
+    "locale": "ms-MY",
+    "voiceIndex": 0,
+    "voice": "ms-MY-YasminNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 52272,
+    "sha256": "5c8a9aa871d50cde041cd6e5940881a6618fd69e0165dbbdf247f9bd2c98d92a"
+  },
+  {
+    "locale": "ms-MY",
+    "voiceIndex": 0,
+    "voice": "ms-MY-YasminNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 48528,
+    "sha256": "cd38830925bf5f718cd949854881f60b1fdb996c29668700feb1b88c61fc3c0c"
+  },
+  {
+    "locale": "ms-MY",
+    "voiceIndex": 1,
+    "voice": "ms-MY-OsmanNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 27072,
+    "sha256": "ba2e98add0d820ef3bf81ebe1fb72670dccd9af32900a5b8a6a3768f9b117c15"
+  },
+  {
+    "locale": "ms-MY",
+    "voiceIndex": 1,
+    "voice": "ms-MY-OsmanNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 26064,
+    "sha256": "37600633bb00dd7c1d52dfd53644e6bee73b6fbee5107ef6f54ddc4b2f210963"
+  },
+  {
+    "locale": "ms-MY",
+    "voiceIndex": 1,
+    "voice": "ms-MY-OsmanNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 38880,
+    "sha256": "1304e1cde38ebd99cac2d3b6df8fd72a9f84a93d9d5db786caa06af21294b7f0"
+  },
+  {
+    "locale": "ms-MY",
+    "voiceIndex": 1,
+    "voice": "ms-MY-OsmanNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 34560,
+    "sha256": "58f71830b17b0ea8e00346bc8fed29a26b7b4b33b2a51e48143afb4626687d6a"
+  },
+  {
+    "locale": "ms-MY",
+    "voiceIndex": 1,
+    "voice": "ms-MY-OsmanNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 32400,
+    "sha256": "c137cde81e21bea37c17b186e261c9ecbe2521504882a21e68fcc9a789bc68f5"
+  },
+  {
+    "locale": "ms-MY",
+    "voiceIndex": 1,
+    "voice": "ms-MY-OsmanNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 55872,
+    "sha256": "f717043bc5770fe97ee0e9016e94cab89793b297bbc67ebe561771dee01ec042"
+  },
+  {
+    "locale": "ms-MY",
+    "voiceIndex": 1,
+    "voice": "ms-MY-OsmanNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 52128,
+    "sha256": "e4d3e9503437cf0e7e4ad72d30f0815be82b824f1d3bfccaca88e19e4fa0c151"
+  },
+  {
+    "locale": "ms-MY",
+    "voiceIndex": 1,
+    "voice": "ms-MY-OsmanNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 48384,
+    "sha256": "9a7cb992f83be1436736abc993a2a92757f7bcb1f6cbf1b8165ec3be08229421"
+  },
+  {
+    "locale": "nl-NL",
+    "voiceIndex": 0,
+    "voice": "nl-NL-ColetteNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 22608,
+    "sha256": "5060cda1f78f76fddb0c7806add8838f6f883d0829d200542290183dc15549f0"
+  },
+  {
+    "locale": "nl-NL",
+    "voiceIndex": 0,
+    "voice": "nl-NL-ColetteNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 23904,
+    "sha256": "772375e41080fcd3f6e29a8e2ea78e13f8752433c71893812b1575335183c68a"
+  },
+  {
+    "locale": "nl-NL",
+    "voiceIndex": 0,
+    "voice": "nl-NL-ColetteNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 37728,
+    "sha256": "71f8f3e5071ef4c0cb7363d85191fd8a641507c445b592ae515193ecb5c17223"
+  },
+  {
+    "locale": "nl-NL",
+    "voiceIndex": 0,
+    "voice": "nl-NL-ColetteNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 32976,
+    "sha256": "8f11ede4abf5dd488b94b9dc5bda88a7f8e377e542220a37553fe3a311896a98"
+  },
+  {
+    "locale": "nl-NL",
+    "voiceIndex": 0,
+    "voice": "nl-NL-ColetteNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 40320,
+    "sha256": "1fd2cd5ad752e7631bc9c4b1677e7924a35ae553df1ba0aa30ba1f541aa93da1"
+  },
+  {
+    "locale": "nl-NL",
+    "voiceIndex": 0,
+    "voice": "nl-NL-ColetteNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 50688,
+    "sha256": "4ee50a22433f2f698e4552e00797de17f9f8c0219195fe023ab1eeaee340b8aa"
+  },
+  {
+    "locale": "nl-NL",
+    "voiceIndex": 0,
+    "voice": "nl-NL-ColetteNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 46224,
+    "sha256": "0caba66e1a14e0730157f252a17a0e6dd5e36a8e5de06055d1a46e50e13b2aa0"
+  },
+  {
+    "locale": "nl-NL",
+    "voiceIndex": 0,
+    "voice": "nl-NL-ColetteNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 37728,
+    "sha256": "3e3cbaa9e55258d3e22c14a0b428ea3931741ec026a3b87f87bef0825f5a6d4d"
+  },
+  {
+    "locale": "nl-NL",
+    "voiceIndex": 1,
+    "voice": "nl-NL-MaartenNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 21456,
+    "sha256": "09c485954fc1852abc21c25b1aea58b79a8c062dd803025765ac71d131e54a59"
+  },
+  {
+    "locale": "nl-NL",
+    "voiceIndex": 1,
+    "voice": "nl-NL-MaartenNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 22608,
+    "sha256": "a3a4d7cf0d9ff4c0654f7cf84e086a970ce03d3b151bab5e425fb554fda4c7e7"
+  },
+  {
+    "locale": "nl-NL",
+    "voiceIndex": 1,
+    "voice": "nl-NL-MaartenNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 34272,
+    "sha256": "2e47c81379244b4e0e857d5376bb691982f58ed80914d28b35f03a1328314fab"
+  },
+  {
+    "locale": "nl-NL",
+    "voiceIndex": 1,
+    "voice": "nl-NL-MaartenNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 29664,
+    "sha256": "ab1d5ef759507f219c078acbe056da41a215c431c49f3ed2ed1a7660733dc62c"
+  },
+  {
+    "locale": "nl-NL",
+    "voiceIndex": 1,
+    "voice": "nl-NL-MaartenNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 33264,
+    "sha256": "a17823b2f27bae735f8836abcf0b0f60ffa456f25ad72f8ea3ccc088f15a7521"
+  },
+  {
+    "locale": "nl-NL",
+    "voiceIndex": 1,
+    "voice": "nl-NL-MaartenNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 43056,
+    "sha256": "31d7df5501bc886ad303711759aa860dfa9577156b5d2fcceceae05a98a88f51"
+  },
+  {
+    "locale": "nl-NL",
+    "voiceIndex": 1,
+    "voice": "nl-NL-MaartenNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 39024,
+    "sha256": "6a2dff9787ae63d237ccf8c7a3ab7e2db5fdb2c3ebea192462c9715a5d117695"
+  },
+  {
+    "locale": "nl-NL",
+    "voiceIndex": 1,
+    "voice": "nl-NL-MaartenNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 33552,
+    "sha256": "dea7c16dfeaa9cdca7ea4b616aff0a3affe198d65480591d1e11f6a5caff8b6f"
+  },
+  {
+    "locale": "no-NO",
+    "voiceIndex": 0,
+    "voice": "nb-NO-PernilleNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 20448,
+    "sha256": "f9e9b70f69c94d9a1bdbc0544f2a94b064f55f1c5969917afbaf53b7188fdaeb"
+  },
+  {
+    "locale": "no-NO",
+    "voiceIndex": 0,
+    "voice": "nb-NO-PernilleNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 20304,
+    "sha256": "bf1c8307a077937acec937af25c5466272b1d9395e04512707a10ccd9c2acbd3"
+  },
+  {
+    "locale": "no-NO",
+    "voiceIndex": 0,
+    "voice": "nb-NO-PernilleNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 33120,
+    "sha256": "1ccf3050fef7ad6b5e2b53221459de7615f60fe62d6dc4486c156e2807ecf6c9"
+  },
+  {
+    "locale": "no-NO",
+    "voiceIndex": 0,
+    "voice": "nb-NO-PernilleNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 28512,
+    "sha256": "4d12c76ea117bdc4d362dcc5cb4be2f203eb1b89fcc891ad4511537d513ef91e"
+  },
+  {
+    "locale": "no-NO",
+    "voiceIndex": 0,
+    "voice": "nb-NO-PernilleNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 27504,
+    "sha256": "0f7a1ae382e45ffa2d69c2983fad8a1b896f8c5f2eb9b7989c288a45f88e339e"
+  },
+  {
+    "locale": "no-NO",
+    "voiceIndex": 0,
+    "voice": "nb-NO-PernilleNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 47952,
+    "sha256": "50be449afa292c21fa91ad9e08d8e404aaea517258547331b0c048e6aa4fb8f5"
+  },
+  {
+    "locale": "no-NO",
+    "voiceIndex": 0,
+    "voice": "nb-NO-PernilleNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 36720,
+    "sha256": "9d520c1c7d2d82a9fa62c994aee4ad7a3e13b27817ef819691262cac7c007ed6"
+  },
+  {
+    "locale": "no-NO",
+    "voiceIndex": 0,
+    "voice": "nb-NO-PernilleNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 30816,
+    "sha256": "346ceb6f89abca7d920732901b9f3a1356541a5d11e2e364af4847810b00dd42"
+  },
+  {
+    "locale": "no-NO",
+    "voiceIndex": 1,
+    "voice": "nb-NO-FinnNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 20880,
+    "sha256": "4e575c0069c0212d199ad44dacabf2a8a279b42806a6dc34c35d6331279adee0"
+  },
+  {
+    "locale": "no-NO",
+    "voiceIndex": 1,
+    "voice": "nb-NO-FinnNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 20736,
+    "sha256": "0c138d54adc2588ac3b24b04bb2f2191cb297a0f784a8b235042620662a8e728"
+  },
+  {
+    "locale": "no-NO",
+    "voiceIndex": 1,
+    "voice": "nb-NO-FinnNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 34848,
+    "sha256": "9e6bbc15120faea11e07578ba4b29a0078246c97937f1b372ca5b186f8cd0132"
+  },
+  {
+    "locale": "no-NO",
+    "voiceIndex": 1,
+    "voice": "nb-NO-FinnNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 28800,
+    "sha256": "95f869671e8ce50f09c986e15ce38d09227e3b2074993b117d1def20601ef069"
+  },
+  {
+    "locale": "no-NO",
+    "voiceIndex": 1,
+    "voice": "nb-NO-FinnNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 30816,
+    "sha256": "17077006ba0f2120ab68bc683de31661f0a3401f25e1a98228b14e36cc65bb78"
+  },
+  {
+    "locale": "no-NO",
+    "voiceIndex": 1,
+    "voice": "nb-NO-FinnNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 49680,
+    "sha256": "e5644853bc794a90c42213f4320ef5457a47966525c5636989275f5f8f5a83d9"
+  },
+  {
+    "locale": "no-NO",
+    "voiceIndex": 1,
+    "voice": "nb-NO-FinnNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 38304,
+    "sha256": "24849254860549cdb917b588d44d53e9a37d2cc727ce2a251a07a2ace341268a"
+  },
+  {
+    "locale": "no-NO",
+    "voiceIndex": 1,
+    "voice": "nb-NO-FinnNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 31824,
+    "sha256": "2c346cee09e809d849880a1164bf4c45c0fac3919b7f67d318f8121e7eff3120"
+  },
+  {
+    "locale": "pl-PL",
+    "voiceIndex": 0,
+    "voice": "pl-PL-ZofiaNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 20448,
+    "sha256": "ed20912d1670d664c6fb60d5accec3b2db05c50145d7f00d94ef8c8d502f34b3"
+  },
+  {
+    "locale": "pl-PL",
+    "voiceIndex": 0,
+    "voice": "pl-PL-ZofiaNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 20160,
+    "sha256": "98068df4c5b8cfac09b01e1bb6b971819252ef22b094431afbe8a58b7f6756ad"
+  },
+  {
+    "locale": "pl-PL",
+    "voiceIndex": 0,
+    "voice": "pl-PL-ZofiaNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 34128,
+    "sha256": "9860e1a0703ef8efec660edb6746914209efb33dbe5348ddd133c7420e12b3b2"
+  },
+  {
+    "locale": "pl-PL",
+    "voiceIndex": 0,
+    "voice": "pl-PL-ZofiaNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 31536,
+    "sha256": "ead9253621566f0b2de97464c543439c40b8c3dd6ca277bf883244787698a850"
+  },
+  {
+    "locale": "pl-PL",
+    "voiceIndex": 0,
+    "voice": "pl-PL-ZofiaNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 30816,
+    "sha256": "2de11ffa61cf1e4ad0d60ea8af69c26d42da70a59010bf579c2c865d8280c624"
+  },
+  {
+    "locale": "pl-PL",
+    "voiceIndex": 0,
+    "voice": "pl-PL-ZofiaNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 45360,
+    "sha256": "b94118fc9506c4c3d75eeb5d274362bc31b1b1e0c08227d90b43b01841c5402b"
+  },
+  {
+    "locale": "pl-PL",
+    "voiceIndex": 0,
+    "voice": "pl-PL-ZofiaNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 44496,
+    "sha256": "d620a0f2eeb5d700207215025f3ec01f03a8f5a2dfb6b0865fe89f73c6e1cbbd"
+  },
+  {
+    "locale": "pl-PL",
+    "voiceIndex": 0,
+    "voice": "pl-PL-ZofiaNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 35712,
+    "sha256": "ec2e96ff50ee78fabbf44e3c33d390ea78bca877df891be1a3096e648153c7d4"
+  },
+  {
+    "locale": "pl-PL",
+    "voiceIndex": 1,
+    "voice": "pl-PL-MarekNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 20592,
+    "sha256": "82ceac24c28394aa83a9187acfe8dc28d18af95b65ed66ec77f4a97162b8b885"
+  },
+  {
+    "locale": "pl-PL",
+    "voiceIndex": 1,
+    "voice": "pl-PL-MarekNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 19728,
+    "sha256": "f8bb16a61e6494aca9ae03883d2a31e29f3e0f4cf1136f7b8635813622e27293"
+  },
+  {
+    "locale": "pl-PL",
+    "voiceIndex": 1,
+    "voice": "pl-PL-MarekNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 32256,
+    "sha256": "7e539686c46a967644f1a03476fa4fedda9aea0204b3a39abf22e0bece751baa"
+  },
+  {
+    "locale": "pl-PL",
+    "voiceIndex": 1,
+    "voice": "pl-PL-MarekNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 31392,
+    "sha256": "5ab102759989439ccc293d818ba7a05205a3fbe98916884b501880834cdc5665"
+  },
+  {
+    "locale": "pl-PL",
+    "voiceIndex": 1,
+    "voice": "pl-PL-MarekNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 29952,
+    "sha256": "d41297ed151f84d673472d88c2b2fed0fef5d0d872a007e6a2511a53648ad363"
+  },
+  {
+    "locale": "pl-PL",
+    "voiceIndex": 1,
+    "voice": "pl-PL-MarekNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 43920,
+    "sha256": "6edee539117d16c81c13f6e29822fd26799c9fdbb7f92414b5236e46d72ed126"
+  },
+  {
+    "locale": "pl-PL",
+    "voiceIndex": 1,
+    "voice": "pl-PL-MarekNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 41616,
+    "sha256": "b0a10c06b207a631f133b5bca58763815bd1bca63ad12476babaa67fd679137c"
+  },
+  {
+    "locale": "pl-PL",
+    "voiceIndex": 1,
+    "voice": "pl-PL-MarekNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 33408,
+    "sha256": "e215f095337fb753dc0b30b7fabe6a9b8fdbc944190c6a92644704f8affda4ef"
+  },
+  {
+    "locale": "pt-BR",
+    "voiceIndex": 0,
+    "voice": "pt-BR-FranciscaNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 26784,
+    "sha256": "bd3c763eb36f5cf4fabc060d09aa5352540ebf517af56567e550e469187af2de"
+  },
+  {
+    "locale": "pt-BR",
+    "voiceIndex": 0,
+    "voice": "pt-BR-FranciscaNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 18864,
+    "sha256": "9b12f8128729cba544b13f5a9c499d85253e90894531f64430ea28cf1a11c068"
+  },
+  {
+    "locale": "pt-BR",
+    "voiceIndex": 0,
+    "voice": "pt-BR-FranciscaNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 37008,
+    "sha256": "e6b577ab3a3fbea59c1690c9a460f380b5234d3730ef698678f5fe2648cc553e"
+  },
+  {
+    "locale": "pt-BR",
+    "voiceIndex": 0,
+    "voice": "pt-BR-FranciscaNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 33120,
+    "sha256": "3cb0c379b08b05747aaf51194337f958cf4e2f67987efa3c8d6ec0a832a746c2"
+  },
+  {
+    "locale": "pt-BR",
+    "voiceIndex": 0,
+    "voice": "pt-BR-FranciscaNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 32400,
+    "sha256": "922fe6e13ed87f93b6556ae0f2bdcbbe8efcd6dc91f5080a6dd208020b72e6f0"
+  },
+  {
+    "locale": "pt-BR",
+    "voiceIndex": 0,
+    "voice": "pt-BR-FranciscaNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 54864,
+    "sha256": "ebf7c8c3d8f3802dfddfaa43d3c811cbb786a20a9354855a8050ee88d32cc4e9"
+  },
+  {
+    "locale": "pt-BR",
+    "voiceIndex": 0,
+    "voice": "pt-BR-FranciscaNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 50544,
+    "sha256": "3f2a6316323c7fb2c3b196f2f73dd5760f0afcd8dda1a4df214c026063caac42"
+  },
+  {
+    "locale": "pt-BR",
+    "voiceIndex": 0,
+    "voice": "pt-BR-FranciscaNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 41040,
+    "sha256": "9891fa3307c2d0203f0cdbf7ca2abb32657d93dd66f364302a1c6a4b28036589"
+  },
+  {
+    "locale": "pt-BR",
+    "voiceIndex": 1,
+    "voice": "pt-BR-AntonioNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 28512,
+    "sha256": "e8094404a294de2db413d0a978c09d5afb434a4efbc36ec0c2c0c294de2a77b6"
+  },
+  {
+    "locale": "pt-BR",
+    "voiceIndex": 1,
+    "voice": "pt-BR-AntonioNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 21168,
+    "sha256": "d0bab59e97f4a5e024579d3895134921d2f486e470a1dedd842a0cdbef2dac18"
+  },
+  {
+    "locale": "pt-BR",
+    "voiceIndex": 1,
+    "voice": "pt-BR-AntonioNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 35568,
+    "sha256": "4504db6494e84d6f3c9346ff69f9c8a3b482633dc3f7a294adeafcb5fe369a34"
+  },
+  {
+    "locale": "pt-BR",
+    "voiceIndex": 1,
+    "voice": "pt-BR-AntonioNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 31248,
+    "sha256": "3d7dd5f3016d73bd0b7854a01b67e9ebd9de2226681b54dce18a9dacaa86b87d"
+  },
+  {
+    "locale": "pt-BR",
+    "voiceIndex": 1,
+    "voice": "pt-BR-AntonioNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 32112,
+    "sha256": "03276af643a23782d7363df971eebe3224a7f3d2bc4eb999a69d20d7cf303cbc"
+  },
+  {
+    "locale": "pt-BR",
+    "voiceIndex": 1,
+    "voice": "pt-BR-AntonioNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 52992,
+    "sha256": "76cacf839c55ac379cd031dcf871797535fbdfad1c9d0a01305dbb630f6e60ef"
+  },
+  {
+    "locale": "pt-BR",
+    "voiceIndex": 1,
+    "voice": "pt-BR-AntonioNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 47520,
+    "sha256": "a2502cba10f5e8f2a6154c1caa9e2c94034eac3acf671d4f0bd416ee124785ed"
+  },
+  {
+    "locale": "pt-BR",
+    "voiceIndex": 1,
+    "voice": "pt-BR-AntonioNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 41040,
+    "sha256": "66740e99bdfcf6177fd8837ab629c1be7d6426d8f704a7e15534336f1fd82c30"
+  },
+  {
+    "locale": "ro-RO",
+    "voiceIndex": 0,
+    "voice": "ro-RO-AlinaNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 21600,
+    "sha256": "d650fb926c22700dd8aaf90ba9a83456b2ed416a09f9c3b8e764b6a16b37a681"
+  },
+  {
+    "locale": "ro-RO",
+    "voiceIndex": 0,
+    "voice": "ro-RO-AlinaNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 23040,
+    "sha256": "e8b83fc8252454aedeb24eca9f62f002ada2ae0d1cb85b2fcc91c1258b13c279"
+  },
+  {
+    "locale": "ro-RO",
+    "voiceIndex": 0,
+    "voice": "ro-RO-AlinaNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 36144,
+    "sha256": "88b6b306e3c68d29fea9c979c8d02b59d649d40ddf633e6b15b122f3d2ad594b"
+  },
+  {
+    "locale": "ro-RO",
+    "voiceIndex": 0,
+    "voice": "ro-RO-AlinaNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 31536,
+    "sha256": "bfb4084ed112b5370be82e851868ce3d28f35331d1f98c51508db8d9f610a798"
+  },
+  {
+    "locale": "ro-RO",
+    "voiceIndex": 0,
+    "voice": "ro-RO-AlinaNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 32256,
+    "sha256": "57c8de963539535c26e728577f50f4342d9e6f96e66d30a53cd927bfb353a948"
+  },
+  {
+    "locale": "ro-RO",
+    "voiceIndex": 0,
+    "voice": "ro-RO-AlinaNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 43056,
+    "sha256": "6be9e2aa30e7c8af5259fec264cfe540a28351673437b24a7c4f721d64133e5d"
+  },
+  {
+    "locale": "ro-RO",
+    "voiceIndex": 0,
+    "voice": "ro-RO-AlinaNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 40896,
+    "sha256": "d4f22884380e436ce7b6934247f9d72fb89b7bf45546aa3c78e649040b541e73"
+  },
+  {
+    "locale": "ro-RO",
+    "voiceIndex": 0,
+    "voice": "ro-RO-AlinaNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 39600,
+    "sha256": "db63cc2b59f09c7ef274d45fe9ba4eac840b50220d4c3cae183c1594270a56e9"
+  },
+  {
+    "locale": "ro-RO",
+    "voiceIndex": 1,
+    "voice": "ro-RO-EmilNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 22176,
+    "sha256": "3f24bf510613564644dad279caed144e58312e37c6b44f9d1d76b038efdab8dc"
+  },
+  {
+    "locale": "ro-RO",
+    "voiceIndex": 1,
+    "voice": "ro-RO-EmilNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 22608,
+    "sha256": "5161f3358ab423a0ab864591043cfa3c3d4d1d0bd017c5a59612ae51bc6ebd54"
+  },
+  {
+    "locale": "ro-RO",
+    "voiceIndex": 1,
+    "voice": "ro-RO-EmilNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 35568,
+    "sha256": "d1161a725ad73609233c106db83fc8e3f9745d0caea5f128e9c69ae3d237b5da"
+  },
+  {
+    "locale": "ro-RO",
+    "voiceIndex": 1,
+    "voice": "ro-RO-EmilNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 31104,
+    "sha256": "5c920b0c2effecc496c1bf90084da342feafbac65f8b56aff7ae1f3a2e667b93"
+  },
+  {
+    "locale": "ro-RO",
+    "voiceIndex": 1,
+    "voice": "ro-RO-EmilNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 31104,
+    "sha256": "4ab3a7ffee92c2ae86572e353cb3915cb17b32bcd6799c53833643f590eff452"
+  },
+  {
+    "locale": "ro-RO",
+    "voiceIndex": 1,
+    "voice": "ro-RO-EmilNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 43056,
+    "sha256": "3182ff7868819c10fbbaeb12fbc4d334bddbbea227052190b2bb5e3b3ac28915"
+  },
+  {
+    "locale": "ro-RO",
+    "voiceIndex": 1,
+    "voice": "ro-RO-EmilNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 41040,
+    "sha256": "4bbb8e41d405a8f050f2dea862f2f7ca870d115a8ce0a97f52877601d4113375"
+  },
+  {
+    "locale": "ro-RO",
+    "voiceIndex": 1,
+    "voice": "ro-RO-EmilNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 39456,
+    "sha256": "f2fda302567206009e2c2b92e6188722fd8debd279f76a329cd5b3e16a9a957b"
+  },
+  {
+    "locale": "ru-RU",
+    "voiceIndex": 0,
+    "voice": "ru-RU-SvetlanaNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 22176,
+    "sha256": "b602a1a5e9bfab37935e434ad80c6751b829471507e23fbee2da2087e909d078"
+  },
+  {
+    "locale": "ru-RU",
+    "voiceIndex": 0,
+    "voice": "ru-RU-SvetlanaNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 22608,
+    "sha256": "5f8256a6db5bf5b3aec7e5236d5a00be8fa6a7bb3da35559f35dcc383bd46886"
+  },
+  {
+    "locale": "ru-RU",
+    "voiceIndex": 0,
+    "voice": "ru-RU-SvetlanaNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 36576,
+    "sha256": "34db0a0e47f0e4f8e6548ce572562c04fae9edbb177664ef20fbdd3bf36914e3"
+  },
+  {
+    "locale": "ru-RU",
+    "voiceIndex": 0,
+    "voice": "ru-RU-SvetlanaNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 28656,
+    "sha256": "9893bf06a5ea82928af014224e6d9b6ec2ca3327b3ecb5db9ce5da3e6b86f0db"
+  },
+  {
+    "locale": "ru-RU",
+    "voiceIndex": 0,
+    "voice": "ru-RU-SvetlanaNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 34704,
+    "sha256": "db9365fd167dcdc4d7fe0f809e17843b8d42c0a4d075135ea24d3d6f6e436d49"
+  },
+  {
+    "locale": "ru-RU",
+    "voiceIndex": 0,
+    "voice": "ru-RU-SvetlanaNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 48384,
+    "sha256": "f1c0fe3af8c19e92932dfb80db1bcb65125d95a51aa8ffe4895f461e5da74a2c"
+  },
+  {
+    "locale": "ru-RU",
+    "voiceIndex": 0,
+    "voice": "ru-RU-SvetlanaNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 47664,
+    "sha256": "6066fcde379812e218614c21b1d6069a7dc50eb3f099368772151a47f8006535"
+  },
+  {
+    "locale": "ru-RU",
+    "voiceIndex": 0,
+    "voice": "ru-RU-SvetlanaNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 40896,
+    "sha256": "0a763008854b70d4e4366e5fe712708eb96af0306b5108f4b29287b8b67dde17"
+  },
+  {
+    "locale": "ru-RU",
+    "voiceIndex": 1,
+    "voice": "ru-RU-DmitryNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 22752,
+    "sha256": "1eca19ad777aff5e247d74f18190767ca4c192931414129ab12418dd145d4958"
+  },
+  {
+    "locale": "ru-RU",
+    "voiceIndex": 1,
+    "voice": "ru-RU-DmitryNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 21456,
+    "sha256": "40f20c47688e6a88321f34d0185795b7b88df9e616d6b829456e64804abfe574"
+  },
+  {
+    "locale": "ru-RU",
+    "voiceIndex": 1,
+    "voice": "ru-RU-DmitryNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 36720,
+    "sha256": "e475b471db19c2efbe26b9065cdf426e9b38f04ab8b97cac8963973a117bea6a"
+  },
+  {
+    "locale": "ru-RU",
+    "voiceIndex": 1,
+    "voice": "ru-RU-DmitryNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 29376,
+    "sha256": "e145868d9292b9fa6c27c98436df3ebd825a3d2712ed708880e765cf3a7671a9"
+  },
+  {
+    "locale": "ru-RU",
+    "voiceIndex": 1,
+    "voice": "ru-RU-DmitryNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 35280,
+    "sha256": "e536d400a7928a3d377d1141a0670d9f892567f35072c5e6b548f594b8d0d9ca"
+  },
+  {
+    "locale": "ru-RU",
+    "voiceIndex": 1,
+    "voice": "ru-RU-DmitryNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 50256,
+    "sha256": "d34196e6a1a603b210828fdc57aeebbb8ad6fbfc8df7112eb31bdb4e8120e71f"
+  },
+  {
+    "locale": "ru-RU",
+    "voiceIndex": 1,
+    "voice": "ru-RU-DmitryNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 48528,
+    "sha256": "3394192d35f7dd8909d6084197b430506183e4cc17a58fede84261768d96c499"
+  },
+  {
+    "locale": "ru-RU",
+    "voiceIndex": 1,
+    "voice": "ru-RU-DmitryNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 42192,
+    "sha256": "b81aa898f147708f82f304e83f1531196f8b5fad2ff7887464eea2dcaef6edde"
+  },
+  {
+    "locale": "sk-SK",
+    "voiceIndex": 0,
+    "voice": "sk-SK-ViktoriaNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 21744,
+    "sha256": "188cd6802403cb6ad880e032b1fb3d57477bc3a3623b88e4b9b5fe96c0d2ccc7"
+  },
+  {
+    "locale": "sk-SK",
+    "voiceIndex": 0,
+    "voice": "sk-SK-ViktoriaNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 19008,
+    "sha256": "4c7c57bb825e6c669b722c563ecad9d9e6196502d7e7b280dc7d638bdcb04ed3"
+  },
+  {
+    "locale": "sk-SK",
+    "voiceIndex": 0,
+    "voice": "sk-SK-ViktoriaNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 35280,
+    "sha256": "80281f96c51147341dce9e81f41fd562bc71e3800c5455c8d3b112e05e0ce001"
+  },
+  {
+    "locale": "sk-SK",
+    "voiceIndex": 0,
+    "voice": "sk-SK-ViktoriaNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 30528,
+    "sha256": "7ebae59708149e4b53ee92b33ae8a3bea47f290bf5b05fed313f00a8e6884363"
+  },
+  {
+    "locale": "sk-SK",
+    "voiceIndex": 0,
+    "voice": "sk-SK-ViktoriaNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 33408,
+    "sha256": "9a0815b80cba8822c6b5cb7c7fbe0327a14f49669ca99af5845b1ee50951d998"
+  },
+  {
+    "locale": "sk-SK",
+    "voiceIndex": 0,
+    "voice": "sk-SK-ViktoriaNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 51264,
+    "sha256": "842d738ad185cfe0076d5da1e246ef92265357cc35a11c3804ae914545abfbe2"
+  },
+  {
+    "locale": "sk-SK",
+    "voiceIndex": 0,
+    "voice": "sk-SK-ViktoriaNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 50256,
+    "sha256": "a55f1b5965e9d771cb87835b824d1250d883ab87a090bfbcf93ce29ef42a4750"
+  },
+  {
+    "locale": "sk-SK",
+    "voiceIndex": 0,
+    "voice": "sk-SK-ViktoriaNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 35136,
+    "sha256": "4689c71c9d836f8ab0dc8a037e8a8d8328281de977b6c2860146ee6ec0f6c4c4"
+  },
+  {
+    "locale": "sk-SK",
+    "voiceIndex": 1,
+    "voice": "sk-SK-LukasNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 19440,
+    "sha256": "ffd8489f13556c9f90a09b4ad2d15ef9563c272cc207c28bb079e10372bfdf31"
+  },
+  {
+    "locale": "sk-SK",
+    "voiceIndex": 1,
+    "voice": "sk-SK-LukasNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 17424,
+    "sha256": "8eaef4f160e68c1f3d826a3c7f64236cea4c288a494bde38a19eb73b71587348"
+  },
+  {
+    "locale": "sk-SK",
+    "voiceIndex": 1,
+    "voice": "sk-SK-LukasNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 32544,
+    "sha256": "d6b57baeca4c1b0fd2fea3ac0fb0e7d4e109b48731b5e034857b48550fbf8cf4"
+  },
+  {
+    "locale": "sk-SK",
+    "voiceIndex": 1,
+    "voice": "sk-SK-LukasNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 26064,
+    "sha256": "5c2b4e4837befa741e0bb7a6c185071f21f4d0d1b30ae82434d58ad84871ce3c"
+  },
+  {
+    "locale": "sk-SK",
+    "voiceIndex": 1,
+    "voice": "sk-SK-LukasNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 29952,
+    "sha256": "dc2c74517cc5c635677035a1e57622be5c786747a7d41d632891aac25aa64d3b"
+  },
+  {
+    "locale": "sk-SK",
+    "voiceIndex": 1,
+    "voice": "sk-SK-LukasNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 45504,
+    "sha256": "0d9ae2533f29ce67ef3f7018dfd06234deefea1572a368516e8c2fc2ae40cae5"
+  },
+  {
+    "locale": "sk-SK",
+    "voiceIndex": 1,
+    "voice": "sk-SK-LukasNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 44208,
+    "sha256": "21409164a80243ba0f413f79a192dd901f306f3566bbd625f6f22c5c12090dbd"
+  },
+  {
+    "locale": "sk-SK",
+    "voiceIndex": 1,
+    "voice": "sk-SK-LukasNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 32256,
+    "sha256": "886030169bde190d791190c4e3c980a8160e74d72dc4dca449fd2520fc65a26a"
+  },
+  {
+    "locale": "sv-SE",
+    "voiceIndex": 0,
+    "voice": "sv-SE-SofieNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 26064,
+    "sha256": "7a2cd8c479d009fdc5c436a7216f6588b7260a55a082479fa563a9e3ec6f13bf"
+  },
+  {
+    "locale": "sv-SE",
+    "voiceIndex": 0,
+    "voice": "sv-SE-SofieNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 22176,
+    "sha256": "68cf80fd940462e91d7c4ee1dd1e0be7c49b9b788ca8c366a2fc0f92f9514a28"
+  },
+  {
+    "locale": "sv-SE",
+    "voiceIndex": 0,
+    "voice": "sv-SE-SofieNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 35280,
+    "sha256": "8f1a99801d48837ff8df4e1b212579046f9b73483cbb40373d86e834843ce038"
+  },
+  {
+    "locale": "sv-SE",
+    "voiceIndex": 0,
+    "voice": "sv-SE-SofieNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 32544,
+    "sha256": "4736093ccddc36d38b8ca916123e7b2854b9dc637816bac58bb62bdec3ae8d78"
+  },
+  {
+    "locale": "sv-SE",
+    "voiceIndex": 0,
+    "voice": "sv-SE-SofieNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 33552,
+    "sha256": "1935e51516edd730766d39342da78ab8eb4e351a326114f5910953c5b1d746f3"
+  },
+  {
+    "locale": "sv-SE",
+    "voiceIndex": 0,
+    "voice": "sv-SE-SofieNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 50400,
+    "sha256": "6c1580605c3062726a98ea7f6c6ce7810eaa64abb1679001d9b8c921a5388ee3"
+  },
+  {
+    "locale": "sv-SE",
+    "voiceIndex": 0,
+    "voice": "sv-SE-SofieNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 44496,
+    "sha256": "ca4d9fbeff904909dca5bfbaccf872b1890c400ebaa21b6a087dca40e15c1765"
+  },
+  {
+    "locale": "sv-SE",
+    "voiceIndex": 0,
+    "voice": "sv-SE-SofieNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 38160,
+    "sha256": "ad9b48df7eee5d0cdaa2e877e19b41b684a3ee020f9d547c351e5101bf51708b"
+  },
+  {
+    "locale": "sv-SE",
+    "voiceIndex": 1,
+    "voice": "sv-SE-MattiasNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 28368,
+    "sha256": "63d9c45cf4872f0ada668db9d1eea4be88dddbda6be5fa2360c20412cb25393f"
+  },
+  {
+    "locale": "sv-SE",
+    "voiceIndex": 1,
+    "voice": "sv-SE-MattiasNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 25200,
+    "sha256": "451eeaf9232024a77cb17cfee440f853d688dabbee003754be19cc56a9500410"
+  },
+  {
+    "locale": "sv-SE",
+    "voiceIndex": 1,
+    "voice": "sv-SE-MattiasNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 38304,
+    "sha256": "fef6ecb7bbe3acb915cdc404a8f0eea517b3c9e6a40e084f4288e0fb08d0ac96"
+  },
+  {
+    "locale": "sv-SE",
+    "voiceIndex": 1,
+    "voice": "sv-SE-MattiasNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 34272,
+    "sha256": "e72dcbc364148281165d77f925abe2adc46131466bbbcfe855641ba6ddc1c856"
+  },
+  {
+    "locale": "sv-SE",
+    "voiceIndex": 1,
+    "voice": "sv-SE-MattiasNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 35280,
+    "sha256": "18ed43fa8f18564d058e939202600930067f8c6c67d16d4d8f79573901d676a3"
+  },
+  {
+    "locale": "sv-SE",
+    "voiceIndex": 1,
+    "voice": "sv-SE-MattiasNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 56736,
+    "sha256": "27ce71cd39a4bfda73da9ba3a23e7372dc138ad9fdf919f66673cedf817f03af"
+  },
+  {
+    "locale": "sv-SE",
+    "voiceIndex": 1,
+    "voice": "sv-SE-MattiasNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 46800,
+    "sha256": "c15b72ac654bcbbe2d4e848a829bfbd22127fdc26d1c7f3f060a8b4ec58ee72d"
+  },
+  {
+    "locale": "sv-SE",
+    "voiceIndex": 1,
+    "voice": "sv-SE-MattiasNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 42912,
+    "sha256": "113e7a59711a99a9cfc11cf1ba4dfb65ee2034c2fc80e375247f5516b40419af"
+  },
+  {
+    "locale": "sw-KE",
+    "voiceIndex": 0,
+    "voice": "sw-KE-ZuriNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 23328,
+    "sha256": "2c17f14624ef5f067d0e51fd6273692b59a1d977915a75616675fb61cb081121"
+  },
+  {
+    "locale": "sw-KE",
+    "voiceIndex": 0,
+    "voice": "sw-KE-ZuriNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 23616,
+    "sha256": "b18c3bd2478e8076e7a185596646630a36f5ed196979b0355dbd3f229d47fca3"
+  },
+  {
+    "locale": "sw-KE",
+    "voiceIndex": 0,
+    "voice": "sw-KE-ZuriNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 40464,
+    "sha256": "9e02324aa0c5eb2c9680d3cc7199a0c96484a76612b1ce52216d19310d29acbe"
+  },
+  {
+    "locale": "sw-KE",
+    "voiceIndex": 0,
+    "voice": "sw-KE-ZuriNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 36720,
+    "sha256": "95ef304c20986a99880bb48b944b1fabc06204fbf4d9f7503d755fcead48a463"
+  },
+  {
+    "locale": "sw-KE",
+    "voiceIndex": 0,
+    "voice": "sw-KE-ZuriNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 35136,
+    "sha256": "e229a25fe03eedbae0d367b0ab6a19aa156d5d6f6164851f73f989f84d88eac7"
+  },
+  {
+    "locale": "sw-KE",
+    "voiceIndex": 0,
+    "voice": "sw-KE-ZuriNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 57456,
+    "sha256": "44d01fa2c6e3eaf7c4bd45434573c07bb1aa89f2da4870d6ece03eaaac455e34"
+  },
+  {
+    "locale": "sw-KE",
+    "voiceIndex": 0,
+    "voice": "sw-KE-ZuriNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 57744,
+    "sha256": "c7707d8b4455a1fc465e349a45ee8352c502bc632250380e86e8dbddbdb0747f"
+  },
+  {
+    "locale": "sw-KE",
+    "voiceIndex": 0,
+    "voice": "sw-KE-ZuriNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 48384,
+    "sha256": "123c5689e44289ee7f86b97fb37621df4442d7d5382b2e59e70c462e24cc139a"
+  },
+  {
+    "locale": "sw-KE",
+    "voiceIndex": 1,
+    "voice": "sw-KE-RafikiNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 22320,
+    "sha256": "a096d22e31bed70522d61ba81ae516ccd1390847a9421caf524bd48889fb0d50"
+  },
+  {
+    "locale": "sw-KE",
+    "voiceIndex": 1,
+    "voice": "sw-KE-RafikiNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 22320,
+    "sha256": "7fe4fbba43fe517ba9249ab81de449725892890f94d13cfd5210549831af8ae5"
+  },
+  {
+    "locale": "sw-KE",
+    "voiceIndex": 1,
+    "voice": "sw-KE-RafikiNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 38592,
+    "sha256": "5060e78a4a6f62aa8ad8d29c3bbc0a981016fee396dda8884d0db441b8cc15f7"
+  },
+  {
+    "locale": "sw-KE",
+    "voiceIndex": 1,
+    "voice": "sw-KE-RafikiNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 34416,
+    "sha256": "92a124f172e71fb6088fe533687ed37d5e44235a8feec62d0bbea18917a84886"
+  },
+  {
+    "locale": "sw-KE",
+    "voiceIndex": 1,
+    "voice": "sw-KE-RafikiNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 33984,
+    "sha256": "5889f47273f3c0d5e91e220c29713dabb55197d8cf51dc771a6fc6cac6cb59a3"
+  },
+  {
+    "locale": "sw-KE",
+    "voiceIndex": 1,
+    "voice": "sw-KE-RafikiNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 54144,
+    "sha256": "77fd31998fc3babd04954a8d32e86f55d8a11f6b365a10da7c3bb380b2cdfcc0"
+  },
+  {
+    "locale": "sw-KE",
+    "voiceIndex": 1,
+    "voice": "sw-KE-RafikiNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 55584,
+    "sha256": "6c26d602fb01872d1057d68c3ae071a97fdbc3846087bd5e543996dbf8b1c2d5"
+  },
+  {
+    "locale": "sw-KE",
+    "voiceIndex": 1,
+    "voice": "sw-KE-RafikiNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 45792,
+    "sha256": "7fcdf224756751a431b44a0b66c99056c6d97a0043a3c3ea99e64401d15fbfef"
+  },
+  {
+    "locale": "ta-IN",
+    "voiceIndex": 0,
+    "voice": "ta-IN-PallaviNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 25776,
+    "sha256": "c0c7c648586bb61c46438c2eb800221470f084e84f3468424dce167a483971f0"
+  },
+  {
+    "locale": "ta-IN",
+    "voiceIndex": 0,
+    "voice": "ta-IN-PallaviNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 24480,
+    "sha256": "806087629e38ee65447f9f57af189b49ed5e7098d7e346b5977143faab6c41e3"
+  },
+  {
+    "locale": "ta-IN",
+    "voiceIndex": 0,
+    "voice": "ta-IN-PallaviNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 39600,
+    "sha256": "6db5b187f2184f76eb1b4b98b55a3ef7bef92abb73ec648853daeea4d14a345f"
+  },
+  {
+    "locale": "ta-IN",
+    "voiceIndex": 0,
+    "voice": "ta-IN-PallaviNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 39312,
+    "sha256": "b27923ee6827e790f94920bc46a8debafc292500d70022e572b9505cd944d01f"
+  },
+  {
+    "locale": "ta-IN",
+    "voiceIndex": 0,
+    "voice": "ta-IN-PallaviNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 43776,
+    "sha256": "7ddb121bbf746ff7214ba75d1afbc7adb938cd2a034595668740007f99402b3e"
+  },
+  {
+    "locale": "ta-IN",
+    "voiceIndex": 0,
+    "voice": "ta-IN-PallaviNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 68688,
+    "sha256": "9240931aa99a0476c86ea54f73051d7b715c604bd662b98538750e65e242a8fe"
+  },
+  {
+    "locale": "ta-IN",
+    "voiceIndex": 0,
+    "voice": "ta-IN-PallaviNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 63504,
+    "sha256": "b73f9d3f80057f40c9d676075a7becb61c9f9ba132154604c661549920d15a72"
+  },
+  {
+    "locale": "ta-IN",
+    "voiceIndex": 0,
+    "voice": "ta-IN-PallaviNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 49104,
+    "sha256": "fe6b689209f1ec2a64feb6ff9fe53a6e7304e6c77a7af1ee1a472ae368c978b9"
+  },
+  {
+    "locale": "ta-IN",
+    "voiceIndex": 1,
+    "voice": "ta-IN-ValluvarNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 25488,
+    "sha256": "051c4f71a0f3087ff8eaaa73084d9197d55a26fcc29e7e13e09e89c37bb3b96d"
+  },
+  {
+    "locale": "ta-IN",
+    "voiceIndex": 1,
+    "voice": "ta-IN-ValluvarNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 24480,
+    "sha256": "36d3eaf79bd4bff84b71c9aa941b6afdec98baa7846029a03cd4321421ce5066"
+  },
+  {
+    "locale": "ta-IN",
+    "voiceIndex": 1,
+    "voice": "ta-IN-ValluvarNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 38016,
+    "sha256": "a68c18a067fb668a4811a45022f51b895a656e705e44d37e048373e73065da48"
+  },
+  {
+    "locale": "ta-IN",
+    "voiceIndex": 1,
+    "voice": "ta-IN-ValluvarNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 38880,
+    "sha256": "4c54616386a1815f654e1469acf2efacd27b610359b7850b2f2b0d0e8b82fdea"
+  },
+  {
+    "locale": "ta-IN",
+    "voiceIndex": 1,
+    "voice": "ta-IN-ValluvarNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 42912,
+    "sha256": "774f5f600d46e9ea3a11ddcf6525025d7c58587c88bf2f685faca7efa2fb97a3"
+  },
+  {
+    "locale": "ta-IN",
+    "voiceIndex": 1,
+    "voice": "ta-IN-ValluvarNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 69408,
+    "sha256": "a20d7746941848c20b4582fc3c7f23a6b8b5896db3b36b7d81022202bb88327d"
+  },
+  {
+    "locale": "ta-IN",
+    "voiceIndex": 1,
+    "voice": "ta-IN-ValluvarNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 61920,
+    "sha256": "8ad0b6c426c86f535a920335a46af8739a999fe4219218475084e856db9ec5ed"
+  },
+  {
+    "locale": "ta-IN",
+    "voiceIndex": 1,
+    "voice": "ta-IN-ValluvarNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 50976,
+    "sha256": "ded7bcb6858817f2a689ad638fb1f40ee42221033dcd4a94c74ff41908cf3d2c"
+  },
+  {
+    "locale": "th-TH",
+    "voiceIndex": 0,
+    "voice": "th-TH-PremwadeeNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 19152,
+    "sha256": "d5ac7bfbc30a770032ac5df452552a1bd552de3e2f533381bc7cb0d013c32f37"
+  },
+  {
+    "locale": "th-TH",
+    "voiceIndex": 0,
+    "voice": "th-TH-PremwadeeNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 19440,
+    "sha256": "90383d000914b47bb724fab3ba8e6eaa1aacb8a23e7b3c1b1abb6de8bffbb1ec"
+  },
+  {
+    "locale": "th-TH",
+    "voiceIndex": 0,
+    "voice": "th-TH-PremwadeeNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 31104,
+    "sha256": "93003e1255878766265c3a8ca06895aa0de218d758239d70becc22b7d3887cb0"
+  },
+  {
+    "locale": "th-TH",
+    "voiceIndex": 0,
+    "voice": "th-TH-PremwadeeNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 24048,
+    "sha256": "34ccbca9d84a2f0298547d728d1319ff97908e48bb5e2426744e6d4138568383"
+  },
+  {
+    "locale": "th-TH",
+    "voiceIndex": 0,
+    "voice": "th-TH-PremwadeeNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 31680,
+    "sha256": "ed826f86254415ba1691ab37e6718596a81ea84b863fa2ccc053993ce1a1cc91"
+  },
+  {
+    "locale": "th-TH",
+    "voiceIndex": 0,
+    "voice": "th-TH-PremwadeeNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 40608,
+    "sha256": "853dc84fce7f40b9c6b002e71b5238dd700238513f922268c725a29c704d615c"
+  },
+  {
+    "locale": "th-TH",
+    "voiceIndex": 0,
+    "voice": "th-TH-PremwadeeNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 42192,
+    "sha256": "26e749e2f986dacafab1e68c1c5152de3c9d97cb41bc03b821b86a54176b2d81"
+  },
+  {
+    "locale": "th-TH",
+    "voiceIndex": 0,
+    "voice": "th-TH-PremwadeeNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 34128,
+    "sha256": "8446545f854bf5e6b1bc087aef3299898fae4b1b8ccb0d6227a962cb8b3e6457"
+  },
+  {
+    "locale": "th-TH",
+    "voiceIndex": 1,
+    "voice": "th-TH-NiwatNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
     "bytes": 16272,
-    "sha256": "aec4da1121477dbda38fa1e00b1b0db468455cfa410063975cb37111627b795b"
+    "sha256": "aa6946f24f34d1af9598e493973010549a55af7261a2bd66afb4d036158d7610"
+  },
+  {
+    "locale": "th-TH",
+    "voiceIndex": 1,
+    "voice": "th-TH-NiwatNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 18000,
+    "sha256": "927d4d06517ccdd5044c365a6cbed6be4bfa5988d6683072b9692bb6c634a9a7"
+  },
+  {
+    "locale": "th-TH",
+    "voiceIndex": 1,
+    "voice": "th-TH-NiwatNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 31248,
+    "sha256": "e24584de4c6499749db27f0b8ab8a2fb84c0df8da170cc16d309fd068f556298"
+  },
+  {
+    "locale": "th-TH",
+    "voiceIndex": 1,
+    "voice": "th-TH-NiwatNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 24480,
+    "sha256": "abb6e02f9ece8f946b4f726dee832bd0fabfe803f9de167233b8982c4e5871b1"
+  },
+  {
+    "locale": "th-TH",
+    "voiceIndex": 1,
+    "voice": "th-TH-NiwatNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 30384,
+    "sha256": "914cb1bafa2e4566aa0024e16dc0eaa889d6383b2da744d27d87af8840cc30ce"
+  },
+  {
+    "locale": "th-TH",
+    "voiceIndex": 1,
+    "voice": "th-TH-NiwatNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 42048,
+    "sha256": "3734ca6a489e39921627dad5fd0b68a6fa18a5d532b6b85a0ca77d006e6be2fa"
+  },
+  {
+    "locale": "th-TH",
+    "voiceIndex": 1,
+    "voice": "th-TH-NiwatNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 47664,
+    "sha256": "be08c435dd8a476c7369df00f75ace8ea1afecd1e56e61bb795d6623657edd52"
+  },
+  {
+    "locale": "th-TH",
+    "voiceIndex": 1,
+    "voice": "th-TH-NiwatNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 33120,
+    "sha256": "1017c144dc57874f7c5b820f9431ac4a8d06090bfe84f09111ea311268d9010b"
+  },
+  {
+    "locale": "tr-TR",
+    "voiceIndex": 0,
+    "voice": "tr-TR-EmelNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 21600,
+    "sha256": "cca04be1ece4310d67efd794dd771e2769bbe87b7ff3592b602291b5303ba0e8"
+  },
+  {
+    "locale": "tr-TR",
+    "voiceIndex": 0,
+    "voice": "tr-TR-EmelNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 23040,
+    "sha256": "c6cd837f120280791603d78b34ad0b7d61518922a500500e358c6ef77393cfc8"
+  },
+  {
+    "locale": "tr-TR",
+    "voiceIndex": 0,
+    "voice": "tr-TR-EmelNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 33984,
+    "sha256": "f0be6b4e38ff87d95b211d4b11cf392dabf720d4f75293c52ada641c3da6cf7c"
+  },
+  {
+    "locale": "tr-TR",
+    "voiceIndex": 0,
+    "voice": "tr-TR-EmelNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 33120,
+    "sha256": "58ac54e3cd97aef64786005a9f5685b3c7985463ad4cedf4517410403bd24fdd"
+  },
+  {
+    "locale": "tr-TR",
+    "voiceIndex": 0,
+    "voice": "tr-TR-EmelNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 32256,
+    "sha256": "629248a676bbea7d82f6d5384f06cea45634afea686992111824d1f41a7382ea"
+  },
+  {
+    "locale": "tr-TR",
+    "voiceIndex": 0,
+    "voice": "tr-TR-EmelNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 52992,
+    "sha256": "d0de23acdb1a48842ed5d4f52d56a370d311ca163b719916510393d9046ed59a"
+  },
+  {
+    "locale": "tr-TR",
+    "voiceIndex": 0,
+    "voice": "tr-TR-EmelNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 53280,
+    "sha256": "710f2b2a825e90d4b51ba915a09eebba67de71698720c0403e36053b20523b85"
+  },
+  {
+    "locale": "tr-TR",
+    "voiceIndex": 0,
+    "voice": "tr-TR-EmelNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 48528,
+    "sha256": "bd347847dae77f12183892127c85a06b2ae2c69b8dfc8abb2486562e7d5f7074"
+  },
+  {
+    "locale": "tr-TR",
+    "voiceIndex": 1,
+    "voice": "tr-TR-AhmetNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 21744,
+    "sha256": "8cb40adb98e701ece05ffb8b6654abaac5bc7d9102f19d2af95539e8556ec7c4"
+  },
+  {
+    "locale": "tr-TR",
+    "voiceIndex": 1,
+    "voice": "tr-TR-AhmetNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 23472,
+    "sha256": "31b7525cd8990956585d2febeee54c35f42b11a7130651fa8dbcff3f08490e3b"
+  },
+  {
+    "locale": "tr-TR",
+    "voiceIndex": 1,
+    "voice": "tr-TR-AhmetNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 35712,
+    "sha256": "2fb9f36b5eade126976090fb9b9e0123adedab16f44561fe731ca39769e86233"
+  },
+  {
+    "locale": "tr-TR",
+    "voiceIndex": 1,
+    "voice": "tr-TR-AhmetNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 33696,
+    "sha256": "55d966690b5739689c276bd28b5eb19390dff07264323f62106d7d2770798b41"
+  },
+  {
+    "locale": "tr-TR",
+    "voiceIndex": 1,
+    "voice": "tr-TR-AhmetNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 34128,
+    "sha256": "66cd2df9d2503a006cdb1ca76729095a915d0a3938eec180578935bc5c34e450"
+  },
+  {
+    "locale": "tr-TR",
+    "voiceIndex": 1,
+    "voice": "tr-TR-AhmetNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 52416,
+    "sha256": "16185065d0e77d60ff8444417b357f55339d0c299f7cae1313399f00fa2ecdc2"
+  },
+  {
+    "locale": "tr-TR",
+    "voiceIndex": 1,
+    "voice": "tr-TR-AhmetNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 46512,
+    "sha256": "15cdd7626e70412deb9fdcd851010268e7dea6a54f2dd4a75b936b53ce8ab0b2"
+  },
+  {
+    "locale": "tr-TR",
+    "voiceIndex": 1,
+    "voice": "tr-TR-AhmetNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 46512,
+    "sha256": "d51736e606e43ee75e627dc206ac08f480470789c6179e73fa2de587ea791afc"
+  },
+  {
+    "locale": "uk-UA",
+    "voiceIndex": 0,
+    "voice": "uk-UA-PolinaNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 22176,
+    "sha256": "59ca59d0829ada4c4cd6e5ab197e6ba3a0168cdbeac83745b4687742a622253b"
+  },
+  {
+    "locale": "uk-UA",
+    "voiceIndex": 0,
+    "voice": "uk-UA-PolinaNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 22176,
+    "sha256": "0a5ab496ec0d5f4e9709299a3c94d02059f304dc4309ce52717ffa8c41b1ea56"
+  },
+  {
+    "locale": "uk-UA",
+    "voiceIndex": 0,
+    "voice": "uk-UA-PolinaNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 41040,
+    "sha256": "c417faef83042a60113871078bb83078750ba4783c685f72d6d601f8a7b02bee"
+  },
+  {
+    "locale": "uk-UA",
+    "voiceIndex": 0,
+    "voice": "uk-UA-PolinaNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 32112,
+    "sha256": "5ab15622932b9ce4e3b80422e5434be929ec443acf2ab64c03a2505fe2f86fbe"
+  },
+  {
+    "locale": "uk-UA",
+    "voiceIndex": 0,
+    "voice": "uk-UA-PolinaNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 31968,
+    "sha256": "8e2f42a9c537cda5d037a55c8169c790a833593a5fb83d14c11c7f62a479a7ff"
+  },
+  {
+    "locale": "uk-UA",
+    "voiceIndex": 0,
+    "voice": "uk-UA-PolinaNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 51264,
+    "sha256": "bcdcd2b942d7b44b50c3ea910e9a4b9dd8f7c1af152b0800ec1a9e0657282d03"
+  },
+  {
+    "locale": "uk-UA",
+    "voiceIndex": 0,
+    "voice": "uk-UA-PolinaNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 46656,
+    "sha256": "8424ce3906babac9ad608e3b68bf16e2b5ecbaaa183fa2d8a9ccafe1fe968e4d"
+  },
+  {
+    "locale": "uk-UA",
+    "voiceIndex": 0,
+    "voice": "uk-UA-PolinaNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 35280,
+    "sha256": "c288efc29a66ab244e9068a611c9c82f3babb84477dbc456787168140a04b3c2"
+  },
+  {
+    "locale": "uk-UA",
+    "voiceIndex": 1,
+    "voice": "uk-UA-OstapNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 23472,
+    "sha256": "555e866e66115228ca8f0029477a5c91b4a5857e3288575b30fe6a68a5d20b4b"
+  },
+  {
+    "locale": "uk-UA",
+    "voiceIndex": 1,
+    "voice": "uk-UA-OstapNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 23904,
+    "sha256": "5e6009de665b0df37a3a0b38119931bfdaf5ba943c3af7437de418b66bf5b382"
+  },
+  {
+    "locale": "uk-UA",
+    "voiceIndex": 1,
+    "voice": "uk-UA-OstapNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 42192,
+    "sha256": "fe8be5951182b068cdc94ba438bd09b163c61b1e7f4d689870c36ff56524ab21"
+  },
+  {
+    "locale": "uk-UA",
+    "voiceIndex": 1,
+    "voice": "uk-UA-OstapNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 33552,
+    "sha256": "496ea33c49a13a96542a0a777e4d58e09e211e9ac8e8c81f7afa34d4ab21874e"
+  },
+  {
+    "locale": "uk-UA",
+    "voiceIndex": 1,
+    "voice": "uk-UA-OstapNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 33840,
+    "sha256": "c2515a70f10d01b9a719046182fdd2b4edc8eafea2aac1c4aa608fb3532ccc10"
+  },
+  {
+    "locale": "uk-UA",
+    "voiceIndex": 1,
+    "voice": "uk-UA-OstapNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 52560,
+    "sha256": "896f7d64c411e4c72a27e635e28ce7713c2233bb490ebdfd25655eda1b33baa3"
+  },
+  {
+    "locale": "uk-UA",
+    "voiceIndex": 1,
+    "voice": "uk-UA-OstapNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 49248,
+    "sha256": "f870a08b486b1bdb79f54d7096f45d808275fa63f04d31f05ebe1bc8f09d85da"
+  },
+  {
+    "locale": "uk-UA",
+    "voiceIndex": 1,
+    "voice": "uk-UA-OstapNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 37296,
+    "sha256": "3aa4b2fdd21a1ca65423883a41a1bb9a85a9fe3428880bdc3155b7080de174a4"
+  },
+  {
+    "locale": "ur-PK",
+    "voiceIndex": 0,
+    "voice": "ur-PK-UzmaNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 23616,
+    "sha256": "aeafdd59a0d6db2b963049dbea3e27816ae27437aae96870bd735bcb9486c7bb"
+  },
+  {
+    "locale": "ur-PK",
+    "voiceIndex": 0,
+    "voice": "ur-PK-UzmaNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 22464,
+    "sha256": "f15b37c81b253f8e35aa5e59af804972b99569461951f470d905420a30cf558d"
+  },
+  {
+    "locale": "ur-PK",
+    "voiceIndex": 0,
+    "voice": "ur-PK-UzmaNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 36144,
+    "sha256": "1540d760ac2740192e9f7994cc5dccba41fe148017a829b62dbaaa595b9bdf72"
+  },
+  {
+    "locale": "ur-PK",
+    "voiceIndex": 0,
+    "voice": "ur-PK-UzmaNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 32976,
+    "sha256": "f1bf33a0c314974eacb4de6ea0777bb2de7d5d20765b7b4302cf828b51971e75"
+  },
+  {
+    "locale": "ur-PK",
+    "voiceIndex": 0,
+    "voice": "ur-PK-UzmaNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 35568,
+    "sha256": "3188463a379fad2d615a8ad9dd0dd66c67473e4278ac39344738d22bf5a8aed9"
+  },
+  {
+    "locale": "ur-PK",
+    "voiceIndex": 0,
+    "voice": "ur-PK-UzmaNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 56304,
+    "sha256": "a9205175fa9fc91fd1a9cdb3a62623f2a3276b415aa7057a9175d5e398fc98b7"
+  },
+  {
+    "locale": "ur-PK",
+    "voiceIndex": 0,
+    "voice": "ur-PK-UzmaNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 47376,
+    "sha256": "09185521355aa10c8d5fa7a4cfcb808de7519f2e8ec35d4bde0391fcf7308749"
+  },
+  {
+    "locale": "ur-PK",
+    "voiceIndex": 0,
+    "voice": "ur-PK-UzmaNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 39456,
+    "sha256": "e99690e19b1bed801b6d276f10b48bf173b87adf67b0c9e7a71661ecd856a2eb"
+  },
+  {
+    "locale": "ur-PK",
+    "voiceIndex": 1,
+    "voice": "ur-PK-AsadNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 23472,
+    "sha256": "23570fef6429a974ffb6ca408bc0dace70aa96dfd85baf6a1455fb84ffea883e"
+  },
+  {
+    "locale": "ur-PK",
+    "voiceIndex": 1,
+    "voice": "ur-PK-AsadNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 21744,
+    "sha256": "d749713e3d60b21207e696c8e44417cbdfebc2e6c58d1d063a212b105a6d753d"
+  },
+  {
+    "locale": "ur-PK",
+    "voiceIndex": 1,
+    "voice": "ur-PK-AsadNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 37008,
+    "sha256": "898ff75c3d6d3beb9fd89a170bfbde69ce9da4b637d5aa11f496904f3d7bbd6d"
+  },
+  {
+    "locale": "ur-PK",
+    "voiceIndex": 1,
+    "voice": "ur-PK-AsadNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 35280,
+    "sha256": "82800ca47ce99d7879586d814ca873a0895b56b5e4ba6bb9e4ecb263c53e327c"
+  },
+  {
+    "locale": "ur-PK",
+    "voiceIndex": 1,
+    "voice": "ur-PK-AsadNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 36720,
+    "sha256": "e548b60fb375626a4bf1064771e8517b5b2715abebaed914a0cb4eec151595c7"
+  },
+  {
+    "locale": "ur-PK",
+    "voiceIndex": 1,
+    "voice": "ur-PK-AsadNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 58752,
+    "sha256": "f73cc436d6b6777f8f01a7131808b819f858b40818c49f906a8891a01bdbda8c"
+  },
+  {
+    "locale": "ur-PK",
+    "voiceIndex": 1,
+    "voice": "ur-PK-AsadNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 49680,
+    "sha256": "99842a04ecf0c0c231dda14666cf4d5e9794ef357d0e9eb9650df1bb6b7f74ef"
+  },
+  {
+    "locale": "ur-PK",
+    "voiceIndex": 1,
+    "voice": "ur-PK-AsadNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 40320,
+    "sha256": "c00a06618d59c6df1a186c8d98aeccba3357f54962244f00ce37540bf5ef5935"
+  },
+  {
+    "locale": "vi-VN",
+    "voiceIndex": 0,
+    "voice": "vi-VN-HoaiMyNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 22320,
+    "sha256": "d894b6870ebea15da468e9a2660d61e9792e5c4b8371d043fdb0df55d171495d"
+  },
+  {
+    "locale": "vi-VN",
+    "voiceIndex": 0,
+    "voice": "vi-VN-HoaiMyNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 20304,
+    "sha256": "7c7cff6cc42bf71445ec44099d3ad9c26160edf4fa1e5e0d269eb75e46aa9ab4"
+  },
+  {
+    "locale": "vi-VN",
+    "voiceIndex": 0,
+    "voice": "vi-VN-HoaiMyNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 34272,
+    "sha256": "5736c9f17dd376aa15308234d796fe1bdd69ca96a32aefcb6f55b4530c552a85"
+  },
+  {
+    "locale": "vi-VN",
+    "voiceIndex": 0,
+    "voice": "vi-VN-HoaiMyNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 24768,
+    "sha256": "7ece2160e06dd33379b76199f947e58199f79a4d8761541def68e6628c0f4ea8"
+  },
+  {
+    "locale": "vi-VN",
+    "voiceIndex": 0,
+    "voice": "vi-VN-HoaiMyNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 29664,
+    "sha256": "8b3a7a6048f6ca8785c5058f03baf456f3320b2401e7e61e11b62c7b56e6679f"
+  },
+  {
+    "locale": "vi-VN",
+    "voiceIndex": 0,
+    "voice": "vi-VN-HoaiMyNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 41616,
+    "sha256": "91139b9c1fcf5071b3f91496d40e556126ba952c4da33bd02e376b6562090336"
+  },
+  {
+    "locale": "vi-VN",
+    "voiceIndex": 0,
+    "voice": "vi-VN-HoaiMyNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 37008,
+    "sha256": "8fe6ee483893b315fd28ca36ef4310e637f4035667de93f73c8459af0c1a7a7f"
+  },
+  {
+    "locale": "vi-VN",
+    "voiceIndex": 0,
+    "voice": "vi-VN-HoaiMyNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 34704,
+    "sha256": "f143b80885bda152334ca851e1914ada43694314d0435ccb71cc2ba7c3a87df7"
+  },
+  {
+    "locale": "vi-VN",
+    "voiceIndex": 1,
+    "voice": "vi-VN-NamMinhNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 22320,
+    "sha256": "7bb381b9ff27ccbe19420e612be5430828ef6d04a525332dcfcc54963105a08c"
+  },
+  {
+    "locale": "vi-VN",
+    "voiceIndex": 1,
+    "voice": "vi-VN-NamMinhNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 21312,
+    "sha256": "b5a3b5bcf0f5bd7cd1879192e5e89d682d911f64e1ff91564812be6e6d374dd6"
+  },
+  {
+    "locale": "vi-VN",
+    "voiceIndex": 1,
+    "voice": "vi-VN-NamMinhNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 34272,
+    "sha256": "980000bb021b957a4da86df461ee86660b8b82b501154f14bc3160f6ae40c48a"
+  },
+  {
+    "locale": "vi-VN",
+    "voiceIndex": 1,
+    "voice": "vi-VN-NamMinhNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 25200,
+    "sha256": "fd257a49144ce9e125e53834116234624de7b959817022853202d660ddf74ab9"
+  },
+  {
+    "locale": "vi-VN",
+    "voiceIndex": 1,
+    "voice": "vi-VN-NamMinhNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 30672,
+    "sha256": "16a9617463ffde8e764072e90d7937514557698cce3f716887b3019c3d24831e"
+  },
+  {
+    "locale": "vi-VN",
+    "voiceIndex": 1,
+    "voice": "vi-VN-NamMinhNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 42048,
+    "sha256": "2f246337369257d3dd1b52e80f5d19c61ad262c0ebc5036bf77b2b55a19a369e"
+  },
+  {
+    "locale": "vi-VN",
+    "voiceIndex": 1,
+    "voice": "vi-VN-NamMinhNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 38304,
+    "sha256": "c21d45a001d7953e1963eca5bd40d453837e9fe1597fe7b45da8a2fc49dfb2d8"
+  },
+  {
+    "locale": "vi-VN",
+    "voiceIndex": 1,
+    "voice": "vi-VN-NamMinhNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 33696,
+    "sha256": "321109dba92e59a52896d1157c30d4e941346f78560e005fc96919fa5ae9d961"
+  },
+  {
+    "locale": "zh-CN",
+    "voiceIndex": 0,
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 20592,
+    "sha256": "da5a1f2e9cb3b01b1da0632a53a44a1ec5817f13fd99b96ce5dd127356d8aaad"
+  },
+  {
+    "locale": "zh-CN",
+    "voiceIndex": 0,
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 20016,
+    "sha256": "3e2eb2596fece0e8d90e3e1386eb3de70226b93dca12e000f4b7a305feb8b9b2"
+  },
+  {
+    "locale": "zh-CN",
+    "voiceIndex": 0,
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 33984,
+    "sha256": "269d3dbc316d8dfcbce591862ef699e1747be6ebcdb3a6beef3483df78d3b253"
+  },
+  {
+    "locale": "zh-CN",
+    "voiceIndex": 0,
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 34416,
+    "sha256": "e76cdbf91cd4ddce080a2e3fbdeeebad83543ca1fd73651b0572728c2178d7f7"
+  },
+  {
+    "locale": "zh-CN",
+    "voiceIndex": 0,
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 29808,
+    "sha256": "ac8467c831e0c99003ee2d1ad809dd356809bde7fe893617d35d7b0d0786c8f3"
+  },
+  {
+    "locale": "zh-CN",
+    "voiceIndex": 0,
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 53136,
+    "sha256": "51f737eb1a70ff9ed369f6aee892802aaf1def7f2849c5c70e8e886784ad1e8e"
+  },
+  {
+    "locale": "zh-CN",
+    "voiceIndex": 0,
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 53568,
+    "sha256": "c5814f439912b348912a46dc06eae53dccfe6b01ba918dcdd5dd91f131172498"
+  },
+  {
+    "locale": "zh-CN",
+    "voiceIndex": 0,
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 43056,
+    "sha256": "37e43d65812cf680af4e3884d5742004657fbd26618e2a653816de32dd46cc73"
+  },
+  {
+    "locale": "zh-CN",
+    "voiceIndex": 1,
+    "voice": "zh-CN-YunjianNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 22896,
+    "sha256": "293d58c775f793896e8bcfa2452aaf77f9f432e88e0c6d957e64b4a6506ca485"
+  },
+  {
+    "locale": "zh-CN",
+    "voiceIndex": 1,
+    "voice": "zh-CN-YunjianNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 22752,
+    "sha256": "b6f8d4d87be487b0d6d1a0b087e240bf65e8dd57e100cf76b9de6e309c3a6444"
+  },
+  {
+    "locale": "zh-CN",
+    "voiceIndex": 1,
+    "voice": "zh-CN-YunjianNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 34848,
+    "sha256": "b1e8d23f382786f6e9506790d6a97728c47f7cd284da00d326dfa2d3a37990e2"
+  },
+  {
+    "locale": "zh-CN",
+    "voiceIndex": 1,
+    "voice": "zh-CN-YunjianNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 34416,
+    "sha256": "6856acf2b54d4f8a8eb7b627c09bff4f0aae789d66882f487eb348b4bc3de588"
+  },
+  {
+    "locale": "zh-CN",
+    "voiceIndex": 1,
+    "voice": "zh-CN-YunjianNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 31968,
+    "sha256": "dbe8a6238e9944fb8be1b62ca9891d5c2259e7b702a4ef3193f0119b4b7c4e49"
+  },
+  {
+    "locale": "zh-CN",
+    "voiceIndex": 1,
+    "voice": "zh-CN-YunjianNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 53280,
+    "sha256": "ffe02d2f363e2341637fd2d8dae6d649f4dfeea7f9593796e2cb7b09f2c379c7"
+  },
+  {
+    "locale": "zh-CN",
+    "voiceIndex": 1,
+    "voice": "zh-CN-YunjianNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 53856,
+    "sha256": "f5e3f5a01707acbfcae3e8d9f57b0d85d69a71b07f733834317cd117ad47e3e9"
+  },
+  {
+    "locale": "zh-CN",
+    "voiceIndex": 1,
+    "voice": "zh-CN-YunjianNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 44208,
+    "sha256": "a02cba998900fc6cd541033b07b789d1f4f4984f8c377faae650d9326aed0963"
+  },
+  {
+    "locale": "zh-TW",
+    "voiceIndex": 0,
+    "voice": "zh-TW-HsiaoChenNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 23040,
+    "sha256": "ef3febc438411ba141f91c871b031b2d7eba618c4d9a20f2f1893873b823f726"
+  },
+  {
+    "locale": "zh-TW",
+    "voiceIndex": 0,
+    "voice": "zh-TW-HsiaoChenNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 23040,
+    "sha256": "fd04a05dda1e6119708e40edbac597e20451900d76dd4aa85359bbf2c4dc10e1"
+  },
+  {
+    "locale": "zh-TW",
+    "voiceIndex": 0,
+    "voice": "zh-TW-HsiaoChenNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 38880,
+    "sha256": "034da57b48897884fa9347861f1091fe1da3e7025dca9334765f81687a80558f"
+  },
+  {
+    "locale": "zh-TW",
+    "voiceIndex": 0,
+    "voice": "zh-TW-HsiaoChenNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 34416,
+    "sha256": "663d93cc8428e018027a38a43e459990e09c070f911401a63d076b0b93b70373"
+  },
+  {
+    "locale": "zh-TW",
+    "voiceIndex": 0,
+    "voice": "zh-TW-HsiaoChenNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 32400,
+    "sha256": "f796b463be8bbb55ba8b86cce2f28ddebc3fd3da4f1918cf40f12342220a4889"
+  },
+  {
+    "locale": "zh-TW",
+    "voiceIndex": 0,
+    "voice": "zh-TW-HsiaoChenNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 51120,
+    "sha256": "7c06a307358f72fcc49b1306f081bc68e1bc729491d064254f84f9604bbe3af2"
+  },
+  {
+    "locale": "zh-TW",
+    "voiceIndex": 0,
+    "voice": "zh-TW-HsiaoChenNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 51552,
+    "sha256": "ac3636b4ff23b435073887196e08f3660a2dd984c6b2282154ec7a3b654f9dd8"
+  },
+  {
+    "locale": "zh-TW",
+    "voiceIndex": 0,
+    "voice": "zh-TW-HsiaoChenNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 40752,
+    "sha256": "bfb3bc1d080094551af71de019f271326f964c0d8c0ff3c935007f23063b8643"
+  },
+  {
+    "locale": "zh-TW",
+    "voiceIndex": 1,
+    "voice": "zh-TW-YunJheNeural",
+    "sentenceId": "l1-children-asleep-dog-awake",
+    "bytes": 21600,
+    "sha256": "c46308676b59e2ae2e52da5496e061472b287773c15de29bc203255c49b8babc"
+  },
+  {
+    "locale": "zh-TW",
+    "voiceIndex": 1,
+    "voice": "zh-TW-YunJheNeural",
+    "sentenceId": "l1-rained-all-night-river-rose",
+    "bytes": 21168,
+    "sha256": "8695654156d0448cbfffb5c17c30ce2af69a64adc59b1d7b1492d3b46e6b2771"
+  },
+  {
+    "locale": "zh-TW",
+    "voiceIndex": 1,
+    "voice": "zh-TW-YunJheNeural",
+    "sentenceId": "l2-grandfather-whistles-mending-fence",
+    "bytes": 34992,
+    "sha256": "0c5d56538c1acf5e6c4c9354eca76078bee3a7a27a54712b6ba0e0a59cefc4bc"
+  },
+  {
+    "locale": "zh-TW",
+    "voiceIndex": 1,
+    "voice": "zh-TW-YunJheNeural",
+    "sentenceId": "l2-left-umbrella-got-soaked",
+    "bytes": 30960,
+    "sha256": "b12e89b0419a3c500d48bc5a7115e9ba5f2b429f3d61d25b4d9579ae581eabfa"
+  },
+  {
+    "locale": "zh-TW",
+    "voiceIndex": 1,
+    "voice": "zh-TW-YunJheNeural",
+    "sentenceId": "l2-neighbour-kept-our-ladder",
+    "bytes": 28512,
+    "sha256": "66a8654400bd43496e48bbe23bfb8fc3d25d4dbd40a81953cb89e1f4c2260d84"
+  },
+  {
+    "locale": "zh-TW",
+    "voiceIndex": 1,
+    "voice": "zh-TW-YunJheNeural",
+    "sentenceId": "l3-blacksmith-crooked-ploughshares",
+    "bytes": 42768,
+    "sha256": "f45b17afc92bdbe3dfeff0a42d6a8c20da31fab1c70597f8b838030487fc8ee0"
+  },
+  {
+    "locale": "zh-TW",
+    "voiceIndex": 1,
+    "voice": "zh-TW-YunJheNeural",
+    "sentenceId": "l3-cellar-damp-wool-rusty-hinges",
+    "bytes": 44784,
+    "sha256": "c2b8234b59fabd47961653e4dcd2062f72c6982b1e259245edb4dcb59c6d9882"
+  },
+  {
+    "locale": "zh-TW",
+    "voiceIndex": 1,
+    "voice": "zh-TW-YunJheNeural",
+    "sentenceId": "l3-heron-motionless-in-reeds",
+    "bytes": 35280,
+    "sha256": "b36c19c17247e14de42224b55d0c7fe5589dc5ac6ef86d9759debe27e093ac94"
   }
 ]
