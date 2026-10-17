@@ -75,6 +75,8 @@ export interface GameState {
   lives: number
   history: RoundResult[]
   lastResult: RoundResult | null
+  /** Clip keys heard in earlier games, oldest first; read-only memory for `buildRound`. */
+  heard: readonly string[]
 }
 
 /** Identifies one recorded clip; the unit of "never hear the same thing twice". */
@@ -88,6 +90,8 @@ export interface Avoid {
   codes?: readonly LangCode[]
   /** Clip keys (see `clipKey`) already played this game. */
   clips?: readonly string[]
+  /** Clip keys heard in earlier games, oldest first (persisted by the app). */
+  heard?: readonly string[]
 }
 
 interface Clip {
@@ -100,9 +104,17 @@ interface Clip {
  * Picks the clip for a round. Candidates are every (language, sentence, voice)
  * of the level; they are narrowed by the strictest filter that still leaves
  * something, so running out of fresh clips degrades gracefully and never
- * throws. The language is drawn first (uniform over languages that have a
- * candidate), then one of its clips, so a few played clips do not skew which
- * languages come up.
+ * throws. In order of preference:
+ *   1. a clip never heard before (not this game, not in `heard`), from a
+ *      language not yet answered this game — or, failing that, from any
+ *      language;
+ *   2. once every clip has been heard: the same, but only the most recent
+ *      half of `heard` counts, then a quarter, …, so the clips heard longest
+ *      ago come back first;
+ *   3. anything in the level pool.
+ * A clip already played this game is only possible in step 3. The language is
+ * drawn first (uniform over languages that have a candidate), then one of its
+ * clips, so a few heard clips do not skew which languages come up.
  */
 function pickClip(rng: Rng, eligible: readonly Language[], level: SentenceLevel, avoid: Avoid): Clip {
   const sentences = sentencesForLevel(level)
@@ -115,10 +127,28 @@ function pickClip(rng: Rng, eligible: readonly Language[], level: SentenceLevel,
 
   const usedCodes = new Set(avoid.codes)
   const played = new Set(avoid.clips)
+  const heard = avoid.heard ?? []
+  const key = (c: Clip) => clipKey(c.language.code, c.voiceIndex, c.sentenceId)
   const freshLanguage = (c: Clip) => !usedCodes.has(c.language.code)
-  const notPlayed = (c: Clip) => !played.has(clipKey(c.language.code, c.voiceIndex, c.sentenceId))
-  const preferences: ((c: Clip) => boolean)[] = [(c) => freshLanguage(c) && notPlayed(c), notPlayed]
-  const candidates = preferences.map((keep) => all.filter(keep)).find((cs) => cs.length > 0) ?? all
+  const notPlayed = (c: Clip) => !played.has(key(c))
+
+  // Recent-memory windows: all of `heard`, the newest half, quarter, …, none.
+  const windows: ReadonlySet<string>[] = []
+  for (let n = heard.length; n > 0; n = Math.floor(n / 2)) windows.push(new Set(heard.slice(-n)))
+  windows.push(new Set())
+
+  const preferences: ((c: Clip) => boolean)[] = windows.flatMap((recent) => [
+    (c: Clip) => freshLanguage(c) && notPlayed(c) && !recent.has(key(c)),
+    (c: Clip) => notPlayed(c) && !recent.has(key(c)),
+  ])
+  let candidates = all
+  for (const keep of preferences) {
+    const cs = all.filter(keep)
+    if (cs.length > 0) {
+      candidates = cs
+      break
+    }
+  }
 
   const languages = [...new Set(candidates.map((c) => c.language))]
   const language = languages[randInt(rng, languages.length)] as Language
@@ -172,6 +202,7 @@ export function initialState(
   seed: number,
   difficulty: Difficulty,
   pool: readonly Language[],
+  heard: readonly string[] = [],
 ): GameState {
   return {
     seed,
@@ -179,13 +210,14 @@ export function initialState(
     pool: pool.slice(),
     phase: 'round',
     roundNumber: 1,
-    round: buildRound(roundRng(seed, 1), pool, difficulty),
+    round: buildRound(roundRng(seed, 1), pool, difficulty, { heard }),
     score: 0,
     streak: 0,
     bestStreak: 0,
     lives: LIVES,
     history: [],
     lastResult: null,
+    heard: heard.slice(),
   }
 }
 
@@ -260,6 +292,7 @@ export function nextRound(state: GameState): GameState {
   const avoid: Avoid = {
     codes: state.history.map((r) => r.code),
     clips: state.history.map((r) => clipKey(r.code, r.voiceIndex, r.sentenceId)),
+    heard: state.heard,
   }
   return {
     ...state,

@@ -5,15 +5,24 @@ import { Reveal } from './components/Reveal.tsx'
 import { Round } from './components/Round.tsx'
 import { StartScreen } from './components/StartScreen.tsx'
 import { LANGUAGES } from './data/languages.ts'
-import { SLOW_RATE, guess, initialState, isOver, nextRound, type Difficulty, type GameState } from './engine/game.ts'
+import {
+  SLOW_RATE,
+  clipKey,
+  guess,
+  initialState,
+  isOver,
+  nextRound,
+  type Difficulty,
+  type GameState,
+} from './engine/game.ts'
 import { seedFromString } from './engine/rng.ts'
 import { useAudio } from './hooks/useAudio.ts'
-import { loadBestScore, saveBestScore } from './storage.ts'
+import { appendHeard, loadBestScore, loadHeard, saveBestScore, saveHeard } from './storage.ts'
 
 type AppState = { screen: 'start' } | { screen: 'game'; game: GameState }
 
 type Action =
-  | { type: 'start'; seed: number; difficulty: Difficulty }
+  | { type: 'start'; seed: number; difficulty: Difficulty; heard: readonly string[] }
   | { type: 'guess'; index: number | null }
   | { type: 'next' }
   | { type: 'menu' }
@@ -21,7 +30,7 @@ type Action =
 function reducer(state: AppState, action: Action): AppState {
   switch (action.type) {
     case 'start':
-      return { screen: 'game', game: initialState(action.seed, action.difficulty, LANGUAGES) }
+      return { screen: 'game', game: initialState(action.seed, action.difficulty, LANGUAGES, action.heard) }
     case 'guess':
       return state.screen === 'game' ? { ...state, game: guess(state.game, action.index) } : state
     case 'next':
@@ -51,6 +60,9 @@ export default function App() {
   const [urlSeed, setUrlSeed] = useState(firstSeed)
   const [bestScore, setBestScore] = useState(loadBestScore)
   const [isNewBest, setIsNewBest] = useState(false)
+  // Clips heard in earlier games, so replays do not repeat them. Kept in
+  // memory too, so it still works for this session if storage is disabled.
+  const [heard, setHeard] = useState(loadHeard)
 
   const game = state.screen === 'game' ? state.game : null
   const src =
@@ -65,8 +77,19 @@ export default function App() {
   }, [slow, setRate])
 
   const start = (difficulty: Difficulty) => {
-    dispatch({ type: 'start', seed: urlSeed ?? randomSeed(), difficulty })
+    // A ?seed= game ignores the memory so the seed alone determines it.
+    dispatch({ type: 'start', seed: urlSeed ?? randomSeed(), difficulty, heard: urlSeed === null ? heard : [] })
     setUrlSeed(null)
+  }
+
+  const answer = (index: number | null) => {
+    if (game && game.phase === 'round') {
+      const { round } = game
+      const next = appendHeard(heard, clipKey(round.language.code, round.voiceIndex, round.sentenceId))
+      saveHeard(next)
+      setHeard(next)
+    }
+    dispatch({ type: 'guess', index })
   }
 
   const next = () => {
@@ -107,8 +130,8 @@ export default function App() {
           audio={audio}
           slow={slow}
           onToggleSlow={() => setSlow((s) => !s)}
-          onGuess={(index) => dispatch({ type: 'guess', index })}
-          onSkip={() => dispatch({ type: 'guess', index: null })}
+          onGuess={answer}
+          onSkip={() => answer(null)}
         />
       ) : (
         game.lastResult && (

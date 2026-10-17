@@ -365,6 +365,53 @@ describe('sentences and voices', () => {
   })
 })
 
+describe('memory across replays', () => {
+  /** Plays a whole game and returns the clip keys it used, in order. */
+  function playGame(seed: number, difficulty: Difficulty, heard: readonly string[]): string[] {
+    let s = initialState(seed, difficulty, LANGUAGES, heard)
+    while (s.phase !== 'over') s = play(s, true)
+    return s.history.map((r) => clipKey(r.code, r.voiceIndex, r.sentenceId))
+  }
+
+  it('an empty memory changes nothing', () => {
+    for (const seed of [1, 2, 3]) {
+      expect(initialState(seed, 'hard', LANGUAGES, [])).toEqual(initialState(seed, 'hard', LANGUAGES))
+    }
+  })
+
+  it('avoids a clip heard in an earlier game', () => {
+    const tier1 = LANGUAGES.filter((l) => l.tier === 1)
+    const all = tier1.flatMap((l) => sentencesForLevel(1).flatMap((x) => [0, 1].map((v) => clipKey(l.code, v, x.id))))
+    const [left, ...heard] = all
+    for (let seed = 0; seed < 50; seed++) {
+      const r = initialState(seed, 'easy', LANGUAGES, heard).round
+      expect(clipKey(r.language.code, r.voiceIndex, r.sentenceId)).toBe(left)
+    }
+  })
+
+  it('never repeats a clip across replays until the level pool is used up', () => {
+    // Normal: 25 tier-1/2 languages × 2 voices × 3 sentences = 150 clips = 15 games.
+    for (let seed = 0; seed < 10; seed++) {
+      let heard: string[] = []
+      for (let g = 0; g < 15; g++) heard = [...heard, ...playGame(seed * 100 + g, 'normal', heard)]
+      expect(heard).toHaveLength(150)
+      expect(new Set(heard).size).toBe(150)
+    }
+  })
+
+  it('once everything was heard, brings back the clips heard longest ago', () => {
+    // Easy: 9 tier-1 languages × 2 × 2 = 36 clips; game 4 must reuse 4 of them.
+    for (let seed = 0; seed < 50; seed++) {
+      let heard: string[] = []
+      for (let g = 0; g < 3; g++) heard = [...heard, ...playGame(seed * 10 + g, 'easy', heard)]
+      expect(new Set(heard).size).toBe(30)
+      const repeats = playGame(seed * 10 + 3, 'easy', heard).filter((k) => heard.includes(k))
+      expect(repeats).toHaveLength(4)
+      for (const k of repeats) expect(heard.indexOf(k)).toBeLessThan(heard.length / 2)
+    }
+  })
+})
+
 describe('shareGrid', () => {
   it('maps hits, misses and skips to emoji', () => {
     let s = initialState(10, 'normal', LANGUAGES)
