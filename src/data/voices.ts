@@ -15,7 +15,9 @@ export const VOICES_BY_LANG: Record<LangCode, readonly string[]> = {
   'en-US': ['en-US-JennyNeural', 'en-US-AndrewNeural'],
   'es-ES': ['es-ES-ElviraNeural', 'es-ES-AlvaroNeural'],
   'fr-FR': ['fr-FR-DeniseNeural', 'fr-FR-HenriNeural'],
-  'de-DE': ['de-DE-AmalaNeural', 'de-DE-ConradNeural'],
+  // German voices were retired by Microsoft (Amala/Conrad/Katja are gone from
+  // --list-voices as of the 36-language wave); current roster is Tanja + Christoph.
+  'de-DE': ['de-DE-TanjaNeural', 'de-DE-ChristophNeural'],
   'it-IT': ['it-IT-ElsaNeural', 'it-IT-DiegoNeural'],
   'pt-BR': ['pt-BR-FranciscaNeural', 'pt-BR-AntonioNeural'],
   'ja-JP': ['ja-JP-NanamiNeural', 'ja-JP-KeitaNeural'],

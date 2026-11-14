@@ -101,7 +101,7 @@ export const LANGUAGES: Language[] = [
   { code: 'en-US', name: 'English', nativeName: 'English', flag: '🇺🇸', family: 'Germanic', tier: 1, voice: 'en-US-AriaNeural', fact: 'English is the most widely studied foreign language in the world.' },
   { code: 'es-ES', name: 'Spanish', nativeName: 'Español', flag: '🇪🇸', family: 'Romance', tier: 1, voice: 'es-ES-ElviraNeural', fact: 'Spanish is the official language of 20 countries.' },
   { code: 'fr-FR', name: 'French', nativeName: 'Français', flag: '🇫🇷', family: 'Romance', tier: 1, voice: 'fr-FR-DeniseNeural', fact: 'French was the language of the English court for about 300 years after 1066.' },
-  { code: 'de-DE', name: 'German', nativeName: 'Deutsch', flag: '🇩🇪', family: 'Germanic', tier: 1, voice: 'de-DE-KatjaNeural', fact: 'German capitalises every noun, not just proper names.' },
+  { code: 'de-DE', name: 'German', nativeName: 'Deutsch', flag: '🇩🇪', family: 'Germanic', tier: 1, voice: 'de-DE-TanjaNeural', fact: 'German capitalises every noun, not just proper names.' },
   { code: 'it-IT', name: 'Italian', nativeName: 'Italiano', flag: '🇮🇹', family: 'Romance', tier: 1, voice: 'it-IT-ElsaNeural', fact: 'Standard Italian grew out of the Tuscan dialect of Dante.' },
   { code: 'pt-BR', name: 'Portuguese (Brazil)', nativeName: 'Português', flag: '🇧🇷', family: 'Romance', tier: 1, voice: 'pt-BR-FranciscaNeural', fact: 'Brazil has more Portuguese speakers than Portugal by a factor of about twenty.' },
   { code: 'ja-JP', name: 'Japanese', nativeName: '日本語', flag: '🇯🇵', family: 'Japonic', tier: 1, voice: 'ja-JP-NanamiNeural', fact: 'Japanese mixes three scripts: kanji, hiragana and katakana.' },
