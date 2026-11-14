@@ -90,7 +90,8 @@ describe('buildRound', () => {
     const chi2 = counts.reduce((acc, c) => acc + (c - expected) ** 2 / expected, 0)
     expect(chi2).toBeLessThan(16.27)
     for (const c of counts) expect(Math.abs(c - expected) / expected).toBeLessThan(0.05)
-  })
+    // 20k rounds over the full 76-language roster: several seconds on a small machine.
+  }, 30_000)
 
   it('falls back to other tiers when the answer tier is too small', () => {
     const tiny: Language[] = [
@@ -392,12 +393,12 @@ describe('memory across replays', () => {
   })
 
   it('never repeats a clip across replays until the level pool is used up', () => {
-    // Normal: 25 tier-1/2 languages × 2 voices × 3 sentences = 150 clips = 15 games.
+    // Normal: 40 tier-1/2 languages × 2 voices × 3 sentences = 240 clips = 24 games.
     for (let seed = 0; seed < 10; seed++) {
       let heard: string[] = []
-      for (let g = 0; g < 15; g++) heard = [...heard, ...playGame(seed * 100 + g, 'normal', heard)]
-      expect(heard).toHaveLength(150)
-      expect(new Set(heard).size).toBe(150)
+      for (let g = 0; g < 24; g++) heard = [...heard, ...playGame(seed * 100 + g, 'normal', heard)]
+      expect(heard).toHaveLength(240)
+      expect(new Set(heard).size).toBe(240)
     }
   })
 

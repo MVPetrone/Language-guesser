@@ -5,8 +5,8 @@
 // blocklisted internationalisms, length bands, and level integrity.
 //
 // Length bands. A "word" is a whitespace-separated token containing a letter
-// or digit. Japanese, Chinese and Thai are written without spaces, so those
-// are segmented with Intl.Segmenter (for Japanese, single-hiragana segments —
+// or digit. Japanese, Chinese, Thai, Khmer, Lao and Burmese are written without
+// spaces between words, so those are segmented with Intl.Segmenter (for Japanese, single-hiragana segments —
 // particles and inflection endings — are not counted).
 // Raw word counts are not comparable across languages: an Urdu or Thai
 // translation of the same sentence has ~1.4× the words of English, a Finnish
@@ -40,6 +40,16 @@ type Script =
   | 'Bengali'
   | 'Tamil'
   | 'Thai'
+  | 'Ethiopic'
+  | 'Khmer'
+  | 'Sinhala'
+  | 'Myanmar'
+  | 'Georgian'
+  | 'Lao'
+  | 'Kannada'
+  | 'Malayalam'
+  | 'Telugu'
+  | 'Gujarati'
 
 const SCRIPT_RE: Record<Script, RegExp> = {
   Latin: /\p{Script_Extensions=Latin}/u,
@@ -55,6 +65,16 @@ const SCRIPT_RE: Record<Script, RegExp> = {
   Bengali: /\p{Script_Extensions=Bengali}/u,
   Tamil: /\p{Script_Extensions=Tamil}/u,
   Thai: /\p{Script_Extensions=Thai}/u,
+  Ethiopic: /\p{Script_Extensions=Ethiopic}/u,
+  Khmer: /\p{Script_Extensions=Khmer}/u,
+  Sinhala: /\p{Script_Extensions=Sinhala}/u,
+  Myanmar: /\p{Script_Extensions=Myanmar}/u,
+  Georgian: /\p{Script_Extensions=Georgian}/u,
+  Lao: /\p{Script_Extensions=Lao}/u,
+  Kannada: /\p{Script_Extensions=Kannada}/u,
+  Malayalam: /\p{Script_Extensions=Malayalam}/u,
+  Telugu: /\p{Script_Extensions=Telugu}/u,
+  Gujarati: /\p{Script_Extensions=Gujarati}/u,
 }
 
 const LATIN: readonly Script[] = ['Latin']
@@ -99,6 +119,42 @@ export const EXPECTED_SCRIPTS: Record<LangCode, readonly Script[]> = {
   'sw-KE': LATIN,
   'af-ZA': LATIN,
   'cy-GB': LATIN,
+  'zh-HK': ['Han'],
+  'ps-AF': ['Arabic'],
+  'sr-RS': ['Cyrillic'],
+  'mk-MK': ['Cyrillic'],
+  'kk-KZ': ['Cyrillic'],
+  'mn-MN': ['Cyrillic'],
+  'ne-NP': ['Devanagari'],
+  'mr-IN': ['Devanagari'],
+  'gu-IN': ['Gujarati'],
+  'kn-IN': ['Kannada'],
+  'ml-IN': ['Malayalam'],
+  'te-IN': ['Telugu'],
+  'si-LK': ['Sinhala'],
+  'am-ET': ['Ethiopic'],
+  'ka-GE': ['Georgian'],
+  'km-KH': ['Khmer'],
+  'lo-LA': ['Lao'],
+  'my-MM': ['Myanmar'],
+  'ca-ES': LATIN,
+  'gl-ES': LATIN,
+  'ga-IE': LATIN,
+  'mt-MT': LATIN,
+  'is-IS': LATIN,
+  'et-EE': LATIN,
+  'lv-LV': LATIN,
+  'lt-LT': LATIN,
+  'hr-HR': LATIN,
+  'bs-BA': LATIN,
+  'sl-SI': LATIN,
+  'sq-AL': LATIN,
+  'az-AZ': LATIN,
+  'uz-UZ': LATIN,
+  'jv-ID': LATIN,
+  'su-ID': LATIN,
+  'so-SO': LATIN,
+  'zu-ZA': LATIN,
 }
 
 /**
@@ -113,16 +169,19 @@ export const BLOCKLIST: readonly string[] = [
   'coffee', 'café', 'cafe', 'caffè', 'caffe', 'cafea', 'kafe', 'kaffe', 'kaffee', 'koffie', 'coffi',
   'kahve', 'kahvi', 'kávé', 'káva', 'kava', 'kawa', 'kafa', 'kopi', 'kape', 'kahawa',
   'кофе', 'кафе', 'кава', 'καφές', 'καφέ', 'קפה', 'قهوة', 'قهوه', 'کافی', 'कॉफ़ी', 'कॉफी', 'কফি',
-  'காபி', 'กาแฟ', 'cà phê', '咖啡', 'コーヒー', '커피',
+  'காபி', 'กาแฟ', 'cà phê', '咖啡', 'コーヒー', '커피', 'kahva', 'kafija', 'kavos', 'kaffi', 'qəhvə', 'qahva', 'кафа',
+  'кофі', 'ყავა', 'កាហ្វេ', 'ກາເຟ', 'ကော်ဖီ', 'කෝපි', 'ಕಾಫಿ', 'കാപ്പി', 'కాఫీ', 'કૉફી', 'કોફી',
   // hello
   'hello', 'hallo', 'helo', 'hullo', 'ciao', 'hola', 'hej', 'hei', 'olá', 'allô', 'алло', 'хелло',
-  'ハロー', '헬로',
+  'ハロー', '헬로', 'ჰელო', 'ហេឡូ', 'ဟယ်လို', 'හෙලෝ', 'ಹಲೋ', 'ഹലോ', 'హలో', 'હેલો', 'हॅलो', 'हेलो', 'ሄሎ',
   // taxi
   'taxi', 'taxì', 'taksi', 'такси', 'таксі', 'ταξί', 'טקסי', 'تاكسي', 'تاکسی', 'ٹیکسی', 'टैक्सी',
-  'ট্যাক্সি', 'டாக்சி', 'แท็กซี่', 'タクシー', '택시', 'teksi',
+  'ট্যাক্সি', 'டாக்சி', 'แท็กซี่', 'タクシー', '택시', 'teksi', 'taksí', 'takso*', 'tacsaí', 'ტაქსი', 'តាក់ស៊ី', 'ແທັກຊີ',
+  'တက္ကစီ', 'ටැක්සි', 'ಟ್ಯಾಕ್ಸಿ', 'ടാക്സി', 'టాక్సీ', 'ટેક્સી', 'ታክሲ', 'ټکسي',
   // hotel
   'hotel*', 'hôtel*', 'otel*', 'отел*', 'хотел*', 'готел*', 'هتل', 'ہوٹل', 'होटल', 'হোটেল',
-  'ஹோட்டல்', 'โฮเต็ล', 'ホテル', '호텔',
+  'ஹோட்டல்', 'โฮเต็ล', 'ホテル', '호텔', 'ოტელ', 'ဟိုတယ်', 'හෝටල', 'ಹೋಟೆಲ್', 'ഹോട്ടൽ', 'హోటల్', 'હોટેલ', 'हॉटेल',
+  'ሆቴል', 'هوټل',
   // internet
   'internet*', 'интернет*', 'інтернет*', 'ίντερνετ', 'אינטרנט', 'إنترنت', 'انترنت', 'اینترنت',
   'انٹرنیٹ', 'इंटरनेट', 'ইন্টারনেট', 'இன்டர்நெட்', 'อินเทอร์เน็ต', 'インターネット', '인터넷',
@@ -149,7 +208,7 @@ export const BLOCKLIST: readonly string[] = [
 ]
 
 const SPACED_TERM = /^[\p{Script=Latin}\p{Script=Cyrillic}\p{Script=Greek}'’ *]+$/u
-const UNSPACED: ReadonlySet<LangCode> = new Set(['ja-JP', 'zh-CN', 'zh-TW', 'th-TH'])
+const UNSPACED: ReadonlySet<LangCode> = new Set(['ja-JP', 'zh-CN', 'zh-TW', 'zh-HK', 'th-TH', 'km-KH', 'lo-LA', 'my-MM'])
 
 const norm = (s: string) => s.normalize('NFC').toLocaleLowerCase('en')
 

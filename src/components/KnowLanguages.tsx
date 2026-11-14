@@ -7,6 +7,7 @@ type Region =
   | 'Northern Europe'
   | 'Central & Eastern Europe'
   | 'Middle East'
+  | 'Caucasus & Central Asia'
   | 'South Asia'
   | 'East & Southeast Asia'
   | 'Africa'
@@ -16,6 +17,7 @@ const REGIONS: readonly Region[] = [
   'Northern Europe',
   'Central & Eastern Europe',
   'Middle East',
+  'Caucasus & Central Asia',
   'South Asia',
   'East & Southeast Asia',
   'Africa',
@@ -63,6 +65,42 @@ const REGION_OF: Record<LangCode, Region> = {
   'fil-PH': 'East & Southeast Asia',
   'sw-KE': 'Africa',
   'af-ZA': 'Africa',
+  'ca-ES': 'Western Europe',
+  'gl-ES': 'Western Europe',
+  'ga-IE': 'Western Europe',
+  'mt-MT': 'Western Europe',
+  'is-IS': 'Northern Europe',
+  'et-EE': 'Northern Europe',
+  'lv-LV': 'Northern Europe',
+  'lt-LT': 'Northern Europe',
+  'hr-HR': 'Central & Eastern Europe',
+  'bs-BA': 'Central & Eastern Europe',
+  'sr-RS': 'Central & Eastern Europe',
+  'sl-SI': 'Central & Eastern Europe',
+  'mk-MK': 'Central & Eastern Europe',
+  'sq-AL': 'Central & Eastern Europe',
+  'ka-GE': 'Caucasus & Central Asia',
+  'az-AZ': 'Caucasus & Central Asia',
+  'kk-KZ': 'Caucasus & Central Asia',
+  'uz-UZ': 'Caucasus & Central Asia',
+  'mn-MN': 'Caucasus & Central Asia',
+  'ps-AF': 'South Asia',
+  'ne-NP': 'South Asia',
+  'mr-IN': 'South Asia',
+  'gu-IN': 'South Asia',
+  'si-LK': 'South Asia',
+  'kn-IN': 'South Asia',
+  'ml-IN': 'South Asia',
+  'te-IN': 'South Asia',
+  'zh-HK': 'East & Southeast Asia',
+  'km-KH': 'East & Southeast Asia',
+  'lo-LA': 'East & Southeast Asia',
+  'my-MM': 'East & Southeast Asia',
+  'jv-ID': 'East & Southeast Asia',
+  'su-ID': 'East & Southeast Asia',
+  'am-ET': 'Africa',
+  'so-SO': 'Africa',
+  'zu-ZA': 'Africa',
 }
 
 /** Case- and accent-insensitive form for search ("espanol" finds "Español"). */

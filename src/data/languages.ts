@@ -39,6 +39,42 @@ export type LangCode =
   | 'sw-KE'
   | 'af-ZA'
   | 'cy-GB'
+  | 'am-ET'
+  | 'az-AZ'
+  | 'bs-BA'
+  | 'ca-ES'
+  | 'et-EE'
+  | 'ga-IE'
+  | 'gl-ES'
+  | 'gu-IN'
+  | 'hr-HR'
+  | 'is-IS'
+  | 'jv-ID'
+  | 'ka-GE'
+  | 'kk-KZ'
+  | 'km-KH'
+  | 'kn-IN'
+  | 'lo-LA'
+  | 'lt-LT'
+  | 'lv-LV'
+  | 'mk-MK'
+  | 'ml-IN'
+  | 'mn-MN'
+  | 'mr-IN'
+  | 'mt-MT'
+  | 'my-MM'
+  | 'ne-NP'
+  | 'ps-AF'
+  | 'si-LK'
+  | 'sl-SI'
+  | 'so-SO'
+  | 'sq-AL'
+  | 'sr-RS'
+  | 'su-ID'
+  | 'te-IN'
+  | 'uz-UZ'
+  | 'zh-HK'
+  | 'zu-ZA'
 
 /** 1 = instantly recognisable, 2 = recognisable, 3 = expert (confusable pairs). */
 export type Tier = 1 | 2 | 3
@@ -89,6 +125,21 @@ export const LANGUAGES: Language[] = [
   { code: 'sw-KE', name: 'Swahili', nativeName: 'Kiswahili', flag: '🇰🇪', family: 'Bantu', tier: 2, voice: 'sw-KE-ZuriNeural', fact: 'Swahili is a lingua franca for over 100 million people in East Africa.' },
   { code: 'af-ZA', name: 'Afrikaans', nativeName: 'Afrikaans', flag: '🇿🇦', family: 'Germanic', tier: 2, voice: 'af-ZA-AdriNeural', fact: 'Afrikaans developed from 17th-century Dutch spoken in the Cape Colony.' },
   { code: 'cy-GB', name: 'Welsh', nativeName: 'Cymraeg', flag: '🏴󠁧󠁢󠁷󠁬󠁳󠁿', family: 'Celtic', tier: 2, voice: 'cy-GB-NiaNeural', fact: 'Welsh changes the first sound of words in certain contexts, a feature called mutation.' },
+  { code: 'ca-ES', name: 'Catalan', nativeName: 'Català', flag: '🇪🇸', family: 'Romance', tier: 2, voice: 'ca-ES-JoanaNeural', fact: 'Andorra is the only country in the world where Catalan is the sole official language.' },
+  { code: 'hr-HR', name: 'Croatian', nativeName: 'Hrvatski', flag: '🇭🇷', family: 'Slavic', tier: 2, voice: 'hr-HR-GabrijelaNeural', fact: 'Croatian dialect groups are named after their word for "what": što, kaj and ča.' },
+  { code: 'sr-RS', name: 'Serbian', nativeName: 'Српски', flag: '🇷🇸', family: 'Slavic', tier: 2, voice: 'sr-RS-SophieNeural', fact: 'Serbian is fully digraphic: Cyrillic and Latin are both in everyday use, often on the same street.' },
+  { code: 'sl-SI', name: 'Slovenian', nativeName: 'Slovenščina', flag: '🇸🇮', family: 'Slavic', tier: 2, voice: 'sl-SI-PetraNeural', fact: 'Slovenian still has the dual: separate word forms for exactly two of something.' },
+  { code: 'et-EE', name: 'Estonian', nativeName: 'Eesti', flag: '🇪🇪', family: 'Uralic', tier: 2, voice: 'et-EE-AnuNeural', fact: 'Estonian distinguishes three lengths of sound — short, long and overlong — a rarity among languages.' },
+  { code: 'lv-LV', name: 'Latvian', nativeName: 'Latviešu', flag: '🇱🇻', family: 'Baltic', tier: 2, voice: 'lv-LV-EveritaNeural', fact: 'Latvian and Lithuanian are the last surviving Baltic languages; Old Prussian died out around 1700.' },
+  { code: 'lt-LT', name: 'Lithuanian', nativeName: 'Lietuvių', flag: '🇱🇹', family: 'Baltic', tier: 2, voice: 'lt-LT-OnaNeural', fact: 'Lithuanian keeps so many ancient Indo-European features that linguists compare it with Sanskrit.' },
+  { code: 'is-IS', name: 'Icelandic', nativeName: 'Íslenska', flag: '🇮🇸', family: 'Germanic', tier: 2, voice: 'is-IS-GudrunNeural', fact: 'Icelandic coins native words instead of borrowing: "tölva" (computer) blends "tala" (number) and "völva" (prophetess).' },
+  { code: 'sq-AL', name: 'Albanian', nativeName: 'Shqip', flag: '🇦🇱', family: 'Albanian', tier: 2, voice: 'sq-AL-AnilaNeural', fact: 'Albanian forms its own branch of the Indo-European family, with no close living relatives.' },
+  { code: 'ka-GE', name: 'Georgian', nativeName: 'ქართული', flag: '🇬🇪', family: 'Kartvelian', tier: 2, voice: 'ka-GE-EkaNeural', fact: 'The Georgian verb გვფრცქვნი ("you peel us") stacks eight consonants without a single vowel.' },
+  { code: 'az-AZ', name: 'Azerbaijani', nativeName: 'Azərbaycanca', flag: '🇦🇿', family: 'Turkic', tier: 2, voice: 'az-AZ-BanuNeural', fact: 'Azerbaijani changed alphabet three times in the 20th century: Arabic to Latin, to Cyrillic, and back to Latin in 1991.' },
+  { code: 'zh-HK', name: 'Cantonese', nativeName: '廣東話', flag: '🇭🇰', family: 'Sino-Tibetan', tier: 2, voice: 'zh-HK-HiuGaaiNeural', fact: 'Cantonese keeps the final -p, -t and -k sounds of Middle Chinese that Mandarin lost, and has six tones.' },
+  { code: 'zu-ZA', name: 'Zulu', nativeName: 'isiZulu', flag: '🇿🇦', family: 'Bantu', tier: 2, voice: 'zu-ZA-ThandoNeural', fact: 'Zulu has three click consonants, written c, q and x, borrowed from neighbouring Khoisan languages.' },
+  { code: 'uz-UZ', name: 'Uzbek', nativeName: 'Oʻzbekcha', flag: '🇺🇿', family: 'Turkic', tier: 2, voice: 'uz-UZ-MadinaNeural', fact: 'Uzbek is the most widely spoken Turkic language after Turkish.' },
+  { code: 'kk-KZ', name: 'Kazakh', nativeName: 'Қазақ тілі', flag: '🇰🇿', family: 'Turkic', tier: 2, voice: 'kk-KZ-AigulNeural', fact: 'Kazakhstan is gradually moving Kazakh from the Cyrillic alphabet to a Latin one.' },
 
   // Tier 3 — expert: confusable groups live together here
   { code: 'sv-SE', name: 'Swedish', nativeName: 'Svenska', flag: '🇸🇪', family: 'Germanic', tier: 3, voice: 'sv-SE-SofieNeural', fact: 'Swedish has a pitch accent that can distinguish otherwise identical words.' },
@@ -106,4 +157,25 @@ export const LANGUAGES: Language[] = [
   { code: 'ur-PK', name: 'Urdu', nativeName: 'اردو', flag: '🇵🇰', family: 'Indo-Aryan', tier: 3, voice: 'ur-PK-UzmaNeural', fact: 'Urdu is written right-to-left in the Nastaliq style of Perso-Arabic script.' },
   { code: 'bn-BD', name: 'Bengali', nativeName: 'বাংলা', flag: '🇧🇩', family: 'Indo-Aryan', tier: 3, voice: 'bn-BD-NabanitaNeural', fact: 'International Mother Language Day commemorates the 1952 Bengali Language Movement.' },
   { code: 'ta-IN', name: 'Tamil', nativeName: 'தமிழ்', flag: '🇮🇳', family: 'Dravidian', tier: 3, voice: 'ta-IN-PallaviNeural', fact: 'Tamil is Dravidian, not Indo-Aryan, and has a literary tradition over 2,000 years old.' },
+  { code: 'bs-BA', name: 'Bosnian', nativeName: 'Bosanski', flag: '🇧🇦', family: 'Slavic', tier: 3, voice: 'bs-BA-VesnaNeural', fact: 'Bosnian keeps an "h" its neighbours dropped: coffee is "kahva", where Croatian says "kava" and Serbian "kafa".' },
+  { code: 'mk-MK', name: 'Macedonian', nativeName: 'Македонски', flag: '🇲🇰', family: 'Slavic', tier: 3, voice: 'mk-MK-MarijaNeural', fact: 'Macedonian has three definite articles, depending on whether the thing is near, far or neither.' },
+  { code: 'ga-IE', name: 'Irish', nativeName: 'Gaeilge', flag: '🇮🇪', family: 'Celtic', tier: 3, voice: 'ga-IE-OrlaNeural', fact: 'Irish has no words for "yes" and "no" — you answer by repeating the verb of the question.' },
+  { code: 'gl-ES', name: 'Galician', nativeName: 'Galego', flag: '🇪🇸', family: 'Romance', tier: 3, voice: 'gl-ES-SabelaNeural', fact: 'King Alfonso X of Castile wrote his Cantigas de Santa Maria in Galician-Portuguese, then the language of Iberian lyric poetry.' },
+  { code: 'mt-MT', name: 'Maltese', nativeName: 'Malti', flag: '🇲🇹', family: 'Semitic', tier: 3, voice: 'mt-MT-GraceNeural', fact: 'Maltese is the only Semitic language written in the Latin alphabet and the only one official in the EU.' },
+  { code: 'mn-MN', name: 'Mongolian', nativeName: 'Монгол', flag: '🇲🇳', family: 'Mongolic', tier: 3, voice: 'mn-MN-YesuiNeural', fact: 'Traditional Mongolian script is written vertically, top to bottom, and is still taught alongside Cyrillic.' },
+  { code: 'ne-NP', name: 'Nepali', nativeName: 'नेपाली', flag: '🇳🇵', family: 'Indo-Aryan', tier: 3, voice: 'ne-NP-HemkalaNeural', fact: 'Nepali is also an official language of the Indian state of Sikkim.' },
+  { code: 'mr-IN', name: 'Marathi', nativeName: 'मराठी', flag: '🇮🇳', family: 'Indo-Aryan', tier: 3, voice: 'mr-IN-AarohiNeural', fact: 'Marathi is written in Devanagari but uses the letter ळ, a retroflex "l" that standard Hindi lacks.' },
+  { code: 'gu-IN', name: 'Gujarati', nativeName: 'ગુજરાતી', flag: '🇮🇳', family: 'Indo-Aryan', tier: 3, voice: 'gu-IN-DhwaniNeural', fact: 'Gandhi wrote his autobiography in Gujarati, whose script looks like Devanagari with the top line removed.' },
+  { code: 'si-LK', name: 'Sinhala', nativeName: 'සිංහල', flag: '🇱🇰', family: 'Indo-Aryan', tier: 3, voice: 'si-LK-ThiliniNeural', fact: 'Sinhala is related to Hindi and Bengali, but has developed in isolation on Sri Lanka for over 2,000 years.' },
+  { code: 'kn-IN', name: 'Kannada', nativeName: 'ಕನ್ನಡ', flag: '🇮🇳', family: 'Dravidian', tier: 3, voice: 'kn-IN-SapnaNeural', fact: 'The oldest known Kannada inscription, at Halmidi, dates from around 450 CE.' },
+  { code: 'ml-IN', name: 'Malayalam', nativeName: 'മലയാളം', flag: '🇮🇳', family: 'Dravidian', tier: 3, voice: 'ml-IN-SobhanaNeural', fact: 'Spelled in English, "Malayalam" is a palindrome.' },
+  { code: 'te-IN', name: 'Telugu', nativeName: 'తెలుగు', flag: '🇮🇳', family: 'Dravidian', tier: 3, voice: 'te-IN-ShrutiNeural', fact: 'Because almost every Telugu word ends in a vowel, it has been nicknamed "the Italian of the East".' },
+  { code: 'ps-AF', name: 'Pashto', nativeName: 'پښتو', flag: '🇦🇫', family: 'Indo-Iranian', tier: 3, voice: 'ps-AF-LatifaNeural', fact: 'Pashto adds letters found in no other Arabic-script language, such as ټ and ړ, marked with a small ring.' },
+  { code: 'am-ET', name: 'Amharic', nativeName: 'አማርኛ', flag: '🇪🇹', family: 'Semitic', tier: 3, voice: 'am-ET-MekdesNeural', fact: 'Amharic is the second most spoken Semitic language after Arabic; each Ge’ez character is a consonant–vowel pair.' },
+  { code: 'so-SO', name: 'Somali', nativeName: 'Soomaali', flag: '🇸🇴', family: 'Cushitic', tier: 3, voice: 'so-SO-UbaxNeural', fact: 'Somali got an official alphabet only in 1972; in it, "c" and "x" stand for throat sounds.' },
+  { code: 'km-KH', name: 'Khmer', nativeName: 'ភាសាខ្មែរ', flag: '🇰🇭', family: 'Austroasiatic', tier: 3, voice: 'km-KH-SreymomNeural', fact: 'Unlike its neighbours Thai, Lao and Vietnamese, Khmer is not a tonal language.' },
+  { code: 'lo-LA', name: 'Lao', nativeName: 'ພາສາລາວ', flag: '🇱🇦', family: 'Kra–Dai', tier: 3, voice: 'lo-LA-KeomanyNeural', fact: 'More native Lao speakers live in northeastern Thailand (Isan) than in Laos itself.' },
+  { code: 'my-MM', name: 'Burmese', nativeName: 'မြန်မာဘာသာ', flag: '🇲🇲', family: 'Sino-Tibetan', tier: 3, voice: 'my-MM-NilarNeural', fact: 'Burmese letters are built from circles, a shape often credited to writing on palm leaves, which straight strokes would tear.' },
+  { code: 'jv-ID', name: 'Javanese', nativeName: 'Basa Jawa', flag: '🇮🇩', family: 'Austronesian', tier: 3, voice: 'jv-ID-SitiNeural', fact: 'Javanese has speech levels — ngoko and krama — that can swap out most of the words depending on whom you address.' },
+  { code: 'su-ID', name: 'Sundanese', nativeName: 'Basa Sunda', flag: '🇮🇩', family: 'Austronesian', tier: 3, voice: 'su-ID-TutiNeural', fact: 'Sundanese is the second-largest regional language of Indonesia, after Javanese, with tens of millions of speakers.' },
 ]
