@@ -9,7 +9,7 @@ interface Props {
 
 export function GuessGrid({ options, onPick, reveal }: Props) {
   return (
-    <div className="grid" role="group" aria-label="Answer options">
+    <div className={`grid grid-${options.length}`} role="group" aria-label="Answer options">
       {options.map((lang, i) => {
         let state = ''
         if (reveal) {

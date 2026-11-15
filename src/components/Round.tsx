@@ -8,6 +8,8 @@ interface Props {
   round: RoundSpec
   audio: AudioControls
   slow: boolean
+  /** Expert hides the 0.6x toggle; replay at full speed only. */
+  allowSlow: boolean
   onToggleSlow: () => void
   onGuess: (index: number) => void
   onSkip: () => void
@@ -24,14 +26,11 @@ function speakFallback(round: RoundSpec, slow: boolean) {
   window.speechSynthesis.speak(u)
 }
 
-export function Round({ round, audio, slow, onToggleSlow, onGuess, onSkip }: Props) {
-  useHotkeys({
-    '1': () => onGuess(0),
-    '2': () => onGuess(1),
-    '3': () => onGuess(2),
-    '4': () => onGuess(3),
-    r: audio.replay,
-  })
+export function Round({ round, audio, slow, allowSlow, onToggleSlow, onGuess, onSkip }: Props) {
+  // One hotkey per option; expert shows five.
+  const hotkeys: Record<string, () => void> = { r: audio.replay }
+  for (let i = 0; i < round.options.length; i++) hotkeys[String(i + 1)] = () => onGuess(i)
+  useHotkeys(hotkeys)
 
   return (
     <main className="screen round">
@@ -46,10 +45,12 @@ export function Round({ round, audio, slow, onToggleSlow, onGuess, onSkip }: Pro
         >
           <span aria-hidden="true">{audio.isPlaying ? '🔊' : '▶'}</span>
         </button>
-        <label className="toggle">
-          <input type="checkbox" checked={slow} onChange={onToggleSlow} />
-          <span>🐢 Slow (0.6×)</span>
-        </label>
+        {allowSlow && (
+          <label className="toggle">
+            <input type="checkbox" checked={slow} onChange={onToggleSlow} />
+            <span>🐢 Slow (0.6×)</span>
+          </label>
+        )}
         {audio.needsTap && <p className="muted">Tap ▶ to hear the clip.</p>}
       </div>
 

@@ -8,6 +8,7 @@ import { StartScreen } from './components/StartScreen.tsx'
 import { LANGUAGES, type LangCode, type Language } from './data/languages.ts'
 import {
   SLOW_RATE,
+  allowsSlow,
   clipKey,
   guess,
   initialState,
@@ -86,9 +87,15 @@ export default function App() {
   const audio = useAudio(src)
   const { setRate } = audio
 
+  // Expert has no slow toggle. The preference is kept for other difficulties but
+  // must not leak into an expert run: it would both change the rate and leave a
+  // hidden toggle in a checked state.
+  const slowAllowed = game ? allowsSlow(game.difficulty) : true
+  const slowActive = slowAllowed && slow
+
   useEffect(() => {
-    setRate(slow ? SLOW_RATE : 1)
-  }, [slow, setRate])
+    setRate(slowActive ? SLOW_RATE : 1)
+  }, [slowActive, setRate])
 
   const start = (difficulty: Difficulty) => {
     // A ?seed= game ignores the memory so the seed alone determines it.
@@ -175,7 +182,8 @@ export default function App() {
         <Round
           round={game.round}
           audio={audio}
-          slow={slow}
+          slow={slowActive}
+          allowSlow={slowAllowed}
           onToggleSlow={() => setSlow((s) => !s)}
           onGuess={answer}
           onSkip={() => answer(null)}

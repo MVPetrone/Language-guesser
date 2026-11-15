@@ -18,8 +18,10 @@ import {
   guess,
   initialState,
   isOver,
+  allowsSlow,
   levelForDifficulty,
   nextRound,
+  optionCountFor,
   scoreGuess,
   shareGrid,
   type Difficulty,
@@ -27,9 +29,9 @@ import {
 } from '../../src/engine/game.ts'
 import { mulberry32 } from '../../src/engine/rng.ts'
 
-const DIFFICULTIES: Difficulty[] = ['easy', 'normal', 'hard']
+const DIFFICULTIES: Difficulty[] = ['easy', 'normal', 'hard', 'expert']
 
-const wrongIndex = (s: GameState) => (s.round.correctIndex + 1) % OPTION_COUNT
+const wrongIndex = (s: GameState) => (s.round.correctIndex + 1) % s.round.options.length
 
 /** Answer the current round (hit or miss) and advance past the reveal. */
 function play(s: GameState, hit: boolean): GameState {
@@ -37,13 +39,14 @@ function play(s: GameState, hit: boolean): GameState {
 }
 
 describe('buildRound', () => {
-  it('always returns 4 unique options containing the answer exactly once', () => {
+  it('returns the right number of unique options containing the answer exactly once', () => {
     for (const difficulty of DIFFICULTIES) {
+      const expected = optionCountFor(difficulty)
       const rng = mulberry32(1234)
       for (let i = 0; i < 2000; i++) {
         const r = buildRound(rng, LANGUAGES, difficulty)
-        expect(r.options).toHaveLength(OPTION_COUNT)
-        expect(new Set(r.options.map((l) => l.code)).size).toBe(OPTION_COUNT)
+        expect(r.options).toHaveLength(expected)
+        expect(new Set(r.options.map((l) => l.code)).size).toBe(expected)
         expect(r.options[r.correctIndex]).toBe(r.language)
         expect(r.options.filter((l) => l.code === r.language.code)).toHaveLength(1)
         expect(SENTENCES.map((x) => x.id)).toContain(r.sentenceId)
@@ -271,7 +274,7 @@ describe('sentences and voices', () => {
   const smallPool = tier1.slice(0, 4)
 
   it('maps easy → level 1, normal → level 2, hard → level 3', () => {
-    expect(DIFFICULTY_LEVEL).toEqual({ easy: 1, normal: 2, hard: 3 })
+    expect(DIFFICULTY_LEVEL).toEqual({ easy: 1, normal: 2, hard: 3, expert: 3 })
     for (const difficulty of DIFFICULTIES) {
       const level = levelForDifficulty(difficulty)
       const ids = sentencesForLevel(level).map((x) => x.id)
@@ -467,6 +470,79 @@ describe('known-language exclusion', () => {
       // The sentence level still follows the chosen difficulty.
       for (const r of s.history) expect(sentencesForLevel(levelForDifficulty(difficulty)).map((x) => x.id)).toContain(r.sentenceId)
     }
+  })
+})
+
+describe('expert mode', () => {
+  const familySize = (family: string) => LANGUAGES.filter((l) => l.family === family).length
+
+  it('only ever asks about tier-3 languages', () => {
+    const rng = mulberry32(4242)
+    for (let i = 0; i < 2000; i++) {
+      const r = buildRound(rng, LANGUAGES, 'expert')
+      expect(r.language.tier).toBe(3)
+    }
+  })
+
+  it('shows five options, not four', () => {
+    const rng = mulberry32(11)
+    for (let i = 0; i < 500; i++) {
+      const r = buildRound(rng, LANGUAGES, 'expert')
+      expect(r.options).toHaveLength(5)
+      expect(new Set(r.options.map((l) => l.code)).size).toBe(5)
+      expect(r.options[r.correctIndex]).toBe(r.language)
+    }
+  })
+
+  it('fills the options with the answer\'s own language family when it has enough members', () => {
+    const rng = mulberry32(777)
+    let checked = 0
+    for (let i = 0; i < 3000; i++) {
+      const r = buildRound(rng, LANGUAGES, 'expert')
+      if (familySize(r.language.family) - 1 < 4) continue // family too small to fill 4 distractors
+      checked++
+      for (const opt of r.options) expect(opt.family).toBe(r.language.family)
+    }
+    // Slavic, Germanic, Romance, Indo-Aryan and Austronesian answers are common
+    // enough that this path must actually be exercised.
+    expect(checked).toBeGreaterThan(200)
+  })
+
+  it('falls back to other families when the answer\'s family is too small', () => {
+    // Mongolian is alone in its family, so all four distractors must come from elsewhere.
+    const pool = LANGUAGES
+    const rng = mulberry32(5)
+    let seen = 0
+    for (let i = 0; i < 4000; i++) {
+      const r = buildRound(rng, pool, 'expert')
+      if (r.language.family !== 'Mongolic') continue
+      seen++
+      expect(r.options).toHaveLength(5)
+      expect(new Set(r.options.map((l) => l.code)).size).toBe(5)
+    }
+    expect(seen).toBeGreaterThan(0)
+  })
+
+  it('has no slow-down toggle but the other difficulties keep it', () => {
+    expect(allowsSlow('expert')).toBe(false)
+    for (const difficulty of ['easy', 'normal', 'hard'] as Difficulty[]) {
+      expect(allowsSlow(difficulty)).toBe(true)
+    }
+  })
+
+  it('still gives three lives and can play a full game', () => {
+    let s = initialState(21, 'expert', LANGUAGES)
+    expect(s.lives).toBe(LIVES)
+    while (s.phase !== 'over') s = play(s, true)
+    expect(s.history).toHaveLength(ROUNDS)
+    expect(s.lives).toBe(LIVES)
+    for (const r of s.history) expect(r.voiceIndex).toBeGreaterThanOrEqual(0)
+  })
+
+  it('a fixed seed reproduces the same expert round', () => {
+    expect(buildRound(mulberry32(99), LANGUAGES, 'expert')).toEqual(
+      buildRound(mulberry32(99), LANGUAGES, 'expert'),
+    )
   })
 })
 

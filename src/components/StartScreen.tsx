@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import type { Language } from '../data/languages.ts'
 import type { Difficulty } from '../engine/game.ts'
-import { DIFFICULTY_TIERS, LIVES, MIN_POOL, ROUNDS, answerTiers } from '../engine/game.ts'
+import { DIFFICULTY_TIERS, LIVES, MIN_POOL, ROUNDS, answerTiers, optionCountFor } from '../engine/game.ts'
 
 const LEVELS: { id: Difficulty; label: string; hint: string }[] = [
   { id: 'easy', label: 'Easy', hint: 'Big, famous languages · short sentences' },
   { id: 'normal', label: 'Normal', hint: 'Adds the recognisable ones · longer sentences' },
   { id: 'hard', label: 'Hard', hint: 'Includes confusable pairs · rare words' },
+  { id: 'expert', label: 'Expert', hint: 'Confusable languages only · 5 choices · no slow-down' },
 ]
 
 interface Props {
@@ -46,6 +47,12 @@ export function StartScreen({ bestScore, pool, excludedCount, onStart, onEditKno
           </label>
         ))}
       </fieldset>
+      {difficulty === 'expert' && !tooFew && (
+        <p className="fineprint" data-testid="expert-note">
+          Expert only asks about the {pool.filter((l) => l.tier === 3).length} confusable languages you don’t know.
+          Wrong choices come from the same language family wherever it has enough members.
+        </p>
+      )}
       {tierFallback && (
         <p className="fineprint" data-testid="tier-fallback">
           You know all of this level’s usual languages, so it draws from the nearest harder ones instead.
@@ -82,7 +89,7 @@ export function StartScreen({ bestScore, pool, excludedCount, onStart, onEditKno
 
       {bestScore !== null && <p className="muted">Best score: {bestScore}</p>}
       <p className="fineprint">
-        Sound on. Keys: <kbd>1</kbd>–<kbd>4</kbd> answer, <kbd>R</kbd> replay.
+        Sound on. Keys: <kbd>1</kbd>–<kbd>{optionCountFor(difficulty)}</kbd> answer, <kbd>R</kbd> replay.
       </p>
     </main>
   )

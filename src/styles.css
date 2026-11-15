@@ -458,6 +458,12 @@ kbd {
   .grid {
     grid-template-columns: 1fr 1fr;
   }
+
+  /* Expert shows five options: let the fifth span the full width instead of
+     leaving a gap beside it. */
+  .grid-5 > .option:last-child {
+    grid-column: 1 / -1;
+  }
 }
 
 .option {

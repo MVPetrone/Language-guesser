@@ -18,13 +18,16 @@ export const SLOW_RATE = 0.6
 /** Fewest languages a game may draw from once the player's known ones are excluded. */
 export const MIN_POOL = 12
 
-export type Difficulty = 'easy' | 'normal' | 'hard'
+export type Difficulty = 'easy' | 'normal' | 'hard' | 'expert'
 
 /** Which tiers the *answer* may be drawn from at each difficulty. */
 export const DIFFICULTY_TIERS: Record<Difficulty, readonly Tier[]> = {
   easy: [1],
   normal: [1, 2],
   hard: [1, 2, 3],
+  // Expert never asks you to name a famous language: every answer is one of the
+  // confusable ones. Distractors are drawn from the same family wherever possible.
+  expert: [3],
 }
 
 /**
@@ -45,13 +48,41 @@ export const DIFFICULTY_LEVEL: Record<Difficulty, SentenceLevel> = {
   easy: 1,
   normal: 2,
   hard: 3,
+  expert: 3,
 }
 
 export function levelForDifficulty(difficulty: Difficulty): SentenceLevel {
   return DIFFICULTY_LEVEL[difficulty]
 }
 
-export type Options = [Language, Language, Language, Language]
+/** Number of answer buttons per difficulty. Expert adds a fifth to beat 4-way elimination. */
+export const OPTION_COUNTS: Record<Difficulty, number> = {
+  easy: OPTION_COUNT,
+  normal: OPTION_COUNT,
+  hard: OPTION_COUNT,
+  expert: 5,
+}
+
+export function optionCountFor(difficulty: Difficulty): number {
+  return OPTION_COUNTS[difficulty]
+}
+
+/**
+ * Expert removes the 0.6× crutch: replay stays unlimited, but you hear it at
+ * full speed only. Every other difficulty keeps the slow toggle.
+ */
+export const SLOW_ALLOWED: Record<Difficulty, boolean> = {
+  easy: true,
+  normal: true,
+  hard: true,
+  expert: false,
+}
+
+export function allowsSlow(difficulty: Difficulty): boolean {
+  return SLOW_ALLOWED[difficulty]
+}
+
+export type Options = Language[]
 
 export interface RoundSpec {
   language: Language
@@ -176,6 +207,8 @@ function pickClip(rng: Rng, eligible: readonly Language[], level: SentenceLevel,
  * (see `answerTiers` for the fallback when those are empty) and speaks a sentence of that difficulty's level in one of its voices;
  * distractors come from the answer's own tier so they are plausibly
  * confusable (falling back to other tiers only if that tier is too small).
+ * Expert draws distractors from the answer's language family first, and asks
+ * for one more option than the other difficulties.
  * `avoid` steers away from answers and clips already used this game.
  */
 export function buildRound(
@@ -191,17 +224,31 @@ export function buildRound(
   const { language, sentenceId, voiceIndex } = pickClip(rng, eligible, levelForDifficulty(difficulty), avoid)
 
   const others = pool.filter((l) => l.code !== language.code)
-  const sameTier = shuffle(
-    rng,
-    others.filter((l) => l.tier === language.tier),
-  )
-  const otherTier = shuffle(
-    rng,
-    others.filter((l) => l.tier !== language.tier),
-  )
-  const distractors = [...sameTier, ...otherTier].slice(0, OPTION_COUNT - 1)
-  if (distractors.length < OPTION_COUNT - 1) {
-    throw new Error(`Pool needs at least ${OPTION_COUNT} languages`)
+  const optionCount = optionCountFor(difficulty)
+  // Order of preference for distractors. Expert leads with the same language
+  // family so "that's not Slavic" elimination stops working; every difficulty
+  // then falls back to the answer's own tier, then to anything at all.
+  const buckets: ((l: Language) => boolean)[] =
+    difficulty === 'expert'
+      ? [
+          (l) => l.family === language.family,
+          (l) => l.tier === language.tier,
+          () => true,
+        ]
+      : [(l) => l.tier === language.tier, () => true]
+  const ordered: Language[] = []
+  const taken = new Set<string>()
+  for (const keep of buckets) {
+    for (const l of shuffle(rng, others.filter(keep))) {
+      if (!taken.has(l.code)) {
+        taken.add(l.code)
+        ordered.push(l)
+      }
+    }
+  }
+  const distractors = ordered.slice(0, optionCount - 1)
+  if (distractors.length < optionCount - 1) {
+    throw new Error(`Pool needs at least ${optionCount} languages`)
   }
 
   const options = shuffle(rng, [language, ...distractors]) as Options
