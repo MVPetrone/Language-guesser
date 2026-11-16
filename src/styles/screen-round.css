@@ -1,0 +1,177 @@
+/* ============================================================================
+   ROUND — the listening screen
+   Budget (360×640, expert, 5 options, no slow switch): HUD 52 · pad 16 ·
+   orb 112 · caption 24 · gap 24 · prompt 16 · options 5×48+4×8 = 272 ·
+   pad 32 → ~550px, so it fits without scrolling. The player block takes the
+   free space above the options, which stay anchored low, in thumb reach.
+   ========================================================================== */
+
+.screen--round {
+  --orb: 7rem;
+  --orb-core: 5rem;
+  gap: var(--s-4);
+}
+
+.player {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-3);
+}
+
+/* ---- the signal orb: the one amber element on this screen ------------------ */
+.orb {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: var(--orb);
+  height: var(--orb);
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  color: var(--voice);
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition: var(--t-ui);
+}
+
+.orb__rings {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.orb__ring {
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+/* Arcs, not circles: the aperture iris, broken in two places each. */
+.orb__ring--outer {
+  stroke-dasharray: 38 12;
+  opacity: 0.28;
+}
+
+.orb__ring--inner {
+  stroke-dasharray: 22 3;
+  stroke-dashoffset: 6;
+  opacity: 0.55;
+}
+
+.orb__core {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: var(--orb-core);
+  height: var(--orb-core);
+  border-radius: 50%;
+  background-color: var(--voice);
+  color: var(--ink-950);
+  box-shadow: 0 0 0 var(--s-2) var(--signal-wash), var(--shadow-2);
+  transition: var(--t-ui);
+}
+
+.orb__play {
+  width: 2rem;
+  height: 2rem;
+  transform: translateX(2px); /* optical centre of a triangle */
+}
+
+/* Soft pulse: the outer arc breathes outward while the clip plays. */
+.orb.is-playing .orb__ring--outer {
+  animation: orb-breathe var(--dur-5) var(--ease-settle) infinite;
+}
+
+@keyframes orb-breathe {
+  from {
+    opacity: 0.28;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.55;
+    transform: scale(1.06);
+  }
+
+  to {
+    opacity: 0.28;
+    transform: scale(1);
+  }
+}
+
+@media (hover: hover) {
+  .orb:hover:not(:disabled) .orb__core {
+    transform: scale(1.04);
+  }
+}
+
+.orb:active:not(:disabled) .orb__core {
+  transform: scale(0.95);
+}
+
+.orb:disabled {
+  color: var(--text-off);
+  cursor: not-allowed;
+}
+
+.orb:disabled .orb__core {
+  background-color: var(--surface-2);
+  color: var(--text-3);
+  box-shadow: none;
+}
+
+/* Durations are already zeroed by tokens.css; stop the loops outright too so
+   nothing sits at an arbitrary keyframe. Bars rest in their static profile. */
+@media (prefers-reduced-motion: reduce) {
+  .orb.is-playing .orb__ring--outer {
+    animation: none;
+  }
+}
+
+/* The readout: the same voice the orb is playing, drawn as telemetry. It also
+   gives the empty middle of the screen a job instead of a gap. */
+.player__wave {
+  width: min(100%, 17rem);
+  opacity: 0.85;
+  /* Fade the ends so the rest pose reads as a signal, not a barcode. */
+  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+}
+
+.player__caption {
+  text-align: center;
+}
+
+.player__rate {
+  color: var(--machine);
+}
+
+/* ---- answers ---------------------------------------------------------------- */
+.round__answers {
+  display: grid;
+  gap: var(--s-3);
+}
+
+.round__prompt {
+  text-align: center;
+}
+
+@media (min-width: 48rem) {
+  .screen--round {
+    --orb: 8.5rem;
+    --orb-core: 6rem;
+    justify-content: center;
+    gap: var(--s-6);
+  }
+
+  .player {
+    flex: 0 0 auto;
+  }
+}

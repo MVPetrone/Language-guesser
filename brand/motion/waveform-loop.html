@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Guess the Language — waveform loop (1080 × 1080, 6 s seamless)</title>
+<link rel="stylesheet" href="../../src/styles/tokens.css">
+<link rel="stylesheet" href="motion-kit.css">
+</head>
+<body>
+<div class="stage"><canvas></canvas></div>
+<script src="motion-kit.js"></script>
+<script>
+/* Background loop for social and site: a field recorder's screen. A speech
+   waveform scrolls through a fixed cyan playhead and turns amber only where it
+   is "speaking now"; a cyan focal glow drifts over the calibration graticule.
+   Seamless by construction: time is taken modulo LOOP, the waveform tiles
+   exactly once per loop (180 bars x 6 px = 1080 px), and every other motion
+   completes whole cycles in LOOP. No text: it sits behind other content. */
+const K = MotionKit
+const LOOP = 6
+const C = {
+  ink950: K.color('--ink-950'), fog400: K.color('--fog-400'), cyan: K.color('--caliber-500'),
+  amber: K.color('--signal-500'),
+}
+const PITCH = 6, BARS = 180, SYLLABLES = 27, MID = 540, MAX_H = 230
+const TAU = Math.PI * 2
+
+// The voice: 27 syllables across one tile, stressed and unstressed, word gaps
+// and two phrase pauses. Same shape as the in-app envelope (src/motion/envelope.ts).
+const AMP = new Float32Array(BARS)
+for (let j = 0; j < BARS; j++) {
+  const pos = (j / BARS) * SYLLABLES
+  const s = Math.floor(pos)
+  const u = pos - s
+  const pulse = Math.sin(Math.PI * Math.pow(u, 0.55)) ** 2
+  const stress = 0.45 + 0.55 * K.hash(s, 0x5102)
+  const voiced = s % 9 === 8 ? 0.03 : K.hash(s, 0x5103) < 0.17 ? 0.05 : 1
+  AMP[j] = Math.max(0.025, stress * pulse * voiced * (0.72 + 0.28 * K.hash(j, 0x5109)))
+}
+
+// The graticule, drawn once: faint everywhere, and a bright copy for the glow.
+function graticule(alpha) {
+  const c = document.createElement('canvas')
+  c.width = c.height = 1080
+  const g = c.getContext('2d')
+  g.strokeStyle = K.rgba(C.cyan, alpha)
+  g.lineWidth = 1
+  for (let k = 0; k <= 10; k++) {
+    const p = k * 108 + 0.5
+    g.beginPath(); g.moveTo(p, 0); g.lineTo(p, 1080); g.stroke()
+    g.beginPath(); g.moveTo(0, p); g.lineTo(1080, p); g.stroke()
+  }
+  g.strokeStyle = K.rgba(C.cyan, alpha * 2.2)
+  for (let k = 0; k <= 50; k++) {
+    const p = k * 21.6
+    const len = k % 5 === 0 ? 12 : 7
+    g.beginPath(); g.moveTo(p, MID - len); g.lineTo(p, MID + len); g.stroke()
+    g.beginPath(); g.moveTo(MID - len, p); g.lineTo(MID + len, p); g.stroke()
+  }
+  g.fillStyle = K.rgba(C.cyan, Math.min(1, alpha * 4))
+  for (let i = 0; i <= 10; i++) for (let k = 0; k <= 10; k++) {
+    g.beginPath(); g.arc(i * 108, k * 108, 1.7, 0, TAU); g.fill()
+  }
+  return c
+}
+const GRID = graticule(0.06)
+const GRID_LIT = graticule(0.22)
+const scratch = document.createElement('canvas')
+scratch.width = scratch.height = 1080
+const sctx = scratch.getContext('2d')
+
+function draw(ctx, time) {
+  const t = ((time % LOOP) + LOOP) % LOOP
+  const u = t / LOOP
+  ctx.fillStyle = K.rgba(C.ink950)
+  ctx.fillRect(0, 0, 1080, 1080)
+
+  // Drifting focal glow: a figure-eight, one lap per loop.
+  const fx = MID + 230 * Math.sin(TAU * u)
+  const fy = MID + 120 * Math.sin(2 * TAU * u + 0.6)
+  const breath = 0.5 - 0.5 * Math.cos(2 * TAU * u)
+  const R = 440 + 30 * breath
+  const wash = ctx.createRadialGradient(fx, fy, 0, fx, fy, R)
+  wash.addColorStop(0, K.rgba(C.cyan, 0.075 + 0.03 * breath))
+  wash.addColorStop(1, K.rgba(C.cyan, 0))
+  ctx.fillStyle = wash
+  ctx.fillRect(0, 0, 1080, 1080)
+
+  ctx.drawImage(GRID, 0, 0)
+  // The bright graticule, masked to the glow.
+  sctx.globalCompositeOperation = 'source-over'
+  sctx.clearRect(0, 0, 1080, 1080)
+  sctx.drawImage(GRID_LIT, 0, 0)
+  sctx.globalCompositeOperation = 'destination-in'
+  const mask = sctx.createRadialGradient(fx, fy, 0, fx, fy, R * 0.8)
+  mask.addColorStop(0, 'rgba(0, 0, 0, 1)')
+  mask.addColorStop(1, 'rgba(0, 0, 0, 0)')
+  sctx.fillStyle = mask
+  sctx.fillRect(0, 0, 1080, 1080)
+  ctx.drawImage(scratch, 0, 0)
+
+  // The waveform scrolls one full tile per loop.
+  const offset = u * BARS * PITCH
+  const first = Math.floor(offset / PITCH)
+  ctx.lineCap = 'round'
+  ctx.lineWidth = 3.4
+  for (let i = -1; i <= BARS + 1; i++) {
+    const idx = first + i
+    const x = idx * PITCH - offset + PITCH / 2
+    if (x < -4 || x > 1084) continue
+    const h = Math.max(1.5, MAX_H * AMP[((idx % BARS) + BARS) % BARS])
+    const edge = K.clamp(Math.min(x, 1080 - x) / 160)
+    const now = Math.exp(-(((x - MID) / 120) ** 2)) // "speaking now" at the playhead
+    ctx.shadowBlur = 0
+    ctx.strokeStyle = K.rgba(C.fog400, 0.55 * (1 - now) * edge)
+    ctx.beginPath(); ctx.moveTo(x, MID - h); ctx.lineTo(x, MID + h); ctx.stroke()
+    if (now > 0.02) {
+      ctx.shadowColor = K.rgba(C.amber, 0.6 * now)
+      ctx.shadowBlur = 16 * now
+      ctx.strokeStyle = K.rgba(C.amber, now)
+      ctx.beginPath(); ctx.moveTo(x, MID - h); ctx.lineTo(x, MID + h); ctx.stroke()
+    }
+  }
+  ctx.shadowBlur = 0
+
+  // The playhead: the instrument listening.
+  ctx.strokeStyle = K.rgba(C.cyan, 0.7)
+  ctx.lineWidth = 1.5
+  ctx.beginPath(); ctx.moveTo(MID, 278); ctx.lineTo(MID, 802); ctx.stroke()
+  ctx.fillStyle = K.rgba(C.cyan, 0.9)
+  for (const [y, dir] of [[278, 1], [802, -1]]) {
+    ctx.beginPath(); ctx.moveTo(MID - 8, y - 10 * dir); ctx.lineTo(MID + 8, y - 10 * dir); ctx.lineTo(MID, y); ctx.fill()
+  }
+
+  // Registration corners and a vignette frame the screen.
+  ctx.strokeStyle = K.rgba(C.cyan, 0.4)
+  ctx.lineWidth = 2
+  for (const [x, y, sx, sy] of [[72, 72, 1, 1], [1008, 72, -1, 1], [72, 1008, 1, -1], [1008, 1008, -1, -1]]) {
+    ctx.beginPath(); ctx.moveTo(x, y + 34 * sy); ctx.lineTo(x, y); ctx.lineTo(x + 34 * sx, y); ctx.stroke()
+  }
+  const vignette = ctx.createRadialGradient(MID, MID, 360, MID, MID, 780)
+  vignette.addColorStop(0, K.rgba(C.ink950, 0))
+  vignette.addColorStop(1, K.rgba(C.ink950, 0.75))
+  ctx.fillStyle = vignette
+  ctx.fillRect(0, 0, 1080, 1080)
+}
+
+K.film({ duration: LOOP, fonts: [], draw })
+</script>
+</body>
+</html>

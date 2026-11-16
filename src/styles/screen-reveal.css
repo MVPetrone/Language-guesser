@@ -1,0 +1,179 @@
+/* ============================================================================
+   REVEAL — the answer card
+   The actions bar is sticky so "Next round" (autofocused) is always in view:
+   focusing it never scrolls the verdict away, and it stays in thumb reach.
+   ========================================================================== */
+
+.screen--reveal {
+  gap: var(--s-4);
+  padding-bottom: 0;
+}
+
+/* ---- verdict: icon + text + mono telemetry; tone never by colour alone ---------- */
+.verdict {
+  --tone: var(--text-3);
+  --tone-bg: var(--surface-2);
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-1) var(--s-2);
+  min-height: var(--row-h);
+  padding: var(--s-2) var(--s-4);
+  border: 1px solid color-mix(in srgb, var(--tone) 55%, transparent);
+  border-radius: var(--r-pill);
+  background-color: var(--tone-bg);
+  color: var(--text-1);
+  font-weight: 600;
+  line-height: var(--lh-snug);
+}
+
+.verdict--good {
+  --tone: var(--allow-500);
+  --tone-bg: var(--allow-wash);
+}
+
+.verdict--bad {
+  --tone: var(--deny-500);
+  --tone-bg: var(--deny-wash);
+}
+
+.verdict--neutral {
+  --tone: var(--line-strong);
+  color: var(--text-2);
+}
+
+.verdict__icon {
+  flex: none;
+  width: var(--icon);
+  height: var(--icon);
+  color: var(--tone);
+}
+
+.verdict--neutral .verdict__icon {
+  color: var(--text-3);
+}
+
+.verdict__text {
+  flex: 1 1 12rem;
+  overflow-wrap: anywhere;
+}
+
+.verdict__detail {
+  font-family: var(--font-mono);
+  font-size: var(--fs-telemetry);
+  font-weight: 500;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--tone);
+}
+
+.verdict--neutral .verdict__detail {
+  color: var(--text-3);
+}
+
+/* ---- answer card ---------------------------------------------------------------
+   Children shrink-wrap to the start edge, so a right-to-left native name sits
+   where a left-to-right one would while still reading right to left. */
+.answer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--s-4);
+  padding: var(--s-5) var(--s-4);
+}
+
+.answer__head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--s-2);
+  max-width: 100%;
+}
+
+.answer__native {
+  max-width: 100%;
+  font-size: var(--fs-h1);
+  overflow-wrap: anywhere;
+}
+
+.answer__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-1) var(--s-2);
+}
+
+/* The flag is a hint, not the point: telemetry-sized, ahead of the name. */
+.answer__flag {
+  font-size: var(--fs-small);
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.phrase {
+  display: grid;
+  gap: var(--s-2);
+  width: 100%;
+  padding-top: var(--s-4);
+  border-top: 1px solid var(--line-faint);
+}
+
+.phrase__native {
+  font-size: var(--fs-h3);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--track, var(--tracking-ui));
+  overflow-wrap: anywhere;
+}
+
+.phrase__gloss {
+  color: var(--text-2);
+  font-size: var(--fs-small);
+}
+
+.fact {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: var(--s-2);
+  width: 100%;
+  padding-top: var(--s-4);
+  border-top: 1px solid var(--line-faint);
+  color: var(--text-2);
+  font-size: var(--fs-small);
+  line-height: var(--lh-body);
+}
+
+.fact__icon {
+  width: 1rem;
+  height: 1rem;
+  margin-top: 0.15em;
+  color: var(--machine);
+}
+
+/* ---- sticky actions ------------------------------------------------------------ */
+.reveal__actions {
+  position: sticky;
+  bottom: 0;
+  z-index: var(--z-hud);
+  margin-inline: calc(var(--gutter) * -1);
+  padding: var(--s-3) var(--gutter) calc(var(--s-3) + var(--safe-b));
+  border-top: 1px solid var(--line-faint);
+}
+
+@media (min-width: 48rem) {
+  .answer {
+    padding: var(--s-6);
+  }
+
+  .answer__native {
+    font-size: var(--fs-display);
+  }
+
+  .reveal__actions {
+    margin-bottom: var(--s-6);
+    border: var(--hairline);
+    border-radius: var(--r-lg);
+    margin-inline: 0;
+    padding-inline: var(--s-3);
+  }
+}

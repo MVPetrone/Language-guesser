@@ -1,0 +1,241 @@
+/* ============================================================================
+   END — the result
+   The score is white on purpose: "Play again" is this screen's one amber.
+   ========================================================================== */
+
+.screen--end {
+  align-items: stretch;
+  text-align: center;
+}
+
+.result {
+  display: grid;
+  justify-items: center;
+  gap: var(--s-2);
+  padding-top: var(--s-4);
+}
+
+.result__title {
+  color: var(--text-2);
+  font-size: var(--fs-h3);
+  font-weight: 500;
+}
+
+.result__score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--s-1);
+}
+
+.result__value {
+  font-family: var(--font-display);
+  font-size: var(--fs-display);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  line-height: 0.95;
+  letter-spacing: var(--tracking-display);
+}
+
+.result__summary {
+  color: var(--text-2);
+}
+
+.result__badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--s-2);
+  margin-top: var(--s-2);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-1);
+  min-height: 1.75rem;
+  padding: 0 var(--s-3);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-pill);
+  color: var(--text-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-telemetry);
+  font-weight: 500;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+}
+
+/* New best: the machine logs a record — cyan, precise, no confetti. */
+.badge--best {
+  border-color: var(--machine);
+  background-color: var(--caliber-wash);
+  color: var(--machine);
+}
+
+.badge__icon {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+/* ---- stats: three readouts in one hairline frame ------------------------------- */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border: var(--hairline);
+  border-radius: var(--r-md);
+  background-color: var(--surface-1);
+}
+
+.stats__item {
+  display: grid;
+  gap: var(--s-1);
+  padding: var(--s-3) var(--s-2);
+}
+
+.stats__item + .stats__item {
+  border-inline-start: 1px solid var(--line-faint);
+}
+
+.stats__value {
+  font-family: var(--font-mono);
+  font-size: var(--fs-h3);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---- tokens: one square per round, a selectable text line ---------------------- */
+.tokens {
+  display: flex;
+  justify-content: center;
+  gap: var(--s-1);
+}
+
+.token {
+  display: grid;
+  flex: 0 1 2.25rem;
+  place-items: center;
+  aspect-ratio: 1;
+  min-width: 0;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-token);
+  color: var(--text-3);
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.token--hit {
+  border-color: var(--allow-500);
+  background-color: var(--allow-wash);
+  color: var(--allow-500);
+}
+
+.token--miss {
+  border-color: var(--deny-500);
+  background-color: var(--deny-wash);
+  color: var(--deny-500);
+}
+
+.token--skip {
+  border-style: dashed;
+}
+
+/* ---- actions & share ------------------------------------------------------------- */
+.end__status {
+  min-height: 1lh;
+  color: var(--text-2);
+  font-size: var(--fs-small);
+}
+
+.end__status:empty {
+  display: none;
+}
+
+.end__menu {
+  align-self: center;
+}
+
+/* ---- round-by-round log (native disclosure) ------------------------------------ */
+.log {
+  border: var(--hairline);
+  border-radius: var(--r-md);
+  text-align: start;
+}
+
+.log__summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: var(--tap-min);
+  padding: 0 var(--s-4);
+  border-radius: var(--r-md);
+  list-style: none;
+  cursor: pointer;
+}
+
+.log__summary::-webkit-details-marker {
+  display: none;
+}
+
+.log__chevron {
+  width: 1rem;
+  height: 1rem;
+  color: var(--text-3);
+  transform: rotate(90deg);
+  transition: transform var(--dur-2) var(--ease-settle);
+}
+
+.log[open] .log__chevron {
+  transform: rotate(-90deg);
+}
+
+.log__list {
+  display: grid;
+  padding: 0 var(--s-4) var(--s-2);
+}
+
+.log__row {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: var(--s-3);
+  padding: var(--s-2) 0;
+  border-top: 1px solid var(--line-faint);
+  font-size: var(--fs-small);
+}
+
+.log__num {
+  font-family: var(--font-mono);
+  font-size: var(--fs-telemetry);
+  color: var(--text-3);
+}
+
+.log__row--hit .log__num {
+  color: var(--allow-500);
+}
+
+.log__row--miss .log__num {
+  color: var(--deny-500);
+}
+
+.log__answer {
+  overflow-wrap: anywhere;
+}
+
+.log__flag {
+  display: inline-block;
+  margin-inline-end: var(--s-2);
+}
+
+.log__detail {
+  color: var(--text-2);
+  text-align: end;
+}
+
+@media (min-width: 48rem) {
+  .end__actions {
+    width: min(100%, 28rem);
+    margin-inline: auto;
+  }
+}

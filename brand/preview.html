@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Guess the Language — identity contact sheet</title>
+<!-- Source for brand/preview.png (1600×1000). Render: node brand/tools/build.mjs -->
+<link rel="stylesheet" href="../public/fonts/fonts.css">
+<style>
+  @font-face { font-family: 'Space Grotesk'; font-weight: 700; src: url(../public/fonts/SpaceGrotesk-700-latin.woff2) format('woff2'); }
+  @font-face { font-family: 'Space Grotesk'; font-weight: 500; src: url(../public/fonts/SpaceGrotesk-500-latin.woff2) format('woff2'); }
+  @font-face { font-family: 'Inter'; font-weight: 400; src: url(../public/fonts/Inter-400-latin.woff2) format('woff2'); }
+  @font-face { font-family: 'Inter'; font-weight: 600; src: url(../public/fonts/Inter-600-latin.woff2) format('woff2'); }
+  @font-face { font-family: 'JetBrains Mono'; font-weight: 500; src: url(../public/fonts/JetBrainsMono-500-latin.woff2) format('woff2'); }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; width: 1600px; height: 1000px; overflow: hidden; }
+  body { background: #0a0d13; color: #edf1f7; font: 400 15px/1.5 'Inter', system-ui, sans-serif; padding: 40px 48px;
+         display: grid; grid-template-columns: 1.15fr 1fr 1fr; grid-template-rows: 186px 300px 1fr; gap: 20px; }
+  .card { background: #10141d; border: 1px solid rgba(255,255,255,.06); border-radius: 18px; padding: 22px 24px; position: relative; overflow: hidden; }
+  .label { font: 500 11px/1 'JetBrains Mono', monospace; letter-spacing: .09em; text-transform: uppercase; color: #98a2b3; margin: 0 0 16px; }
+  .label b { color: #57e3c9; font-weight: 500; }
+  .hero { grid-column: 1 / 3; display: flex; align-items: center; justify-content: space-between; background: #06080c; }
+  .hero img { width: 720px; height: 160px; margin: -10px 0 -10px -24px; }
+  .hero .meta { text-align: right; }
+  .hero h1 { font: 700 30px/1.05 'Space Grotesk', sans-serif; letter-spacing: -0.03em; margin: 0 0 10px; }
+  .hero p { margin: 0; color: #98a2b3; max-width: 300px; margin-left: auto; }
+  .scale { display: flex; align-items: flex-end; gap: 26px; }
+  .scale figure { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .scale figcaption, .chip code, .cap { font: 500 11px/1 'JetBrains Mono', monospace; letter-spacing: .09em; text-transform: uppercase; color: #6b7688; }
+  .stack { grid-row: 1 / 3; grid-column: 3; display: flex; flex-direction: column; background: #06080c; }
+  .stack img { width: 100%; flex: 1; object-fit: contain; }
+  .variants { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; height: 132px; }
+  .variants div { border-radius: 12px; display: grid; place-items: center; position: relative; }
+  .variants img { width: 84px; height: 84px; margin-top: -14px; }
+  .variants .cap { position: absolute; bottom: 10px; }
+  .palette { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .chip { border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,.08); }
+  .chip i { display: block; height: 62px; }
+  .chip div { padding: 9px 11px; background: #171c28; }
+  .chip strong { display: block; font: 600 13px/1.3 'Inter', sans-serif; }
+  .chip code { color: #98a2b3; }
+  .type .row { display: grid; grid-template-columns: 160px 1fr; align-items: baseline; padding: 13px 0; border-top: 1px solid rgba(255,255,255,.06); }
+  .type .row:first-of-type { border-top: 0; padding-top: 0; }
+  .s1 { font: 700 44px/1 'Space Grotesk', sans-serif; letter-spacing: -0.03em; }
+  .s2 { font: 400 18px/1.4 'Inter', sans-serif; color: #c7ceda; }
+  .s2 b { font-weight: 600; color: #edf1f7; }
+  .s3 { font: 500 13px/1 'JetBrains Mono', monospace; letter-spacing: .09em; text-transform: uppercase; color: #57e3c9; }
+  .tabs { display: flex; flex-direction: column; gap: 14px; }
+  .strip { border-radius: 12px; padding: 10px 12px 0; display: flex; }
+  .tab { display: flex; align-items: center; gap: 9px; height: 34px; padding: 0 14px; border-radius: 9px 9px 0 0; font: 400 12px/1 system-ui, sans-serif; width: 230px; }
+  .tab img { width: 16px; height: 16px; }
+  .tab span { flex: 1; } .tab em { font-style: normal; opacity: .55; }
+  .light { background: #dee1e6; } .light .tab { background: #fff; color: #1f1f1f; }
+  .dark { background: #202124; } .dark .tab { background: #35363a; color: #e8eaed; }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+</style>
+</head>
+<body>
+  <section class="card hero">
+    <img src="lockup-horizontal.svg" alt="Guess the Language lockup">
+    <div class="meta">
+      <p class="label"><b>●</b> Identity system · v1</p>
+      <h1>The aperture ear</h1>
+      <p>Calibration rings (the machine listening) sliced by a voice (the human signal).</p>
+    </div>
+  </section>
+
+  <section class="card stack">
+    <p class="label">Lockup · stacked</p>
+    <img src="lockup-stacked.svg" alt="">
+  </section>
+
+  <section class="card" style="grid-column: 1 / 3;">
+    <p class="label">Mark · scale ramp <b>16 → 192 px</b></p>
+    <div class="scale">
+      <figure><img src="mark-small.svg" width="16" height="16" alt=""><figcaption>16 · small</figcaption></figure>
+      <figure><img src="mark-small.svg" width="24" height="24" alt=""><figcaption>24 · small</figcaption></figure>
+      <figure><img src="mark.svg" width="48" height="48" alt=""><figcaption>48</figcaption></figure>
+      <figure><img src="mark.svg" width="96" height="96" alt=""><figcaption>96</figcaption></figure>
+      <figure><img src="mark.svg" width="192" height="192" alt=""><figcaption>192 · master</figcaption></figure>
+      <figure style="margin-left:auto"><img src="mark-mono.svg" width="96" height="96" alt="" style="filter:invert(1)"><figcaption>mono · currentColor</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="card">
+    <p class="label">Variants</p>
+    <div class="variants" style="grid-template-columns: 1fr 1fr;">
+      <div style="background:#fff"><img src="mark-light.svg" alt=""><span class="cap">light · on white</span></div>
+      <div style="background:#edf1f7"><img src="mark-mono.svg" alt=""><span class="cap">mono · print</span></div>
+    </div>
+    <p class="label" style="margin-top:18px">Favicon · 16 px in the tab bar</p>
+    <div class="tabs">
+      <div class="strip light"><div class="tab"><img src="../public/favicon.svg" alt=""><span>Guess the Language</span><em>✕</em></div></div>
+      <div class="strip dark"><div class="tab"><img src="../public/favicon.svg" alt=""><span>Guess the Language</span><em>✕</em></div></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <p class="label">Palette · tokens.css</p>
+    <div class="palette">
+      <div class="chip"><i style="background:#06080c"></i><div><strong>Ink 950</strong><code>#06080C</code></div></div>
+      <div class="chip"><i style="background:#10141d"></i><div><strong>Ink 800</strong><code>#10141D</code></div></div>
+      <div class="chip"><i style="background:#edf1f7"></i><div><strong>Fog 100</strong><code>#EDF1F7</code></div></div>
+      <div class="chip"><i style="background:#98a2b3"></i><div><strong>Fog 300</strong><code>#98A2B3</code></div></div>
+      <div class="chip"><i style="background:#ffb020"></i><div><strong>Signal</strong><code>#FFB020</code></div></div>
+      <div class="chip"><i style="background:#57e3c9"></i><div><strong>Calibration</strong><code>#57E3C9</code></div></div>
+      <div class="chip"><i style="background:#56d68a"></i><div><strong>Allow</strong><code>#56D68A</code></div></div>
+      <div class="chip"><i style="background:#ff6161"></i><div><strong>Deny</strong><code>#FF6161</code></div></div>
+    </div>
+  </section>
+
+  <section class="card type">
+    <p class="label">Type</p>
+    <div class="row"><span class="cap">Space Grotesk 700</span><span class="s1">Bonjour? Hola!</span></div>
+    <div class="row"><span class="cap">Inter 400 / 600</span><span class="s2"><b>Which language is this?</b> Listen once, then pick from five.</span></div>
+    <div class="row"><span class="cap">JetBrains Mono 500</span><span class="s3">Round 07/10 · 1,240 pts</span></div>
+  </section>
+
+</body>
+</html>

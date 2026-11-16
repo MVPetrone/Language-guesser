@@ -1,0 +1,278 @@
+/* ============================================================================
+   BASE — semantic aliases, reset, page, focus, typography, utilities
+   ========================================================================== */
+
+/* ---- semantic aliases over the frozen tokens ------------------------------
+   Contrast measured against --ink-800 (the card surface):
+     fog-100 16.2:1 · fog-200 11.6:1 · fog-300 7.2:1 · fog-400 4.0:1
+   fog-400 fails 4.5:1, so it is only ever used for disabled or decorative
+   marks, never for text someone has to read. */
+:root {
+  --text-1: var(--fog-100); /* primary */
+  --text-2: var(--fog-200); /* secondary: body copy, hints */
+  --text-3: var(--fog-300); /* labels, telemetry */
+  --text-off: var(--fog-400); /* disabled, decorative only */
+
+  --page: var(--ink-950);
+  --page-lift: var(--ink-900);
+  --surface-1: var(--ink-800);
+  --surface-2: var(--ink-700);
+  --surface-hover: var(--ink-600);
+
+  --voice: var(--signal-500); /* amber: at most one element per screen */
+  --machine: var(--caliber-500); /* cyan: selected, focus, readouts, links */
+
+  /* The brand sets telemetry at 11px (--fs-micro); the non-negotiable floor
+     is 12px, so telemetry renders at the floor. */
+  --fs-telemetry: max(var(--fs-micro), 0.75rem);
+
+  --hairline: 1px solid var(--line);
+  --edge-w: 3px; /* selected / hover edge bar */
+  --r-token: calc(var(--r-sm) / 2);
+  --row-h: max(var(--tap-min), 3rem);
+  --gutter: var(--s-4);
+  --icon: 1.125rem;
+
+  /* Only these may transition (brief: transform, opacity, colours). */
+  --t-ui: transform var(--dur-1) var(--ease-settle), opacity var(--dur-2) var(--ease-settle),
+    background-color var(--dur-2) var(--ease-settle), border-color var(--dur-2) var(--ease-settle),
+    color var(--dur-2) var(--ease-settle);
+}
+
+/* ---- reset ----------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  background-color: var(--page);
+  color: var(--text-1);
+  font-family: var(--font-ui);
+  line-height: var(--lh-body);
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  overflow-x: hidden;
+  background: radial-gradient(120% 70% at 50% 0%, var(--page-lift), var(--page) 70%) no-repeat;
+  font-size: var(--fs-body);
+  letter-spacing: var(--tracking-ui);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+p,
+figure,
+blockquote,
+dl,
+dd,
+ol,
+ul {
+  margin: 0;
+}
+
+ol,
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+  margin: 0;
+  font: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+legend {
+  padding: 0;
+}
+
+::selection {
+  background-color: var(--caliber-600);
+  color: var(--ink-950);
+}
+
+/* ---- focus ------------------------------------------------------------------
+   The ring is a box-shadow so it follows radii; the transparent outline is what
+   forced-colors mode paints instead, so focus never disappears there. */
+:focus-visible {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  box-shadow: var(--ring-caliber);
+}
+
+/* ---- typography ------------------------------------------------------------ */
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: var(--lh-tight);
+  letter-spacing: var(--track, var(--tracking-display));
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* Telemetry: the instrument readout. Mono, uppercase, always. */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--fs-telemetry);
+  font-weight: 500;
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+/* Connected and complex scripts must not be tracked: letter-spacing breaks
+   Arabic joining and the Devanagari headline, and crowds CJK. Components read
+   --track (default: their own tracking), so this works across layers. */
+:is(
+    :lang(ar),
+    :lang(fa),
+    :lang(ur),
+    :lang(ps),
+    :lang(hi),
+    :lang(mr),
+    :lang(ne),
+    :lang(bn),
+    :lang(gu),
+    :lang(ta),
+    :lang(te),
+    :lang(kn),
+    :lang(ml),
+    :lang(si),
+    :lang(th),
+    :lang(lo),
+    :lang(km),
+    :lang(my),
+    :lang(zh),
+    :lang(ja),
+    :lang(ko)
+  ) {
+  --track: 0;
+  letter-spacing: 0;
+}
+
+/* ---- page layout -------------------------------------------------------------
+   A screen is the centred --app-max column. The game wraps HUD + screen in
+   .game, a full-height column, so the round can be budgeted to one viewport. */
+#root {
+  min-height: 100svh;
+}
+
+.screen {
+  position: relative;
+  isolation: isolate;
+  z-index: var(--z-content);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-5);
+  width: min(100%, var(--app-max));
+  margin-inline: auto;
+  padding: calc(var(--s-6) + var(--safe-t)) var(--gutter) calc(var(--s-6) + var(--safe-b));
+}
+
+/* Screens outside the game frame have no HUD to fill the column, so they own
+   the viewport and centre their stack instead of leaving a void underneath. */
+.screen--start,
+.screen--end,
+.screen--know {
+  min-height: 100svh;
+  justify-content: center;
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+}
+
+.game > .screen {
+  flex: 1;
+  padding-top: var(--s-4);
+}
+
+/* Agent C's ambient field mounts here. It is fixed to the viewport and sits one
+   step below --z-ambient inside the screen's own stacking context, i.e. behind
+   the screen's content and in front of the page background. */
+.ambient-slot {
+  position: fixed;
+  inset: 0;
+  z-index: calc(var(--z-ambient) - 1);
+  pointer-events: none;
+  overflow: hidden;
+}
+
+@media (min-width: 48rem) {
+  :root {
+    --gutter: var(--s-6);
+  }
+
+  .screen {
+    gap: var(--s-6);
+    padding-block: calc(var(--s-8) + var(--safe-t)) calc(var(--s-8) + var(--safe-b));
+  }
+}
+
+/* ---- utilities (always on a class-less element; see index.css) ------------ */
+.touch-only {
+  display: none;
+}
+
+@media (hover: none) {
+  .touch-only {
+    display: inline;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Keyboard hints mean nothing on a phone: hide them on touch-only devices. */
+@media (hover: none) and (pointer: coarse) {
+  .touch-only-hide {
+    display: none;
+  }
+}

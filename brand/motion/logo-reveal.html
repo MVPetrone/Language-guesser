@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Guess the Language — logo reveal (1080 × 1080, 5 s)</title>
+<link rel="stylesheet" href="../../src/styles/tokens.css">
+<link rel="stylesheet" href="motion-kit.css">
+</head>
+<body>
+<div class="stage"><canvas></canvas></div>
+<script src="motion-kit.js"></script>
+<script>
+/* The aperture mark assembles. Geometry is brand/mark.svg exactly (128-unit
+   grid): three cyan annuli cut by a horizontal slot, and the amber waveform.
+   Beats sit on a 120 bpm grid (0.5 s); every move lasts a --dur-* token and
+   rides --ease-settle, so the film keeps the product's tempo.
+     0.0  grid fades in, a calibration point appears        (anticipation)
+     0.3  the point inhales
+     0.5  the iris opens; the waveform draws itself through it
+     1.5  the arcs snap shut around it, inner to outer      (snap)
+     2.0  the wordmark tracks in; 2.5 the telemetry line
+     3.0  one amber pulse ripples out and settles it        (settle)
+     3.6  clean end card, held to 5.0 */
+const K = MotionKit
+const DUR = 5
+const d1 = K.sec('--dur-1'), d2 = K.sec('--dur-2'), d3 = K.sec('--dur-3'), d4 = K.sec('--dur-4')
+const stagger = K.sec('--stagger')
+const settle = K.ease('--ease-settle')
+const C = {
+  ink950: K.color('--ink-950'), ink800: K.color('--ink-800'), fog100: K.color('--fog-100'),
+  fog300: K.color('--fog-300'), fog400: K.color('--fog-400'), cyan: K.color('--caliber-500'),
+  amber: K.color('--signal-500'), amberHi: K.color('--signal-400'),
+}
+
+// brand/mark.svg, verbatim.
+const MARK = {
+  rings: [[36, 44], [49, 55], [60, 64]],
+  slot: 72.25 - 64,
+  wave: new Path2D('M3.25 64H37.9C40.49 64 40.02 58.7 42.6 58.7C46.78 58.7 46.02 79.4 50.2 79.4C54.93 79.4 54.07 37.6 58.8 37.6C64.52 37.6 63.48 90.4 69.2 90.4C73.93 90.4 73.07 48.6 77.8 48.6C81.98 48.6 81.22 69.3 85.4 69.3C87.98 69.3 87.51 64 90.1 64H124.75'),
+  waveWidth: 6.5,
+  waveReach: 64 - 3.25,
+}
+const S = 3 // px per mark unit: the mark is 384 px across
+const CX = 540, CY = 440
+const WORD_Y = 762, TAG_Y = 822
+const T = { point: 0.05, inhale: 0.3, iris: 0.5, snap: 1.5, word: 2.0, tag: 2.5, pulse: 3.0 }
+
+function background(ctx, t, pulseR, pulseK) {
+  ctx.fillStyle = K.rgba(C.ink950)
+  ctx.fillRect(0, 0, 1080, 1080)
+  const fade = settle(K.seg(t, 0, d4))
+  const dist = (x, y) => Math.hypot(x - CX, y - CY)
+  K.dotGrid(ctx, {
+    pitch: 30, radius: 1.4, fill: K.rgba(C.fog400),
+    alphaAt: (x, y) => {
+      const d = dist(x, y)
+      const clear = K.clamp((d - 215) / 70) // keep the mark on clean ink
+      return 0.22 * fade * clear * Math.max(0, 1 - d / 820)
+    },
+  })
+  if (pulseK > 0) {
+    // The pulse lights the matrix as its wavefront passes.
+    K.dotGrid(ctx, {
+      pitch: 30, radius: 1.6, fill: K.rgba(C.amber),
+      alphaAt: (x, y) => 0.5 * pulseK * Math.exp(-(((dist(x, y) - pulseR) / 26) ** 2)),
+    })
+  }
+}
+
+function calibration(ctx, t) {
+  // A cyan point, then four registration ticks closing on the mark's rim.
+  const appear = settle(K.seg(t, T.point, d2))
+  const inhale = settle(K.seg(t, T.inhale, d3 - d1 / 2))
+  const open = K.seg(t, T.iris, d1)
+  const r = 7 * appear * (1 - 0.4 * inhale) * (1 - open)
+  if (r > 0.1) {
+    ctx.fillStyle = K.rgba(C.cyan)
+    ctx.beginPath()
+    ctx.arc(CX, CY, r, 0, Math.PI * 2)
+    ctx.fill()
+  }
+  const a = 0.75 * K.seg(t, T.point, d2) * (1 - K.seg(t, T.snap + 0.1, d3))
+  if (a <= 0) return
+  const r0 = K.lerp(330, 64 * S + 22, settle(K.seg(t, 0.1, d4)))
+  ctx.strokeStyle = K.rgba(C.cyan, a)
+  ctx.lineWidth = 2
+  ctx.lineCap = 'round'
+  for (let k = 0; k < 4; k++) {
+    const ang = (k * Math.PI) / 2
+    ctx.beginPath()
+    ctx.moveTo(CX + Math.cos(ang) * r0, CY + Math.sin(ang) * r0)
+    ctx.lineTo(CX + Math.cos(ang) * (r0 + 26), CY + Math.sin(ang) * (r0 + 26))
+    ctx.stroke()
+  }
+}
+
+function mark(ctx, t) {
+  const iris = 66 * S * settle(K.seg(t, T.iris, d4 + d3))
+  const irisFade = 1 - K.seg(t, T.snap, d3)
+  const impact = Math.sin(Math.PI * K.seg(t, T.snap + 0.36, d3))
+  const scale = 1 - 0.016 * impact
+  ctx.save()
+  ctx.translate(CX, CY)
+  ctx.scale(scale, scale)
+
+  // The iris: an opening in the ink, rimmed in cyan.
+  if (iris > 0 && irisFade > 0) {
+    ctx.fillStyle = K.rgba(C.ink800, 0.9 * irisFade)
+    ctx.beginPath()
+    ctx.arc(0, 0, iris, 0, Math.PI * 2)
+    ctx.fill()
+    ctx.strokeStyle = K.rgba(C.cyan, 0.55 * irisFade)
+    ctx.lineWidth = 2
+    ctx.stroke()
+  }
+
+  // The arcs snap shut around the waveform, inner ring first.
+  ctx.save()
+  ctx.beginPath()
+  ctx.rect(-400, -400, 800, 400 - MARK.slot * S)
+  ctx.rect(-400, MARK.slot * S, 800, 400 - MARK.slot * S)
+  ctx.clip()
+  MARK.rings.forEach(([inner, outer], k) => {
+    const x = settle(K.seg(t, T.snap + k * 2 * stagger, d2 + d1))
+    if (x <= 0) return
+    const radius = ((inner + outer) / 2) * S * (1 + 0.12 * (1 - x))
+    const span = x * (Math.PI / 2 + 0.06)
+    ctx.strokeStyle = K.rgba(C.cyan, K.clamp(x * 4))
+    ctx.lineWidth = (outer - inner) * S
+    ctx.lineCap = 'butt'
+    for (const centre of [-Math.PI / 2, Math.PI / 2]) {
+      ctx.beginPath()
+      ctx.arc(0, 0, radius, centre - span, centre + span)
+      ctx.stroke()
+    }
+  })
+  ctx.restore()
+
+  // The waveform, visible through the iris; one amber pulse later.
+  if (iris > 0) {
+    const glow = K.seg(t, T.pulse, d1) * (1 - settle(K.seg(t, T.pulse + d1, d4)))
+    ctx.save()
+    ctx.beginPath()
+    ctx.arc(0, 0, iris, 0, Math.PI * 2)
+    ctx.clip()
+    ctx.translate(-64 * S, -64 * S)
+    ctx.scale(S, S)
+    ctx.strokeStyle = K.rgba(K.mixColor(C.amber, C.amberHi, glow))
+    ctx.lineWidth = MARK.waveWidth
+    ctx.lineCap = 'round'
+    ctx.lineJoin = 'round'
+    ctx.shadowColor = K.rgba(C.amber, 0.9 * glow)
+    ctx.shadowBlur = 34 * glow
+    ctx.stroke(MARK.wave)
+    ctx.restore()
+    // Draw heads where the line meets the opening iris.
+    const reach = MARK.waveReach * S
+    if (iris > 27 * S && iris < reach) {
+      ctx.fillStyle = K.rgba(C.amberHi, 1 - K.clamp((iris - (reach - 40)) / 40))
+      for (const side of [-1, 1]) {
+        ctx.beginPath()
+        ctx.arc(side * iris, 0, 5.5, 0, Math.PI * 2)
+        ctx.fill()
+      }
+    }
+  }
+  ctx.restore()
+}
+
+function pulseRing(ctx, t) {
+  const x = K.seg(t, T.pulse, d4 + d3)
+  if (x <= 0 || x >= 1) return
+  ctx.strokeStyle = K.rgba(C.amber, 0.85 * (1 - x) ** 1.4)
+  ctx.lineWidth = K.lerp(9, 1.2, x)
+  ctx.beginPath()
+  ctx.arc(CX, CY, K.lerp(14, 118, settle(x)) * S, 0, Math.PI * 2)
+  ctx.stroke()
+}
+
+function words(ctx, t) {
+  const a = settle(K.seg(t, T.word, d3))
+  if (a > 0) {
+    const size = 66
+    const track = K.lerp(0.42, -0.03, settle(K.seg(t, T.word, d4 + d2))) * size
+    ctx.font = `700 ${size}px "Space Grotesk"`
+    ctx.letterSpacing = `${track}px`
+    ctx.textAlign = 'center'
+    ctx.textBaseline = 'alphabetic'
+    ctx.fillStyle = K.rgba(C.fog100, a)
+    ctx.filter = `blur(${(7 * (1 - settle(K.seg(t, T.word, d4)))).toFixed(2)}px)`
+    ctx.fillText('GUESS THE LANGUAGE', 540 + track / 2, WORD_Y)
+    ctx.filter = 'none'
+  }
+  const b = settle(K.seg(t, T.tag, d3))
+  if (b > 0) {
+    ctx.font = '500 22px "JetBrains Mono"'
+    ctx.letterSpacing = `${0.09 * 22}px`
+    ctx.textAlign = 'center'
+    ctx.fillStyle = K.rgba(C.fog300, b)
+    ctx.fillText('76 LANGUAGES · 10 ROUNDS · 3 LIVES', 540 + 0.045 * 22, TAG_Y + 10 * (1 - b))
+  }
+  ctx.letterSpacing = '0px'
+}
+
+K.film({
+  duration: DUR,
+  fonts: ['700 66px "Space Grotesk"', '500 22px "JetBrains Mono"'],
+  draw(ctx, t) {
+    const x = K.seg(t, T.pulse, d4 + d3)
+    background(ctx, t, K.lerp(14, 118, settle(x)) * S, x > 0 && x < 1 ? (1 - x) : 0)
+    calibration(ctx, t)
+    mark(ctx, t)
+    pulseRing(ctx, t)
+    words(ctx, t)
+  },
+})
+</script>
+</body>
+</html>

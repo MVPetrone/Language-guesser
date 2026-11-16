@@ -193,14 +193,16 @@ test('known languages: searchable picker, asked once, excluded from every option
   await page.goto('./')
   await expect(page.getByTestId('know-languages')).toBeVisible()
 
-  // Search narrows 40 checkboxes down, accent-insensitively.
+  // Search narrows the whole roster down, accent-insensitively.
   await page.getByTestId('know-search').fill('espanol')
   await expect(page.locator('.know-item')).toHaveCount(1)
   await page.getByTestId('know-es-ES').check()
   await page.getByTestId('know-search').fill('')
-  await expect(page.locator('.know-item')).toHaveCount(40)
+  await expect(page.locator('.know-item')).toHaveCount(LANGUAGES.length)
   for (const code of ['fr-FR', 'de-DE', 'it-IT', 'pt-BR', 'nl-NL']) await page.getByTestId(`know-${code}`).check()
-  await expect(page.getByTestId('know-count')).toHaveText(/6 selected · 34 left/)
+  await expect(page.getByTestId('know-count')).toHaveText(
+    new RegExp(`6 selected · ${LANGUAGES.length - 6} left`),
+  )
   await page.getByTestId('know-save').click()
 
   await expect(page.getByTestId('excluded-count')).toContainText('6 languages you know are left out')
@@ -228,7 +230,9 @@ test('pool guard: Start is blocked below the minimum and unblocked again', async
   await page.getByTestId('edit-known').click()
   const keep = new Set(LANGUAGES.slice(0, 11).map((l) => l.code))
   for (const l of LANGUAGES) if (!keep.has(l.code)) await page.getByTestId(`know-${l.code}`).check()
-  await expect(page.getByTestId('know-count')).toHaveText(/29 selected · 11 left to play — a game needs at least 12/)
+  await expect(page.getByTestId('know-count')).toHaveText(
+    new RegExp(`${LANGUAGES.length - 11} selected · 11 left to play — a game needs at least 12`),
+  )
   await page.getByTestId('know-save').click()
 
   await expect(page.getByRole('button', { name: /start/i })).toBeDisabled()

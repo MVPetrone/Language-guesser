@@ -1,0 +1,472 @@
+/* ============================================================================
+   CONTROLS — buttons, option rows, native-input covers, switch, search, kbd,
+   links. Press feedback is transform-only so nothing shifts layout.
+   ========================================================================== */
+
+/* ---- buttons ---------------------------------------------------------------- */
+.btn {
+  --btn-bg: var(--surface-2);
+  --btn-fg: var(--text-1);
+  --btn-line: var(--line);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-2);
+  min-height: var(--row-h);
+  padding: var(--s-2) var(--s-5);
+  border: 1px solid var(--btn-line);
+  border-radius: var(--r-md);
+  background-color: var(--btn-bg);
+  color: var(--btn-fg);
+  font-weight: 600;
+  line-height: var(--lh-snug);
+  text-align: center;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition: var(--t-ui);
+}
+
+.btn:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+@media (hover: hover) {
+  .btn:hover:not(:disabled) {
+    --btn-bg: var(--surface-hover);
+    --btn-line: var(--line-strong);
+  }
+}
+
+/* Disabled stays legible (fog-300, 6.6:1 on ink-700): it reads as "offline",
+   not as missing. */
+.btn:disabled {
+  --btn-bg: var(--surface-1);
+  --btn-fg: var(--text-3);
+  --btn-line: var(--line);
+  border-style: dashed;
+  cursor: not-allowed;
+}
+
+/* The voice: the one amber element on a screen. */
+.btn--signal {
+  --btn-bg: var(--signal-500);
+  --btn-fg: var(--ink-950);
+  --btn-line: var(--signal-500);
+}
+
+@media (hover: hover) {
+  .btn--signal:hover:not(:disabled) {
+    --btn-bg: var(--signal-400);
+    --btn-line: var(--signal-400);
+  }
+}
+
+/* High emphasis without amber, for commits that make no sound (Save). */
+.btn--solid {
+  --btn-bg: var(--fog-100);
+  --btn-fg: var(--ink-950);
+  --btn-line: var(--fog-100);
+}
+
+@media (hover: hover) {
+  .btn--solid:hover:not(:disabled) {
+    --btn-bg: var(--fog-200);
+    --btn-line: var(--fog-200);
+  }
+}
+
+.btn--ghost {
+  --btn-bg: transparent;
+}
+
+.btn--xl {
+  min-height: calc(var(--row-h) + var(--s-2));
+  border-radius: var(--r-lg);
+  font-size: var(--fs-h3);
+}
+
+.btn--sm {
+  min-height: var(--tap-min);
+  padding-inline: var(--s-3);
+  font-size: var(--fs-small);
+}
+
+.btn__icon {
+  flex: none;
+  width: var(--icon);
+  height: var(--icon);
+}
+
+.btn__kbd {
+  margin-inline-start: var(--s-1);
+}
+
+/* ---- links ------------------------------------------------------------------ */
+.link {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap-min);
+  padding: 0 var(--s-1);
+  border: 0;
+  border-radius: var(--r-sm);
+  background: none;
+  color: var(--machine);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--machine) 45%, transparent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.25em;
+  transition: var(--t-ui);
+}
+
+@media (hover: hover) {
+  .link:hover {
+    color: var(--caliber-400);
+    text-decoration-color: currentColor;
+  }
+}
+
+.link--quiet {
+  color: var(--text-2);
+  font-weight: 400;
+  text-decoration-color: var(--line-strong);
+}
+
+/* ---- kbd -------------------------------------------------------------------- */
+kbd {
+  display: inline-grid;
+  place-items: center;
+  min-width: 1.5em;
+  height: 1.5em;
+  padding: 0 var(--s-1);
+  border: var(--hairline);
+  border-bottom-color: var(--line-strong);
+  border-radius: var(--r-token);
+  background-color: var(--surface-2);
+  color: var(--text-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-telemetry);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+/* ---- native-input cover ----------------------------------------------------
+   Radios and checkboxes stay real inputs: stretched invisibly over their
+   visual control, so taps, labels, arrow keys and assistive tech all work
+   natively. The parent shows the focus ring via :has(). */
+.control-input {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* ---- option rows (GuessGrid) ----------------------------------------------- */
+.options {
+  display: grid;
+  gap: var(--s-2);
+}
+
+.option {
+  --option-bg: var(--surface-1);
+  --option-line: var(--line);
+  --option-accent: var(--text-off);
+
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--s-3);
+  width: 100%;
+  min-height: var(--row-h);
+  padding: var(--s-2) var(--s-3);
+  border: 1px solid var(--option-line);
+  border-radius: var(--r-md);
+  background-color: var(--option-bg);
+  color: var(--text-1);
+  text-align: start;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition: var(--t-ui);
+}
+
+/* The cyan edge: grows in on hover / focus, never on its own. */
+.option::before {
+  content: '';
+  position: absolute;
+  inset-block: var(--s-2);
+  inset-inline-start: -1px;
+  width: var(--edge-w);
+  border-radius: var(--r-pill);
+  background-color: var(--option-accent);
+  transform: scaleY(0);
+  transition: transform var(--dur-2) var(--ease-settle), background-color var(--dur-2) var(--ease-settle);
+}
+
+.option__key {
+  display: grid;
+  place-items: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border: var(--hairline);
+  border-radius: var(--r-token);
+  background-color: var(--surface-2);
+  color: var(--text-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-telemetry);
+  font-weight: 500;
+  letter-spacing: 0;
+  transition: var(--t-ui);
+}
+
+.option__name {
+  font-weight: 600;
+  line-height: var(--lh-snug);
+  overflow-wrap: anywhere;
+}
+
+.option__mark {
+  width: var(--icon);
+  height: var(--icon);
+  color: var(--option-accent);
+  transition: var(--t-ui);
+}
+
+.option:not(:disabled):focus-visible,
+.option:not(:disabled):active {
+  --option-line: var(--line-strong);
+  --option-accent: var(--machine);
+}
+
+.option:not(:disabled):focus-visible::before,
+.option:not(:disabled):active::before {
+  transform: scaleY(1);
+}
+
+.option:not(:disabled):active {
+  transform: scale(0.99);
+}
+
+@media (hover: hover) {
+  .option:not(:disabled):hover {
+    --option-bg: var(--surface-2);
+    --option-line: var(--line-strong);
+    --option-accent: var(--machine);
+    transform: translateY(-1px);
+  }
+
+  .option:not(:disabled):hover::before {
+    transform: scaleY(1);
+  }
+
+  .option:not(:disabled):hover .option__key {
+    border-color: var(--machine);
+    color: var(--machine);
+  }
+
+  .option:not(:disabled):hover .option__mark {
+    transform: translateX(2px);
+  }
+}
+
+/* Reveal states: colour is always paired with a glyph and hidden text. */
+.option:disabled {
+  cursor: default;
+}
+
+.option.is-correct {
+  --option-bg: var(--allow-wash);
+  --option-line: var(--allow-500);
+  --option-accent: var(--allow-500);
+}
+
+.option.is-wrong {
+  --option-bg: var(--deny-wash);
+  --option-line: var(--deny-500);
+  --option-accent: var(--deny-500);
+}
+
+.option.is-correct::before,
+.option.is-wrong::before {
+  transform: scaleY(1);
+}
+
+.option.is-correct .option__key {
+  border-color: var(--allow-500);
+  color: var(--allow-500);
+}
+
+.option.is-wrong .option__key {
+  border-color: var(--deny-500);
+  color: var(--deny-500);
+}
+
+.option.is-dim {
+  opacity: 0.45;
+}
+
+/* ---- switch (a real checkbox, role="switch") -------------------------------- */
+.switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  min-height: var(--tap-min);
+  padding: 0 var(--s-4) 0 var(--s-3);
+  border: var(--hairline);
+  border-radius: var(--r-pill);
+  background-color: var(--surface-1);
+  color: var(--text-2);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  transition: var(--t-ui);
+}
+
+.switch__track {
+  position: relative;
+  flex: none;
+  width: 2rem;
+  height: 1.125rem;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-pill);
+  background-color: var(--surface-2);
+  transition: var(--t-ui);
+}
+
+.switch__thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background-color: var(--text-3);
+  transition: transform var(--dur-2) var(--ease-settle), background-color var(--dur-2) var(--ease-settle);
+}
+
+.switch:has(.control-input:checked) {
+  border-color: var(--machine);
+  background-color: var(--caliber-wash);
+  color: var(--text-1);
+}
+
+.switch:has(.control-input:checked) .switch__track {
+  border-color: var(--machine);
+  background-color: var(--caliber-glow);
+}
+
+.switch:has(.control-input:checked) .switch__thumb {
+  background-color: var(--machine);
+  transform: translateX(0.875rem);
+}
+
+.switch:has(.control-input:focus-visible) {
+  box-shadow: var(--ring-caliber);
+}
+
+@media (hover: hover) {
+  .switch:hover {
+    border-color: var(--line-strong);
+  }
+}
+
+/* ---- search field ------------------------------------------------------------ */
+.search {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search__icon {
+  position: absolute;
+  inset-inline-start: var(--s-3);
+  width: var(--icon);
+  height: var(--icon);
+  color: var(--text-3);
+  pointer-events: none;
+}
+
+.search__input {
+  width: 100%;
+  min-height: var(--row-h);
+  padding: 0 calc(var(--tap-min) + var(--s-1)) 0 calc(var(--s-3) + var(--icon) + var(--s-2));
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-md);
+  background-color: var(--surface-2);
+  color: var(--text-1);
+  appearance: none;
+  transition: var(--t-ui);
+}
+
+.search__input::placeholder {
+  color: var(--text-3);
+  opacity: 1;
+}
+
+.search__input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.search__input:focus-visible {
+  border-color: var(--machine);
+}
+
+.search__clear {
+  position: absolute;
+  inset-inline-end: var(--s-1);
+  display: grid;
+  place-items: center;
+  width: var(--tap-min);
+  height: var(--tap-min);
+  border: 0;
+  border-radius: var(--r-sm);
+  background: none;
+  color: var(--text-3);
+  transition: var(--t-ui);
+}
+
+@media (hover: hover) {
+  .search__clear:hover {
+    color: var(--text-1);
+  }
+}
+
+.search__clear svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* ---- textarea (share fallback) --------------------------------------------- */
+.textfield {
+  width: 100%;
+  padding: var(--s-3);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-md);
+  background-color: var(--surface-2);
+  color: var(--text-1);
+  font-family: var(--font-ui);
+  font-size: var(--fs-small);
+  line-height: var(--lh-body);
+  resize: none;
+}
+
+/* ---- action rows --------------------------------------------------------------
+   Ghost first, primary last: side by side the primary sits right; when they
+   wrap on a narrow phone the primary lands at the bottom, nearest the thumb. */
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+}
+
+.actions > .btn {
+  flex: 1 1 9rem;
+}

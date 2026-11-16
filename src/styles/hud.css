@@ -1,0 +1,71 @@
+/* ============================================================================
+   HUD — the instrument bar: four mono readouts separated by hairlines.
+   Never amber: on the round screen the play orb is the one voice.
+   ========================================================================== */
+
+.hud {
+  position: relative;
+  z-index: var(--z-hud);
+  padding-top: var(--safe-t);
+  border-bottom: var(--hairline);
+}
+
+.hud__bar {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  width: min(100%, var(--app-max));
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.hud__cell {
+  display: grid;
+  gap: calc(var(--s-1) / 2);
+  justify-items: center;
+  padding: var(--s-2) var(--s-1);
+}
+
+.hud__cell + .hud__cell {
+  border-inline-start: 1px solid var(--line-faint);
+}
+
+.hud__value {
+  display: flex;
+  align-items: baseline;
+  min-height: 1.5rem;
+  color: var(--text-1);
+  font-family: var(--font-mono);
+  font-size: var(--fs-body);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.5rem;
+  letter-spacing: 0;
+}
+
+.hud__of {
+  color: var(--text-3);
+}
+
+.hud__value.is-hot {
+  color: var(--machine);
+}
+
+.hud__lives {
+  align-items: center;
+  gap: var(--s-1);
+}
+
+/* A life is an LED: lit, or an empty ring once spent. */
+.hud__pip {
+  width: 0.5rem;
+  height: 0.5rem;
+  border: 1px solid var(--text-1);
+  border-radius: 50%;
+  background-color: var(--text-1);
+  transition: var(--t-ui);
+}
+
+.hud__pip.is-spent {
+  border-color: var(--text-off);
+  background-color: transparent;
+}

@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { LANGUAGES, type LangCode, type Language } from '../data/languages.ts'
 import { MIN_POOL } from '../engine/game.ts'
+import { Icon } from './Icon.tsx'
 
 type Region =
   | 'Western Europe'
@@ -117,6 +118,7 @@ interface Props {
 export function KnowLanguages({ initial, firstVisit, onSave, onCancel }: Props) {
   const [selected, setSelected] = useState<ReadonlySet<LangCode>>(() => new Set(initial))
   const [query, setQuery] = useState('')
+  const searchRef = useRef<HTMLInputElement>(null)
 
   const q = fold(query.trim())
   const matches = (l: Language) => q === '' || fold(l.name).includes(q) || fold(l.nativeName).includes(q)
@@ -125,6 +127,7 @@ export function KnowLanguages({ initial, firstVisit, onSave, onCancel }: Props) 
     languages: LANGUAGES.filter((l) => REGION_OF[l.code] === region && matches(l)),
   })).filter((g) => g.languages.length > 0)
   const remaining = LANGUAGES.length - selected.size
+  const tooFew = remaining < MIN_POOL
 
   const toggle = (code: LangCode) =>
     setSelected((prev) => {
@@ -134,75 +137,116 @@ export function KnowLanguages({ initial, firstVisit, onSave, onCancel }: Props) 
       return next
     })
 
+  const clearSearch = () => {
+    setQuery('')
+    searchRef.current?.focus()
+  }
+
   return (
-    <main className="screen know" data-testid="know-languages">
-      {firstVisit && <p className="muted">Before you play</p>}
-      <h1 className="know-title">Which languages do you know?</h1>
-      <p className="muted">
-        Tick the ones you speak or would recognise instantly. They are left out of the game entirely — never the
-        answer, never one of the choices.
-      </p>
+    <main className="screen screen--know" data-testid="know-languages">
+      <header className="know__head">
+        <div className="know__bar">
+          <p className="eyebrow">
+            {firstVisit ? 'Before you play · ' : ''}
+            {LANGUAGES.length} languages
+          </p>
+          {onCancel && (
+            <button type="button" className="link link--quiet" onClick={onCancel} data-testid="know-cancel">
+              Cancel
+            </button>
+          )}
+        </div>
+        <h1 className="know__title">Which languages do you know?</h1>
+        <p className="know__lede">
+          Tick the ones you speak or would recognise instantly. They are left out of the game entirely — never the
+          answer, never one of the choices.
+        </p>
+      </header>
 
-      <input
-        type="search"
-        className="know-search"
-        placeholder="Search, e.g. Polish or Polski"
-        aria-label="Search languages"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        data-testid="know-search"
-      />
-
-      <div className="know-groups">
-        {groups.map(({ region, languages }) => (
-          <fieldset key={region} className="know-group">
-            <legend>{region}</legend>
-            {languages.map((l) => (
-              <label key={l.code} className={`know-item ${selected.has(l.code) ? 'is-selected' : ''}`}>
-                <input
-                  type="checkbox"
-                  checked={selected.has(l.code)}
-                  onChange={() => toggle(l.code)}
-                  data-testid={`know-${l.code}`}
-                />
-                <span className="know-flag" aria-hidden="true">
-                  {l.flag}
-                </span>
-                <span className="know-name">{l.name}</span>
-                <span className="know-native muted" lang={l.code}>
-                  {l.nativeName}
-                </span>
-              </label>
-            ))}
-          </fieldset>
-        ))}
-        {groups.length === 0 && <p className="muted">No language matches “{query}”.</p>}
+      <div className="search">
+        <Icon name="search" className="search__icon" />
+        <input
+          ref={searchRef}
+          type="search"
+          className="search__input"
+          placeholder="Search, e.g. Polish or Polski"
+          aria-label="Search languages"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          data-testid="know-search"
+        />
+        {query !== '' && (
+          <button type="button" className="search__clear" onClick={clearSearch} aria-label="Clear search">
+            <Icon name="cross" />
+          </button>
+        )}
       </div>
 
-      <div className="know-footer">
-        <p className={remaining < MIN_POOL ? 'know-warning' : 'muted'} role="status" data-testid="know-count">
-          {selected.size} selected · {remaining} left to play
-          {remaining < MIN_POOL && ` — a game needs at least ${MIN_POOL}`}
+      <div className="know__groups">
+        {groups.map(({ region, languages }) => (
+          <fieldset key={region} className="know-group">
+            <legend className="eyebrow know-group__title">
+              {region}
+              <span className="know-group__count" aria-hidden="true">
+                {languages.length}
+              </span>
+            </legend>
+            <div className="know-group__items">
+              {languages.map((l) => (
+                <label key={l.code} className={`know-item ${selected.has(l.code) ? 'is-selected' : ''}`}>
+                  <input
+                    className="control-input"
+                    type="checkbox"
+                    checked={selected.has(l.code)}
+                    onChange={() => toggle(l.code)}
+                    data-testid={`know-${l.code}`}
+                  />
+                  <span className="know-item__flag" aria-hidden="true">
+                    {l.flag}
+                  </span>
+                  <span className="know-item__text">
+                    <span className="know-item__name">{l.name}</span>
+                    <span className="know-item__native" lang={l.code} dir="auto">
+                      {l.nativeName}
+                    </span>
+                  </span>
+                  <span className="know-item__check" aria-hidden="true">
+                    <Icon name="check" />
+                  </span>
+                </label>
+              ))}
+            </div>
+          </fieldset>
+        ))}
+        {groups.length === 0 && (
+          <div className="know__empty">
+            <p>No language matches “{query}”.</p>
+            <button type="button" className="link" onClick={clearSearch}>
+              Clear search
+            </button>
+          </div>
+        )}
+      </div>
+
+      <footer className="know__footer glass">
+        <p className={`know__count ${tooFew ? 'is-warn' : ''}`} role="status" data-testid="know-count">
+          <strong className="know__num">{selected.size}</strong> selected · {remaining} left to play
+          {tooFew && ` — a game needs at least ${MIN_POOL}`}
         </p>
         <div className="actions">
-          <button type="button" className="btn" onClick={() => onSave([])} data-testid="know-none">
+          <button type="button" className="btn btn--ghost btn--sm" onClick={() => onSave([])} data-testid="know-none">
             I don’t know any of these
           </button>
           <button
             type="button"
-            className="btn btn-primary"
+            className="btn btn--signal btn--sm know__save"
             onClick={() => onSave(LANGUAGES.map((l) => l.code).filter((c) => selected.has(c)))}
             data-testid="know-save"
           >
             Save
           </button>
         </div>
-        {onCancel && (
-          <button type="button" className="btn btn-ghost" onClick={onCancel} data-testid="know-cancel">
-            Cancel
-          </button>
-        )}
-      </div>
+      </footer>
     </main>
   )
 }

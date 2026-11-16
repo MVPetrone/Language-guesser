@@ -1,0 +1,25 @@
+/* Opacity on --dur-2, the settle on --dur-3: the screen is legible before it
+   has finished landing. No fill after the end, so no transform lingers. */
+.enter {
+  animation:
+    screen-fade var(--dur-2) var(--ease-settle) backwards,
+    screen-settle var(--dur-3) var(--ease-settle) backwards;
+}
+
+@keyframes screen-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes screen-settle {
+  from {
+    transform: translateY(8px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .enter {
+    animation: none;
+  }
+}

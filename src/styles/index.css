@@ -1,0 +1,35 @@
+/* ============================================================================
+   GUESS THE LANGUAGE — STYLESHEET ENTRY (the only CSS file main.tsx imports)
+   ----------------------------------------------------------------------------
+   Layer order, lowest priority first. A later layer always beats an earlier
+   one regardless of selector specificity, so screens can adjust controls
+   without specificity wars and utilities (.sr-only) win without !important.
+
+     tokens     frozen raw values (tokens.css — never edit)
+     base       semantic aliases, reset, page, focus, typography
+     surfaces   card / panel / glass / hairline primitives
+     controls   buttons, option rows, inputs, chips, switch, kbd, links
+     hud        the in-game instrument bar
+     screens    one file per screen, grouped by screen
+
+   Utilities (.sr-only, .touch-only-hide) live at the end of base.css and are
+   only ever put on elements that carry no other class, so nothing in a later
+   layer competes with them; that is why .sr-only needs no !important.
+
+   Unlayered CSS (src/motion/*.module.css) sits above every layer by design:
+   component-scoped motion styles always apply to their own elements.
+   Fonts are linked from index.html (public/fonts/fonts.css), not here.
+   ========================================================================== */
+
+@layer tokens, base, surfaces, controls, hud, screens;
+
+@import url('./tokens.css') layer(tokens);
+@import url('./base.css') layer(base);
+@import url('./surfaces.css') layer(surfaces);
+@import url('./controls.css') layer(controls);
+@import url('./hud.css') layer(hud);
+@import url('./screen-start.css') layer(screens);
+@import url('./screen-round.css') layer(screens);
+@import url('./screen-reveal.css') layer(screens);
+@import url('./screen-end.css') layer(screens);
+@import url('./screen-know.css') layer(screens);

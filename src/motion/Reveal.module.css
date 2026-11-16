@@ -1,0 +1,18 @@
+/* `backwards` holds the start pose through the delay and leaves no transform
+   behind afterwards (a lingering transform would trap position: fixed). */
+.reveal {
+  animation: reveal-in var(--dur-3) var(--ease-settle) var(--reveal-delay) backwards;
+}
+
+@keyframes reveal-in {
+  from {
+    opacity: 0;
+    transform: translateY(var(--reveal-y));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    animation: none;
+  }
+}

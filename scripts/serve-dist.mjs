@@ -40,9 +40,33 @@ const server = createServer(async (req, res) => {
   try {
     const info = await stat(file)
     if (!info.isFile()) throw new Error('not a file')
+    const type = TYPES[extname(file)] ?? 'application/octet-stream'
+    const range = req.headers.range
+    // iOS Safari refuses to play <audio> unless the server answers a Range
+    // request with 206 + Content-Range. Plain 200 leaves the clip silent.
+    const m = range ? /^bytes=(\d*)-(\d*)$/.exec(range) : null
+    if (m) {
+      const start = m[1] ? Number(m[1]) : 0
+      const end = m[2] ? Math.min(Number(m[2]), info.size - 1) : info.size - 1
+      if (start > end || start >= info.size) {
+        res.writeHead(416, { 'content-range': `bytes */${info.size}` })
+        return res.end()
+      }
+      res.writeHead(206, {
+        'content-type': type,
+        'content-length': end - start + 1,
+        'content-range': `bytes ${start}-${end}/${info.size}`,
+        'accept-ranges': 'bytes',
+        'cache-control': 'no-store',
+      })
+      createReadStream(file, { start, end }).pipe(res)
+      return
+    }
     res.writeHead(200, {
-      'content-type': TYPES[extname(file)] ?? 'application/octet-stream',
+      'content-type': type,
       'content-length': info.size,
+      'accept-ranges': 'bytes',
+      'cache-control': 'no-store',
     })
     createReadStream(file).pipe(res)
   } catch {

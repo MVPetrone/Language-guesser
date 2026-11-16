@@ -1,0 +1,48 @@
+/* Self-hosted brand type for the motion films. public/fonts/fonts.css points at
+   root-absolute /fonts/... URLs, which only resolve behind a server; these
+   rules mirror it with paths relative to this file, so the films also work
+   opened straight from disk (file://) at brand/motion/<name>.html. */
+@font-face {
+  font-family: 'Space Grotesk';
+  font-weight: 700;
+  font-display: block;
+  src: url(../../public/fonts/SpaceGrotesk-700-latin.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Space Grotesk';
+  font-weight: 500;
+  font-display: block;
+  src: url(../../public/fonts/SpaceGrotesk-500-latin.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-weight: 500;
+  font-display: block;
+  src: url(../../public/fonts/JetBrainsMono-500-latin.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-weight: 400;
+  font-display: block;
+  src: url(../../public/fonts/Inter-400-latin.woff2) format('woff2');
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background: var(--ink-950);
+  overflow: hidden;
+}
+
+/* The film is authored at 1080 x 1080 and fitted to any window. */
+.stage {
+  position: relative;
+  width: 1080px;
+  height: 1080px;
+  transform-origin: 0 0;
+}
+
+.stage canvas {
+  display: block;
+}

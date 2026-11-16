@@ -1,0 +1,91 @@
+.root {
+  position: relative;
+  display: inline-block;
+  font-variant-numeric: tabular-nums;
+  isolation: isolate;
+}
+
+.value {
+  display: inline-block;
+  transform-origin: 50% 55%;
+}
+
+/* Rise over --dur-1, settle over --dur-3: 24% is 120 / (120 + 380). */
+.popOdd .value {
+  animation: score-pop-odd calc(var(--dur-1) + var(--dur-3)) linear;
+}
+
+.popEven .value {
+  animation: score-pop-even calc(var(--dur-1) + var(--dur-3)) linear;
+}
+
+@keyframes score-pop-odd {
+  0% {
+    transform: scale(1);
+    text-shadow: 0 0 0 transparent;
+    animation-timing-function: var(--ease-settle);
+  }
+  24% {
+    transform: scale(1.12);
+    text-shadow: 0 0 0.45em var(--signal-glow);
+    animation-timing-function: var(--ease-settle);
+  }
+  100% {
+    transform: scale(1);
+    text-shadow: 0 0 0 transparent;
+  }
+}
+
+@keyframes score-pop-even {
+  0% {
+    transform: scale(1);
+    text-shadow: 0 0 0 transparent;
+    animation-timing-function: var(--ease-settle);
+  }
+  24% {
+    transform: scale(1.12);
+    text-shadow: 0 0 0.45em var(--signal-glow);
+    animation-timing-function: var(--ease-settle);
+  }
+  100% {
+    transform: scale(1);
+    text-shadow: 0 0 0 transparent;
+  }
+}
+
+/* The afterglow: amber only, opacity and transform only, then gone. */
+.glow {
+  position: absolute;
+  inset: -0.35em -0.55em;
+  z-index: -1;
+  border-radius: var(--r-pill);
+  background: radial-gradient(closest-side, var(--signal-glow), transparent);
+  opacity: 0;
+  pointer-events: none;
+  animation: score-glow calc(var(--dur-1) + var(--dur-4)) var(--ease-settle) both;
+}
+
+@keyframes score-glow {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.35);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .popOdd .value,
+  .popEven .value {
+    animation: none;
+  }
+
+  .glow {
+    display: none;
+  }
+}

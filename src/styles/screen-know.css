@@ -1,0 +1,215 @@
+/* ============================================================================
+   KNOW — the roster: search, grouped chips, sticky count + save
+   ========================================================================== */
+
+.screen--know {
+  gap: var(--s-5);
+  min-height: 100svh;
+  padding-bottom: 0;
+}
+
+.know__head {
+  display: grid;
+  gap: var(--s-3);
+}
+
+.know__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-3);
+  min-height: var(--tap-min);
+}
+
+.know__title {
+  font-size: var(--fs-h1);
+}
+
+.know__lede {
+  color: var(--text-2);
+  font-size: var(--fs-small);
+}
+
+/* ---- groups -------------------------------------------------------------------- */
+.know__groups {
+  display: grid;
+  flex: 1;
+  align-content: start;
+  gap: var(--s-6);
+}
+
+/* A floated legend leaves the fieldset's border rendering and lays out like an
+   ordinary block, so it can be a flex row with a rule running to the count. */
+.know-group__title {
+  float: left;
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  width: 100%;
+  margin-bottom: var(--s-3);
+}
+
+.know-group__title::after {
+  content: '';
+  flex: 1;
+  order: 1;
+  height: 1px;
+  background-color: var(--line-faint);
+}
+
+.know-group__count {
+  order: 2;
+  color: var(--text-off);
+}
+
+.know-group__items {
+  clear: both;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 10rem), 1fr));
+  gap: var(--s-2);
+}
+
+/* ---- chips --------------------------------------------------------------------- */
+.know-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--s-2);
+  min-height: calc(var(--row-h) + var(--s-2));
+  padding: var(--s-2) var(--s-2) var(--s-2) var(--s-3);
+  border: var(--hairline);
+  border-radius: var(--r-md);
+  background-color: var(--surface-1);
+  transition: var(--t-ui);
+}
+
+.know-item__flag {
+  font-size: var(--fs-h3);
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.know-item__text {
+  display: grid;
+  min-width: 0;
+}
+
+.know-item__name {
+  font-size: var(--fs-small);
+  font-weight: 600;
+  line-height: var(--lh-snug);
+  overflow-wrap: anywhere;
+}
+
+.know-item__native {
+  color: var(--text-2);
+  font-size: var(--fs-small);
+  line-height: var(--lh-snug);
+  overflow-wrap: anywhere;
+  justify-self: start;
+}
+
+/* The check box: empty hairline square, or a filled cyan square with a tick. */
+.know-item__check {
+  display: grid;
+  place-items: center;
+  width: 1.375rem;
+  height: 1.375rem;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-token);
+  color: transparent;
+  transition: var(--t-ui);
+}
+
+.know-item__check svg {
+  width: 0.875rem;
+  height: 0.875rem;
+  stroke-width: 3;
+}
+
+@media (hover: hover) {
+  .know-item:hover {
+    border-color: var(--line-strong);
+    background-color: var(--surface-2);
+  }
+}
+
+.know-item:active {
+  transform: scale(0.98);
+}
+
+.know-item.is-selected {
+  border-color: var(--machine);
+  background-color: var(--caliber-wash);
+}
+
+.know-item.is-selected .know-item__check {
+  border-color: var(--machine);
+  background-color: var(--machine);
+  color: var(--ink-950);
+}
+
+.know-item:has(.control-input:focus-visible) {
+  box-shadow: var(--ring-caliber);
+}
+
+.know__empty {
+  display: grid;
+  justify-items: center;
+  gap: var(--s-2);
+  padding: var(--s-6) 0;
+  color: var(--text-2);
+  text-align: center;
+}
+
+/* ---- sticky footer --------------------------------------------------------------- */
+.know__footer {
+  /* Glass alone lets the roster read through the bar; commit to the page colour
+     so the count and the buttons sit on a clean surface. */
+  background-color: var(--page);
+  position: sticky;
+  bottom: 0;
+  z-index: var(--z-hud);
+  display: grid;
+  gap: var(--s-2);
+  margin-inline: calc(var(--gutter) * -1);
+  padding: var(--s-3) var(--gutter) calc(var(--s-3) + var(--safe-b));
+  border-top: var(--hairline);
+}
+
+.know__count {
+  color: var(--text-2);
+  font-size: var(--fs-small);
+}
+
+.know__num {
+  color: var(--text-1);
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.know__count.is-warn,
+.know__count.is-warn .know__num {
+  color: var(--warn-500);
+}
+
+.know__footer .actions > .btn {
+  flex: 1 1 auto;
+}
+
+.know__footer .actions > .know__save {
+  flex: 0 0 auto;
+  min-width: 6rem;
+}
+
+@media (min-width: 48rem) {
+  .know__footer {
+    margin-inline: 0;
+    margin-bottom: var(--s-4);
+    padding-inline: var(--s-4);
+    border: var(--hairline);
+    border-radius: var(--r-lg);
+  }
+}

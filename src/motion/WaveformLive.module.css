@@ -1,0 +1,28 @@
+/* A readout of the voice, so it speaks in calibration cyan; the amber stays on
+   the play button. Set --waveform-color on an ancestor to change it. */
+.wave {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--bar-w);
+  color: var(--waveform-color, var(--caliber-500));
+  opacity: 0.55;
+  transition: opacity var(--dur-2) var(--ease-settle);
+  pointer-events: none;
+  contain: layout paint;
+}
+
+.wave[data-playing] {
+  opacity: 1;
+}
+
+/* Full height, scaled down: only `transform` ever changes, on its own layer. */
+.bar {
+  flex: none;
+  width: var(--bar-w);
+  height: 100%;
+  border-radius: var(--r-pill);
+  background: currentColor;
+  transform-origin: 50% 50%;
+  will-change: transform;
+}

@@ -3,6 +3,8 @@ import { SLOW_RATE, type RoundSpec } from '../engine/game.ts'
 import type { AudioControls } from '../hooks/useAudio.ts'
 import { useHotkeys } from '../hooks/useHotkeys.ts'
 import { GuessGrid } from './GuessGrid.tsx'
+import { Icon } from './Icon.tsx'
+import { WaveformLive } from '../motion/index.ts'
 
 interface Props {
   round: RoundSpec
@@ -26,43 +28,77 @@ function speakFallback(round: RoundSpec, slow: boolean) {
   window.speechSynthesis.speak(u)
 }
 
+/** The orb's frame: the aperture's concentric arcs, broken like an iris. */
+function ApertureRings() {
+  return (
+    <svg className="orb__rings" viewBox="0 0 112 112" fill="none" aria-hidden="true" focusable="false">
+      <circle className="orb__ring orb__ring--outer" cx="56" cy="56" r="54" pathLength="100" />
+      <circle className="orb__ring orb__ring--inner" cx="56" cy="56" r="47" pathLength="100" />
+    </svg>
+  )
+}
+
 export function Round({ round, audio, slow, allowSlow, onToggleSlow, onGuess, onSkip }: Props) {
   // One hotkey per option; expert shows five.
   const hotkeys: Record<string, () => void> = { r: audio.replay }
   for (let i = 0; i < round.options.length; i++) hotkeys[String(i + 1)] = () => onGuess(i)
   useHotkeys(hotkeys)
 
+  const caption = audio.error ? 'Clip unavailable' : audio.needsTap ? 'Tap to play' : 'Tap to replay'
+
   return (
-    <main className="screen round">
-      <div className="player">
+    <main className="screen screen--round">
+      <section className="player" aria-label="Clip">
         <button
           type="button"
-          className={`play ${audio.isPlaying ? 'is-playing' : ''}`}
+          className={`orb ${audio.isPlaying ? 'is-playing' : ''}`}
           onClick={audio.replay}
           disabled={audio.error !== null}
           aria-label={audio.isPlaying ? 'Playing' : 'Play clip'}
+          aria-keyshortcuts="R"
           data-testid="play"
         >
-          <span aria-hidden="true">{audio.isPlaying ? '🔊' : '▶'}</span>
+          <ApertureRings />
+          <span className="orb__core" aria-hidden="true">
+            <Icon name="play" className="orb__play" />
+          </span>
         </button>
+        <p className="eyebrow player__caption" aria-hidden="true">
+          {caption}
+          <span className="touch-only-hide"> · R</span>
+          {slow && <span className="player__rate"> · 0.6×</span>}
+        </p>
+        <div className="player__wave">
+          <WaveformLive playing={audio.isPlaying} bars={20} height={40} />
+        </div>
         {allowSlow && (
-          <label className="toggle">
-            <input type="checkbox" checked={slow} onChange={onToggleSlow} />
-            <span>🐢 Slow (0.6×)</span>
+          <label className="switch">
+            <input className="control-input" type="checkbox" role="switch" checked={slow} onChange={onToggleSlow} />
+            <span className="switch__track" aria-hidden="true">
+              <span className="switch__thumb" />
+            </span>
+            Slow 0.6×
           </label>
         )}
-        {audio.needsTap && <p className="muted">Tap ▶ to hear the clip.</p>}
-      </div>
+      </section>
+
+      {audio.needsTap && (
+        <p className="notice notice--warn">
+          <span className="notice__tag">Autoplay blocked</span>
+          Tap the play button to hear the clip.
+        </p>
+      )}
 
       {audio.error && (
-        <div className="alert" role="alert" data-testid="audio-error">
+        <div className="notice notice--warn" role="alert" data-testid="audio-error">
+          <span className="notice__tag">No signal</span>
           <p>{audio.error}</p>
-          <div className="alert-actions">
-            <button type="button" className="btn" onClick={onSkip} data-testid="skip">
+          <div className="notice__actions">
+            <button type="button" className="btn btn--sm" onClick={onSkip} data-testid="skip">
               Skip this round
             </button>
             {canSpeak && (
-              <button type="button" className="btn btn-ghost" onClick={() => speakFallback(round, slow)}>
+              <button type="button" className="btn btn--ghost btn--sm" onClick={() => speakFallback(round, slow)}>
                 Try device voice (fallback — may sound different)
               </button>
             )}
@@ -70,8 +106,10 @@ export function Round({ round, audio, slow, allowSlow, onToggleSlow, onGuess, on
         </div>
       )}
 
-      <p className="prompt">Which language is this?</p>
-      <GuessGrid options={round.options} onPick={onGuess} />
+      <div className="round__answers">
+        <h1 className="eyebrow round__prompt">Which language is this?</h1>
+        <GuessGrid options={round.options} onPick={onGuess} />
+      </div>
     </main>
   )
 }

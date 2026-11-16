@@ -1,4 +1,4 @@
-import { useEffect, useReducer, useState } from 'react'
+import { useEffect, useReducer, useState, type ReactNode } from 'react'
 import { EndScreen } from './components/EndScreen.tsx'
 import { HUD } from './components/HUD.tsx'
 import { KnowLanguages } from './components/KnowLanguages.tsx'
@@ -19,6 +19,7 @@ import {
 } from './engine/game.ts'
 import { seedFromString } from './engine/rng.ts'
 import { useAudio } from './hooks/useAudio.ts'
+import { AmbientField, ScreenTransition } from './motion/index.ts'
 import { appendHeard, loadBestScore, loadHeard, loadKnown, saveBestScore, saveHeard, saveKnown } from './storage.ts'
 
 type AppState = { screen: 'start' } | { screen: 'game'; game: GameState }
@@ -80,6 +81,21 @@ export default function App() {
   const pool = LANGUAGES.filter((l) => !known?.includes(l.code))
 
   const game = state.screen === 'game' ? state.game : null
+
+  // One key per screen type: a change remounts the frame and plays the
+  // enter transition. The ambient field lives outside it because a transform
+  // on the wrapper would trap position: fixed.
+  const screenKey = !game
+    ? known === null || editingKnown
+      ? 'know'
+      : 'start'
+    : game.phase
+  const frame = (screen: ReactNode) => (
+    <>
+      <AmbientField intensity={0.5} />
+      <ScreenTransition screenKey={screenKey}>{screen}</ScreenTransition>
+    </>
+  )
   const src =
     game && game.phase !== 'over'
       ? clipUrl(game.round.language.code, game.round.voiceIndex, game.round.sentenceId)
@@ -140,30 +156,30 @@ export default function App() {
   }
 
   if (!game && (known === null || editingKnown)) {
-    return (
+    return frame(
       <KnowLanguages
         initial={known ?? []}
         firstVisit={known === null}
         onSave={saveKnownLanguages}
         onCancel={known === null ? undefined : () => setEditingKnown(false)}
-      />
+      />,
     )
   }
 
   if (!game) {
-    return (
+    return frame(
       <StartScreen
         bestScore={bestScore}
         pool={pool}
         excludedCount={LANGUAGES.length - pool.length}
         onStart={start}
         onEditKnown={() => setEditingKnown(true)}
-      />
+      />,
     )
   }
 
   if (game.phase === 'over') {
-    return (
+    return frame(
       <EndScreen
         game={game}
         bestScore={bestScore}
@@ -171,12 +187,12 @@ export default function App() {
         shareUrl={window.location.origin + import.meta.env.BASE_URL}
         onPlayAgain={() => start(game.difficulty)}
         onMenu={() => dispatch({ type: 'menu' })}
-      />
+      />,
     )
   }
 
-  return (
-    <div className="app">
+  return frame(
+    <div className="game">
       <HUD roundNumber={game.roundNumber} score={game.score} streak={game.streak} lives={game.lives} />
       {game.phase === 'round' ? (
         <Round
@@ -199,6 +215,6 @@ export default function App() {
           />
         )
       )}
-    </div>
+    </div>,
   )
 }

@@ -1,0 +1,142 @@
+/* ============================================================================
+   GUESS THE LANGUAGE — DESIGN TOKENS (FROZEN CONTRACT)
+   ----------------------------------------------------------------------------
+   This file is the single source of truth for the brand's raw values.
+   It is FROZEN: agents and components may *consume* these variables and may add
+   semantic aliases in a separate file, but must never change a raw value here.
+   Any change to a raw value has to be coordinated across the brand assets
+   (brand/*.svg), the OG image and the UI, so it is a deliberate, reviewed edit.
+
+   Concept: "the linguistic instrument". A field recorder for human speech —
+   ink-dark surfaces, two signal accents, monospace telemetry. Warm amber = the
+   human voice. Calibration cyan = the machine listening.
+   ========================================================================== */
+
+:root {
+  /* ---- ink scale: page -> raised surfaces ------------------------------- */
+  --ink-950: #06080c; /* page background */
+  --ink-900: #0a0d13; /* page background, slightly lifted */
+  --ink-800: #10141d; /* card / panel surface */
+  --ink-700: #171c28; /* raised surface, inputs */
+  --ink-600: #212836; /* strong border, hover fill */
+  --ink-500: #2e3746; /* hairline on raised surfaces */
+
+  /* ---- fog scale: text ------------------------------------------------ */
+  --fog-100: #edf1f7; /* primary text */
+  --fog-200: #c7ceda; /* secondary text */
+  --fog-300: #98a2b3; /* tertiary / labels */
+  --fog-400: #6b7688; /* disabled, watermark */
+
+  /* ---- signal: the human voice (primary accent) ----------------------- */
+  --signal-500: #ffb020;
+  --signal-400: #ffc24b;
+  --signal-600: #e09400;
+  --signal-glow: rgba(255, 176, 32, 0.22);
+  --signal-wash: rgba(255, 176, 32, 0.12);
+
+  /* ---- calibration: the machine listening (secondary accent) ----------- */
+  --caliber-500: #57e3c9;
+  --caliber-400: #7deedd;
+  --caliber-600: #2bb9a2;
+  --caliber-glow: rgba(87, 227, 201, 0.2);
+  --caliber-wash: rgba(87, 227, 201, 0.1);
+
+  /* ---- verdicts: reserved for correct / wrong / caution only ---------- */
+  --allow-500: #56d68a;
+  --allow-wash: rgba(86, 214, 138, 0.14);
+  --deny-500: #ff6161;
+  --deny-wash: rgba(255, 97, 97, 0.14);
+  --warn-500: #ffc857;
+
+  /* ---- hairlines & glass ---------------------------------------------- */
+  --line-faint: rgba(255, 255, 255, 0.06);
+  --line: rgba(255, 255, 255, 0.1);
+  --line-strong: rgba(255, 255, 255, 0.18);
+
+  /* ---- typography ------------------------------------------------------ */
+  --font-display: 'Space Grotesk', ui-sans-serif, system-ui, -apple-system,
+    'Segoe UI', sans-serif;
+  --font-ui: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI',
+    sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* fluid scale — phone first, capped on desktop */
+  --fs-display: clamp(2.6rem, 11vw, 4.4rem);
+  --fs-h1: clamp(1.9rem, 7.5vw, 2.8rem);
+  --fs-h2: clamp(1.35rem, 5vw, 1.7rem);
+  --fs-h3: clamp(1.1rem, 4vw, 1.25rem);
+  --fs-body: clamp(1rem, 3.6vw, 1.0625rem);
+  --fs-small: 0.875rem;
+  --fs-micro: 0.6875rem; /* 11px monospace telemetry */
+
+  --lh-tight: 1.05;
+  --lh-snug: 1.25;
+  --lh-body: 1.55;
+  --tracking-display: -0.03em;
+  --tracking-ui: -0.01em;
+  --tracking-mono: 0.09em;
+
+  /* ---- space (4px base) ------------------------------------------------ */
+  --s-1: 0.25rem;
+  --s-2: 0.5rem;
+  --s-3: 0.75rem;
+  --s-4: 1rem;
+  --s-5: 1.5rem;
+  --s-6: 2rem;
+  --s-7: 3rem;
+  --s-8: 4rem;
+  --s-9: 6rem;
+
+  /* ---- radii ----------------------------------------------------------- */
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 18px;
+  --r-xl: 26px;
+  --r-pill: 999px;
+
+  /* ---- elevation ------------------------------------------------------- */
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-2: 0 8px 24px -8px rgba(0, 0, 0, 0.7);
+  --shadow-3: 0 24px 60px -20px rgba(0, 0, 0, 0.85);
+  --ring-signal: 0 0 0 2px var(--ink-950), 0 0 0 4px var(--signal-500);
+  --ring-caliber: 0 0 0 2px var(--ink-950), 0 0 0 4px var(--caliber-500);
+
+  /* ---- motion ---------------------------------------------------------- */
+  --ease-settle: cubic-bezier(0.22, 1, 0.36, 1); /* the house curve */
+  --ease-snap: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-exit: cubic-bezier(0.4, 0, 1, 1);
+  --dur-1: 120ms;
+  --dur-2: 220ms;
+  --dur-3: 380ms;
+  --dur-4: 620ms;
+  --dur-5: 1200ms; /* ambient loops only */
+  --stagger: 40ms;
+
+  /* ---- layout ---------------------------------------------------------- */
+  --app-max: 720px;
+  --tap-min: 44px;
+  --safe-t: env(safe-area-inset-top, 0px);
+  --safe-b: env(safe-area-inset-bottom, 0px);
+
+  /* ---- z layers -------------------------------------------------------- */
+  --z-ambient: 0;
+  --z-content: 10;
+  --z-hud: 20;
+  --z-overlay: 40;
+  --z-toast: 50;
+
+  color-scheme: dark;
+}
+
+/* Anything that animates must collapse to a static, legible layout here.
+   Components still render; they simply stop moving. */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-1: 0ms;
+    --dur-2: 0ms;
+    --dur-3: 0ms;
+    --dur-4: 0ms;
+    --dur-5: 0ms;
+    --stagger: 0ms;
+  }
+}

@@ -1,0 +1,230 @@
+/* ============================================================================
+   START — the instrument boot screen
+   ========================================================================== */
+
+.screen--start {
+  min-height: 100svh;
+}
+
+/* ---- hero: mark beside the wordmark on a phone (saves ~80px of height),
+   above it and larger on wide screens. -------------------------------------- */
+.hero {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  column-gap: var(--s-4);
+  row-gap: var(--s-2);
+}
+
+.hero__mark {
+  width: 4rem;
+  height: 4rem;
+}
+
+.hero__title {
+  font-size: var(--fs-display);
+}
+
+.hero__lede,
+.hero__spec {
+  grid-column: 1 / -1;
+}
+
+.hero__lede {
+  margin-top: var(--s-2);
+  color: var(--text-2);
+}
+
+/* ---- difficulty: a real radiogroup, drawn as cards ----------------------------- */
+.levels__legend {
+  margin-bottom: var(--s-3);
+}
+
+.levels__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--s-2);
+}
+
+@media (max-width: 23.74rem) {
+  .levels__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.level {
+  position: relative;
+  display: grid;
+  align-content: start;
+  gap: var(--s-1);
+  padding: var(--s-3) var(--s-4);
+  border: var(--hairline);
+  border-radius: var(--r-md);
+  background-color: var(--surface-1);
+  color: var(--text-1);
+  transition: var(--t-ui);
+}
+
+/* Left edge bar: the selected state's third cue, after hairline and wash. */
+.level::before {
+  content: '';
+  position: absolute;
+  inset-block: var(--s-3);
+  inset-inline-start: -1px;
+  width: var(--edge-w);
+  border-radius: var(--r-pill);
+  background-color: var(--machine);
+  transform: scaleY(0);
+  transition: transform var(--dur-2) var(--ease-settle);
+}
+
+.level__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-2);
+}
+
+.level__label {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  font-weight: 500;
+  letter-spacing: var(--tracking-display);
+}
+
+.level__glyph {
+  flex: none;
+  width: 2.125rem;
+  height: 0.875rem;
+  color: var(--text-3);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.2;
+  transition: var(--t-ui);
+}
+
+.level__glyph .is-lit {
+  fill: currentColor;
+}
+
+.level__ring {
+  fill: none;
+  stroke-width: 1.2;
+}
+
+.level__hint {
+  color: var(--text-2);
+  font-size: var(--fs-small);
+  line-height: var(--lh-snug);
+}
+
+@media (hover: hover) {
+  .level:hover {
+    border-color: var(--line-strong);
+    background-color: var(--surface-2);
+  }
+}
+
+.level:active {
+  transform: scale(0.99);
+}
+
+.level.is-selected {
+  border-color: var(--machine);
+  background-color: var(--caliber-wash);
+}
+
+.level.is-selected::before {
+  transform: scaleY(1);
+}
+
+.level.is-selected .level__glyph {
+  color: var(--machine);
+}
+
+.level:has(.control-input:focus-visible) {
+  box-shadow: var(--ring-caliber);
+}
+
+/* ---- go ----------------------------------------------------------------------- */
+.start__go {
+  display: grid;
+  gap: var(--s-3);
+}
+
+.start__cta {
+  width: 100%;
+}
+
+/* ---- footer telemetry ---------------------------------------------------------- */
+.start__foot {
+  display: grid;
+  gap: var(--s-3);
+  padding-top: var(--s-4);
+  border-top: 1px solid var(--line-faint);
+}
+
+.start__known {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: var(--s-3);
+}
+
+.start__known .link {
+  margin-inline-start: calc(var(--s-1) * -1);
+}
+
+.start__telemetry {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-3);
+}
+
+.start__keys kbd {
+  margin-inline: calc(var(--s-1) / 2);
+}
+
+.readout {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--s-2);
+}
+
+.readout__value {
+  color: var(--text-1);
+  font-family: var(--font-mono);
+  font-size: var(--fs-body);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---- wide screens: more air, larger hero, the field shows around the column -- */
+@media (min-width: 48rem) {
+  .screen--start {
+    justify-content: center;
+  }
+
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: start;
+  }
+
+  .hero__mark {
+    width: 4.5rem;
+    height: 4.5rem;
+    margin-bottom: var(--s-3);
+  }
+
+  .hero__lede {
+    font-size: var(--fs-h3);
+  }
+
+  .start__cta {
+    width: auto;
+    min-width: 18rem;
+    justify-self: start;
+  }
+}

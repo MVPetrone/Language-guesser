@@ -1,0 +1,67 @@
+/* ============================================================================
+   SURFACES — panels, cards, glass, hairlines, elevation, notices
+   ========================================================================== */
+
+/* A card: the instrument's faceplate. */
+.panel {
+  position: relative;
+  border: var(--hairline);
+  border-radius: var(--r-lg);
+  background-color: var(--surface-1);
+  box-shadow: var(--shadow-2);
+}
+
+/* Glass: used only for bars that content scrolls beneath. */
+.glass {
+  background-color: color-mix(in srgb, var(--page) 86%, transparent);
+  -webkit-backdrop-filter: blur(14px) saturate(1.2);
+  backdrop-filter: blur(14px) saturate(1.2);
+}
+
+.hairline-top {
+  border-top: var(--hairline);
+}
+
+.hairline-bottom {
+  border-bottom: var(--hairline);
+}
+
+/* ---- notices ----------------------------------------------------------------
+   Quiet telemetry with a thin left rule. Never a siren: red belongs to wrong
+   answers only, so warnings use the caution token. */
+.notice {
+  display: grid;
+  gap: var(--s-1);
+  padding: var(--s-2) var(--s-3);
+  border-inline-start: 2px solid var(--line-strong);
+  color: var(--text-2);
+  font-size: var(--fs-small);
+  line-height: var(--lh-snug);
+}
+
+.notice__tag {
+  font-family: var(--font-mono);
+  font-size: var(--fs-telemetry);
+  font-weight: 500;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+.notice--warn {
+  border-inline-start-color: var(--warn-500);
+  border-radius: 0 var(--r-sm) var(--r-sm) 0;
+  background-color: color-mix(in srgb, var(--warn-500) 7%, transparent);
+  color: var(--text-1);
+}
+
+.notice--warn .notice__tag {
+  color: var(--warn-500);
+}
+
+.notice__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+  margin-top: var(--s-2);
+}
