@@ -101,7 +101,9 @@
       }
     });
 
-    const every = Math.ceil(points.length / 8);
+    // Fewer labels on narrow screens: the axis font is scaled up there to stay legible.
+    const labelTarget = window.innerWidth < 560 ? 4 : 8;
+    const every = Math.ceil(points.length / labelTarget);
     points.forEach((p, i) => {
       if (i % every !== 0) return;
       const label = mk('text', { class: 'axis', x: x(i), y: H - 6, 'text-anchor': 'middle' });
