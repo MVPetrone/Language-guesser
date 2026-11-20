@@ -67,7 +67,7 @@ $csrf = csrf_token();
 
   <div class="grid3">
     <div class="panel"><h2>Devices</h2><div class="bars" id="devices"></div></div>
-    <div class="panel"><h2>Countries</h2><div class="bars" id="countries"></div></div>
+    <div class="panel"><h2>Session depth</h2><div class="bars" id="depth"></div></div>
     <div class="panel"><h2>Referrers</h2><div class="bars" id="referrers"></div></div>
   </div>
 

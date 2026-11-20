@@ -85,7 +85,7 @@ foreach ($events as $event) {
     foreach ($allowed[$name] as $field => $max) {
         $value = $props[$field] ?? null;
         if ($max === 0) {
-            $clean[$field] = is_numeric($value) ? (int) $value : null;
+            $clean[$field] = is_bool($value) ? (int) $value : (is_numeric($value) ? (int) $value : null);
         } else {
             $clean[$field] = is_string($value) ? clean_str($value, $max) : null;
         }

@@ -159,7 +159,7 @@
     chart(data.series);
     bars($('languages'), data.languages, { empty: 'No rounds played yet.' });
     bars($('devices'), data.devices, { share: true });
-    bars($('countries'), data.countries, { share: true, empty: 'No geo data from the CDN yet.' });
+    bars($('depth'), data.depth, { empty: 'No rounds played yet.' });
     bars($('referrers'), data.referrers, { share: true });
     bars($('difficulty'), data.difficulty, { empty: 'No games started yet.' });
     bars($('accuracy'), data.accuracy, { empty: 'No answers yet.' });

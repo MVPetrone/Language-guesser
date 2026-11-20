@@ -111,6 +111,12 @@ $difficulty = $top(
      WHERE name = \'game_start\' AND difficulty IS NOT NULL AND ts >= ? GROUP BY difficulty ORDER BY n DESC',
     [$from]
 );
+$depth = $top(
+    'SELECT CASE WHEN c <= 3 THEN \'1-3\' WHEN c <= 6 THEN \'4-6\' WHEN c <= 9 THEN \'7-9\' ELSE \'10\' END AS k,
+            COUNT(*) AS n
+     FROM (SELECT sid, COUNT(*) AS c FROM events WHERE name = \'round\' AND ts >= ? GROUP BY sid) GROUP BY k ORDER BY k',
+    [$from]
+);
 $accuracy = $top(
     'SELECT CASE WHEN ok = 1 THEN \'correct\' ELSE \'wrong\' END AS k, COUNT(*) AS n
      FROM events WHERE name = \'round\' AND ok IS NOT NULL AND ts >= ? GROUP BY k',
@@ -140,6 +146,7 @@ json_out([
     'devices' => $devices,
     'browsers' => $browsers,
     'countries' => $countries,
+    'depth' => $depth,
     'referrers' => $referrers,
     'difficulty' => $difficulty,
     'accuracy' => $accuracy,
