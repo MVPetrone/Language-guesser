@@ -27,3 +27,4 @@ dist-ssr
 .playwright/
 test-results/
 playwright-report/
+dist-web/

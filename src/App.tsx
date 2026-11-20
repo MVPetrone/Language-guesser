@@ -1,4 +1,4 @@
-import { useEffect, useReducer, useState, type ReactNode } from 'react'
+import { useEffect, useReducer, useRef, useState, type ReactNode } from 'react'
 import { EndScreen } from './components/EndScreen.tsx'
 import { HUD } from './components/HUD.tsx'
 import { KnowLanguages } from './components/KnowLanguages.tsx'
@@ -19,6 +19,7 @@ import {
 } from './engine/game.ts'
 import { seedFromString } from './engine/rng.ts'
 import { useAudio } from './hooks/useAudio.ts'
+import { track, trackPageview } from './lib/analytics.ts'
 import { AmbientField, ScreenTransition } from './motion/index.ts'
 import { appendHeard, loadBestScore, loadHeard, loadKnown, saveBestScore, saveHeard, saveKnown } from './storage.ts'
 
@@ -113,7 +114,41 @@ export default function App() {
     setRate(slowActive ? SLOW_RATE : 1)
   }, [slowActive, setRate])
 
+  // One pageview per mount; the collector filters crawlers and dedupes by id.
+  useEffect(() => {
+    trackPageview()
+  }, [])
+
+  // Round timing for the "how long does a guess take" panel.
+  const roundStartedAt = useRef(0)
+  useEffect(() => {
+    roundStartedAt.current = performance.now()
+  }, [game?.roundNumber, game?.phase])
+
+  // Report each answered round exactly once, when the reveal appears.
+  const reportedRound = useRef(-1)
+  useEffect(() => {
+    if (!game || game.phase !== 'reveal' || !game.lastResult) return
+    if (reportedRound.current === game.roundNumber) return
+    reportedRound.current = game.roundNumber
+    track('round', {
+      lang: game.round.language.code,
+      difficulty: game.difficulty,
+      ok: game.lastResult.correct,
+      ms: Math.round(performance.now() - roundStartedAt.current),
+    })
+  }, [game])
+
+  // A finished game is reported once, on the over screen.
+  const reportedGame = useRef<GameState | null>(null)
+  useEffect(() => {
+    if (!game || game.phase !== 'over' || reportedGame.current === game) return
+    reportedGame.current = game
+    track('game_over', { score: game.score, difficulty: game.difficulty })
+  }, [game])
+
   const start = (difficulty: Difficulty) => {
+    track('game_start', { difficulty })
     // A ?seed= game ignores the memory so the seed alone determines it.
     dispatch({
       type: 'start',

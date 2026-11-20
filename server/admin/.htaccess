@@ -1,0 +1,39 @@
+# Admin area — not a public document tree.
+Options -Indexes -MultiViews
+DirectoryIndex index.php
+
+# Never serve anything from the includes directory.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^lib/ - [F,L]
+  RewriteRule ^(assets|api)/ - [L]
+</IfModule>
+
+# Block downloads of anything that is not executable PHP, JS, CSS or an image.
+<FilesMatch "\.(sqlite|sqlite3|db|log|json|md|ini|bak|old|sh|py|env|txt)$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>
+
+# Dotfiles (.git, .env, .htaccess backups) are never served.
+<FilesMatch "^\.">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+</FilesMatch>
+
+<IfModule mod_headers.c>
+  Header always set X-Robots-Tag "noindex, nofollow, noarchive"
+  Header always unset X-Powered-By
+</IfModule>
+
+# PHP hardening for this directory only.
+<IfModule lsapi_module>
+  php_flag display_errors off
+  php_flag expose_php off
+</IfModule>
