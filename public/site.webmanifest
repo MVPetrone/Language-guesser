@@ -1,6 +1,6 @@
 {
-  "name": "Guess the Language",
-  "short_name": "LangGuess",
+  "name": "Lingo Guess",
+  "short_name": "Lingo",
   "description": "Hear one sentence, name the language. A listening game across 76 languages.",
   "start_url": "./",
   "scope": "./",

@@ -6,8 +6,8 @@
   min-height: 100svh;
 }
 
-/* ---- hero: mark beside the wordmark on a phone (saves ~80px of height),
-   above it and larger on wide screens. -------------------------------------- */
+/* ---- hero: the mark and the wordmark read as one lockup, side by side at
+   every width, so the name is always learned with the logo. ----------------- */
 .hero {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
@@ -19,10 +19,14 @@
 .hero__mark {
   width: 4rem;
   height: 4rem;
+  flex: none;
 }
 
 .hero__title {
-  font-size: var(--fs-display);
+  font-size: clamp(1.75rem, 8.4vw, 3.4rem);
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
 }
 
 .hero__lede,
@@ -208,14 +212,16 @@
   }
 
   .hero {
-    grid-template-columns: minmax(0, 1fr);
-    justify-items: start;
+    column-gap: var(--s-5);
   }
 
   .hero__mark {
-    width: 4.5rem;
-    height: 4.5rem;
-    margin-bottom: var(--s-3);
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .hero__title {
+    font-size: clamp(2.6rem, 4.2vw, 4rem);
   }
 
   .hero__lede {

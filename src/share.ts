@@ -3,7 +3,7 @@ import { shareGrid, type GameState } from './engine/game.ts'
 export function shareText(game: GameState, url: string): string {
   const correct = game.history.filter((r) => r.correct).length
   return [
-    `Guess the Language (${game.difficulty}) — ${game.score} pts`,
+    `Lingo Guess (${game.difficulty}) — ${game.score} pts`,
     `${shareGrid(game.history)} ${correct}/${game.history.length}`,
     url,
   ].join('\n')

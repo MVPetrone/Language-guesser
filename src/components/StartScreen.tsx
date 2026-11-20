@@ -53,7 +53,7 @@ export function StartScreen({ bestScore, pool, excludedCount, onStart, onEditKno
           width="72"
           height="72"
         />
-        <h1 className="hero__title">Guess the Language</h1>
+        <h1 className="hero__title">Lingo Guess</h1>
         <p className="hero__lede">Hear one sentence. Name the language.</p>
         <p className="eyebrow hero__spec">
           {ROUNDS} rounds · {LIVES} lives · {pool.length} languages
