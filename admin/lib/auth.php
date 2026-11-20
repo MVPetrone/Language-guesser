@@ -30,8 +30,6 @@ function session_boot(): void
     ]);
     ini_set('session.use_strict_mode', '1');
     ini_set('session.use_only_cookies', '1');
-    ini_set('session.sid_length', '48');
-    ini_set('session.sid_bits_per_character', '5');
     ini_set('session.gc_maxlifetime', (string) ABSOLUTE_TIMEOUT);
     session_start();
 
