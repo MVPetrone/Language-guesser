@@ -61,7 +61,7 @@
   function chart(points) {
     const svg = $('chart');
     svg.textContent = '';
-    const W = 800, H = 210, padL = 34, padB = 22, padT = 10;
+    const W = 800, H = 210, padL = 34, padB = 36, padT = 10;
     const max = Math.max(1, ...points.map((p) => p.views));
     const stepX = points.length > 1 ? (W - padL - 8) / (points.length - 1) : 0;
     const y = (v) => padT + (H - padT - padB) * (1 - v / max);
@@ -101,10 +101,14 @@
       }
     });
 
-    const every = Math.ceil(points.length / 8);
+    // Fewer labels on narrow screens: the axis font is scaled up there to stay legible.
+    const labelTarget = window.innerWidth < 560 ? 4 : 8;
+    const every = Math.ceil(points.length / labelTarget);
     points.forEach((p, i) => {
       if (i % every !== 0) return;
-      const label = mk('text', { class: 'axis', x: x(i), y: H - 6, 'text-anchor': 'middle' });
+      // first/last labels anchor inward so they cannot collide with the y axis
+      const anchor = i === 0 ? 'start' : (i >= points.length - every ? 'end' : 'middle');
+      const label = mk('text', { class: 'axis', x: x(i), y: H - 12, 'text-anchor': anchor });
       label.textContent = p.label;
       svg.append(label);
     });

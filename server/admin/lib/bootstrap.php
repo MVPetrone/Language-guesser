@@ -29,6 +29,18 @@ ini_set('error_log', STORAGE . '/logs/php.log');
 ini_set('expose_php', '0');
 error_reporting(E_ALL);
 
+// A clean 500 with no internal detail; the exception itself goes to the private log.
+set_exception_handler(static function (Throwable $e): void {
+    error_log('unhandled: ' . $e->getMessage() . ' @ ' . $e->getFile() . ':' . $e->getLine());
+    if (!headers_sent()) {
+        http_response_code(500);
+        header('Content-Type: application/json; charset=utf-8');
+        header('Cache-Control: no-store');
+        header('X-Content-Type-Options: nosniff');
+    }
+    echo '{"error":"server_error"}';
+});
+
 date_default_timezone_set('UTC');
 
 require __DIR__ . '/util.php';

@@ -23,7 +23,7 @@ function db(): PDO
     ]);
     $pdo->exec('PRAGMA journal_mode = WAL');
     $pdo->exec('PRAGMA synchronous = NORMAL');
-    $pdo->exec('PRAGMA busy_timeout = 4000');
+    $pdo->exec('PRAGMA busy_timeout = 10000');
     $pdo->exec('PRAGMA foreign_keys = ON');
 
     migrate($pdo);
@@ -95,30 +95,40 @@ function migrate(PDO $pdo): void
         SQL);
 }
 
-/** Fixed-window rate limiter. Returns true when the call is allowed. */
+/**
+ * Fixed-window rate limiter. Returns true when the call is allowed.
+ *
+ * One atomic UPSERT (SQLite >= 3.35 `RETURNING`) instead of SELECT-then-INSERT in a
+ * transaction: several PHP workers under LiteSpeed can hit this concurrently, and a
+ * deferred transaction that upgrades a read lock to a write lock deadlocks (500s).
+ */
 function rate_limit(string $key, int $limit, int $windowSeconds): bool
 {
     $pdo = db();
     $now = time();
     $bucket = $key . ':' . intdiv($now, $windowSeconds);
-    $pdo->beginTransaction();
-    try {
-        $stmt = $pdo->prepare('SELECT n FROM rate_limits WHERE k = ?');
-        $stmt->execute([$bucket]);
-        $n = (int) ($stmt->fetchColumn() ?: 0);
-        if ($n >= $limit) {
-            $pdo->commit();
-            return false;
+
+    $sql = 'INSERT INTO rate_limits (k, ts, n) VALUES (?, ?, 1)
+            ON CONFLICT(k) DO UPDATE SET n = n + 1, ts = excluded.ts
+            RETURNING n';
+
+    for ($attempt = 1; $attempt <= 4; $attempt++) {
+        try {
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([$bucket, $now]);
+            $n = (int) $stmt->fetchColumn();
+            $stmt->closeCursor();
+            return $n <= $limit;
+        } catch (PDOException $e) {
+            $isBusy = str_contains($e->getMessage(), 'locked') || str_contains($e->getMessage(), 'busy');
+            if ($isBusy && $attempt < 4) {
+                usleep(20000 * $attempt);
+                continue;
+            }
+            // Never let the limiter take the request down: fail open but log it.
+            error_log('rate_limit failed: ' . $e->getMessage());
+            return true;
         }
-        $stmt = $pdo->prepare(
-            'INSERT INTO rate_limits (k, ts, n) VALUES (?, ?, 1)
-             ON CONFLICT(k) DO UPDATE SET n = n + 1, ts = excluded.ts'
-        );
-        $stmt->execute([$bucket, $now]);
-        $pdo->commit();
-    } catch (Throwable $e) {
-        $pdo->rollBack();
-        throw $e;
     }
     return true;
 }

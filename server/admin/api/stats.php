@@ -114,7 +114,7 @@ $difficulty = $top(
 $depth = $top(
     'SELECT CASE WHEN c <= 3 THEN \'1-3\' WHEN c <= 6 THEN \'4-6\' WHEN c <= 9 THEN \'7-9\' ELSE \'10\' END AS k,
             COUNT(*) AS n
-     FROM (SELECT sid, COUNT(*) AS c FROM events WHERE name = \'round\' AND ts >= ? GROUP BY sid) GROUP BY k ORDER BY k',
+     FROM (SELECT sid, COUNT(*) AS c FROM events WHERE name = \'round\' AND ts >= ? GROUP BY sid) GROUP BY k ORDER BY CASE k WHEN \'1-3\' THEN 1 WHEN \'4-6\' THEN 2 WHEN \'7-9\' THEN 3 ELSE 4 END',
     [$from]
 );
 $accuracy = $top(
