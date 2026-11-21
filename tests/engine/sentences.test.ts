@@ -15,10 +15,10 @@ describe('sentence pool', () => {
     expect(validateSentences(SENTENCES).errors).toEqual([])
   })
 
-  it('has 2 / 3 / 3 sentences per level with stable slug ids', () => {
-    expect(sentencesForLevel(1)).toHaveLength(2)
-    expect(sentencesForLevel(2)).toHaveLength(3)
-    expect(sentencesForLevel(3)).toHaveLength(3)
+  it('has 4 / 5 / 5 sentences per level with stable slug ids', () => {
+    expect(sentencesForLevel(1)).toHaveLength(4)
+    expect(sentencesForLevel(2)).toHaveLength(5)
+    expect(sentencesForLevel(3)).toHaveLength(5)
     for (const s of SENTENCES) expect(sentenceById(s.id)).toBe(s)
     expect(() => sentenceById('hello')).toThrow()
   })
