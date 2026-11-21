@@ -46,21 +46,17 @@ export type LangCode =
   | 'et-EE'
   | 'ga-IE'
   | 'gl-ES'
-  | 'gu-IN'
   | 'hr-HR'
   | 'is-IS'
   | 'jv-ID'
   | 'ka-GE'
   | 'kk-KZ'
   | 'km-KH'
-  | 'kn-IN'
   | 'lo-LA'
   | 'lt-LT'
   | 'lv-LV'
   | 'mk-MK'
-  | 'ml-IN'
   | 'mn-MN'
-  | 'mr-IN'
   | 'mt-MT'
   | 'my-MM'
   | 'ne-NP'
@@ -164,11 +160,7 @@ export const LANGUAGES: Language[] = [
   { code: 'mt-MT', name: 'Maltese', nativeName: 'Malti', flag: '🇲🇹', family: 'Semitic', tier: 3, voice: 'mt-MT-GraceNeural', fact: 'Maltese is the only Semitic language written in the Latin alphabet and the only one official in the EU.' },
   { code: 'mn-MN', name: 'Mongolian', nativeName: 'Монгол', flag: '🇲🇳', family: 'Mongolic', tier: 3, voice: 'mn-MN-YesuiNeural', fact: 'Traditional Mongolian script is written vertically, top to bottom, and is still taught alongside Cyrillic.' },
   { code: 'ne-NP', name: 'Nepali', nativeName: 'नेपाली', flag: '🇳🇵', family: 'Indo-Aryan', tier: 3, voice: 'ne-NP-HemkalaNeural', fact: 'Nepali is also an official language of the Indian state of Sikkim.' },
-  { code: 'mr-IN', name: 'Marathi', nativeName: 'मराठी', flag: '🇮🇳', family: 'Indo-Aryan', tier: 3, voice: 'mr-IN-AarohiNeural', fact: 'Marathi is written in Devanagari but uses the letter ळ, a retroflex "l" that standard Hindi lacks.' },
-  { code: 'gu-IN', name: 'Gujarati', nativeName: 'ગુજરાતી', flag: '🇮🇳', family: 'Indo-Aryan', tier: 3, voice: 'gu-IN-DhwaniNeural', fact: 'Gandhi wrote his autobiography in Gujarati, whose script looks like Devanagari with the top line removed.' },
   { code: 'si-LK', name: 'Sinhala', nativeName: 'සිංහල', flag: '🇱🇰', family: 'Indo-Aryan', tier: 3, voice: 'si-LK-ThiliniNeural', fact: 'Sinhala is related to Hindi and Bengali, but has developed in isolation on Sri Lanka for over 2,000 years.' },
-  { code: 'kn-IN', name: 'Kannada', nativeName: 'ಕನ್ನಡ', flag: '🇮🇳', family: 'Dravidian', tier: 3, voice: 'kn-IN-SapnaNeural', fact: 'The oldest known Kannada inscription, at Halmidi, dates from around 450 CE.' },
-  { code: 'ml-IN', name: 'Malayalam', nativeName: 'മലയാളം', flag: '🇮🇳', family: 'Dravidian', tier: 3, voice: 'ml-IN-SobhanaNeural', fact: 'Spelled in English, "Malayalam" is a palindrome.' },
   { code: 'te-IN', name: 'Telugu', nativeName: 'తెలుగు', flag: '🇮🇳', family: 'Dravidian', tier: 3, voice: 'te-IN-ShrutiNeural', fact: 'Because almost every Telugu word ends in a vowel, it has been nicknamed "the Italian of the East".' },
   { code: 'ps-AF', name: 'Pashto', nativeName: 'پښتو', flag: '🇦🇫', family: 'Indo-Iranian', tier: 3, voice: 'ps-AF-LatifaNeural', fact: 'Pashto adds letters found in no other Arabic-script language, such as ټ and ړ, marked with a small ring.' },
   { code: 'am-ET', name: 'Amharic', nativeName: 'አማርኛ', flag: '🇪🇹', family: 'Semitic', tier: 3, voice: 'am-ET-MekdesNeural', fact: 'Amharic is the second most spoken Semitic language after Arabic; each Ge’ez character is a consonant–vowel pair.' },

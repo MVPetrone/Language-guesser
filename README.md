@@ -1,6 +1,6 @@
 # Lingo Guess
 
-Hear one sentence, name the language. A listening game across 76 languages —
+Hear one sentence, name the language. A listening game across 72 languages —
 10 rounds, 3 lives, four difficulty tiers. Live at **[lingoguess.com](https://lingoguess.com)**.
 
 ## Stack

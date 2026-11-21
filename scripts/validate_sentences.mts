@@ -46,10 +46,7 @@ type Script =
   | 'Myanmar'
   | 'Georgian'
   | 'Lao'
-  | 'Kannada'
-  | 'Malayalam'
   | 'Telugu'
-  | 'Gujarati'
 
 const SCRIPT_RE: Record<Script, RegExp> = {
   Latin: /\p{Script_Extensions=Latin}/u,
@@ -71,10 +68,7 @@ const SCRIPT_RE: Record<Script, RegExp> = {
   Myanmar: /\p{Script_Extensions=Myanmar}/u,
   Georgian: /\p{Script_Extensions=Georgian}/u,
   Lao: /\p{Script_Extensions=Lao}/u,
-  Kannada: /\p{Script_Extensions=Kannada}/u,
-  Malayalam: /\p{Script_Extensions=Malayalam}/u,
   Telugu: /\p{Script_Extensions=Telugu}/u,
-  Gujarati: /\p{Script_Extensions=Gujarati}/u,
 }
 
 const LATIN: readonly Script[] = ['Latin']
@@ -126,10 +120,6 @@ export const EXPECTED_SCRIPTS: Record<LangCode, readonly Script[]> = {
   'kk-KZ': ['Cyrillic'],
   'mn-MN': ['Cyrillic'],
   'ne-NP': ['Devanagari'],
-  'mr-IN': ['Devanagari'],
-  'gu-IN': ['Gujarati'],
-  'kn-IN': ['Kannada'],
-  'ml-IN': ['Malayalam'],
   'te-IN': ['Telugu'],
   'si-LK': ['Sinhala'],
   'am-ET': ['Ethiopic'],
