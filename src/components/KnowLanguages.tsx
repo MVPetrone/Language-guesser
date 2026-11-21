@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react'
 import { LANGUAGES, type LangCode, type Language } from '../data/languages.ts'
 import { MIN_POOL } from '../engine/game.ts'
+import { Flag } from './Flag.tsx'
 import { Icon } from './Icon.tsx'
 
 type Region =
@@ -198,7 +199,7 @@ export function KnowLanguages({ initial, firstVisit, onSave, onCancel }: Props) 
                     data-testid={`know-${l.code}`}
                   />
                   <span className="know-item__flag" aria-hidden="true">
-                    {l.flag}
+                    <Flag code={l.code} />
                   </span>
                   <span className="know-item__text">
                     <span className="know-item__name">{l.name}</span>

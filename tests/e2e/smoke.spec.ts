@@ -277,3 +277,19 @@ test('a replay does not repeat any clip from the previous game', async ({ page }
   expect(heard.length).toBe(first.size + second.size)
   expect(errors).toEqual([])
 })
+
+test('reveal shows a real flag image at a desktop viewport', async ({ page }) => {
+  const errors = trackErrors(page)
+  await page.setViewportSize({ width: 1280, height: 800 })
+  await page.goto('./?seed=flags')
+  await skipKnown(page)
+  await page.getByRole('button', { name: /start/i }).click()
+  await page.getByTestId('option-0').click()
+  await expect(page.getByTestId('verdict')).toBeVisible()
+
+  const flag = page.locator('.answer__flag img.flag')
+  await expect(flag).toHaveCount(1)
+  await expect(flag).toBeVisible()
+  await expect.poll(() => flag.evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth)).toBeGreaterThan(0)
+  expect(errors).toEqual([])
+})

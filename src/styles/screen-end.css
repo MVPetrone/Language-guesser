@@ -228,6 +228,10 @@
   margin-inline-end: var(--s-2);
 }
 
+.log__flag .flag {
+  width: 1.25rem;
+}
+
 .log__detail {
   color: var(--text-2);
   text-align: end;
