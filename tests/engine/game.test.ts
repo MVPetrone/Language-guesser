@@ -93,7 +93,7 @@ describe('buildRound', () => {
     const chi2 = counts.reduce((acc, c) => acc + (c - expected) ** 2 / expected, 0)
     expect(chi2).toBeLessThan(16.27)
     for (const c of counts) expect(Math.abs(c - expected) / expected).toBeLessThan(0.05)
-    // 20k rounds over the full 76-language roster: several seconds on a small machine.
+    // 20k rounds over the full 72-language roster: several seconds on a small machine.
   }, 30_000)
 
   it('falls back to other tiers when the answer tier is too small', () => {

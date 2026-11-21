@@ -10,7 +10,7 @@ export interface Sentence {
   /** Gloss shown on the reveal. Never spoken, never scored. */
   english: string
   /**
-   * One fixed English source translated 76 ways. Best-effort renderings, not
+   * One fixed English source translated 72 ways. Best-effort renderings, not
    * verified by native speakers — the puzzle is the sound of the language, so
    * rounds are never scored on translation accuracy. Chosen to avoid
    * internationalisms (coffee, hello, taxi, …) that give the language away.
