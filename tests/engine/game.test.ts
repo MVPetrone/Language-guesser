@@ -396,23 +396,23 @@ describe('memory across replays', () => {
   })
 
   it('never repeats a clip across replays until the level pool is used up', () => {
-    // Normal: 40 tier-1/2 languages × 2 voices × 3 sentences = 240 clips = 24 games.
+    // Normal: 40 tier-1/2 languages × 2 voices × 5 sentences = 400 clips = 40 games.
     for (let seed = 0; seed < 10; seed++) {
       let heard: string[] = []
-      for (let g = 0; g < 24; g++) heard = [...heard, ...playGame(seed * 100 + g, 'normal', heard)]
-      expect(heard).toHaveLength(240)
-      expect(new Set(heard).size).toBe(240)
+      for (let g = 0; g < 40; g++) heard = [...heard, ...playGame(seed * 100 + g, 'normal', heard)]
+      expect(heard).toHaveLength(400)
+      expect(new Set(heard).size).toBe(400)
     }
   })
 
   it('once everything was heard, brings back the clips heard longest ago', () => {
-    // Easy: 9 tier-1 languages × 2 × 2 = 36 clips; game 4 must reuse 4 of them.
+    // Easy: 9 tier-1 languages × 2 × 4 = 72 clips; game 8 must reuse 8 of them.
     for (let seed = 0; seed < 50; seed++) {
       let heard: string[] = []
-      for (let g = 0; g < 3; g++) heard = [...heard, ...playGame(seed * 10 + g, 'easy', heard)]
-      expect(new Set(heard).size).toBe(30)
-      const repeats = playGame(seed * 10 + 3, 'easy', heard).filter((k) => heard.includes(k))
-      expect(repeats).toHaveLength(4)
+      for (let g = 0; g < 7; g++) heard = [...heard, ...playGame(seed * 10 + g, 'easy', heard)]
+      expect(new Set(heard).size).toBe(70)
+      const repeats = playGame(seed * 10 + 7, 'easy', heard).filter((k) => heard.includes(k))
+      expect(repeats).toHaveLength(8)
       for (const k of repeats) expect(heard.indexOf(k)).toBeLessThan(heard.length / 2)
     }
   })

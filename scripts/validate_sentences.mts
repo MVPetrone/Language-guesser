@@ -23,7 +23,7 @@ export const BANDS: Record<SentenceLevel, readonly [number, number]> = {
   2: [10, 16],
   3: [14, 22],
 }
-export const LEVEL_COUNTS: Record<SentenceLevel, number> = { 1: 2, 2: 3, 3: 3 }
+export const LEVEL_COUNTS: Record<SentenceLevel, number> = { 1: 4, 2: 5, 3: 5 }
 export const VERBOSITY_RANGE = [0.6, 1.6] as const
 
 type Script =
