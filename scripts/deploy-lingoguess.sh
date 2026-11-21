@@ -53,6 +53,9 @@ fi
 
 if [ "${1:-}" = "--ship" ]; then
   echo "== trigger Hostinger Git deploy"
-  # Repo is now lingo-guess; GitHub also redirects the old URL.
-  python3 /root/hz.py execute "{\"operation\":\"hosting_git_deploy-website-repository\",\"params\":{\"username\":\"$USER_NAME\",\"domain\":\"$DOMAIN\",\"repository_url\":\"https://github.com/MVPetrone/lingo-guess.git\",\"branch\":\"$BRANCH\"}}"
+  # The hPanel git binding is registered against the pre-rename URL. Passing the
+  # new lingo-guess URL returns HTTP 422 ("directory already holds another
+  # repository or branch"), so keep this in sync with `list-website-repositories`.
+  # GitHub 301-redirects the old URL to lingo-guess, so the clone still works.
+  python3 /root/hz.py execute "{\"operation\":\"hosting_git_deploy-website-repository\",\"params\":{\"username\":\"$USER_NAME\",\"domain\":\"$DOMAIN\",\"repository_url\":\"https://github.com/MVPetrone/Language-guesser.git\",\"branch\":\"$BRANCH\"}}"
 fi
