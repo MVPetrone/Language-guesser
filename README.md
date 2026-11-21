@@ -3,6 +3,13 @@
 Hear one sentence, name the language. A listening game across 72 languages —
 10 rounds, 3 lives, four difficulty tiers. Live at **[lingoguess.com](https://lingoguess.com)**.
 
+## Modes
+
+- **Classic** — four difficulties (easy to expert), multiple-choice answers.
+- **Daily Challenge** — one deterministic challenge per Europe/London day (10 rounds,
+  3 lives, typed answers with an autocomplete dropdown). Everyone gets the same rounds,
+  so scores are comparable. Reachable at `?daily=1`.
+
 ## Stack
 
 - React 19 + TypeScript + Vite (SPA, no router — screen state lives in `src/engine/game.ts`)

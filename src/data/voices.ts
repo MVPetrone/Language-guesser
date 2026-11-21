@@ -9,6 +9,9 @@ import type { LangCode } from './languages.ts'
  * `no-NO` has no voices of its own; it uses its family `nb-NO`.
  * Checked against `edge-tts --list-voices` by `node scripts/validate_voices.mts`.
  */
+// NOTE: th-TH, el-GR and da-DK index 0 use the multilingual Ava voice because
+// Microsoft retired PremwadeeNeural, AthinaNeural and ChristelNeural (they now
+// return no audio). Their native male voices remain at index 1.
 export const VOICES_BY_LANG: Record<LangCode, readonly string[]> = {
   // en-US hand-picked, NOT lowest-id: the lowest-id female is en-US-AnaNeural, a
   // "Cartoon/Cute" child voice, which is wrong for a language-identification game.
@@ -29,18 +32,18 @@ export const VOICES_BY_LANG: Record<LangCode, readonly string[]> = {
   'hu-HU': ['hu-HU-NoemiNeural', 'hu-HU-TamasNeural'],
   'ro-RO': ['ro-RO-AlinaNeural', 'ro-RO-EmilNeural'],
   'bg-BG': ['bg-BG-KalinaNeural', 'bg-BG-BorislavNeural'],
-  'el-GR': ['el-GR-AthinaNeural', 'el-GR-NestorasNeural'],
+  'el-GR': ['en-US-AvaMultilingualNeural', 'el-GR-NestorasNeural'],
   'tr-TR': ['tr-TR-EmelNeural', 'tr-TR-AhmetNeural'],
   'he-IL': ['he-IL-HilaNeural', 'he-IL-AvriNeural'],
   'fa-IR': ['fa-IR-DilaraNeural', 'fa-IR-FaridNeural'],
-  'th-TH': ['th-TH-PremwadeeNeural', 'th-TH-NiwatNeural'],
+  'th-TH': ['en-US-AvaMultilingualNeural', 'th-TH-NiwatNeural'],
   'vi-VN': ['vi-VN-HoaiMyNeural', 'vi-VN-NamMinhNeural'],
   'fil-PH': ['fil-PH-BlessicaNeural', 'fil-PH-AngeloNeural'],
   'sw-KE': ['sw-KE-ZuriNeural', 'sw-KE-RafikiNeural'],
   'af-ZA': ['af-ZA-AdriNeural', 'af-ZA-WillemNeural'],
   'cy-GB': ['cy-GB-NiaNeural', 'cy-GB-AledNeural'],
   'sv-SE': ['sv-SE-SofieNeural', 'sv-SE-MattiasNeural'],
-  'da-DK': ['da-DK-ChristelNeural', 'da-DK-JeppeNeural'],
+  'da-DK': ['en-US-AvaMultilingualNeural', 'da-DK-JeppeNeural'],
   'no-NO': ['nb-NO-PernilleNeural', 'nb-NO-FinnNeural'],
   'cs-CZ': ['cs-CZ-VlastaNeural', 'cs-CZ-AntoninNeural'],
   'sk-SK': ['sk-SK-ViktoriaNeural', 'sk-SK-LukasNeural'],

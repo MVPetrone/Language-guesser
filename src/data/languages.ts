@@ -111,11 +111,11 @@ export const LANGUAGES: Language[] = [
   { code: 'hu-HU', name: 'Hungarian', nativeName: 'Magyar', flag: '🇭🇺', family: 'Uralic', tier: 2, voice: 'hu-HU-NoemiNeural', fact: 'Hungarian always stresses the first syllable of a word.' },
   { code: 'ro-RO', name: 'Romanian', nativeName: 'Română', flag: '🇷🇴', family: 'Romance', tier: 2, voice: 'ro-RO-AlinaNeural', fact: 'Romanian is the only major Romance language that attaches the definite article to the end of nouns.' },
   { code: 'bg-BG', name: 'Bulgarian', nativeName: 'Български', flag: '🇧🇬', family: 'Slavic', tier: 2, voice: 'bg-BG-KalinaNeural', fact: 'The Cyrillic script was developed in the First Bulgarian Empire.' },
-  { code: 'el-GR', name: 'Greek', nativeName: 'Ελληνικά', flag: '🇬🇷', family: 'Hellenic', tier: 2, voice: 'el-GR-AthinaNeural', fact: 'Greek has over 3,000 years of written history.' },
+  { code: 'el-GR', name: 'Greek', nativeName: 'Ελληνικά', flag: '🇬🇷', family: 'Hellenic', tier: 2, voice: 'en-US-AvaMultilingualNeural', fact: 'Greek has over 3,000 years of written history.' },
   { code: 'tr-TR', name: 'Turkish', nativeName: 'Türkçe', flag: '🇹🇷', family: 'Turkic', tier: 2, voice: 'tr-TR-EmelNeural', fact: 'Turkish switched from Arabic to Latin script in 1928.' },
   { code: 'he-IL', name: 'Hebrew', nativeName: 'עברית', flag: '🇮🇱', family: 'Semitic', tier: 2, voice: 'he-IL-HilaNeural', fact: 'Hebrew was revived as an everyday spoken language in the late 19th century.' },
   { code: 'fa-IR', name: 'Persian', nativeName: 'فارسی', flag: '🇮🇷', family: 'Indo-Iranian', tier: 2, voice: 'fa-IR-DilaraNeural', fact: 'Persian has no grammatical gender — one pronoun covers "he" and "she".' },
-  { code: 'th-TH', name: 'Thai', nativeName: 'ไทย', flag: '🇹🇭', family: 'Kra–Dai', tier: 2, voice: 'th-TH-PremwadeeNeural', fact: 'Thai has five lexical tones and writes without spaces between words.' },
+  { code: 'th-TH', name: 'Thai', nativeName: 'ไทย', flag: '🇹🇭', family: 'Kra–Dai', tier: 2, voice: 'en-US-AvaMultilingualNeural', fact: 'Thai has five lexical tones and writes without spaces between words.' },
   { code: 'vi-VN', name: 'Vietnamese', nativeName: 'Tiếng Việt', flag: '🇻🇳', family: 'Austroasiatic', tier: 2, voice: 'vi-VN-HoaiMyNeural', fact: 'Vietnamese uses a Latin alphabet with diacritics to mark six tones.' },
   { code: 'fil-PH', name: 'Filipino', nativeName: 'Filipino', flag: '🇵🇭', family: 'Austronesian', tier: 2, voice: 'fil-PH-BlessicaNeural', fact: 'Filipino borrows heavily from Spanish and English — "Taglish" mixing is common.' },
   { code: 'sw-KE', name: 'Swahili', nativeName: 'Kiswahili', flag: '🇰🇪', family: 'Bantu', tier: 2, voice: 'sw-KE-ZuriNeural', fact: 'Swahili is a lingua franca for over 100 million people in East Africa.' },
@@ -139,7 +139,7 @@ export const LANGUAGES: Language[] = [
 
   // Tier 3 — expert: confusable groups live together here
   { code: 'sv-SE', name: 'Swedish', nativeName: 'Svenska', flag: '🇸🇪', family: 'Germanic', tier: 3, voice: 'sv-SE-SofieNeural', fact: 'Swedish has a pitch accent that can distinguish otherwise identical words.' },
-  { code: 'da-DK', name: 'Danish', nativeName: 'Dansk', flag: '🇩🇰', family: 'Germanic', tier: 3, voice: 'da-DK-ChristelNeural', fact: 'Danish has the "stød", a creaky glottal feature that can change word meaning.' },
+  { code: 'da-DK', name: 'Danish', nativeName: 'Dansk', flag: '🇩🇰', family: 'Germanic', tier: 3, voice: 'en-US-AvaMultilingualNeural', fact: 'Danish has the "stød", a creaky glottal feature that can change word meaning.' },
   { code: 'no-NO', name: 'Norwegian', nativeName: 'Norsk', flag: '🇳🇴', family: 'Germanic', tier: 3, voice: 'nb-NO-PernilleNeural', fact: 'Norwegian has two official written standards: Bokmål and Nynorsk.' },
   { code: 'cs-CZ', name: 'Czech', nativeName: 'Čeština', flag: '🇨🇿', family: 'Slavic', tier: 3, voice: 'cs-CZ-VlastaNeural', fact: 'Czech has the sound "ř", found in almost no other language.' },
   { code: 'sk-SK', name: 'Slovak', nativeName: 'Slovenčina', flag: '🇸🇰', family: 'Slavic', tier: 3, voice: 'sk-SK-ViktoriaNeural', fact: 'Slovak and Czech are largely mutually intelligible.' },
