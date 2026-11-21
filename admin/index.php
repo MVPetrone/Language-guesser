@@ -34,7 +34,7 @@ $message = $messages[is_string($error) ? $error : ''] ?? '';
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="robots" content="noindex, nofollow" />
-<title>Sign in · LingoGuess Admin</title>
+<title>Sign in · Lingo Guess Admin</title>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="stylesheet" href="/fonts/fonts.css" />
 <link rel="stylesheet" href="/admin/assets/admin.css" />
@@ -44,7 +44,7 @@ $message = $messages[is_string($error) ? $error : ''] ?? '';
     <div class="brand">
       <span class="brand-mark" aria-hidden="true"></span>
       <div>
-        <strong>LingoGuess</strong>
+        <strong>Lingo Guess</strong>
         <small>Admin · CRM</small>
       </div>
     </div>
