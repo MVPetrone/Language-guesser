@@ -1,0 +1,333 @@
+/* ============================================================================
+   DAILY — the start-screen card, the intro, and the typed answer
+   The start screen's one amber element is its Start CTA, so the card speaks in
+   the machine colour; the round's is the orb, so "Guess" is solid fog. The
+   intro and the reveal keep amber for their single primary action.
+   ========================================================================== */
+
+/* ---- start-screen card --------------------------------------------------------- */
+.daily-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--s-3);
+  width: 100%;
+  padding: var(--s-4);
+  border: 1px solid color-mix(in srgb, var(--machine) 55%, transparent);
+  border-radius: var(--r-lg);
+  background-color: var(--caliber-wash);
+  color: var(--text-1);
+  text-align: start;
+  box-shadow: var(--shadow-2);
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition: var(--t-ui);
+}
+
+/* Left edge bar, as on a selected level card. */
+.daily-card::before {
+  content: '';
+  position: absolute;
+  inset-block: var(--s-3);
+  inset-inline-start: -1px;
+  width: var(--edge-w);
+  border-radius: var(--r-pill);
+  background-color: var(--machine);
+}
+
+.daily-card__body {
+  display: grid;
+  gap: var(--s-1);
+  min-width: 0;
+}
+
+.daily-card__eyebrow {
+  color: var(--machine);
+}
+
+.daily-card__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  font-weight: 500;
+  letter-spacing: var(--tracking-display);
+  line-height: var(--lh-snug);
+}
+
+.daily-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-1) var(--s-3);
+  color: var(--text-2);
+  font-size: var(--fs-small);
+}
+
+.daily-card__score {
+  color: var(--text-1);
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.daily-card__icon {
+  width: var(--icon);
+  height: var(--icon);
+  color: var(--machine);
+}
+
+.daily-card.is-done {
+  border-color: var(--line);
+  background-color: var(--surface-1);
+}
+
+.daily-card.is-done::before {
+  background-color: var(--line-strong);
+}
+
+.daily-card.is-done .daily-card__eyebrow,
+.daily-card.is-done .daily-card__icon {
+  color: var(--text-3);
+}
+
+@media (hover: hover) {
+  .daily-card:hover {
+    border-color: var(--machine);
+    background-color: color-mix(in srgb, var(--machine) 16%, transparent);
+  }
+
+  .daily-card.is-done:hover {
+    border-color: var(--line-strong);
+    background-color: var(--surface-2);
+  }
+}
+
+.daily-card:active {
+  transform: scale(0.99);
+}
+
+.daily-card:focus-visible {
+  outline: none;
+  box-shadow: var(--ring-caliber);
+}
+
+/* ---- intro --------------------------------------------------------------------- */
+.daily__cta {
+  width: 100%;
+}
+
+.daily__back {
+  align-self: center;
+}
+
+.screen--daily {
+  min-height: 100svh;
+  justify-content: center;
+}
+
+.daily-head {
+  display: grid;
+  gap: var(--s-2);
+}
+
+.daily-head__date {
+  color: var(--machine);
+}
+
+.daily-head__title {
+  font-size: var(--fs-h1);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.daily-head__lede {
+  max-width: 34rem;
+  color: var(--text-2);
+}
+
+.daily-streak {
+  padding: var(--s-3) var(--s-4);
+  border: var(--hairline);
+  border-radius: var(--r-md);
+  background-color: var(--surface-1);
+  color: var(--text-1);
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  letter-spacing: var(--tracking-mono);
+}
+
+/* ---- typed answer -------------------------------------------------------------- */
+.typed {
+  display: grid;
+  gap: var(--s-3);
+}
+
+.typed__label {
+  text-align: center;
+}
+
+.typed__row {
+  display: flex;
+  gap: var(--s-2);
+}
+
+.typed__field {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+}
+
+.typed__icon {
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-start: var(--s-3);
+  width: var(--icon);
+  height: var(--icon);
+  color: var(--text-3);
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
+.typed__input {
+  width: 100%;
+  min-height: var(--row-h);
+  padding: 0 var(--s-3) 0 calc(var(--s-3) + var(--icon) + var(--s-2));
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-md);
+  background-color: var(--surface-2);
+  color: var(--text-1);
+  /* 16px minimum: anything smaller makes iOS Safari zoom on focus. */
+  font-size: max(1rem, var(--fs-body));
+  appearance: none;
+  transition: var(--t-ui);
+}
+
+.typed__input::placeholder {
+  color: var(--text-3);
+  opacity: 1;
+}
+
+.typed__input:focus-visible {
+  border-color: var(--machine);
+  outline: none;
+  box-shadow: var(--ring-caliber);
+}
+
+.typed__input[aria-expanded='true'] {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  /* Field and list read as one outlined box; the ring would cut between them. */
+  box-shadow: none;
+}
+
+/* On phones the list opens upward: the field sits low, in thumb reach, and the
+   keyboard covers everything beneath it. It overlays the player, never the field. */
+.typed__list {
+  position: absolute;
+  inset-inline: 0;
+  bottom: calc(100% - 1px);
+  z-index: var(--z-overlay);
+  display: grid;
+  max-height: min(40vh, 22rem);
+  margin: 0;
+  padding: var(--s-1);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border: 1px solid var(--machine);
+  border-bottom-color: var(--line-faint);
+  border-radius: var(--r-md) var(--r-md) 0 0;
+  background-color: var(--surface-1);
+  box-shadow: var(--shadow-3);
+  list-style: none;
+}
+
+.typed__list[hidden] {
+  display: none;
+}
+
+.typed__option {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  min-height: max(var(--tap-min), 2.75rem);
+  padding: var(--s-2) var(--s-3);
+  border-radius: var(--r-sm);
+  color: var(--text-1);
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.typed__option.is-active {
+  background-color: var(--caliber-wash);
+  box-shadow: inset var(--edge-w) 0 0 var(--machine);
+}
+
+@media (hover: hover) {
+  .typed__option:hover {
+    background-color: var(--surface-2);
+  }
+
+  .typed__option.is-active:hover {
+    background-color: var(--caliber-wash);
+  }
+}
+
+.typed__flag {
+  flex: none;
+  width: 1.5em;
+  text-align: center;
+  line-height: 1;
+}
+
+.typed__name {
+  flex: none;
+  font-weight: 600;
+}
+
+.typed__native {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--text-2);
+  font-size: var(--fs-small);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.typed__go {
+  flex: none;
+  padding-inline: var(--s-4);
+}
+
+@media (min-width: 48rem) {
+  .typed__go {
+    padding-inline: var(--s-6);
+  }
+
+  .daily-card {
+    padding: var(--s-4) var(--s-5);
+  }
+
+  /* No on-screen keyboard and room below: open downward, clear of the orb. */
+  .typed__input[aria-expanded='true'] {
+    border-radius: var(--r-md) var(--r-md) 0 0;
+  }
+
+  .typed__list {
+    top: calc(100% - 1px);
+    bottom: auto;
+    border-top-color: var(--line-faint);
+    border-bottom-color: var(--machine);
+    border-radius: 0 0 var(--r-md) var(--r-md);
+    max-height: min(32vh, 15rem);
+  }
+
+  .daily__cta {
+    width: auto;
+    min-width: 18rem;
+    justify-self: start;
+    align-self: flex-start;
+  }
+
+  .daily__back {
+    align-self: flex-start;
+  }
+}

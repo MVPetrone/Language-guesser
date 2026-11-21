@@ -108,6 +108,11 @@ export const track = (name: string, props: Props = {}): void => {
   }
 };
 
-export const trackPageview = (): void => {
-  track('pageview', { path: window.location.pathname });
+/**
+ * `view` names an in-app screen with no URL of its own (e.g. 'daily'); it is
+ * reported as a virtual path under the current one ("/daily").
+ */
+export const trackPageview = (view?: string): void => {
+  const path = window.location.pathname;
+  track('pageview', { path: view ? `${path.replace(/\/$/, '')}/${view}` : path });
 };

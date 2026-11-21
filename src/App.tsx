@@ -1,4 +1,5 @@
 import { useEffect, useReducer, useRef, useState, type ReactNode } from 'react'
+import { DailyChallenge } from './components/DailyChallenge.tsx'
 import { EndScreen } from './components/EndScreen.tsx'
 import { HUD } from './components/HUD.tsx'
 import { KnowLanguages } from './components/KnowLanguages.tsx'
@@ -14,14 +15,25 @@ import {
   initialState,
   isOver,
   nextRound,
+  MIN_POOL,
   type Difficulty,
   type GameState,
 } from './engine/game.ts'
+import { currentStreak, londonDateKey } from './engine/daily.ts'
 import { seedFromString } from './engine/rng.ts'
 import { useAudio } from './hooks/useAudio.ts'
 import { track, trackPageview } from './lib/analytics.ts'
 import { AmbientField, ScreenTransition } from './motion/index.ts'
-import { appendHeard, loadBestScore, loadHeard, loadKnown, saveBestScore, saveHeard, saveKnown } from './storage.ts'
+import {
+  appendHeard,
+  loadBestScore,
+  loadDaily,
+  loadHeard,
+  loadKnown,
+  saveBestScore,
+  saveHeard,
+  saveKnown,
+} from './storage.ts'
 
 type AppState = { screen: 'start' } | { screen: 'game'; game: GameState }
 
@@ -48,6 +60,19 @@ function reducer(state: AppState, action: Action): AppState {
 function firstSeed(): number | null {
   const param = new URLSearchParams(window.location.search).get('seed')
   return param ? seedFromString(param) : null
+}
+
+/** `?daily=1` opens the Daily Challenge directly, so a shared link lands on it. */
+function firstDaily(): boolean {
+  return new URLSearchParams(window.location.search).get('daily') === '1'
+}
+
+/** Drops `?daily=1` once the player leaves the challenge, so a reload stays on the menu. */
+function clearDailyParam() {
+  const url = new URL(window.location.href)
+  if (!url.searchParams.has('daily')) return
+  url.searchParams.delete('daily')
+  window.history.replaceState(null, '', url)
 }
 
 function randomSeed(): number {
@@ -79,6 +104,8 @@ export default function App() {
   // distractors). null = not asked yet, so the picker is shown first.
   const [known, setKnown] = useState(initialKnown)
   const [editingKnown, setEditingKnown] = useState(false)
+  const [daily, setDaily] = useState(firstDaily)
+  const [dailyRecord, setDailyRecord] = useState(loadDaily)
   const pool = LANGUAGES.filter((l) => !known?.includes(l.code))
 
   const game = state.screen === 'game' ? state.game : null
@@ -190,6 +217,27 @@ export default function App() {
     setEditingKnown(false)
   }
 
+  const leaveDaily = () => {
+    clearDailyParam()
+    setDaily(false)
+  }
+
+  // The daily is the same for everyone, so it skips the known-languages
+  // picker; a shared link plays straight away.
+  if (!game && daily) {
+    return (
+      <DailyChallenge
+        record={dailyRecord}
+        onRecord={setDailyRecord}
+        onBack={leaveDaily}
+        onPlayNormal={() => {
+          leaveDaily()
+          if (known !== null && pool.length >= MIN_POOL) start('normal')
+        }}
+      />
+    )
+  }
+
   if (!game && (known === null || editingKnown)) {
     return frame(
       <KnowLanguages
@@ -202,6 +250,7 @@ export default function App() {
   }
 
   if (!game) {
+    const today = londonDateKey()
     return frame(
       <StartScreen
         bestScore={bestScore}
@@ -209,6 +258,12 @@ export default function App() {
         excludedCount={LANGUAGES.length - pool.length}
         onStart={start}
         onEditKnown={() => setEditingKnown(true)}
+        daily={{
+          date: today,
+          streak: currentStreak(dailyRecord, today),
+          result: dailyRecord?.results[today] ?? null,
+        }}
+        onDaily={() => setDaily(true)}
       />,
     )
   }

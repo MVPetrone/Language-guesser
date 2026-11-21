@@ -29,11 +29,45 @@ function verdict(result: RoundResult): { text: string; detail: string; tone: Ton
   }
 }
 
+/** The correct language, its transcript and English gloss, and a fact. */
+export function AnswerPanel({ round }: { round: RoundSpec }) {
+  const { language } = round
+  const sentence = sentenceById(round.sentenceId)
+  return (
+    <section className="answer panel" aria-label="Answer">
+      <div className="answer__head">
+        <h2 className="answer__native" lang={language.code} dir="auto">
+          {language.nativeName}
+        </h2>
+        <p className="eyebrow answer__meta">
+          <span className="answer__flag" aria-hidden="true">
+            <Flag code={language.code} />
+          </span>
+          <span>{language.name}</span>
+          <span aria-hidden="true">·</span>
+          <span>{language.family}</span>
+        </p>
+      </div>
+
+      <blockquote className="phrase">
+        <p className="eyebrow">Transcript</p>
+        <p className="phrase__native" lang={language.code} dir="auto">
+          {sentence.text[language.code]}
+        </p>
+        <p className="phrase__gloss">{sentence.english}</p>
+      </blockquote>
+
+      <p className="fact">
+        <Icon name="aperture" className="fact__icon" />
+        <span>{language.fact}</span>
+      </p>
+    </section>
+  )
+}
+
 export function Reveal({ round, result, isFinal, onReplay, onNext }: Props) {
   useHotkeys({ enter: onNext, n: onNext, r: onReplay })
 
-  const { language } = round
-  const sentence = sentenceById(round.sentenceId)
   const pickedIndex = round.options.findIndex((l) => l.code === result.guessCode)
   const { text, detail, tone, icon } = verdict(result)
 
@@ -44,34 +78,7 @@ export function Reveal({ round, result, isFinal, onReplay, onNext }: Props) {
         <span className="verdict__text">{text}</span> <span className="verdict__detail">{detail}</span>
       </p>
 
-      <section className="answer panel" aria-label="Answer">
-        <div className="answer__head">
-          <h2 className="answer__native" lang={language.code} dir="auto">
-            {language.nativeName}
-          </h2>
-          <p className="eyebrow answer__meta">
-            <span className="answer__flag" aria-hidden="true">
-              <Flag code={language.code} />
-            </span>
-            <span>{language.name}</span>
-            <span aria-hidden="true">·</span>
-            <span>{language.family}</span>
-          </p>
-        </div>
-
-        <blockquote className="phrase">
-          <p className="eyebrow">Transcript</p>
-          <p className="phrase__native" lang={language.code} dir="auto">
-            {sentence.text[language.code]}
-          </p>
-          <p className="phrase__gloss">{sentence.english}</p>
-        </blockquote>
-
-        <p className="fact">
-          <Icon name="aperture" className="fact__icon" />
-          <span>{language.fact}</span>
-        </p>
-      </section>
+      <AnswerPanel round={round} />
 
       <GuessGrid
         options={round.options}
