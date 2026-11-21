@@ -23,7 +23,7 @@ const TYPES = {
 
 const server = createServer(async (req, res) => {
   const url = new URL(req.url ?? '/', 'http://localhost')
-  if (url.pathname === '/' || url.pathname === BASE.slice(0, -1)) {
+  if (BASE !== '/' && url.pathname === BASE.slice(0, -1)) {
     res.writeHead(302, { location: BASE + url.search })
     return res.end()
   }
