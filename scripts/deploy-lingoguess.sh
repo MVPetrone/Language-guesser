@@ -53,5 +53,7 @@ fi
 
 if [ "${1:-}" = "--ship" ]; then
   echo "== trigger Hostinger Git deploy"
-  python3 /root/hz.py execute "{\"operation\":\"hosting_git_deploy-website-repository\",\"params\":{\"username\":\"$USER_NAME\",\"domain\":\"$DOMAIN\",\"repository_url\":\"https://github.com/MVPetrone/lingo-guess.git\",\"branch\":\"$BRANCH\"}}"
+  # Repo still lives at Language-guesser until the GitHub rename lands (token lacks
+  # admin scope). GitHub redirects renamed URLs, so this keeps working afterwards.
+  python3 /root/hz.py execute "{\"operation\":\"hosting_git_deploy-website-repository\",\"params\":{\"username\":\"$USER_NAME\",\"domain\":\"$DOMAIN\",\"repository_url\":\"https://github.com/MVPetrone/Language-guesser.git\",\"branch\":\"$BRANCH\"}}"
 fi
