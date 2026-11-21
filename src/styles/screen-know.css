@@ -85,9 +85,13 @@
 }
 
 .know-item__flag {
-  font-size: var(--fs-h3);
-  line-height: 1;
-  letter-spacing: 0;
+  display: inline-flex;
+  line-height: 0;
+}
+
+.know-item__flag .flag {
+  width: 1.5rem;
+  vertical-align: 0;
 }
 
 .know-item__text {

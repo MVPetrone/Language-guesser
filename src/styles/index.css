@@ -8,7 +8,7 @@
      tokens     frozen raw values (tokens.css — never edit)
      base       semantic aliases, reset, page, focus, typography
      surfaces   card / panel / glass / hairline primitives
-     controls   buttons, option rows, inputs, chips, switch, kbd, links
+     controls   buttons, option rows, inputs, chips, switch, kbd, links, flag
      hud        the in-game instrument bar
      screens    one file per screen, grouped by screen
 
@@ -27,6 +27,7 @@
 @import url('./base.css') layer(base);
 @import url('./surfaces.css') layer(surfaces);
 @import url('./controls.css') layer(controls);
+@import url('./flag.css') layer(controls);
 @import url('./hud.css') layer(hud);
 @import url('./screen-start.css') layer(screens);
 @import url('./screen-round.css') layer(screens);

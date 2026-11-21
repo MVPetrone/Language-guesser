@@ -2,6 +2,7 @@ import { LANGUAGES } from '../data/languages.ts'
 import { sentenceById } from '../data/sentences.ts'
 import type { RoundResult, RoundSpec } from '../engine/game.ts'
 import { useHotkeys } from '../hooks/useHotkeys.ts'
+import { Flag } from './Flag.tsx'
 import { GuessGrid } from './GuessGrid.tsx'
 import { Icon, type IconName } from './Icon.tsx'
 
@@ -49,11 +50,9 @@ export function Reveal({ round, result, isFinal, onReplay, onNext }: Props) {
             {language.nativeName}
           </h2>
           <p className="eyebrow answer__meta">
-            {language.flag && (
-              <span className="answer__flag" aria-hidden="true">
-                {language.flag}
-              </span>
-            )}
+            <span className="answer__flag" aria-hidden="true">
+              <Flag code={language.code} />
+            </span>
             <span>{language.name}</span>
             <span aria-hidden="true">·</span>
             <span>{language.family}</span>

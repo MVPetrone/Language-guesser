@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { LANGUAGES } from '../data/languages.ts'
 import type { GameState, RoundResult } from '../engine/game.ts'
 import { copyText, shareText } from '../share.ts'
+import { Flag } from './Flag.tsx'
 import { Icon } from './Icon.tsx'
 
 interface Props {
@@ -130,9 +131,9 @@ export function EndScreen({ game, bestScore, isNewBest, shareUrl, onPlayAgain, o
                   {String(r.roundNumber).padStart(2, '0')}
                 </span>
                 <span className="log__answer">
-                  {answer?.flag && (
+                  {answer && (
                     <span className="log__flag" aria-hidden="true">
-                      {answer.flag}
+                      <Flag code={answer.code} />
                     </span>
                   )}
                   {answer?.name}
