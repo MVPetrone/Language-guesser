@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import type { Language } from '../data/languages.ts'
+import { formatDateKey, type DailyResult } from '../engine/daily.ts'
 import type { Difficulty } from '../engine/game.ts'
 import { DIFFICULTY_TIERS, LIVES, MIN_POOL, ROUNDS, answerTiers, optionCountFor } from '../engine/game.ts'
 import { Icon } from './Icon.tsx'
@@ -33,9 +34,41 @@ interface Props {
   excludedCount: number
   onStart: (difficulty: Difficulty) => void
   onEditKnown: () => void
+  /** Today's Daily Challenge: its date, the live streak, and the result once done. */
+  daily: { date: string; streak: number; result: DailyResult | null }
+  onDaily: () => void
 }
 
-export function StartScreen({ bestScore, pool, excludedCount, onStart, onEditKnown }: Props) {
+/** The way into the Daily Challenge; once played it reads as done until tomorrow. */
+function DailyCard({ daily, onDaily }: Pick<Props, 'daily' | 'onDaily'>) {
+  const { date, streak, result } = daily
+  return (
+    <button
+      type="button"
+      className={`daily-card ${result ? 'is-done' : ''}`}
+      onClick={onDaily}
+      data-testid="daily-card"
+    >
+      <span className="daily-card__body">
+        <span className="eyebrow daily-card__eyebrow">
+          Daily Challenge · <time dateTime={date}>{formatDateKey(date)}</time>
+        </span>
+        <span className="daily-card__title">{result ? 'Done for today — come back tomorrow' : 'Type the language'}</span>
+        <span className="daily-card__meta">
+          {result && (
+            <span className="daily-card__score">
+              {result.correct}/{result.total} · {result.score} pts
+            </span>
+          )}
+          <span>{streak > 0 ? `🔥 ${streak}-day streak` : `Same ${ROUNDS} clips for everyone, every day`}</span>
+        </span>
+      </span>
+      <Icon name={result ? 'check' : 'arrow'} className="daily-card__icon" />
+    </button>
+  )
+}
+
+export function StartScreen({ bestScore, pool, excludedCount, onStart, onEditKnown, daily, onDaily }: Props) {
   const [difficulty, setDifficulty] = useState<Difficulty>('normal')
   const tooFew = pool.length < MIN_POOL
   const tierFallback = !tooFew && answerTiers(pool, difficulty) !== DIFFICULTY_TIERS[difficulty]
@@ -59,6 +92,8 @@ export function StartScreen({ bestScore, pool, excludedCount, onStart, onEditKno
           {ROUNDS} rounds · {LIVES} lives · {pool.length} languages
         </p>
       </header>
+
+      <DailyCard daily={daily} onDaily={onDaily} />
 
       <fieldset className="levels">
         <legend className="eyebrow levels__legend">Difficulty</legend>

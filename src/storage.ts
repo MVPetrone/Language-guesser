@@ -1,3 +1,5 @@
+import type { DailyRecord, DailyResult } from './engine/daily.ts'
+
 // localStorage can be disabled, full, or throw on access (Safari private mode,
 // sandboxed iframes, blocked cookies). Every call here degrades to "no value".
 const BEST_KEY = 'gtl:bestScore'
@@ -74,5 +76,42 @@ export function saveKnown(codes: readonly string[]): void {
     window.localStorage.setItem(KNOWN_KEY, JSON.stringify(codes))
   } catch {
     // Not persisted; the choice still applies for this session.
+  }
+}
+
+const DAILY_KEY = 'lingo.daily.v1'
+
+const isCount = (n: unknown): n is number => typeof n === 'number' && Number.isFinite(n) && n >= 0
+const isDateKey = (s: unknown): s is string => typeof s === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(s)
+
+/** The Daily Challenge record, or null if none is stored or it is unreadable. */
+export function loadDaily(): DailyRecord | null {
+  try {
+    const raw = window.localStorage.getItem(DAILY_KEY)
+    if (raw === null) return null
+    const parsed: unknown = JSON.parse(raw)
+    if (typeof parsed !== 'object' || parsed === null) return null
+    const { lastDate, streak, best, results } = parsed as Record<string, unknown>
+    if (!isDateKey(lastDate) || !isCount(streak) || !isCount(best)) return null
+    const clean: Record<string, DailyResult> = {}
+    if (typeof results === 'object' && results !== null) {
+      for (const [date, r] of Object.entries(results)) {
+        if (!isDateKey(date) || typeof r !== 'object' || r === null) continue
+        const { score, correct, total, grid } = r as Record<string, unknown>
+        if (!isCount(score) || !isCount(correct) || !isCount(total)) continue
+        clean[date] = typeof grid === 'string' ? { score, correct, total, grid } : { score, correct, total }
+      }
+    }
+    return { lastDate, streak, best, results: clean }
+  } catch {
+    return null
+  }
+}
+
+export function saveDaily(record: DailyRecord): void {
+  try {
+    window.localStorage.setItem(DAILY_KEY, JSON.stringify(record))
+  } catch {
+    // Not persisted; today's result still shows for this session.
   }
 }

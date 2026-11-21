@@ -33,3 +33,4 @@
 @import url('./screen-reveal.css') layer(screens);
 @import url('./screen-end.css') layer(screens);
 @import url('./screen-know.css') layer(screens);
+@import url('./screen-daily.css') layer(screens);

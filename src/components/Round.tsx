@@ -38,16 +38,17 @@ function ApertureRings() {
   )
 }
 
-export function Round({ round, audio, slow, allowSlow, onToggleSlow, onGuess, onSkip }: Props) {
-  // One hotkey per option; expert shows five.
-  const hotkeys: Record<string, () => void> = { r: audio.replay }
-  for (let i = 0; i < round.options.length; i++) hotkeys[String(i + 1)] = () => onGuess(i)
-  useHotkeys(hotkeys)
+type PlayerProps = Omit<Props, 'onGuess'>
 
+/**
+ * The listening half of a round: the orb, its waveform and slow switch, and
+ * the autoplay / missing-clip notices. Shared by the normal and daily rounds.
+ */
+export function ClipPlayer({ round, audio, slow, allowSlow, onToggleSlow, onSkip }: PlayerProps) {
   const caption = audio.error ? 'Clip unavailable' : audio.needsTap ? 'Tap to play' : 'Tap to replay'
 
   return (
-    <main className="screen screen--round">
+    <>
       <section className="player" aria-label="Clip">
         <button
           type="button"
@@ -105,6 +106,20 @@ export function Round({ round, audio, slow, allowSlow, onToggleSlow, onGuess, on
           </div>
         </div>
       )}
+    </>
+  )
+}
+
+export function Round({ onGuess, ...player }: Props) {
+  const { round, audio } = player
+  // One hotkey per option; expert shows five.
+  const hotkeys: Record<string, () => void> = { r: audio.replay }
+  for (let i = 0; i < round.options.length; i++) hotkeys[String(i + 1)] = () => onGuess(i)
+  useHotkeys(hotkeys)
+
+  return (
+    <main className="screen screen--round">
+      <ClipPlayer {...player} />
 
       <div className="round__answers">
         <h1 className="eyebrow round__prompt">Which language is this?</h1>
