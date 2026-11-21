@@ -13,7 +13,7 @@ $csrf = csrf_token();
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="robots" content="noindex, nofollow" />
-<title>Activity · LingoGuess Admin</title>
+<title>Activity · Lingo Guess Admin</title>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="stylesheet" href="/fonts/fonts.css" />
 <link rel="stylesheet" href="/admin/assets/admin.css" />
@@ -22,7 +22,7 @@ $csrf = csrf_token();
 <header class="topbar">
   <div class="brand">
     <span class="brand-mark" aria-hidden="true"></span>
-    <div><strong>LingoGuess</strong><small>Admin · CRM</small></div>
+    <div><strong>Lingo Guess</strong><small>Admin · CRM</small></div>
   </div>
   <div class="spacer"></div>
   <span class="who"><?= h((string) $user['username']) ?></span>

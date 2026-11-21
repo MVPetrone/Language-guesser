@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Security + behaviour suite for the LingoGuess admin/CRM.
+Security + behaviour suite for the Lingo Guess admin/CRM.
 
 Runs against any base URL (local PHP server or the live site):
 

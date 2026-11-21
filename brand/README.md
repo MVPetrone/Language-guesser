@@ -1,4 +1,4 @@
-# Guess the Language — identity
+# Lingo Guess — identity
 
 **The aperture ear.** Three concentric rings in calibration cyan (the machine listening)
 are cut by one horizontal slice. Through that slice runs a voice in signal amber: a

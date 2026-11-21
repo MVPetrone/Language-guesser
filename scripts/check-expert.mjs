@@ -3,7 +3,7 @@
 import { chromium } from '@playwright/test'
 import { existsSync } from 'node:fs'
 
-const base = process.argv[2] ?? 'http://127.0.0.1:4173/Language-guesser/'
+const base = process.argv[2] ?? 'http://127.0.0.1:4173/'
 const out = process.argv[3] ?? '/tmp/shots-expert'
 const exec = ['/usr/bin/google-chrome', `${process.env.HOME}/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome`].find((p) => existsSync(p))
 const browser = await chromium.launch({ executablePath: exec, args: ['--no-sandbox'] })

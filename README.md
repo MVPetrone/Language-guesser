@@ -1,32 +1,51 @@
-# React + TypeScript + Vite
+# Lingo Guess
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Hear one sentence, name the language. A listening game across 76 languages —
+10 rounds, 3 lives, four difficulty tiers. Live at **[lingoguess.com](https://lingoguess.com)**.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React 19 + TypeScript + Vite (SPA, no router — screen state lives in `src/engine/game.ts`)
+- Vite base is `/` — the site is served from the domain root
+- PHP 8 + SQLite admin/CRM and first-party analytics collector in `server/admin`
+- Deployed with Hostinger Git deploy from the `deploy/lingoguess` branch
 
-## React Compiler
+## Commands
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm run dev      # vite dev server
+npm run build    # tsc -b && vite build  (base: /)
+npm run test     # vitest unit tests (src/engine, src/motion)
+npm run e2e      # playwright, runs against dist/ via scripts/serve-dist.mjs
+npm run lint     # oxlint
+npm run audio    # regenerate the sentence audio bank
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Layout
+
+| Path | What |
+| --- | --- |
+| `src/engine/` | Pure game logic: RNG, round building, scoring, storage |
+| `src/components/` | Screens: start, round, reveal, end, HUD, guess grid |
+| `src/data/` | Languages, sentences, voices |
+| `src/motion/` | Ambient field, transitions, waveform (has its own docs in `MOTION.md`) |
+| `brand/` | Identity: marks, wordmark, lockups, motion plates. `node brand/tools/build.mjs` regenerates every derived asset |
+| `server/admin/` | PHP 8 + SQLite admin panel, CRM and analytics API (`/admin`) |
+| `scripts/` | Deploy, dist server, screenshot and asset-render helpers |
+| `VERIFICATION.md` | Observed build/test/e2e results |
+
+## Brand assets
+
+Every SVG/PNG in `public/brand`, `public/icons` and `public/og*.png` is generated —
+edit `brand/*.svg` or `brand/tools/*.mjs`, then run:
+
+```bash
+node brand/tools/build.mjs
+```
+
+## Deploy
+
+```bash
+./scripts/deploy-lingoguess.sh          # build, commit, push deploy/lingoguess
+./scripts/deploy-lingoguess.sh --ship   # ...and trigger the Hostinger Git deploy
+```

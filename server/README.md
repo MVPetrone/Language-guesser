@@ -1,4 +1,4 @@
-# LingoGuess Admin / CRM
+# Lingo Guess Admin / CRM
 
 A small PHP 8 + SQLite admin application that lives at `/admin` on
 lingoguess.com, plus a first-party analytics collector that the game posts to.

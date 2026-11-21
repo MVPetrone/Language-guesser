@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" role="img">
-  <title>Guess the Language</title>
+  <title>Lingo Guess</title>
   <path fill="#57e3c9" d="M.25 6A8 8 0 0 1 15.75 6H13.66A6 6 0 0 0 2.34 6ZM.25 10A8 8 0 0 0 15.75 10H13.66A6 6 0 0 1 2.34 10Z"/>
   <path fill="none" stroke="#ffb020" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M1 8H4.2C5.15 8 5.15 4.6 6.1 4.6C8 4.6 8 11.4 9.9 11.4C10.85 11.4 10.85 8 11.8 8H15"/>
 </svg>

@@ -3,9 +3,9 @@ import { defineConfig } from 'vitest/config'
 
 // https://vite.dev/config/
 export default defineConfig({
-  // MUST match the GitHub repo name exactly — GitHub Pages serves project
-  // sites from https://<user>.github.io/<repo>/
-  base: '/Language-guesser/',
+  // The site is served from the domain root (lingoguess.com), so assets,
+  // audio and /admin all resolve from '/'.
+  base: '/',
   plugins: [react()],
   test: {
     environment: 'node',

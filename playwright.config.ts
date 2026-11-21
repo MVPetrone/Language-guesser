@@ -14,7 +14,7 @@ export default defineConfig({
   retries: 0,
   reporter: 'list',
   use: {
-    baseURL: `http://127.0.0.1:${PORT}/Language-guesser/`,
+    baseURL: `http://127.0.0.1:${PORT}/`,
     trace: 'off',
   },
   projects: [
@@ -25,7 +25,7 @@ export default defineConfig({
   ],
   webServer: {
     command: `node scripts/serve-dist.mjs ${PORT}`,
-    url: `http://127.0.0.1:${PORT}/Language-guesser/`,
+    url: `http://127.0.0.1:${PORT}/`,
     reuseExistingServer: false,
     timeout: 15_000,
   },

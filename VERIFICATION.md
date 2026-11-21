@@ -1,6 +1,6 @@
 # Verification evidence — wave 2
 
-Observed on 2026-10-17, branch `feat/guess-the-language-v1`, host with 1.85 GB RAM + 4 GB
+Observed on 2026-10-17, branch `feat/lingo-guess-v1`, host with 1.85 GB RAM + 4 GB
 swap, Node v22.23.0, edge-tts 7.3.1 (`.venv/bin/edge-tts`). Every output below was copied
 from a real run in this session. Nothing was pushed; all commits are local. No Vite dev
 server was run.
@@ -266,7 +266,7 @@ The JS bundle grew from 249.38 kB to 293.94 kB, mostly from the 320 sentence tex
 
 ### runtime — static `dist/` + Playwright → 8 passed, zero page and console errors
 
-`dist/` is served by `scripts/serve-dist.mjs` (plain `node:http`, under `/Language-guesser/`),
+`dist/` is served by `scripts/serve-dist.mjs` (plain `node:http`, under `/lingo-guess/`),
 which Playwright's `webServer` starts.
 
 ```

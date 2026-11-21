@@ -7,7 +7,7 @@ import { createServer } from 'node:http'
 import { extname, join, normalize, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-const BASE = '/Language-guesser/'
+const BASE = '/'
 const DIST = resolve(fileURLToPath(new URL('../dist', import.meta.url)))
 const PORT = Number(process.argv[2] ?? process.env.PORT ?? 4173)
 

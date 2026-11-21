@@ -1,5 +1,5 @@
 /**
- * The wordmark: "GUESS THE LANGUAGE" in Space Grotesk 700, tracking -0.03em,
+ * The wordmark: "LINGO GUESS" in Space Grotesk 700, tracking -0.03em,
  * converted to outlines. Pen positions (kerning + tracking) come from Chromium
  * laying out the real webfont, so the outlines match the live UI type exactly;
  * glyph shapes come from the variable font instanced at wght=700.
@@ -8,7 +8,7 @@ import { readFileSync } from 'node:fs'
 import { Font, toSegments, segmentBounds, segmentsToPath } from './font.mjs'
 import { launchChromium } from './chromium.mjs'
 
-export const TEXT = 'GUESS THE LANGUAGE'
+export const TEXT = 'LINGO GUESS'
 export const TRACKING = -0.03
 const FONT_URL = new URL('../../public/fonts/SpaceGrotesk-700-latin.woff2', import.meta.url)
 

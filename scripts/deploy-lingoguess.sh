@@ -5,8 +5,8 @@
 #   ./scripts/deploy-lingoguess.sh --ship   ...and trigger the Hostinger Git deploy
 #
 # The live tree is index.html + assets + audio + /admin (PHP). Two traps:
-#   * the base path is "/" on the real domain, NOT the "/Language-guesser/" that
-#     vite.config.ts hardcodes for GitHub Pages, so the CLI overrides it;
+#   * the base path is "/" on the real domain (already the default in
+#     vite.config.ts), and is passed explicitly here for belt and braces;
 #   * the deploy branch must keep real history, so it lives in a worktree of this
 #     repo instead of a scratch git init (a fresh init cannot fast-forward).
 set -euo pipefail
@@ -53,5 +53,5 @@ fi
 
 if [ "${1:-}" = "--ship" ]; then
   echo "== trigger Hostinger Git deploy"
-  python3 /root/hz.py execute "{\"operation\":\"hosting_git_deploy-website-repository\",\"params\":{\"username\":\"$USER_NAME\",\"domain\":\"$DOMAIN\",\"repository_url\":\"https://github.com/MVPetrone/Language-guesser.git\",\"branch\":\"$BRANCH\"}}"
+  python3 /root/hz.py execute "{\"operation\":\"hosting_git_deploy-website-repository\",\"params\":{\"username\":\"$USER_NAME\",\"domain\":\"$DOMAIN\",\"repository_url\":\"https://github.com/MVPetrone/lingo-guess.git\",\"branch\":\"$BRANCH\"}}"
 fi

@@ -2,12 +2,12 @@
 // sizes, walking the real game flow, and report console/page errors.
 //
 //   node scripts/shoot.mjs <base-url> <out-dir>
-//   e.g. node scripts/shoot.mjs http://127.0.0.1:4173/Language-guesser/ /tmp/shots
+//   e.g. node scripts/shoot.mjs http://127.0.0.1:4173/ /tmp/shots
 import { chromium } from '@playwright/test'
 import { existsSync, mkdirSync } from 'node:fs'
 import { resolve } from 'node:path'
 
-const base = process.argv[2] ?? 'http://127.0.0.1:4173/Language-guesser/'
+const base = process.argv[2] ?? 'http://127.0.0.1:4173/'
 const outDir = resolve(process.argv[3] ?? '/tmp/shots')
 mkdirSync(outDir, { recursive: true })
 

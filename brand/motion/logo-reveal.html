@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Guess the Language — logo reveal (1080 × 1080, 5 s)</title>
+<title>Lingo Guess — logo reveal (1080 × 1080, 5 s)</title>
 <link rel="stylesheet" href="../../src/styles/tokens.css">
 <link rel="stylesheet" href="motion-kit.css">
 </head>
@@ -188,7 +188,7 @@ function words(ctx, t) {
     ctx.textBaseline = 'alphabetic'
     ctx.fillStyle = K.rgba(C.fog100, a)
     ctx.filter = `blur(${(7 * (1 - settle(K.seg(t, T.word, d4)))).toFixed(2)}px)`
-    ctx.fillText('GUESS THE LANGUAGE', 540 + track / 2, WORD_Y)
+    ctx.fillText('LINGO GUESS', 540 + track / 2, WORD_Y)
     ctx.filter = 'none'
   }
   const b = settle(K.seg(t, T.tag, d3))

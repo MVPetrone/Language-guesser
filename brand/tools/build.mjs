@@ -27,7 +27,7 @@ mkdirSync(at('public/icons'), { recursive: true })
 
 const INK = '#06080c'
 const FOG = '#edf1f7'
-const head = (vb) => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${vb}" role="img">\n  <title>Guess the Language</title>\n`
+const head = (vb) => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${vb}" role="img">\n  <title>Lingo Guess</title>\n`
 /** The drawable body of a mark file (everything after <title>). */
 const markBody = (file) => readFileSync(at(file), 'utf8').split('</title>')[1].replace('</svg>', '').trim()
 const placed = (body, x, y, size) =>
